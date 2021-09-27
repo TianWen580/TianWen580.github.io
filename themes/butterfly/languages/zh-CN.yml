@@ -1,0 +1,124 @@
+footer:
+  framework: 框架
+  theme: 主题
+
+copy:
+  success: 👍  已复制
+  error: 👾  复制未完成
+  noSupport: 浏览器不支持
+
+page:
+  articles: 文章总览
+  tag: 文章标签
+  category: 专题系列
+  archives: 回顾
+
+card_post_count: 条评论
+
+sticky: 置顶
+no_title: 无题
+
+post:
+  created: 发于
+  updated: 更于
+  wordcount: 字
+  min2read: 阅读时长
+  min2read_unit: min
+  page_pv: 浏览
+  comments: 评论
+  copyright:
+    author: 🖊
+    link: 文章链接
+    copyright_notice: 版权声明
+    copyright_content: '本博客所有文章除特别声明外，均采用
+      <a href="%s" target="_blank">%s</a> 许可协议。转载请注明来自 <a href="%s" target="_blank">%s</a>！'
+  recommend: 相关
+  edit: 编辑
+
+search: 想找啥
+algolia_search:
+  input_placeholder: 搜索文章
+  hits_empty: '👾  好像找不到您查询的内容：${query}'
+  hits_stats: '❤️  找到 ${hits} 条结果，用时 ${time} 毫秒'
+
+local_search:
+  label: 想找啥
+  input_placeholder: 搜索文章
+  hits_empty: '👾好像找不到您查询的内容：${query}'
+
+pagination:
+  prev: 👈
+  next: 👉
+
+comment: 评论
+
+aside:
+  articles: 文章
+  tags: 标签
+  categories: 专题系列
+  card_announcement: 公告
+  card_categories: 专题系列
+  card_tags: 标签
+  card_archives: 归档
+  card_recent_post: 最新文章
+  card_webinfo:
+    headline: 网站资讯
+    article_name: 文章数目
+    runtime:
+      name: 已运行时间
+      unit: 天
+    last_push_date:
+      name: 最后更新时间
+    site_wordcount: 本站总字数
+    site_uv_name: 本站访客数
+    site_pv_name: 本站总访问量
+  more_button: 查看更多
+  card_newest_comments:
+    headline: 最新评论
+    loading_text: 正在加载中...
+    error: 无法获取评论，请确认相关配置是否正确
+    zero: 没有评论
+    image: 图片
+    link: 链接
+    code: 代码
+  card_toc: 目录
+
+date_suffix:
+  just: 刚刚
+  min: 分钟前
+  hour: 小时前
+  day: 天前
+  month: 个月前
+
+donate: 饭做好了吗  🥰
+share: 分享
+
+rightside:
+  readmode_title: 阅读模式
+  font_plus_title: 放大字体
+  font_minus_title: 缩小字体
+  translate_title: 简繁转换
+  night_mode_title: 浅色和深色模式转换
+  back_to_top: 回到顶部
+  toc: 目录
+  scroll_to_comment: 直达评论
+  setting: ⚙️  设置
+  aside: 单栏和双栏切换
+
+copy_copyright:
+  author: 作者
+  link: 链接
+  source: 来源
+  info: 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+Snackbar:
+  chs_to_cht: 你已切换为繁体
+  cht_to_chs: 你已切换为简体
+  day_to_night: 你已切换为深色模式
+  night_to_day: 你已切换为浅色模式
+
+loading: 🚀  等等！就快了...
+
+error404:
+  error_title: 💔  不好意思啊，没找到页面...
+  back_button: 回到主页

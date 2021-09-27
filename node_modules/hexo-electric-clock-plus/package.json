@@ -1,0 +1,22 @@
+{
+  "name": "hexo-electric-clock-plus",
+  "version": "1.3.5",
+  "description": "修改自 [Zfour](https://github.com/Zfour) 大佬的 [hexo-electric-clock](hexo-electric-clock)，主要解决了搜狐 API 对境外 IP 访问失效的问题。主要修改就是将原搜狐 API： ```bash https://pv.sohu.com/cityjson?ie=utf-8 ``` 改为通过请求 ip-api 网址获取 IP 信息： ```bash http://ip-api.com/json ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ice Kano & hotarugali",
+  "keywords": [
+    "hexo",
+    "plugin"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://https://github.com/hotarugali/hexo-electric-clock-plus.git"
+  },
+  "devDependencies": {
+    "hexo": "^3.2.0"
+  }
+}

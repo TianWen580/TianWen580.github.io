@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Anaconda环境日志</title>
+    <url>/2021/08/07/Anaconda%E7%8E%AF%E5%A2%83%E6%97%A5%E5%BF%97/</url>
+    <content><![CDATA[<p>1.创建虚拟环境<br>    • conda create -n your_env_name python=X.X<br>2.更新conda（慎用！！！，新conda可能用不了）<br>    • conda updata conda<br>3.查看虚拟环境菜单和环境内已载入库<br>    • conda env list/conda info -e<br>    • conda list</p>
+<span id="more"></span>
+<p>4.激活虚拟环境<br>    • Conda activate your_env_name<br>5.前人配置好的版本<br>    • Keras==2.2.4<br>    • Tensorflow-gpu==1.12.0<br>6.如果遇到conda安装频繁报错，使用如下语句：<br>    • conda clean -i<br>7.如果不幸要删除虚拟环境<br>    • conda remove -n your_env_name –all<br>8.如果pip安装报错如下，可以检查一下是不是翻墙了<br><img src="/2021/08/07/Anaconda%E7%8E%AF%E5%A2%83%E6%97%A5%E5%BF%97/%E5%9B%BE1.png" alt="图1"><br>9.镜像pip<br>    • pip install -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> opencv-python<br>    • pip install -i <a href="https://pypi.douban.com/simple">https://pypi.douban.com/simple</a> opencv-python</p>
+<p>10.大电脑虚拟环境记录：<br>    • Main5：keras开发框架<br>    • labelme：用于打开labelme工具<br>    • torch：Torch开发框架</p>
+<p>⚠️tensorflow、keras、python对应版本关系：<br><img src="/2021/08/07/Anaconda%E7%8E%AF%E5%A2%83%E6%97%A5%E5%BF%97/%E5%9B%BE2.png" alt="图2"><br>⚠️Tensorflow、CUDA、python、cudnn版本关系：<br><img src="/2021/08/07/Anaconda%E7%8E%AF%E5%A2%83%E6%97%A5%E5%BF%97/%E5%9B%BE3.png" alt="图3"><br>⚠️前人配置环境全赏:<br><img src="/2021/08/07/Anaconda%E7%8E%AF%E5%A2%83%E6%97%A5%E5%BF%97/%E5%9B%BE4.jpg" alt="图4"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/09/27/mao648/</url>
+    <content><![CDATA[<hr>
+<h2 id="title-Pytorch·GPU-训练-单-多-date-2021-08-07-23-20-37"><a href="#title-Pytorch·GPU-训练-单-多-date-2021-08-07-23-20-37" class="headerlink" title="title: Pytorch·GPU 训练(单/多)date: 2021-08-07 23:20:37"></a>title: Pytorch·GPU 训练(单/多)date: 2021-08-07 23:20:37</h2><p>tags: [深度学习, 语义分割, Pytorch]<br>categories: 计算机视觉特辑</p>
+<p>在一切开始前，请确定计算机拥有英伟达的显卡。</p>
+<p>（不是英特尔！不是英特尔！不是英特尔！）<br>CUDA 安装参考该笔记：Keras·GPU 训练（单/多）</p>
+<p>1.依赖库版本：</p>
+<p>• Torch</p>
+<p>• Torchvision</p>
+<p>2.安装 PyTorch：</p>
+<p>• 进入 PyTorch 官网 Start Locally | PyTorch 选择版本，在 conda 运行所给安装语句</p>
+<p><img src="/2021/09/27/mao648/%E5%9B%BE1.png#alt=%E5%9B%BE1"></p>
+<p>• 然后参照 Keras 的 gpu 环境配置，安装 CUDA11.1 和对应的 cudnn。</p>
+<p>3.单 gpu 训练</p>
+<p>• 输入如下语句，指定搜索 gpu 的起始位置</p>
+<p>device=torch.device(“cuda:0”iftorch.cuda.is_available()else”cpu”)</p>
+<p>4.多 gpu 训练</p>
+<p>• Torch.nn.DataParallel</p>
+<p>○ 输入如下语句，指定搜索 gpu 的起始位置</p>
+<p>device=torch.device(“cuda:0”iftorch.cuda.is_available()else”cpu”)</p>
+<p>○ 输入如下语句生成多 gpu 的 model</p>
+<p>Par_model = nn.DataParallel(MyNet())</p>
+<p>Par_model = Par_model.cuda(device)   #model 加载到 gpu</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/09/27/grllbd/</url>
+    <content><![CDATA[<hr>
+<h2 id="title-语义分割网络模型笔记-date-2021-08-07-22-21-39"><a href="#title-语义分割网络模型笔记-date-2021-08-07-22-21-39" class="headerlink" title="title: 语义分割网络模型笔记 date: 2021-08-07 22:21:39"></a>title: 语义分割网络模型笔记 date: 2021-08-07 22:21:39</h2><p>tags: [深度学习, 语义分割]<br>categories: 计算机视觉特辑</p>
+<p>• 语义分割是计算机视觉的四大任务之一（四大任务：分类 a、定位 b、检测 b、分割 c+d），在语义分割中常用的公共数据集有 PASCAL VOC 2012（1.5k train 1.5k validate 20types with background）、MS COCO（83k train 41k validate 80k test 80types）<br><img src="/2021/09/27/grllbd/%E5%9B%BE1.jpg#alt=%E5%9B%BE1"></p>
+<p><img src="/2021/09/27/grllbd/%E5%9B%BE6.jpg#alt=%E5%9B%BE6"></p>
+<p>• 语义分割基本思路：</p>
+<p>○ 基本思路：</p>
+<p>逐个像素分类。输入整张图片进入网络，输出大小和输入一致，通道数等于类别数，分别存放各个类别在某个像元位置的概率，即可逐个像素分类。</p>
+<p>○ 全卷积网络+反卷积网络 convolution and deconvolution network：</p>
+<p>为了使输出具有三维结构，全卷积网络中没有全连接层，只有卷积层和汇合层。但是随着卷积和汇合不断进行下去，图像的尺寸越来越小、通道数越来越多，就不能保证输出大小和输入一致，所以全卷积网络要使用反卷积和反汇合来增大空间大小。</p>
+<p><img src="/2021/09/27/grllbd/%E5%9B%BE2.jpg#alt=%E5%9B%BE2"></p>
+<p>○ 反卷积（或称转置卷积） deconvolution or transpose convolution：</p>
+<p>标准卷积的滤波器在输入的图像上滑动，每次和输入图像的局部区域点乘得到单个输出值，而反卷积的滤波器在输出图像上滑动，局部范围每个神经元值乘以滤波器对应值，得到一个输出的局部区域。标准卷积的后向过程和反卷积的前向过程完成的是同样的数学运算。而且同标准卷积滤波器一样，反卷积滤波器也是从数据中学到的。</p>
+<p>○ 反最大汇合 max-unpooling：</p>
+<p>通常全卷积网络是对称的结构，在最大汇合时需要记录最大值所处的局部区域范围，在对应的反最大汇合时将对应位置的输出置为输入，其余位置补零。反最大汇合可以弥补最大汇合时的空间信息丢失。反最大汇合的前向过程和最大汇合的后向过程完成的是同样的数学运算。</p>
+<p><img src="/2021/09/27/grllbd/%E5%9B%BE3.jpg#alt=%E5%9B%BE3"></p>
+<p>• 语义分割常用技巧：</p>
+<p>○ 膨胀\空洞\扩张卷积 dilated convolution：</p>
+<p>这是常用于分割任务以增大感受野的一个技巧。标准卷积操作中，每个输出神经元对应的局部区域的范围内是连续的。但是，扩张卷积向标准卷积运算中引入了一个新的超参数扩张量（dilation）用于描述输入局部区域在空间位置上的间距。（当扩张量为 1 时，扩张卷积退化回标准卷积）扩张卷积可以在参数量不变的情况下有效提高感受野，而与经典计算机视觉手工特征相比，大的感受野是深度学习方法能取得优异性能的重要原因之一。</p>
+<p><img src="/2021/09/27/grllbd/%E5%9B%BE4.jpg#alt=%E5%9B%BE4"></p>
+<p>○ 条件随机场 conditional random field(CRF)：</p>
+<p>这是一种概率图模型，常用于微调全卷积网络的输出结果，获得更好的细节信息。它的原理是更相近的像元更可能属于相同的类别。但是这样会要考虑两两像元之间的空间关系，会极大降低运行效率。</p>
+<p>○ 利用低层信息：</p>
+<p>全卷积中，可以记录低层的信息，在对应的反卷积网络中的对应层采用加和（如 FCN）或者沿通道方向拼接（如 U-net）的方法弥补全卷积网络操作中丢失的细节和边缘信息，后者效果通常更好（如图）</p>
+<p><img src="/2021/09/27/grllbd/%E5%9B%BE5.jpg#alt=%E5%9B%BE5"></p>
+<p>（以上参考<a href="https://zhuanlan.zhihu.com/p/31727402%EF%BC%89">https://zhuanlan.zhihu.com/p/31727402）</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/09/27/ot04dg/</url>
+    <content><![CDATA[<hr>
+<h2 id="title-损失函数与语义分割任务-date-2021-08-07-22-29-17"><a href="#title-损失函数与语义分割任务-date-2021-08-07-22-29-17" class="headerlink" title="title: 损失函数与语义分割任务 date: 2021-08-07 22:29:17"></a>title: 损失函数与语义分割任务 date: 2021-08-07 22:29:17</h2><p>tags: [深度学习, 语义分割]<br>categories: 计算机视觉特辑</p>
+<p>1.基于分布的损失函数，基于区域的损失函数，基于边界的损失函数和基于复合的损失函数（ Distribution-based,Region-based,  Boundary-based,  and  Compounded）<br><img src="/2021/09/27/ot04dg/%E5%9B%BE1.png#alt=%E5%9B%BE1"></p>
+<p>2.分类标签不平衡问题：</p>
+<p>• 道路识别中，数据集拥有的正样本非常少，有时候背景负样本带来很多没必要的损失函数值的参数更新，类似噪声干扰了正样本训练，无论双分类训练还是多分类训练都存在该问题，更不用说多分类任务。</p>
+<p>• 解决方案</p>
+<p>损失函数本身对训练影响弱于数据集，但是，如果数据集中标签严重不平衡，还是应该选择二进制交叉熵(binary-cross entropy)之外的其他损失函数，如 DiceLoss 系列。</p>
+<p>○ 普通 DiceLoss 损失函数</p>
+<p><img src="/2021/09/27/ot04dg/%E5%9B%BE2.png#alt=%E5%9B%BE2"></p>
+<p><img src="/2021/09/27/ot04dg/%E5%9B%BE3.png#alt=%E5%9B%BE3"></p>
+<p>上面公式比较通俗，右侧部分称 Dice 系数（dice coefficient），由 1 减去就得到了 DiceLoss。对于分割任务而言，绝对值 X 和 Y 分别代表 ground_truth 和 predict_mask。一般和 IoU 一样作为测试的评价指数，实际训练效果非常糟糕。</p>
+<p>○ Log-Cosh Dice Loss</p>
+<p>普通 DiceLoss 由于其非凸性，它多次都无法获得最佳结果。Lovsz-softmax 损失旨在通过添加使用 Lovsz 扩展的平滑来解决非凸损失函数的问题。同时，Log-Cosh 方法已广泛用于基于回归的问题中，以平滑曲线。</p>
+<p><img src="/2021/09/27/ot04dg/%E5%9B%BE4.png#alt=%E5%9B%BE4"></p>
+<p>但是该损失函数无法在我的项目中运行（ExpLog_Dice）</p>
+<p>○ Tversky Loss</p>
+<p><img src="/2021/09/27/ot04dg/%E5%9B%BE5.png#alt=%E5%9B%BE5"></p>
+<p>Tversky 系数是 Dice 系数和 Jaccard 系数的一种推广。当设置 α=β=0.5，此时 Tversky 系数就是 Dice 系数。而当设置 α=β=1 时，此时 Tversky 系数就是 Jaccard 系数。α 和 β 分别控制假阴性和假阳性。通过调整 α 和 β，可以控制假阳性和假阴性之间的平衡。</p>
+<p><img src="/2021/09/27/ot04dg/%E5%9B%BE6.png#alt=%E5%9B%BE6"></p>
+<p>○ Focal Tversky Loss</p>
+<p><img src="/2021/09/27/ot04dg/%E5%9B%BE7.png#alt=%E5%9B%BE7"></p>
+<p>参考文章： Loss Functions for Medical Image Segmentation: A Taxonomy | by JunMa | Medium <a href="https://medium.com/@junma11/loss-functions-for-medical-image-segmentation-a-taxonomy-cefa5292eec0#:~:text=Generalized%20Dice%20loss%20is%20the%20multi-class%20extension%20of,negatives%20and%20false%20positives%20in%20generalized%20Dice%20loss">https://medium.com/@junma11/loss-functions-for-medical-image-segmentation-a-taxonomy-cefa5292eec0#:~:text=Generalized Dice loss is the multi-class extension of,negatives and false positives in generalized Dice loss</a>.</p>
+<p>GitHub： GitHub - JunMa11/SegLoss: A collection of loss functions for medical image segmentation <a href="https://github.com/JunMa11/SegLoss">https://github.com/JunMa11/SegLoss</a></p>
+<p>论文：<a href="https://arxiv.org/pdf/2006.14822.pdf">https://arxiv.org/pdf/2006.14822.pdf</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/09/27/ug2u1x/</url>
+    <content><![CDATA[<hr>
+<h2 id="title-GIS-的应用-date-2021-07-12-21-50-03"><a href="#title-GIS-的应用-date-2021-07-12-21-50-03" class="headerlink" title="title: GIS 的应用 date: 2021-07-12 21:50:03"></a>title: GIS 的应用 date: 2021-07-12 21:50:03</h2><p>tags: [GIS, GISer, 思想]<br>categories: 地信原理特辑</p>
+<p>1.输入（蓝）、处理（橙）、输出（绿）：</p>
+<p>• 输入处理输出是最基本最简化的应用逻辑</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![图1](GIS的应用/图1.png)</span><br></pre></td></tr></table></figure>
+
+<p>2.GIS 模型+具体行业模型（集成）</p>
+<p>• 举例复杂应用：水务行业的排水管网 SWMM 模型（排水管网属于 GIS 模型，SWMM 属于税务行业模型）</p>
+<p>○ 对应 GISer 的思想：</p>
+<p>§ 给排水管建模</p>
+<p>§ 分层：根据用户需求分析得到的设备类型抽象图层：检查井、管线、汇水区……</p>
+<p>§ 抽象：</p>
+<p>□ 检查井，点类型：坐标、高程……</p>
+<p>□ 管线，线类型：上下游井、埋深、管长、管径……</p>
+<p>□ 汇水区，面类型：面积……</p>
+<p>○ 针对思想的复杂应用构建：</p>
+<p>§ 输入：</p>
+<p>□ 检查井：坐标、高程……&lt;&lt;DEM 高程提取</p>
+<p>□ 管线：上下游井、埋深、管长、管径……&lt;&lt;上下游网络拓扑</p>
+<p>□ 汇水区：面积……&lt;&lt;小流域 Basin 划分工具</p>
+<p>§ 处理：</p>
+<p>□ SWMM 模型引擎（和 GIS 关系不大，主要来源于行业模型）</p>
+<p>§ 输出（行业用户对应需求）：</p>
+<p>□ 检查井的水位变化序列的动态专题渲染</p>
+<p>□ 管线流量、充满度变化序列的动态专题渲染</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/09/27/tvbg16/</url>
+    <content><![CDATA[<hr>
+<h2 id="title-分割任务下数据集增广-date-2021-08-07-22-39-14"><a href="#title-分割任务下数据集增广-date-2021-08-07-22-39-14" class="headerlink" title="title: 分割任务下数据集增广 date: 2021-08-07 22:39:14"></a>title: 分割任务下数据集增广 date: 2021-08-07 22:39:14</h2><p>tags: [深度学习, 语义分割, 数据]<br>categories: 计算机视觉特辑</p>
+<p>1.常用增广算法</p>
+<p>• 图像变换：</p>
+<p>○ 颜色增强</p>
+<p>○ 亮度增强</p>
+<p>○ 颜色随机<br>• 数量增广：</p>
+<p>○ 角度旋转</p>
+<p>• 重要图像变换：</p>
+<p>○ 随机缩放</p>
+<p>○ 椒盐化</p>
+<p>2.有序增广</p>
+<p>有各式各样的数据增广方式，但是有的增广给训练带来的效果更为显著，这样各种增广方式就不能简单各执行一次就好，而要按照一定次序逐一嵌套地执行，目前增广方式可分为三类重要等级（左至右重要性递增）：图像变换&gt;&gt;数量增广&gt;&gt;重要图像变换。</p>
+<p>• 第一步，对当前数据集完成各简单图像变换，如颜色增强、亮度增强、颜色随机。这一步进行了对泛化优化效果较差的增广，因为是第一次增广产生的数据量增长最少。</p>
+<p>• 第二部，对第一步增广的数据集执行角度旋转，这一步大量增加了数据量。</p>
+<p>• 最后，执行重要图像变换，如随机缩放、椒盐化，这是对泛化优化提供重要贡献的增广方法，这样对前面大量的增广数据完成全覆盖式重要图像变换。（值得强调的是，尺度上的变化对于感受野的优化是最大的，这也造就了随即缩放效益最优的地位，当然同时也会进一步数量增广）</p>
+<p><img src="/2021/09/27/tvbg16/%E5%9B%BE1.png#alt=%E5%9B%BE1"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/09/27/skxksy/</url>
+    <content><![CDATA[<hr>
+<h2 id="title-GIS-的前沿现状-date-2021-07-12-21-50-16"><a href="#title-GIS-的前沿现状-date-2021-07-12-21-50-16" class="headerlink" title="title: GIS 的前沿现状 date: 2021-07-12 21:50:16"></a>title: GIS 的前沿现状 date: 2021-07-12 21:50:16</h2><p>tags: [GIS, GISer, 思想]<br>categories: 地信原理特辑</p>
+<p>1.总体来说 GIS 发展遇到了瓶颈</p>
+<p>• 烂概念+旧瓶装新酒：</p>
+<p>○ 数字城市</p>
+<p>○ 智慧城市</p>
+<p>○ 城市大脑</p>
+<p>○ CIM=BIM+GIS</p>
+<p>○ 云 GIS</p>
+<p>○ 大数据城市</p>
+<p>○ ……</p>
+<p>• 大部分概念可能有一些有趣的东西，但是都不足以成为技术革命。这些名词多少有点商业包装的成分，也侧面表明了 GIS 产业的瓶颈。<br>2.GIS+VR/AR</p>
+<p>• 室内导航、实景导航等如华为 AR 地图——河图的简单运用</p>
+<p><img src="/2021/09/27/skxksy/%E5%9B%BE1.png#alt=%E5%9B%BE1"></p>
+<p>3.一个研究生非常适合研究（通过）的选题：GIS+物联网+行业模型（机理模型）</p>
+<p>• 物联网实现不难，行业模型大部分数据来源就可以利用物联网，成为数据来源；行业模型开放输入，作为静态模型存在；GIS 提供背后的空间数据分析能力，最终输出时间序列或者空间序列的展示。</p>
+<p><img src="/2021/09/27/skxksy/%E5%9B%BE2.png#alt=%E5%9B%BE2"></p>
+<p>4.GIS+大数据分析（统计学模型，和人工智能无关）</p>
+<p>• 手机信令，北京第二次疫情病例行迹排查</p>
+<p>5.GIS+机器学习（非机理）</p>
+<p>• GIS 科班的学生对人工智能的认识基本很模糊，机器学习的神经网络是人工智能最典型的。可以理解神经网络过程是   黑箱&gt;&gt;灰箱&gt;&gt;白箱   的过程。黑箱：未知模型&gt;&gt;灰箱：神经网络训练&gt;&gt;白箱：机理模型——可表达模型（如水动力模型数学公式）。研究这方面，训练数据和空间分析挂钩是最好，不然 GIS 存在感太弱。</p>
+<p>6.RS+深度学习（非机理）</p>
+<p>• 遥感影像解译+卷机神经网络（CNN）是天生的一对</p>
+<p>• 栅格计算+图像识别</p>
+<p>7.GIS+BIM</p>
+<p>• 其实就是 CIM 平台开发，目前来讲做 BIM 的华而不实，自然 CIM 就是为了突破 BIM 的硬实力羸弱局面，但是很难，目前对于学生而言基本不现实，对于游戏开发或者大型地信企业是有用的。</p>
+<p>8.GIS 自身技术突破</p>
+<p>• 图形学</p>
+<p>• 三维切片（cesium），点云</p>
+<p>• 时空 GIS（停留在概念阶段）</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/09/27/pklxqf/</url>
+    <content><![CDATA[<hr>
+<h2 id="title-Anaconda-环境日志-date-2021-08-07-22-08-11"><a href="#title-Anaconda-环境日志-date-2021-08-07-22-08-11" class="headerlink" title="title: Anaconda 环境日志 date: 2021-08-07 22:08:11"></a>title: Anaconda 环境日志 date: 2021-08-07 22:08:11</h2><p>tags: [深度学习, 语义分割, Anaconda, Python]<br>categories: 计算机视觉特辑</p>
+<p>1.创建虚拟环境</p>
+<p>• conda create -n your_env_name python=X.X</p>
+<p>2.更新 conda（慎用！！！，新 conda 可能用不了）</p>
+<p>• conda updata conda</p>
+<p>3.查看虚拟环境菜单和环境内已载入库</p>
+<p>• conda env list/conda info -e</p>
+<p>• conda list 4.激活虚拟环境</p>
+<p>• Conda activate your_env_name</p>
+<p>5.前人配置好的版本</p>
+<p>• Keras2.2.4</p>
+<p>• Tensorflow-gpu1.12.0</p>
+<p>6.如果遇到 conda 安装频繁报错，使用如下语句：</p>
+<p>• conda clean -i</p>
+<p>7.如果不幸要删除虚拟环境</p>
+<p>• conda remove -n your_env_name –all</p>
+<p>8.如果 pip 安装报错如下，可以检查一下是不是翻墙了</p>
+<p><img src="/2021/09/27/pklxqf/%E5%9B%BE1.png#alt=%E5%9B%BE1"></p>
+<p>9.镜像 pip</p>
+<p>• pip install -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> opencv-python</p>
+<p>• pip install -i <a href="https://pypi.douban.com/simple">https://pypi.douban.com/simple</a> opencv-python</p>
+<p>10.大电脑虚拟环境记录：</p>
+<p>• Main5：keras 开发框架</p>
+<p>• labelme：用于打开 labelme 工具</p>
+<p>• torch：Torch 开发框架</p>
+<p>⚠️tensorflow、keras、python 对应版本关系：</p>
+<p><img src="/2021/09/27/pklxqf/%E5%9B%BE2.png#alt=%E5%9B%BE2"></p>
+<p>⚠️Tensorflow、CUDA、python、cudnn 版本关系：</p>
+<p><img src="/2021/09/27/pklxqf/%E5%9B%BE3.png#alt=%E5%9B%BE3"></p>
+<p>⚠️ 前人配置环境全赏:</p>
+<p><img src="/2021/09/27/pklxqf/%E5%9B%BE4.jpg#alt=%E5%9B%BE4"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/09/27/xkk3s7/</url>
+    <content><![CDATA[<hr>
+<h2 id="title-Keras·gpu-训练（单-多）date-2021-08-07-23-40-18"><a href="#title-Keras·gpu-训练（单-多）date-2021-08-07-23-40-18" class="headerlink" title="title: Keras·gpu 训练（单\多）date: 2021-08-07 23:40:18"></a>title: Keras·gpu 训练（单\多）date: 2021-08-07 23:40:18</h2><p>tags: [深度学习, 语义分割, Keras]<br>categories: 计算机视觉特辑</p>
+<p>在一切开始前，请确定计算机拥有英伟达的显卡。</p>
+<p>（不是英特尔！不是英特尔！不是英特尔！） 1.版本号：</p>
+<p>• keras2.2.4</p>
+<p>• Tensorflow-gpu1.12.0</p>
+<p>• CUDA9.0.176</p>
+<p>• cuDNN7.6.5 for CUDA 9.0</p>
+<p>• Scikit-image</p>
+<p>• Opencv-python</p>
+<p>2.CUDA 下载</p>
+<p>• 从 <a href="https://developer.nvidia.com/cuda-toolkit-archive">https://developer.nvidia.com/cuda-toolkit-archive</a> 中打开下载中心，找到相应版本，点击版本号即可进入下载页面</p>
+<p><img src="/2021/09/27/xkk3s7/%E5%9B%BE1.png#alt=%E5%9B%BE1"></p>
+<p>• 选择要下载的平台、版本号等，点击 DOWNLOAD 即可</p>
+<p><img src="/2021/09/27/xkk3s7/%E5%9B%BE2.png#alt=%E5%9B%BE2"></p>
+<p>3.cuDNN 下载·安装</p>
+<p>• 首先，把 CUDA 安装好，从 NVIDIA cuDNN | NVIDIA Developer <a href="https://developer.nvidia.com/zh-cn/cudnn">https://developer.nvidia.com/zh-cn/cudnn</a></p>
+<p>中打开 cuDNN 中心，点击“下载 cuDNN”，登录之后填写问卷即可下载。最后 bin、include、lib 三个文件夹里的文件复制到 CUDA 的对应文件夹中就行了。</p>
+<p><img src="/2021/09/27/xkk3s7/%E5%9B%BE3.png#alt=%E5%9B%BE3"></p>
+<p><img src="/2021/09/27/xkk3s7/%E5%9B%BE4.png#alt=%E5%9B%BE4"></p>
+<p><img src="/2021/09/27/xkk3s7/%E5%9B%BE5.png#alt=%E5%9B%BE5"></p>
+<p>4.单 gpu 训练/多 gpu 训练</p>
+<p>• 单 gpu 非常简单，只需要写图中语句即可用 keras 实现单 gpu 训练</p>
+<p><img src="/2021/09/27/xkk3s7/%E5%9B%BE6.png#alt=%E5%9B%BE6"></p>
+<p>• 多 gpu 需要用到 muti 函数生成模型，代码如下</p>
+<p><img src="/2021/09/27/xkk3s7/%E5%9B%BE7.png#alt=%E5%9B%BE7"></p>
+<p>5.找不到第二条 gpu</p>
+<p>• 有时候 keras 识别不了电脑的第二条 gpu，执行 muti 会报错如下：</p>
+<p><img src="/2021/09/27/xkk3s7/%E5%9B%BE8.png#alt=%E5%9B%BE8"></p>
+<p>• 我这次是因为执行了这个语句造成的，这个语句只能供单 gpu 的 model 使用</p>
+<p><img src="/2021/09/27/xkk3s7/%E5%9B%BE9.png#alt=%E5%9B%BE9"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/09/27/zka8l2/</url>
+    <content><![CDATA[<hr>
+<h2 id="title-TensorboardX-训练可视化-date-2021-08-07-22-43-00"><a href="#title-TensorboardX-训练可视化-date-2021-08-07-22-43-00" class="headerlink" title="title: TensorboardX 训练可视化 date: 2021-08-07 22:43:00"></a>title: TensorboardX 训练可视化 date: 2021-08-07 22:43:00</h2><p>tags: [深度学习, 语义分割, 可视化, TensorboardX]<br>categories: 计算机视觉特辑</p>
+<p>1.conda 环境配置：</p>
+<p>• tensorboardX2.2</p>
+<p>• Tensorboard2.5.0</p>
+<p>• PyTorch1.8.1</p>
+<p>• Torchvision0.9.1 2.查看记录</p>
+<p>• 首先学习以下 tensorboardX 怎么用。一般训练代码运行之后会同时生成 tensorboardX 的日志文件。这时复制日志文件所在文件夹路径，打开 Anaconda 命令行，切换环境至 torch，输入图中语句为日志文件夹创建 tensorboardX 默认的本地端口（格式：tensorboard –logdir PATH）</p>
+<p><img src="/2021/09/27/zka8l2/%E5%9B%BE1.png#alt=%E5%9B%BE1"></p>
+<p>• 执行得到端口地址，复制到浏览器打开即可查看训练可视化内容</p>
+<p><img src="/2021/09/27/zka8l2/%E5%9B%BE2.png#alt=%E5%9B%BE2"></p>
+<p><img src="/2021/09/27/zka8l2/%E5%9B%BE3.png#alt=%E5%9B%BE3"></p>
+<p>• 关闭端口占用，只需长按 CTRL + C</p>
+<p>3.训练记录</p>
+<p>• 导入 SummaryWriter</p>
+<p><img src="/2021/09/27/zka8l2/%E5%9B%BE4.png#alt=%E5%9B%BE4"></p>
+<p>• 在代码中初始化 SummaryWriter 实例，参数填记录的存储文件夹位置（有其他初始化方法，这里不常用）</p>
+<p><img src="/2021/09/27/zka8l2/%E5%9B%BE5.png#alt=%E5%9B%BE5"></p>
+<p>• 训练常用记录类型：</p>
+<p>○ （scalar）单个数值</p>
+<p>§ 参数：</p>
+<p>□ Tag：该数据名称（如 train_acc），不同名称数据会用独立图表表示</p>
+<p>□ Scalar_value：数据值来源，一般是个 python 变量（如 train_acc）</p>
+<p>□ Global_step：存放当前 epoch 值</p>
+<p>□ walltime：默认值 time.time()，记录当下时间，一般填 None 不用</p>
+<p>§ 用法：如 writer.add_scalar()</p>
+<p>○ （scalars）多个数值</p>
+<p>多个数值的记录类型利用 python 字典生成日志</p>
+<p>§ 参数：</p>
+<p>□ Main_tag：该图表总的名称</p>
+<p>□ Tag_scalar_dict：各类值的字典（如下）</p>
+<p><img src="/2021/09/27/zka8l2/%E5%9B%BE6.png#alt=%E5%9B%BE6"></p>
+<p>□ Global_step：存放当前 epoch 值</p>
+<p>□ walltime：默认值 time.time()，记录当下时间，一般填 None 不用</p>
+<p>§ 用法：如 writer.add_scalars()</p>
+<p>○ （graph）网络结构/运行图</p>
+<p>§ 参数：</p>
+<p>□ model：待可视化的网络模型</p>
+<p>□ Input_to_model：输入的一组真图片或者伪造的零值图片</p>
+<p>§ 用法：</p>
+<p>□ 首先使用 torch.randn(num,z,x,y)生成假数据，然后正常调用模型并切换至 train 状态</p>
+<p><img src="/2021/09/27/zka8l2/%E5%9B%BE7.png#alt=%E5%9B%BE7"></p>
+<p>□ 然后使用 with 语句生成 SummaryWriter 实例并添加运行图</p>
+<p><img src="/2021/09/27/zka8l2/%E5%9B%BE8.png#alt=%E5%9B%BE8"></p>
+<p>□ 当下文件夹目录会生成 runs 文件夹，这个文件路径为日志地址</p>
+<p><img src="/2021/09/27/zka8l2/%E5%9B%BE9.gif#alt=%E5%9B%BE9"></p>
+<p>• 其他记录类型：</p>
+<p>• 一些问题</p>
+<p>○ 如果执行 add 操作后没有实时在网页可视化界面看到效果，试试重启 tensorboard</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/09/27/uqudv9/</url>
+    <content><![CDATA[<hr>
+<h2 id="title-Pytorch·API-部署-WEB·ONNXdate-2021-08-07-23-25-16"><a href="#title-Pytorch·API-部署-WEB·ONNXdate-2021-08-07-23-25-16" class="headerlink" title="title: Pytorch·API 部署 WEB·ONNXdate: 2021-08-07 23:25:16"></a>title: Pytorch·API 部署 WEB·ONNXdate: 2021-08-07 23:25:16</h2><p>tags: [深度学习, 语义分割, Pytorch, ONNX, Web 开发]<br>categories: 计算机视觉特辑</p>
+<p>1.API 接口，主要是通过中间商，为目标端暴露功能函数作为输入、处理、输出的桥梁。<br>2.WEB 预测 API 开发（基于 ONNX）</p>
+<p>• ONNX 是用于机器学习模型云端发布的文件格式，是适用于不同框架的规范工具，</p>
+<p>参考视频：How to run PyTorch models in the browser with ONNX.js - YouTube</p>
+<p><a href="https://www.youtube.com/watch?v=Vs730jsRgO8">https://www.youtube.com/watch?v=Vs730jsRgO8</a></p>
+<p>项目地址：pytorch-to-javascript-with-onnx - CodeSandbox</p>
+<p><a href="https://codesandbox.io/s/vgzep?file=/index.html">https://codesandbox.io/s/vgzep?file=/index.html</a></p>
+<p>• 训练并保存 model.state_dict()</p>
+<p>○ ONNX 支持 pt 格式的模型介绍文件（model.state_dict()），训练时输入以下语句保存，也可以是 pth 格式</p>
+<p><img src="/2021/09/27/uqudv9/%E5%9B%BE1.png#alt=%E5%9B%BE1"></p>
+<p>○ 注意搭建模型的时候检查激活函数是否支持 ONNX，查询相关文档：</p>
+<p><a href="https://github.com/microsoft/onnxjs/blob/v0.1.8/docs/operators.md">https://github.com/microsoft/onnxjs/blob/v0.1.8/docs/operators.md</a></p>
+<p>切换激活函数后还要更换对应的损失函数算法，比如 softmax 对应 nn.functional.cross_entropy()</p>
+<p>○ 另外，ONNX 仅支持单 GPU 训练的 model，切勿使用 DataParellel 等 model。</p>
+<p>○ 可以根据网络模型的 github 官网复制代码，搭建网络的时候要告知前端输入的图片尺寸，比如画布要绘制高清图可以预设网络输入尺寸为(280,280,4)，后期在池化层池化十倍即可。若 onnx 不能起作用，检查网络的 pytorch 语句是否有 bug（如池化时不能对图片切片而必须使用 torch.narrow(x)），可以查看 pytorch 官网文档或者中文文档的解释：</p>
+<p><a href="https://pytorch.org/docs/stable/index.html">https://pytorch.org/docs/stable/index.html</a> or <a href="https://pytorch-cn.readthedocs.io/zh/latest/">https://pytorch-cn.readthedocs.io/zh/latest/</a></p>
+<p>• pt 转 onnx 文件</p>
+<p>○ 载入 pt 文件，切换为 eval 模式</p>
+<p><img src="/2021/09/27/uqudv9/%E5%9B%BE2.png#alt=%E5%9B%BE2"></p>
+<p>○ 预先构造空的待测影像矩阵，并同相关参数传入 torch.onnx.export()，导出 onnx 文件</p>
+<p><img src="/2021/09/27/uqudv9/%E5%9B%BE3.png#alt=%E5%9B%BE3"></p>
+<p>• 前端对 ONNX 文件的获取和操作/API 接口搭建</p>
+<p>○ 首先，必须输入图中语句调用 ONNX 服务</p>
+<p><img src="/2021/09/27/uqudv9/%E5%9B%BE4.png#alt=%E5%9B%BE4"></p>
+<p>○ 训练后生成的 ONNX 文件直接部署到前端项目文件夹，ONNX 提供如下 js 操作以执行预测：</p>
+<p>§ 新建 Session，并在 Session 中载入 model</p>
+<p><img src="/2021/09/27/uqudv9/%E5%9B%BE5.png#alt=%E5%9B%BE5"></p>
+<p>§ 获取服务器待预测图片，传入 Tensor</p>
+<p><img src="/2021/09/27/uqudv9/%E5%9B%BE6.png#alt=%E5%9B%BE6"></p>
+<p>§ 对图片执行预测</p>
+<p><img src="/2021/09/27/uqudv9/%E5%9B%BE7.png#alt=%E5%9B%BE7"></p>
+<p>§ 获取 model 输出 Tensor</p>
+<p><img src="/2021/09/27/uqudv9/%E5%9B%BE8.png#alt=%E5%9B%BE8"></p>
+<p>§ 从输出 Tensor 提取出概率分布矩阵</p>
+<p><img src="/2021/09/27/uqudv9/%E5%9B%BE9.png#alt=%E5%9B%BE9"></p>
+<p>§ 提取概率最大对应的分类结果（转化为分类结果）</p>
+<p><img src="/2021/09/27/uqudv9/%E5%9B%BE10.png#alt=%E5%9B%BE10"></p>
+<p>○ 每次后端准备搭建 API，以上都需要后端人员介绍给前端人员。</p>
+<p>3.上面内容只是以分类任务为例子，👉</p>
+<p><a href="https://github.com/microsoft/onnxjs/blob/v0.1.8/docs/api.md">https://github.com/microsoft/onnxjs/blob/v0.1.8/docs/api.md</a> 有更多 API 搭建手段提供给分类、检测、分割等不同计算机视觉任务，关于遥感智能解译还要进一步探索。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/09/27/wgc27n/</url>
+    <content><![CDATA[<hr>
+<h2 id="title-GIS-的简要定义-date-2021-07-12-21-49-33"><a href="#title-GIS-的简要定义-date-2021-07-12-21-49-33" class="headerlink" title="title: GIS 的简要定义 date: 2021-07-12 21:49:33"></a>title: GIS 的简要定义 date: 2021-07-12 21:49:33</h2><p>tags: [GIS, GISer, 思想]<br>categories: 地信原理特辑</p>
+<p>1.GIS 的四层定义：</p>
+<p>• 第一层面，表现层（最直观的，非科班出身的理解），就是一张地图的可视化；</p>
+<p>• 第二层面，应用层（最对口的，接触最多的领域），是一类软件，集合了对地理要素的编辑查询分析等功能；</p>
+<p>• 第三层面，服务层（最近走入人们的视野），读取地图数据后，提供一系列 API，面向开发者和最终用户提供数据处理、数据分析、数据发布等服务包；</p>
+<p>• 第四层面，数据层，GIS 主要的两个数据类型：矢量和栅格；这两个数据类型又有多种格式如 SHP、GDB、GRID 等。这一层体现了 GIS 的数据结构以及存储方式。 2.关于：</p>
+<p>• 从第一层到第四层 GIS 的认识是逐步加深的，GIS 作为一个系统，用于建模（modeling our world）人类认知的世界中的地理要素，存在着从现实到虚拟的概要简化，作为矢量格式或者栅格格式存储。将一系列底层功能如数据处理、数据分析、数据发布的代码整合到 API 发布给开发者，最后开发者包装数据编辑、查询、分析等功能形成软件平台提供给用户，数据最终都转换为数字化地图。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/09/27/xnqb2e/</url>
+    <content><![CDATA[<hr>
+<h2 id="title-美食之美——《雅舍谈吃》date-2021-07-06-23-07-04"><a href="#title-美食之美——《雅舍谈吃》date-2021-07-06-23-07-04" class="headerlink" title="title: 美食之美——《雅舍谈吃》date: 2021-07-06 23:07:04"></a>title: 美食之美——《雅舍谈吃》date: 2021-07-06 23:07:04</h2><p>tags: 美食<br>categories: 生活随笔<br>swiper_index: 8<br>swiper_desc: 简单好用的 hexo 博客文章置顶插件！<br>swiper_cover: /img/weixin.png</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">美，不尽收；食，不尽全。 ——题记</span><br></pre></td></tr></table></figure>
+
+<p>谈到美食，正如饥肠辘辘的人，心里面急迫等待着吃的味觉。但不是所谓，仅仅为着生存。追寻美食的目标，不像一种世俗的冲动，正如雅舍先生题序「我以为要求美味固是人欲，然而何曾有背于天理？如果天理不包括美味的要求在内，上天之人，在舌头上为什么要生那么多的味蕾」。<br>   吃得好，是让人幸福，是对舌尖感受的升华，一旦提到耳熟能详的菜名，人的愉悦便像剑拔弩张，舌尖一触，百般馋舌。左右结构的「馋」字，右边两点比喻两腿迅猛，迅猛狡兔之肉，并非丰足，但人为了啖其美味，愿意逐此狡兔，故写作馋。西施舌、火腿、醋溜鱼、烤羊肉、烧鸭……谁若吃一口，也不至于在脑袋里臆想，两腿一跺，手掌一直，啪的一下，就算有事缠身也无暇顾及。然而，追求高级的味觉，就必然失去点东西，尤其时间宝贵，未必能每次都放纵自己。</p>
+<p>今年除夕，我从繁忙学业中抽身，冒着病毒的风险，踉跄到广东家中度过佳节。目的尚且鲜明，写在文章也就印证我所说为了吃美食。老母亲的美味已经不是天天所得，不回一趟家，不吃慈母饭。而明年除夕，已经计划好的美食清单，都在湖南临武，是为了外婆欢庆大寿，为了庆幸生能继续享用湘菜美味。诚然，计划是幸福的计划，我学业若是耽误，便影响我母亲回乡的心情。</p>
+<p>学业之中，不代表就缺乏美味。学校前门小吃街，第一条正中间的店面以「炒」为技艺，炒粉丝、炒饭、炒土豆粉、炒米线……每份炒制不少料、不过熟，香味浓郁滑入咽喉。旁边五碗小菜随取，勺筷俱全，好不心爽幸福。校外也有全州拌饭，馋嘴烤鱼、淮南牛肉汤、鸡蛋灌饼、特制酸奶等等玲琅满，如饕餮大餐，本人如数家珍，乐子甚广。</p>
+<p>但不是美食就令人幸福的，美食反被美食误，吃得不好，有可能还要怪罪一下美食。</p>
+<p>美食为了尝而点，而不是为了点而尝。打开一个外卖软件，铺天盖地的优惠券、广告条、满减促销，全然改变了美食服务的本质。美食不是为了优惠而美，但你看，我想起 26 元的双层牛肉芝士汉堡，打开外卖软件，又开始送我优惠券，一张是满 27 减 5，一张是满 80 减 9。我心念的汉堡计划被搁置一旁。现在，我购物车换了又换，想法改了又改，点了一家鸡架，满减很高，大份鸡架配油饼、薯条、龙串、千叶只要 81，满减后 43，优惠券折至 34，天啊，真捡大便宜了，一个人，母亲常骂我浪费，也怕生冷不好吃，终于胃饱难入。于是，半个月后的一天，我说：「我心心念念的大汉堡还没吃到呢」，于是又习惯地，打开了外卖软件……</p>
+<p>啖美味的人是得爽口，而不是失口德。点到为止，也是嘴的道规。母亲常嘱咐我「什么东西都不能吃多」，但你看，考试结束，我路过一家烤番薯，摊主一旁慢悠悠削菠萝，菠萝酸甜爽口，头脑一昏，要来四根。老板连忙感谢，我心生奇怪。一路上我大快朵颐，直到第三根已然不对劲，牙齿酸疼，满口酥麻。是啊，我知道我吃多了，但是当时人已然傻了，没办法，又已然泛起恶心。</p>
+<p>美食之美，若天仙之佳，似陋室之雅。雅舍谈吃，谈世俗之赏，谈高雅之堂。南京翠香阁的早茶、北京全聚德的烧鸭，绝不同于广东潮州的街边烂摊子，不带有地域的歧视，不带有阶层的歧视，雅舍或许能尽情在破烂中寻味潮州，若是「破烂」登上大雅之堂的高级餐席，也不感觉一丝违和。但是，真世上能为高价路边摊买单的人已然不多见，多人不敢斗胆，为了金钱的缺憾。别人跟我谈到吃，我更愿意关注在吃本身上，谈钱，色变。但美食不是阶级之物。凡人也能有凡人的美味，大雅之堂也未必不入凡人；大雅食材未必得凡人认可，没有凡人认可也不称美食。</p>
+<p>美，有庐山仙境，有墙头杏花，观不可尽收；食，有满汉全席，有菜汤小食，尝不可尽全。却有人生百态，五味杂陈。文章，有百科全书，有一本便笺，若不是看不完，怎么会藏书如山，孜孜不倦。吃饭，若不是吃不完，怎么会馋如饕餮，感想良多。我写的字，就是把味蕾的感想说出来。可，不是我的味蕾，是我熙熙攘攘间，听闻的许多味蕾……</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/09/27/xyq9rx/</url>
+    <content><![CDATA[<hr>
+<h2 id="title-GISer-的思想-date-2021-07-12-21-49-50"><a href="#title-GISer-的思想-date-2021-07-12-21-49-50" class="headerlink" title="title: GISer 的思想 date: 2021-07-12 21:49:50"></a>title: GISer 的思想 date: 2021-07-12 21:49:50</h2><p>tags: [GIS, GISer, 思想]<br>categories: 地信原理特辑</p>
+<p>1.ESRI 出版的《Modeling Our World》讲解了成熟的 GIS 思想方法</p>
+<p>2.GIS 相比传统制图工具：</p>
+<p>• 制图工具只能在不同维度制作可视的现实还原，无法展开空间分析。GIS 相当于传统制图的下一发展阶段，为整个世界创造了空间分析的可视化制图方法。值得一提的是，以 CAD 为代表的传统制图和 GIS 齐头并进，各有千秋，应当进一步融合。 3.分层概念：</p>
+<p>• Feature In FeatureClass：一座城市有许多独立的、多种类的水厂，整个城市的各种水厂形成单独的群体。这就像当于面向对象中抽象的概念，各种 feature 继承了 featureClass 基类，但是 feature 和 featureClass 在 GIS 中都是作为独立一层存储的。</p>
+<p>4.抽象简化：</p>
+<p>• 空间抽象：现实信息组织入虚拟一般有抽象简化的过程，空间万物都是立体的，但是可以抽象成点线面存储在 GIS 中。</p>
+<p>• 属性抽象：就像猫狗都是生物但是不同种类一般，不同的空间要素不能在同一图层，因为字段组织不一致。但是他们抽象出来的特征可能一致，即可能属于同一图层。</p>
+<p><img src="/2021/09/27/xyq9rx/1.png#alt=%E5%9B%BE1"></p>
+]]></content>
+  </entry>
+</search>
