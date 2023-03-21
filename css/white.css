@@ -22,6 +22,10 @@
   font-family: Merriweather;
   src: url("https://cdn.jsdelivr.net/gh/fushaolei/cdn-white@1.0/font/Merriweather-Regular-9.ttf");
 }
+@font-face {
+  font-family: Taiwan;
+  src: url("https://github.com/FuShaoLei/cdn-white/blob/1.0/font/TaiWanQuanZiKuZhengKaiTi-2.ttf");
+}
 * {
   padding: 0;
   margin: 0;
@@ -53,6 +57,10 @@ span {
   width: 100%;
   display: flex;
   justify-content: center;
+  margin: 20px;
+  border: 0px;
+  border-radius: 10px;
+  background-color: #faf0e6;
 }
 .menu-inner {
   width: 1130px;
@@ -106,9 +114,9 @@ span {
   display: none;
   z-index: 99999;
   background: #fff;
-  border-radius: 3px;
-  min-width: 100px;
-  border: 1px solid #11043c;
+  border-radius: 8px;
+  min-width: 260px;
+  border: 3px solid #11043c;
   position: absolute;
   left: -30px;
   top: 30px;
@@ -141,7 +149,7 @@ span {
   width: 80%;
 }
 .intro-title {
-  font-family: Gothic;
+  font-family: Hack-Regular;
   font-size: 4.5em;
   font-weight: 1000;
   margin: 0;
@@ -153,6 +161,7 @@ span {
   font-size: 1.2em;
   line-height: 1.8em;
   margin-left: 5px;
+  color: #deb887;
 }
 .intro-sub a {
   display: inline-block;
@@ -315,7 +324,7 @@ a {
 .img-show-post-title {
   text-align: center;
   font-size: 1.4em;
-  font-family: Gothic;
+  font-family: Taiwan;
   margin-top: 30px;
 }
 .img-show-post-date {
@@ -358,6 +367,8 @@ a {
 }
 .img-show-post-cover img {
   transition: all 0.4s;
+  border: 0px solid #faf0e6;
+  border-radius: 10px;
 }
 .img-show-post-cover img:hover {
   transform: scale(1.05);
@@ -379,6 +390,23 @@ a {
   max-width: 100%;
   height: 350px;
   object-fit: cover;
+  border: 0px solid #000;
+  border-radius: 20px;
+  position: absolute;
+  z-index: 1;
+}
+.post-cover-img-hover {
+  min-width: 100%;
+  max-width: 100%;
+  height: 350px;
+  background: linear-gradient(rgba(255,255,255,0), #fff);
+  position: absolute;
+  z-index: 2;
+}
+.post-cover-img-insert {
+  min-width: 100%;
+  max-width: 100%;
+  height: 350px;
 }
 .post-meta {
   display: flex;
@@ -604,9 +632,9 @@ code {
   font-family: hack-regular, hack-italic, hack-bold, hack-bolditalic;
 }
 .toc-top {
-  border: 1px solid #e3e3e3;
-  border-radius: 2px;
-  padding: 10px 20px;
+  border: 3px solid #e3e3e3;
+  border-radius: 20px;
+  padding: 20px 60px;
   list-style: none;
   counter-reset: li;
   margin-bottom: 20px;
@@ -701,6 +729,7 @@ li p {
   flex-basis: 800px;
   max-width: 800px;
   font-family: Gothic;
+  color: #11043c;
 }
 .post-content-inner .post-content-inner-space {
   flex-basis: 165px;
@@ -807,8 +836,8 @@ li p {
   height: 42px;
   padding-left: 13px;
   padding-right: 46px;
-  background: transparent;
-  border: 2px solid #11043c;
+  background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0), #11043c);
+  border: 3px solid #11043c;
 }
 .search-input-outer button {
   height: 42px;
@@ -828,7 +857,7 @@ li p {
   margin-bottom: 40px;
 }
 #local-search-result .search-result-title {
-  color: #333;
+  color: #deb887;
   font-size: 1.3em;
   font-weight: 700;
   transition: all 0.2s;
