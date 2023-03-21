@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>   林天文 Tianwen Lin | Buluwasior</title>
+  <title>  一键锁定目标的检测算法 |    林天文 Tianwen Lin | Buluwasior</title>
   <meta name="description" content="HELLO">
   <!-- 标签页图标 -->
   
@@ -72,7 +72,7 @@
           <li class="menu-li animate__animated  animate__fadeInUp" id="sort">
              COLLECTIONs
              <div class="categories-outer " id="sort-div">
-               <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GIS%E5%AE%9E%E9%AA%8C%E7%89%B9%E8%BE%91/">GIS实验特辑</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9C%B0%E4%BF%A1%E5%8E%9F%E7%90%86%E7%89%B9%E8%BE%91/">地信原理特辑</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/">生活随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E7%89%B9%E8%BE%91/">计算机视觉特辑</a></li></ul>
+               <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Vision-%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">Computer Vision 计算机视觉</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/For-OpenMMLab/">For OpenMMLab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIS%E5%AE%9E%E9%AA%8C%E7%89%B9%E8%BE%91/">GIS实验特辑</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9C%B0%E4%BF%A1%E5%8E%9F%E7%90%86%E7%89%B9%E8%BE%91/">地信原理特辑</a></li></ul>
              </div>
           </li>
         
@@ -144,8 +144,10 @@
 <article class="post-inner">
   <div class="post-content-outer">
     <div class="post-intro">
-      <div class="post-title animate__animated  animate__fadeInUp"></div>
-      <div class="meta-intro animate__animated  animate__fadeInUp">3月 04 2023</div>
+      <div class="post-title animate__animated  animate__fadeInUp">一键锁定目标的检测算法</div>
+      <div class="meta-intro animate__animated  animate__fadeInUp">3月 21 2023</div>
+      
+        <div class="post-cover"><span class="lazyload-img-span"><img data-src="https://user-images.githubusercontent.com/62822224/226591171-1b77ca48-63ab-4064-95af-be4a3ec10fe4.png" class="post-cover-img"><div class="post-cover-img-hover">asas</div><div class="post-cover-img-insert">asas</div></span></div>
       
     </div>
     <div class="post-content-inner">
@@ -155,105 +157,115 @@
       <div class="post-content-main animate__animated  animate__fadeInUp">
         <!-- top型目录 -->
         
-          <ol class="toc-top"><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95%E7%9A%843%E4%B8%AA%E6%A8%A1%E5%9D%97"><span class="toc-top-text">目标检测算法的3个模块</span></a></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E5%85%B3%E4%BA%8E%E6%A3%80%E6%B5%8B%E7%AA%97%E5%8F%A3%E7%9A%84%E9%80%89%E6%8B%A9"><span class="toc-top-text">关于检测窗口的选择</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%B3%95"><span class="toc-top-text">滑动窗口法</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#SELECTIVE-SEARCH-%E9%80%89%E6%8B%A9%E6%80%A7%E6%90%9C%E7%B4%A2"><span class="toc-top-text">SELECTIVE SEARCH 选择性搜索</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#RPN-%E5%8C%BA%E5%9F%9F%E5%80%99%E9%80%89%E7%BD%91%E7%BB%9C"><span class="toc-top-text">RPN 区域候选网络</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E7%BB%8F%E5%85%B8-TWO-STAGE%E7%AE%97%E6%B3%95"><span class="toc-top-text">经典 TWO-STAGE算法</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#R-CNN%EF%BC%88SELECTIVE-SEARCH-CNN-SVM%EF%BC%89"><span class="toc-top-text">R-CNN（SELECTIVE SEARCH + CNN + SVM）</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#SPP-NET%EF%BC%88ROI-POOLING%EF%BC%8CSPP-%E7%A9%BA%E9%97%B4%E9%87%91%E5%AD%97%E5%A1%94%E6%B1%A0%E5%8C%96%EF%BC%89"><span class="toc-top-text">SPP-NET（ROI POOLING，SPP 空间金字塔池化）</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#FAST-R-CNN%EF%BC%88SELECTIVE-SEARCH-CNN-ROI%EF%BC%89"><span class="toc-top-text">FAST R-CNN（SELECTIVE SEARCH + CNN + ROI）</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#R-FCN"><span class="toc-top-text">R-FCN</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E7%BB%8F%E5%85%B8One-Stage%E7%AE%97%E6%B3%95"><span class="toc-top-text">经典One-Stage算法</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#YoLoV1"><span class="toc-top-text">YoLoV1</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#SSD%EF%BC%88Single-shot-MultiBox-Detector%EF%BC%89"><span class="toc-top-text">SSD（Single shot MultiBox Detector）</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#YoLoV2"><span class="toc-top-text">YoLoV2</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#YoLoV3"><span class="toc-top-text">YoLoV3</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E8%BF%91%E6%9C%9F%E5%8F%97%E5%85%B3%E6%B3%A8%E7%AE%97%E6%B3%95"><span class="toc-top-text">近期受关注算法</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#FCOS"><span class="toc-top-text">FCOS</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#CENTERNET"><span class="toc-top-text">CENTERNET</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#DETR-and-DEFORMABLE-DETR"><span class="toc-top-text">DETR and DEFORMABLE DETR</span></a></li></ol></li></ol>
+          <ol class="toc-top"><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-top-text">常用数据集</span></a></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E5%B8%B8%E7%94%A8%E7%B2%BE%E5%BA%A6%E6%8C%87%E6%A0%87"><span class="toc-top-text">常用精度指标</span></a></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF"><span class="toc-top-text">基本思路</span></a></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E5%85%B3%E4%BA%8E%E6%A3%80%E6%B5%8B%E7%AA%97%E5%8F%A3%E7%9A%84%E9%80%89%E6%8B%A9"><span class="toc-top-text">关于检测窗口的选择</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%B3%95"><span class="toc-top-text">滑动窗口法</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#SELECTIVE-SEARCH-%E9%80%89%E6%8B%A9%E6%80%A7%E6%90%9C%E7%B4%A2"><span class="toc-top-text">SELECTIVE SEARCH 选择性搜索</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#RPN-%E5%8C%BA%E5%9F%9F%E5%80%99%E9%80%89%E7%BD%91%E7%BB%9C"><span class="toc-top-text">RPN 区域候选网络</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E7%BB%8F%E5%85%B8-TWO-STAGE%E7%AE%97%E6%B3%95"><span class="toc-top-text">经典 TWO-STAGE算法</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#R-CNN%EF%BC%88SELECTIVE-SEARCH-CNN-SVM%EF%BC%89"><span class="toc-top-text">R-CNN（SELECTIVE SEARCH + CNN + SVM）</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#SPP-NET%EF%BC%88ROI-POOLING%EF%BC%8CSPP-%E7%A9%BA%E9%97%B4%E9%87%91%E5%AD%97%E5%A1%94%E6%B1%A0%E5%8C%96%EF%BC%89"><span class="toc-top-text">SPP-NET（ROI POOLING，SPP 空间金字塔池化）</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#FAST-R-CNN%EF%BC%88SELECTIVE-SEARCH-CNN-ROI%EF%BC%89"><span class="toc-top-text">FAST R-CNN（SELECTIVE SEARCH + CNN + ROI）</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#R-FCN"><span class="toc-top-text">R-FCN</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E7%BB%8F%E5%85%B8One-Stage%E7%AE%97%E6%B3%95"><span class="toc-top-text">经典One-Stage算法</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#YoLoV1"><span class="toc-top-text">YoLoV1</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E7%BC%BA%E7%82%B9"><span class="toc-top-text">缺点</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#SSD%EF%BC%88Single-shot-MultiBox-Detector%EF%BC%89"><span class="toc-top-text">SSD（Single shot MultiBox Detector）</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E4%B8%BB%E8%A6%81%E6%94%B9%E8%BF%9B"><span class="toc-top-text">主要改进</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E8%BF%91%E6%9C%9F%E5%8F%97%E5%85%B3%E6%B3%A8%E7%AE%97%E6%B3%95"><span class="toc-top-text">近期受关注算法</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#FCOS"><span class="toc-top-text">FCOS</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#CENTERNET"><span class="toc-top-text">CENTERNET</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#DETR-and-DEFORMABLE-DETR"><span class="toc-top-text">DETR and DEFORMABLE DETR</span></a></li></ol></li></ol>
         
-        <h1 id="一键锁定目标的检测算法"><a href="#一键锁定目标的检测算法" class="headerlink" title="一键锁定目标的检测算法"></a>一键锁定目标的检测算法</h1><hr>
-<blockquote>
-<p>学习心得：计算机视觉之目标检测算法基础</p>
-<p>注：基于OpenMMLab实战营的教授内容，做了有用的补充，会缺少一部分课上的内容</p>
+        <blockquote>
+<p>学习心得：计算机视觉之目标检测算法基础 注：基于OpenMMLab实战营的教授内容，做了有用的补充，会缺少一部分课上的内容</p>
 </blockquote>
 <p>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/gG6Ck22.jpg">
+        <img data-src="https://picx.zhimg.com/80/v2-a447ea83ea84fcad99c59dab0634d7d7_720w.png?source=d16d100b">
         
       </span></p>
-<h1 id="常用数据集"><a href="#常用数据集" class="headerlink" title="常用数据集"></a>常用数据集</h1><ul>
-<li><strong>PASCAL  VOC</strong>：20个类别。通常是用VOC07和VOC12的trainval并集作为训练，用VOC07的测试集作为测试</li>
+<h2 id="常用数据集"><a href="#常用数据集" class="headerlink" title="常用数据集"></a>常用数据集</h2><ul>
+<li><strong>PASCAL VOC</strong>：20个类别。通常是用VOC07和VOC12的trainval并集作为训练，用VOC07的测试集作为测试</li>
 <li><strong>MS COCO</strong>：COCO比VOC更困难。80k训练图像、40k验证图像、20k没有公开标记的测试图像(test-dev)，80个类别。通常是用80k训练和35k验证图像的并集作为训练，其余5k图像作为验证，20k测试图像用于线上测试</li>
 </ul>
-<h1 id="常用精度指标"><a href="#常用精度指标" class="headerlink" title="常用精度指标"></a>常用精度指标</h1><ul>
+<h2 id="常用精度指标"><a href="#常用精度指标" class="headerlink" title="常用精度指标"></a>常用精度指标</h2><ul>
 <li><strong>mAP (mean average precision)</strong> ：目标检测中的常用评价指标，计算方法如下。当预测的包围盒和真实包围盒的交并比大于某一阈值(通常为0.5)，则认为该预测正确。对每个类别，我们画出它的查准率-查全率(precision-recall)曲线，平均准确率是曲线下的面积。之后再对所有类别的平均准确率求平均，即可得到mAP，其取值为[0, 100%]</li>
 <li>**交并比(intersection over union, IoU)**：算法预测的包围盒和真实包围盒交集的面积除以这两个包围盒并集的面积，取值为[0, 1]。交并比度量了算法预测的包围盒和真实包围盒的接近程度，交并比越大，两个包围盒的重叠程度越高</li>
 </ul>
-<h1 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h1><p>Object Detection通常是从图像中输出<strong>多个</strong>目标的Bounding Box以及类别，同时完成了Image Classification何Localization。在Localization中，通常只有<strong>一个</strong>目标，而目标检测更一般化，其图像中出现的目标种类和数目都不定。近年来，目标检测研究趋势主要向更快、更有效的检测系统发展。目前检测算法主要分为Two-Stage和One-Stage两种算法。前者，先生成很多可能候选区，然后再对所有候选区进行分类和校准；后者，不生成各种候选区直接给出检测结果。前者以R-CNN为代表，后者以YOLO和SSD为典型<br>
+<h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><ul>
+<li>Object Detection通常是从图像中输出多个目标的Bounding Box以及类别，同时完成了Image Classification何Localization。在Localization中，通常只有一个目标，而目标检测更一般化，其图像中出现的目标种类和数目都不定。近年来，目标检测研究趋势主要向更快、更有效的检测系统发展。目前检测算法主要分为Two-Stage和One-Stage两种算法。前者，先生成很多可能候选区，然后再对所有候选区进行分类和校准；后者，不生成各种候选区直接给出检测结果。前者以R-CNN为代表，后者以YOLO和SSD为典型</li>
+</ul>
+<p>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/DRlyJeb.jpg">
+        <img data-src="https://picx.zhimg.com/80/v2-6260e70fbe1b5727ac2507dfad1834e0_720w.png?source=d16d100b">
         
       </span></p>
-<h2 id="目标检测算法的3个模块"><a href="#目标检测算法的3个模块" class="headerlink" title="目标检测算法的3个模块"></a>目标检测算法的3个模块</h2><ul>
-<li>选择检测窗口</li>
-<li>图像特征提取</li>
-<li>分类器设计</li>
-</ul>
-<h2 id="关于检测窗口的选择"><a href="#关于检测窗口的选择" class="headerlink" title="关于检测窗口的选择"></a>关于检测窗口的选择</h2><h3 id="滑动窗口法"><a href="#滑动窗口法" class="headerlink" title="滑动窗口法"></a>滑动窗口法</h3><ol>
+<h2 id="关于检测窗口的选择"><a href="#关于检测窗口的选择" class="headerlink" title="关于检测窗口的选择"></a>关于检测窗口的选择</h2><h3 id="滑动窗口法"><a href="#滑动窗口法" class="headerlink" title="滑动窗口法"></a>滑动窗口法</h3><ul>
+<li>步骤：<ol>
 <li>生成不同大小的窗口，在图片上设置步长滑动</li>
 <li>每次滑动对窗口执行分类器，若概率超过某个阈值则认为检测到了物体，生成候选框</li>
 <li>最后，在不同大小窗口生成的检测结果中，经过非极大值抑制（NMS）的方法进行筛选，确定最终检测到的物体</li>
 </ol>
-<ul>
+</li>
 <li>缺点：滑动一次就要分类一次，效率太低了，缺少应用价值</li>
 <li>优化方案：不在输入数据上滑窗，而是在尺寸更小单信息跟丰富的特征图上滑窗</li>
 </ul>
-<h3 id="SELECTIVE-SEARCH-选择性搜索"><a href="#SELECTIVE-SEARCH-选择性搜索" class="headerlink" title="SELECTIVE SEARCH 选择性搜索"></a>SELECTIVE SEARCH 选择性搜索</h3><ol>
+<h3 id="SELECTIVE-SEARCH-选择性搜索"><a href="#SELECTIVE-SEARCH-选择性搜索" class="headerlink" title="SELECTIVE SEARCH 选择性搜索"></a>SELECTIVE SEARCH 选择性搜索</h3><ul>
+<li>步骤：<ol>
 <li>基于滑动窗口法，更改了候选框的搜索方法</li>
 <li>首先对图像做分割算法，产生很多的子区域</li>
 <li>然后根据子区域的相似性，如颜色、纹理、尺寸等，进行区域的合并，不断迭代下去</li>
 <li>每次迭代的时候对不同子区域生成外接矩形，也就是提议框</li>
 <li>最后同滑动窗口法</li>
 </ol>
-<ul>
+</li>
 <li>缺点：效率依然不够高，时间成本太大</li>
 <li>优化方案：PRN</li>
 </ul>
-<h3 id="RPN-区域候选网络"><a href="#RPN-区域候选网络" class="headerlink" title="RPN 区域候选网络"></a>RPN 区域候选网络</h3><ol>
+<h3 id="RPN-区域候选网络"><a href="#RPN-区域候选网络" class="headerlink" title="RPN 区域候选网络"></a>RPN 区域候选网络</h3><ul>
+<li>步骤：<ol>
 <li>输入图像通过卷积神经网络，得到特征图</li>
 <li>基于特征图运行，对于每个滑动窗口，生成一组特定的Anchor（锚）</li>
 <li>可能有很多盒子里没有任何物体，模型需要学习哪些Anchor可能有对象</li>
 <li>Anchor的定位和分类由回归层和分类器完成</li>
 </ol>
-<h2 id="经典-TWO-STAGE算法"><a href="#经典-TWO-STAGE算法" class="headerlink" title="经典 TWO-STAGE算法"></a>经典 TWO-STAGE算法</h2><h3 id="R-CNN（SELECTIVE-SEARCH-CNN-SVM）"><a href="#R-CNN（SELECTIVE-SEARCH-CNN-SVM）" class="headerlink" title="R-CNN（SELECTIVE SEARCH + CNN + SVM）"></a>R-CNN（SELECTIVE SEARCH + CNN + SVM）</h3><blockquote>
-<p>步骤</p>
-<ol>
+</li>
+</ul>
+<h2 id="经典-TWO-STAGE算法"><a href="#经典-TWO-STAGE算法" class="headerlink" title="经典 TWO-STAGE算法"></a>经典 TWO-STAGE算法</h2><h3 id="R-CNN（SELECTIVE-SEARCH-CNN-SVM）"><a href="#R-CNN（SELECTIVE-SEARCH-CNN-SVM）" class="headerlink" title="R-CNN（SELECTIVE SEARCH + CNN + SVM）"></a>R-CNN（SELECTIVE SEARCH + CNN + SVM）</h3><ul>
+<li>步骤：<ol>
 <li>首先，对输入图像采用Selective Search生成大概1~2k个候选框</li>
 <li>每个候选区投入CNN提取特征（神经网络中卷积层不需要固定的出入尺寸，但全连接层需要，所以传统投入网络的时候可能会做crop裁切或者warp拉伸等操作）</li>
 <li>特征送入SVM分类器判断分类</li>
-<li>最后使用回归器对候选框位置进行精修<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/BDo66iD.jpg">
-        
-      </span></li>
+<li>最后使用回归器对候选框位置进行精修</li>
 </ol>
-</blockquote>
-<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
+</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://pic1.zhimg.com/80/v2-27ce1521962b06714fbecfbd40b733e0_720w.png?source=d16d100b">
+        
+      </span></p>
+<ul>
+<li>缺点<ul>
 <li>重复的计算。虽然R-CNN不是在穷举，但是候选框太多，计算量依然会很大，而且候选框之间往往有大量重叠部分</li>
 <li>训练很麻烦，候选区提取、分类、回归都是单独的代码块，需要分开运行，中间的数据还要单独存储</li>
 </ul>
-<h3 id="SPP-NET（ROI-POOLING，SPP-空间金字塔池化）"><a href="#SPP-NET（ROI-POOLING，SPP-空间金字塔池化）" class="headerlink" title="SPP-NET（ROI POOLING，SPP 空间金字塔池化）"></a>SPP-NET（ROI POOLING，SPP 空间金字塔池化）</h3><ul>
-<li>作者何凯明注意到，传统网络中由于全连接层的存在，通常要固定网络输入的尺寸，这种方法往往造成空间信息的损失和部分特征的放大或扭曲，于是他在卷积层的结尾创造了SPP空间金字塔池化。物体检测精度确实有所提高<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/JqjNFXI.jpg">
-        
-      </span></li>
-<li>这一层对卷积层的输出做多种固定的池化，无论输入尺寸如何最后都会按照固定的比率池化，比如$W$，$H$变换为$W/n$，$H/n$，于是就确保了全连接层接受的数量不变<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/kFewlol.jpg">
-        
-      </span></li>
+</li>
 </ul>
-<blockquote>
-<p>步骤</p>
-<ol>
+<h3 id="SPP-NET（ROI-POOLING，SPP-空间金字塔池化）"><a href="#SPP-NET（ROI-POOLING，SPP-空间金字塔池化）" class="headerlink" title="SPP-NET（ROI POOLING，SPP 空间金字塔池化）"></a>SPP-NET（ROI POOLING，SPP 空间金字塔池化）</h3><ul>
+<li>作者何凯明注意到，传统网络中由于全连接层的存在，通常要固定网络输入的尺寸，这种方法往往造成空间信息的损失和部分特征的放大或扭曲，于是他在卷积层的结尾创造了SPP空间金字塔池化。物体检测精度确实有所提高</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://pic1.zhimg.com/80/v2-07e04149737cbfb59e0a52fb3e9a1ddf_720w.png?source=d16d100b">
+        
+      </span></p>
+<ul>
+<li>这一层对卷积层的输出做多种固定的池化，无论输入尺寸如何最后都会按照固定的比率池化，比如W，H变换为W/n，H/n，于是就确保了全连接层接受的数量不变</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://pica.zhimg.com/80/v2-ad4e42bec28dd18461e0de4a6a156c93_720w.png?source=d16d100b">
+        
+      </span></p>
+<ul>
+<li>步骤：<ol>
 <li>首先通过Selective Search生成1~2k个候选框，这一步和R-CNN一样</li>
 <li>特征提取阶段就是和最大的区别了，由于SPP一次就可以对整张图片做全面的特征提取，所以效率大大增加</li>
 <li>最后几步也适合R-CNN一样</li>
 </ol>
-</blockquote>
-<ul>
-<li>缺点同R-CNN类似<h3 id="FAST-R-CNN（SELECTIVE-SEARCH-CNN-ROI）"><a href="#FAST-R-CNN（SELECTIVE-SEARCH-CNN-ROI）" class="headerlink" title="FAST R-CNN（SELECTIVE SEARCH + CNN + ROI）"></a>FAST R-CNN（SELECTIVE SEARCH + CNN + ROI）</h3>
+</li>
+<li>缺点同R-CNN类似</li>
+</ul>
+<h3 id="FAST-R-CNN（SELECTIVE-SEARCH-CNN-ROI）"><a href="#FAST-R-CNN（SELECTIVE-SEARCH-CNN-ROI）" class="headerlink" title="FAST R-CNN（SELECTIVE SEARCH + CNN + ROI）"></a>FAST R-CNN（SELECTIVE SEARCH + CNN + ROI）</h3><p>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/QijlNxM.jpg">
+        <img data-src="https://picx.zhimg.com/80/v2-35dd28eb799ef2af85d99e0468671fcf_720w.png?source=d16d100b">
         
-      </span></li>
+      </span></p>
+<ul>
 <li>传统R-CNN要生成不同尺寸滑动窗下的分类结果，因此每次投入分类器的都是固定的某一尺寸，需要对视窗进行Resize或Warp。ROI pooling就能避免这个问题</li>
 <li>其过程和SPP的一部分类似，首先生将region proposal候选框划分为H * W的网格</li>
 <li>对每个网格进行MaxPooling，形成H * W大小的feature maps。其优点就是提高了处理速度</li>
@@ -261,139 +273,154 @@
 </ul>
 <h3 id="R-FCN"><a href="#R-FCN" class="headerlink" title="R-FCN"></a>R-FCN</h3><p>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/QBZVZM5.jpg">
+        <img data-src="https://picx.zhimg.com/80/v2-c603f134d541bd4bd5facf0b4ebc8cf9_720w.png?source=d16d100b">
         
       </span></p>
 <ul>
-<li>R-FCN是Faster-RCNN的改进，速度得到了很大提升，但精度提升不大。主要解决的问题是位置敏感性：一个图片在任何方向稍微经过裁切，都可以被分类器认出，然而检测任务不希望出现这种位置上的偏差。R-FCN提出了Position-sensitive score maps位置敏感网络层来解决这个问题<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/Can99R0.jpg">
-        
-      </span></li>
-<li>位置敏感网络层维度k * k * （C + 1），k一般等于3，构成能够表达敏感位置（左上，正上，右上，正左，正中，正右，左下，正下，右下）的Grid格网编码结构<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/7R7Z0if.jpg">
-        
-      </span></li>
+<li>R-FCN是Faster-RCNN的改进，速度得到了很大提升，但精度提升不大。主要解决的问题是位置敏感性：一个图片在任何方向稍微经过裁切，都可以被分类器认出，然而检测任务不希望出现这种位置上的偏差。R-FCN提出了Position-sensitive score maps位置敏感网络层来解决这个问题</li>
+<li>位置敏感网络层维度k * k * （C + 1），k一般等于3，构成能够表达敏感位置（左上，正上，右上，正左，正中，正右，左下，正下，右下）的Grid格网编码结构</li>
 </ul>
-<h2 id="经典One-Stage算法"><a href="#经典One-Stage算法" class="headerlink" title="经典One-Stage算法"></a>经典One-Stage算法</h2><h3 id="YoLoV1"><a href="#YoLoV1" class="headerlink" title="YoLoV1"></a>YoLoV1</h3><p>
+<p>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/6DVlUh3.jpg">
+        <img data-src="https://picx.zhimg.com/80/v2-291ac6728f65eaf667750ce345d0b06f_720w.png?source=d16d100b">
         
       </span></p>
-<blockquote>
-<p>步骤</p>
-<ol>
-<li>输入一个图像，YoLoV1会把图像看成一个 s * s 的栅格格网，如图中 s = 7 ，若某个物体的ground truth中心落在某个栅格，则这个栅格要负责该物体的预测<br>
+<h2 id="经典One-Stage算法"><a href="#经典One-Stage算法" class="headerlink" title="经典One-Stage算法"></a>经典One-Stage算法</h2><h3 id="YoLoV1"><a href="#YoLoV1" class="headerlink" title="YoLoV1"></a>YoLoV1</h3><p>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/zCZSyDG.jpg">
+        <img data-src="https://pica.zhimg.com/80/v2-9b24e325b437fb2440a66f63684cc96e_720w.png?source=d16d100b">
         
-      </span></li>
-<li>对于上述每个栅格，要预测回归两个bounding box的坐标及其含有对象的置信度，同时预测物体所属类别<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/HHPw6Us.jpg">
-        
-      </span></li>
+      <br>​</span></p>
+<ul>
+<li>步骤：<ol>
+<li>输入一个图像，YoLoV1会把图像看成一个 s * s 的栅格格网，如图中 s = 7 ，若某个物体的ground truth中心落在某个栅格，则这个栅格要负责该物体的预测</li>
+<li>对于上述每个栅格，要预测回归两个bounding box的坐标及其含有对象的置信度，同时预测物体所属类别</li>
 <li>根据上一步可以预测出的目标窗口，然后根据阈值去除可能性比较低的目标窗口，然后根据NMS去除冗余窗口</li>
-<li>YoLoV1最后的输出是7x7x30，这里是7x7代表输入图像的7x7栅格，维数30的前十个代表2个bounding boxes，<br>每个bounding box要预测5个值👇<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/pSHtKYV.jpg">
-        
-      <br>两个bounding box就10个值；<br>维数30的后20个是该论文中的类别数</span></li>
+<li>YoLoV1最后的输出是7x7x30，这里是7x7代表输入图像的7x7栅格，维数30的前十个代表2个bounding boxes， 每个bounding box要预测5个值</li>
 </ol>
-</blockquote>
-<h4 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h4><ul>
+</li>
+</ul>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
 <li>YoLo对相互靠得很近的物体、过于细小的物体检测效果不好，这是因为一个栅格只预测两个bounding box，并且只属于一个类别</li>
 <li>测试时，如果某类物体出现了奇葩的长宽比或者奇怪的角度时，泛化能力显著下降</li>
 <li>由于损失函数的问题，定位误差是影响检测效果的主要原因，尤其是对于大物体小物体的处理还待加强</li>
 </ul>
 <h3 id="SSD（Single-shot-MultiBox-Detector）"><a href="#SSD（Single-shot-MultiBox-Detector）" class="headerlink" title="SSD（Single shot MultiBox Detector）"></a>SSD（Single shot MultiBox Detector）</h3><p>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/PGZKgAj.jpg">
-        
-      <br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/0EhRA2r.jpg">
-        
-      </span></span></p>
-<ul>
-<li>Single shot表明了SSD和YoLo一样属于One-Stage算法，MultiBox表明了SSD可以检测多个物体</li>
-</ul>
-<h4 id="主要改进"><a href="#主要改进" class="headerlink" title="主要改进"></a>主要改进</h4><ul>
-<li>使用了类似RPN中的Anchor锚点机制，增加bounding box多样性。卷积输出的feature map，每个点对应为原图的一个区域的中心点。以这个点为中心，构造出6个宽高比例不同，大小不同的Anchor（SSD中称为default box）。每个anchor对应4个位置参数(x,y,w,h)和21个类别概率<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/7tqs2vc.jpg">
-        
-      </span></li>
-<li>使用全卷积网络，效率得到提高</li>
-<li>网络中间会生成多个阶段不同感受野的Feature Maps丰富特征多样性，因此SSD能够在不同感受野下进行不同的目标检测，实现多尺度预测，克服了YoLo在大物体小物体上的缺陷</li>
-</ul>
-<blockquote>
-<p>步骤</p>
-<ol>
-<li>卷积层。借鉴了VGG16，惯用先经过CNN获得特征图，再进行定位和分类的方法。</li>
-<li>目标检测层。这一层由五个卷积层和一个平均池化层构成。因为SSD认为目标检测中的物体只与周围信息相关，感受野不是全局的，所以去掉了全连接层</li>
-<li>筛选层。与YoLo基本一致，先过滤类别概率低于阈值的default box，再采用NMS筛掉重叠度较高的。不过，SSD综合了各种feature maps上的default box</li>
-</ol>
-</blockquote>
-<ul>
-<li>SSD基本可以满足手机端的实时物体检测需求了，许多框架比如Tensorflow基于MobileNet在移动设备就使用了SSD算法实现。</li>
-</ul>
-<h3 id="YoLoV2"><a href="#YoLoV2" class="headerlink" title="YoLoV2"></a>YoLoV2</h3><h4 id="主要改进-1"><a href="#主要改进-1" class="headerlink" title="主要改进"></a>主要改进</h4><ul>
-<li>批归一化<br>将数据的分布映射到相对集聚的分布上，让网络更快更好地学习，避免过拟合（提升了2%mAP）</li>
-<li>高分辨率分类器<br>YoLoV2根据输入图像尺寸微调分类网络，然后迁移到目标检测网络中去，这样就不需要目标检测网络适应输入分辨率了（提升了4%mAP）</li>
-<li>Anchor<br>借鉴Faster-RCNN锚框思想，利用锚框直接在卷积特征图中滑动采样，代替全连接，保留了空间信息。另外还对ground truth聚类，指导网络更快学到准确位置（提升了5%mAP）</li>
-<li>随着网络加深，细粒度特征容易丢失，引入Passthrough Layer把浅层特征图连接到深层特征图（如26 * 26 * 512 的特征图转为 13 * 13 * 2048）然后跟实际的13 * 13 * 2048特征图Concat（提升了1%mAP）</li>
-<li>每10个epoch采用新的尺寸输入网络训练，提升了多尺度理解，增强鲁棒性（提升了2%mAP）</li>
-</ul>
-<h4 id="速度改进"><a href="#速度改进" class="headerlink" title="速度改进"></a>速度改进</h4><ul>
-<li>YoLoV2简化了网络，只使用了19个卷积层和5个池化层（Darknet19），这提升了精度也提升了效率</li>
-</ul>
-<h4 id="能力改进"><a href="#能力改进" class="headerlink" title="能力改进"></a>能力改进</h4><ul>
-<li>基于YoLoV2提出的YoLo9000能够预测9000个类别，实现了分类和检测的联合训练，训练中也就用到两个数据集，对于大类和在子类的冲突，其利用WordTree建立树结构来解决</li>
-</ul>
-<h3 id="YoLoV3"><a href="#YoLoV3" class="headerlink" title="YoLoV3"></a>YoLoV3</h3><h4 id="主要改进-2"><a href="#主要改进-2" class="headerlink" title="主要改进"></a>主要改进</h4><ul>
-<li>逻辑回归<br>在YoLoV2中每个cell是通过网络回归预测的bounding box坐标和置信度的，YoLoV3则将坐标和置信度分开预测，坐标通过网络回归，置信度通过逻辑回归预测。在分类器方面，作者认为softmax没有提升性能，而且softmax假设一个bounding box只有一个类，这对于迁移到更多类别标签的数据集没有好处，所以使用逻辑回归代替softmax，使用二次交叉熵计算分类损失</li>
-<li>新的特征提取器：DarkNet-53，引入了残差网路</li>
-<li>多尺度预测坐标</li>
-<li>借鉴FPN，将中间层的输出与后层输出融合，进行三个尺度的预测，每个尺度cell预测3个坐标</li>
-</ul>
-<h2 id="近期受关注算法"><a href="#近期受关注算法" class="headerlink" title="近期受关注算法"></a>近期受关注算法</h2><h3 id="FCOS"><a href="#FCOS" class="headerlink" title="FCOS"></a>FCOS</h3><ul>
-<li><p>FCOS不使用Anchor，而且整个结构都是纯粹的CNN。先预测特征图上的各像素类别，再预测各点的bbox的大小和位置。</p>
-</li>
-<li><p>对于Ambiguity问题，FCOS利用FPN和Center Sampling来解决。同时创新了Center-Ness分支帮助NMS抑制低质量框</p>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/ZMpkYca.jpg">
+        <img data-src="https://picx.zhimg.com/80/v2-f0776451ff869de7aad947961279878b_720w.png?source=d16d100b">
         
       </span></p>
-</li>
-</ul>
-<h3 id="CENTERNET"><a href="#CENTERNET" class="headerlink" title="CENTERNET"></a>CENTERNET</h3><ul>
-<li><p>CenterNet将检测任务的思路从以点为核心转换到以框为核心</p>
-</li>
-<li><p>基本思路：</p>
 <ul>
-<li><p>Resnet50提取图像特征得到特征图</p>
-</li>
-<li><p>经过反卷积模块，三次上采样</p>
-</li>
-<li><p>输入三个分支进行预测，得到Heatmap、预测框尺寸和中心点偏移量</p>
-</li>
+<li>Single shot表明了SSD和YoLo一样属于One-Stage算法，MultiBox表明了SSD可以检测多个物体 </li>
 </ul>
+<h3 id="主要改进"><a href="#主要改进" class="headerlink" title="主要改进"></a>主要改进</h3><ul>
+<li>使用了类似RPN中的Anchor锚点机制，增加bounding box多样性。卷积输出的feature map，每个点对应为原图的一个区域的中心点。以这个点为中心，构造出6个宽高比例不同，大小不同的Anchor（SSD中称为default box）。每个anchor对应4个位置参数(x,y,w,h)和21个类别概率</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://pic1.zhimg.com/80/v2-c2197c05bb2a8598f0a3d52141cee802_720w.png?source=d16d100b">
+        
+      </span></p>
+<ul>
+<li>使用全卷积网络，效率得到提高</li>
+<li>网络中间会生成多个阶段不同感受野的Feature Maps丰富特征多样性，因此SSD能够在不同感受野下进行不同的目标检测，实现多尺度预测，克服了YoLo在大物体小物体上的缺陷</li>
+<li>步骤：<ol>
+<li>卷积层。借鉴了VGG16，惯用先经过CNN获得特征图，再进行定位和分类的方法。</li>
+<li>目标检测层。这一层由五个卷积层和一个平均池化层构成。因为SSD认为目标检测中的物体只与周围信息相关，感受野不是全局的，所以去掉了全连接层</li>
+<li>筛选层。与YoLo基本一致，先过滤类别概率低于阈值的default box，再采用NMS筛掉重叠度较高的。不过，SSD综合了各种feature maps上的default box </li>
+</ol>
+</li>
+<li>SSD基本可以满足手机端的实时物体检测需求了，许多框架比如Tensorflow基于MobileNet在移动设备就使用了SSD算法实现。</li>
+</ul>
+<h2 id="近期受关注算法"><a href="#近期受关注算法" class="headerlink" title="近期受关注算法"></a>近期受关注算法</h2><h3 id="FCOS"><a href="#FCOS" class="headerlink" title="FCOS"></a>FCOS</h3><ul>
+<li>FCOS不使用Anchor，而且整个结构都是纯粹的CNN。先预测特征图上的各像素类别，再预测各点的bbox的大小和位置。</li>
+<li>对于Ambiguity问题，FCOS利用FPN和Center Sampling来解决。同时创新了Center-Ness分支帮助NMS抑制低质量框</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://picx.zhimg.com/80/v2-fabf74e5cf48be22623183f9028c6a37_720w.png?source=d16d100b">
+        
+      </span></p>
+<h3 id="CENTERNET"><a href="#CENTERNET" class="headerlink" title="CENTERNET"></a>CENTERNET</h3><ul>
+<li>CenterNet将检测任务的思路从以点为核心转换到以框为核心</li>
+<li>基本思路：<ol>
+<li>Resnet50提取图像特征得到特征图</li>
+<li>经过反卷积模块，三次上采样</li>
+<li>输入三个分支进行预测，得到Heatmap、预测框尺寸和中心点偏移量</li>
+</ol>
 </li>
 </ul>
 <h3 id="DETR-and-DEFORMABLE-DETR"><a href="#DETR-and-DEFORMABLE-DETR" class="headerlink" title="DETR and DEFORMABLE DETR"></a>DETR and DEFORMABLE DETR</h3><ul>
-<li><p>DETR第一次系统地考虑将Transformer引入图像检测任务，实现了端到端算法，本质是特征序列道框序列的流程</p>
+<li>DETR第一次系统地考虑将Transformer引入图像检测任务，实现了端到端算法，本质是特征序列道框序列的流程</li>
+</ul>
 <p>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/tuYs2Wa.jpg">
+        <img data-src="https://picx.zhimg.com/80/v2-285fa40180bff4eb72d6fac1f1ac278c_720w.png?source=d16d100b">
         
       </span></p>
-</li>
-</ul>
 
         <!-- 分类文章 -->
+        
+          <div class="post-categoris-bottom">
+            <div class="post-categoris-name">Computer Vision 计算机视觉</div>
+            <ul>
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/posts/5/" class="post-categoris-bottom-link">
+                  AI入门知识
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="me base">
+                  <a  href="/posts/1/" class="post-categoris-bottom-link">
+                  一键锁定目标的检测算法
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/posts/3/" class="post-categoris-bottom-link">
+                  实验命令汇总
+                </a>
+                </li>
+              
+              
+            
+            
+            </ul>
+
+          </div>
+
         
       </div>
       <div class="post-content-inner-space">
@@ -461,14 +488,14 @@
 
 <!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='all'|| 'all' ==='all')){
     var parent = document.getElementById('recent-posts');
-    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="http://buluwasior.me/categories/生活随笔/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🐱‍👓 林天文的生活随笔 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="http://buluwasior.me/categories/地信原理特辑/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🌍 GIS的攻略合集 (4)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="http://buluwasior.me/categories/计算机视觉特辑/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">👀 计算机智能视觉 (6)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="http://buluwasior.me/categories/GIS实验特辑/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💻 小林的GIS实验课 (2)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="http://buluwasior.me/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="http://buluwasior.me/categories/地信原理特辑/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🌍 GIS的攻略合集 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="http://buluwasior.me/categories/GIS实验特辑/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💻 小林的GIS实验课 (2)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="http://buluwasior.me/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
     console.log('已挂载magnet')
     parent.insertAdjacentHTML("afterbegin",child)}
      </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f7f7f7;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #f2f2f2}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:#0088ff}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
     <style></style> <script data-pjax>if(document.getElementById('recent-posts') && location.pathname =='/'){
     
     var parent = document.getElementById('recent-posts');
-    var child = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms"><div class="blog-slider__img"><img src="https://i0.hdslb.com/bfs/album/e1005cdbccd331cffbe6cf9833bf7765d38aff02.png" alt="https://i0.hdslb.com/bfs/album/e1005cdbccd331cffbe6cf9833bf7765d38aff02.png"/></div><div class="blog-slider__content"><span class="blog-slider__code">2021-07-06</span><a class="blog-slider__title" href="posts/31855/">美食之美——《雅舍谈吃》</a><div class="blog-slider__text">美，不尽收；食，不尽全。</div><a class="blog-slider__button" href="posts/31855/">详情</a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms"><div class="blog-slider__img"><img src="https://i0.hdslb.com/bfs/album/f3d5c03ae88e303f3543a8ef49be7e8fd82af909.png" alt="https://i0.hdslb.com/bfs/album/f3d5c03ae88e303f3543a8ef49be7e8fd82af909.png"/></div><div class="blog-slider__content"><span class="blog-slider__code">2021-07-12</span><a class="blog-slider__title" href="posts/10821/">GIS的前沿现状</a><div class="blog-slider__text">除了深度，也要有广度</div><a class="blog-slider__button" href="posts/10821/">详情</a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms"><div class="blog-slider__img"><img src="https://i0.hdslb.com/bfs/album/b52288eab68a12bbcf0f1954cf385f6f5edd2076.png" alt="https://i0.hdslb.com/bfs/album/b52288eab68a12bbcf0f1954cf385f6f5edd2076.png"/></div><div class="blog-slider__content"><span class="blog-slider__code">2021-09-28</span><a class="blog-slider__title" href="posts/17208/">更全计算机视觉任务整理</a><div class="blog-slider__text">向星辰大海进发的勇气</div><a class="blog-slider__button" href="posts/17208/">详情</a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms"><div class="blog-slider__img"><img src="https://i.imgur.com/OlkGGHI.png" alt="https://i.imgur.com/OlkGGHI.png"/></div><div class="blog-slider__content"><span class="blog-slider__code">2022-10-08</span><a class="blog-slider__title" href="posts/82323/">写给mmsegmentation工具箱新手的避坑指南</a><div class="blog-slider__text">新手！避坑！指南！</div><a class="blog-slider__button" href="posts/82323/">详情</a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    var child = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms"></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
     console.log('已挂载swiper')
     parent.insertAdjacentHTML("afterbegin",child)}
      </script>

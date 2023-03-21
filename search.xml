@@ -1,135 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Anaconda环境日志</title>
-    <url>/posts/43079/</url>
-    <content><![CDATA[<h2 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h2><pre><code class="shell">conda create -n your_env_name python=X.X
-</code></pre>
-<h2 id="更新conda（慎用！！！，新conda可能用不了）"><a href="#更新conda（慎用！！！，新conda可能用不了）" class="headerlink" title="更新conda（慎用！！！，新conda可能用不了）"></a>更新conda（慎用！！！，新conda可能用不了）</h2><pre><code class="shell">conda updata conda
-</code></pre>
-<h2 id="查看虚拟环境菜单和环境内已载入库"><a href="#查看虚拟环境菜单和环境内已载入库" class="headerlink" title="查看虚拟环境菜单和环境内已载入库"></a>查看虚拟环境菜单和环境内已载入库</h2><pre><code class="shell">conda env list
-conda list
-</code></pre>
-<h2 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h2><pre><code class="shell">Conda activate your_env_name
-</code></pre>
-<h2 id="前人配置好的版本"><a href="#前人配置好的版本" class="headerlink" title="前人配置好的版本"></a>前人配置好的版本</h2><blockquote>
-<p>Keras==2.2.4<br>Tensorflow-gpu==1.12.0</p>
+    <title>AI入门知识</title>
+    <url>/posts/5/</url>
+    <content><![CDATA[<blockquote>
+<p>学习心得：计算机视觉之算法基础与OpenMMLab入门</p>
+<p>注：基于子豪兄的讲解，我重点发散了计算机视觉之算法基础的相关部分，主要参考的是我现有的笔记</p>
 </blockquote>
-<h2 id="如果遇到conda安装频繁报错，使用如下语句："><a href="#如果遇到conda安装频繁报错，使用如下语句：" class="headerlink" title="如果遇到conda安装频繁报错，使用如下语句："></a>如果遇到conda安装频繁报错，使用如下语句：</h2><pre><code class="shell">conda clean -i
-</code></pre>
-<h2 id="如果不幸要删除虚拟环境"><a href="#如果不幸要删除虚拟环境" class="headerlink" title="如果不幸要删除虚拟环境"></a>如果不幸要删除虚拟环境</h2><pre><code class="shell">conda remove -n your_env_name --all
-</code></pre>
-<h2 id="如果pip安装报错如下，可以检查一下是不是翻墙了"><a href="#如果pip安装报错如下，可以检查一下是不是翻墙了" class="headerlink" title="如果pip安装报错如下，可以检查一下是不是翻墙了"></a>如果pip安装报错如下，可以检查一下是不是翻墙了</h2><p>
+<h2 id="机器学习的本质"><a href="#机器学习的本质" class="headerlink" title="机器学习的本质"></a>机器学习的本质</h2><h3 id="简单问题的学习"><a href="#简单问题的学习" class="headerlink" title="简单问题的学习"></a>简单问题的学习</h3><p>简单问题的学习过程是寻求最拟合方程的过程（以不同面积房价预测为例）</p>
+<p>
         <span class="lazyload-img-span">
-        <img data-src="Anaconda%E7%8E%AF%E5%A2%83%E6%97%A5%E5%BF%97/%E5%9B%BE1.png">
+        <img data-src="https://img-blog.csdnimg.cn/img_convert/c4ceecf25a107672517273f0a0dcd821.jpeg">
         
       </span></p>
-<h2 id="镜像pip"><a href="#镜像pip" class="headerlink" title="镜像pip"></a>镜像pip</h2><pre><code class="shell">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple opencv-python
-pip install -i https://pypi.douban.com/simple opencv-python
-</code></pre>
-<h2 id="大电脑虚拟环境记录"><a href="#大电脑虚拟环境记录" class="headerlink" title="大电脑虚拟环境记录"></a>大电脑虚拟环境记录</h2><blockquote>
-<p>Main5：keras开发框架<br>labelme：用于打开labelme工具<br>torch：Torch开发框架</p>
-</blockquote>
-<h2 id="安装其他项目的requirements-txt"><a href="#安装其他项目的requirements-txt" class="headerlink" title="安装其他项目的requirements.txt"></a>安装其他项目的requirements.txt</h2><pre><code class="shell">pip install -r requirements.txt -i https://pypi.douban.com/simple
-</code></pre>
-<h2 id="mac上python3配置第三方库"><a href="#mac上python3配置第三方库" class="headerlink" title="mac上python3配置第三方库"></a>mac上python3配置第三方库</h2><pre><code class="shell">python3 -m pip install xxx 
-</code></pre>
-<blockquote>
-<p>环境配置参考资料<br>⚠️tensorflow、keras、python对应版本关系：<br>
+<p>其中$w$、$b$是Learnable，代表了其对于预测精度的决定性，也代表了它是后期得到的，经优化确定之后模型就有了最好的预测能力</p>
+<h3 id="非结构化问题的学习"><a href="#非结构化问题的学习" class="headerlink" title="非结构化问题的学习"></a>非结构化问题的学习</h3><ul>
+<li>所习得的转换为多层非线性变换，实现对DATA的高层抽象</li>
+<li>DATA输入也会更复杂，需要更多数据预处理操作</li>
+</ul>
+<p>
         <span class="lazyload-img-span">
-        <img data-src="Anaconda%E7%8E%AF%E5%A2%83%E6%97%A5%E5%BF%97/%E5%9B%BE2.png">
+        <img data-src="https://i.imgur.com/PqCAyzV.jpg">
         
-      <br>⚠️Tensorflow、CUDA、python、cudnn版本关系：<br>
+      </span></p>
+<h3 id="HIDEN-LAYER的CELL"><a href="#HIDEN-LAYER的CELL" class="headerlink" title="HIDEN LAYER的CELL"></a>HIDEN LAYER的CELL</h3><ul>
+<li>在多层感知机中，隐层由图示的CELL组建而成，每一个CELL接受上一层的多个CELL输入（$S_n$），经过Activation（激活函数，此处以ReLU为例），得到该CELL对下一层的输出（$S^{\prime}$）</li>
+</ul>
+<p>
         <span class="lazyload-img-span">
-        <img data-src="Anaconda%E7%8E%AF%E5%A2%83%E6%97%A5%E5%BF%97/%E5%9B%BE3.png">
+        <img data-src="https://i.imgur.com/jxVB8Ba.jpg">
         
-      <br>⚠️前人配置环境全赏:<br>
+      </span></p>
+<ul>
+<li>Learnable：$w1$、$w2$… $wn$；$bias$（可去掉）</li>
+<li>$o=\sum(ws)+bias$</li>
+<li>$S^{\prime}=Activation(o)$</li>
+</ul>
+<h2 id="CV的基础任务"><a href="#CV的基础任务" class="headerlink" title="CV的基础任务"></a>CV的基础任务</h2><h3 id="非像素级"><a href="#非像素级" class="headerlink" title="非像素级"></a>非像素级</h3><h4 id="IMAGE-CLASSIFICTIOIN（分类）"><a href="#IMAGE-CLASSIFICTIOIN（分类）" class="headerlink" title="IMAGE CLASSIFICTIOIN（分类）"></a>IMAGE CLASSIFICTIOIN（分类）</h4><ul>
+<li>一张图像中是否包含某种物体，<strong>对图像进行类别描述</strong>是Image Classification的主要研究内容</li>
+</ul>
+<p>
         <span class="lazyload-img-span">
-        <img data-src="Anaconda%E7%8E%AF%E5%A2%83%E6%97%A5%E5%BF%97/%E5%9B%BE4.jpg">
+        <img data-src="https://pic2.zhimg.com/80/v2-ff27c83b868490fab2a9a309279e14cd_720w.webp">
         
-      </span></span></span></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>计算机视觉特辑</category>
-      </categories>
-      <tags>
-        <tag>深度学习</tag>
-        <tag>环境配置基础</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GIS的前沿现状</title>
-    <url>/posts/10821/</url>
-    <content><![CDATA[<h1 id="总体来说GIS发展遇到了瓶颈"><a href="#总体来说GIS发展遇到了瓶颈" class="headerlink" title="总体来说GIS发展遇到了瓶颈"></a>总体来说GIS发展遇到了瓶颈</h1><ul>
-<li>烂概念+旧瓶装新酒：<ul>
-<li>数字城市</li>
-<li>智慧城市</li>
-<li>城市大脑</li>
-<li>CIM=BIM+GIS</li>
-<li>云GIS</li>
-<li>大数据城市</li>
-<li>……</li>
+      </span></p>
+<ul>
+<li>经典CNN：AlexNet（2012），在其之后，有很多基于CNN的算法也在ImageNet上取得了特别好的成绩，比如GoogleNet（2014）、VGGNet（2014）、ResNet（2015）以及DenseNet（2016）等</li>
+<li>常用公共数据集（数据复杂度递增）：<ul>
+<li><strong>MNIST</strong>：60k训练图像、10k测试图像、10个类别、图像大小1×28×28、内容是0-9手写数字</li>
+<li><strong>CIFAR-10</strong>：50k训练图像、10k测试图像、10个类别、图像大小3×32×32</li>
+<li><strong>CIFAR-100</strong>：50k训练图像、10k测试图像、100个类别、图像大小3×32×32</li>
+<li><strong>ImageNet</strong>：1.2M训练图像、50k验证图像、1k个类别。2017年及之前，每年会举行基于ImageNet数据集的ILSVRC竞赛</li>
 </ul>
 </li>
 </ul>
-<blockquote>
-<p>大部分概念可能有一些有趣的东西，但是都不足以成为技术革命。这些名词多少有点商业包装的成分，也侧面表明了GIS产业的瓶颈。</p>
-</blockquote>
-<h1 id="主要研究方向"><a href="#主要研究方向" class="headerlink" title="主要研究方向"></a>主要研究方向</h1><h2 id="1-GIS-VR-AR"><a href="#1-GIS-VR-AR" class="headerlink" title="1. GIS+VR/AR"></a>1. GIS+VR/AR</h2><p>室内导航、实景导航等如华为AR地图——河图的简单运用<br>
+<h4 id="LOCALIZATION（定位）"><a href="#LOCALIZATION（定位）" class="headerlink" title="LOCALIZATION（定位）"></a>LOCALIZATION（定位）</h4><ul>
+<li>在Image Classification的基础上，还想知道图像中的<strong>单个</strong>主体对象具体在图像的什么位置，通常是以包围盒（bounding box）的形式。网络带有<strong>两个输出头</strong>。一个分支用于做图像分类，另一个分支用于判断目标位置，即输出四个数字标记包围盒位置（例如中心点横纵坐标和包围盒长宽），<strong>该分支输出结果只有在分类分支判断不为“背景”时才使用</strong></li>
+</ul>
+<p>
         <span class="lazyload-img-span">
-        <img data-src="GIS%E7%9A%84%E5%89%8D%E6%B2%BF%E7%8E%B0%E7%8A%B6/%E5%9B%BE1.png">
+        <img data-src="https://pic2.zhimg.com/80/v2-590292930c3e06a9dac9c3dcb798e33d_720w.webp">
         
       </span></p>
-<h2 id="2-一个研究生非常适合研究（通过）的选题：GIS-物联网-行业模型（机理模型）"><a href="#2-一个研究生非常适合研究（通过）的选题：GIS-物联网-行业模型（机理模型）" class="headerlink" title="2. 一个研究生非常适合研究（通过）的选题：GIS+物联网+行业模型（机理模型）"></a>2. 一个研究生非常适合研究（通过）的选题：GIS+物联网+行业模型（机理模型）</h2><p>物联网实现不难，行业模型大部分数据来源就可以利用物联网，成为数据来源；行业模型开放输入，作为静态模型存在；GIS提供背后的空间数据分析能力，最终输出时间序列或者空间序列的展示。<br>
+<h4 id="OBJECT-DETECTION（检测）"><a href="#OBJECT-DETECTION（检测）" class="headerlink" title="OBJECT DETECTION（检测）"></a>OBJECT DETECTION（检测）</h4><p>
         <span class="lazyload-img-span">
-        <img data-src="GIS%E7%9A%84%E5%89%8D%E6%B2%BF%E7%8E%B0%E7%8A%B6/%E5%9B%BE2.png">
+        <img data-src="https://pic1.zhimg.com/80/v2-e175e2ddab083943f9b07c59c72f6180_720w.webp">
         
       </span></p>
-<h2 id="3-GIS-大数据分析（统计学模型，和人工智能无关）"><a href="#3-GIS-大数据分析（统计学模型，和人工智能无关）" class="headerlink" title="3. GIS+大数据分析（统计学模型，和人工智能无关）"></a>3. GIS+大数据分析（统计学模型，和人工智能无关）</h2><p>手机信令，北京第二次疫情病例行迹排查</p>
-<h2 id="4-GIS-机器学习（非机理）"><a href="#4-GIS-机器学习（非机理）" class="headerlink" title="4. GIS+机器学习（非机理）"></a>4. GIS+机器学习（非机理）</h2><p>GIS科班的学生对人工智能的认识基本很模糊，机器学习的神经网络是人工智能最典型的。可以理解神经网络过程是  黑箱&gt;&gt;灰箱&gt;&gt;白箱  的过程。黑箱：未知模型&gt;&gt;灰箱：神经网络训练&gt;&gt;白箱：机理模型——可表达模型（如水动力模型数学公式）。研究这方面，训练数据和空间分析挂钩是最好，不然GIS存在感太弱。</p>
-<h2 id="5-RS-深度学习（非机理）"><a href="#5-RS-深度学习（非机理）" class="headerlink" title="5. RS+深度学习（非机理）"></a>5. RS+深度学习（非机理）</h2><p>遥感影像解译+卷机神经网络（CNN）是天生的一对<br>栅格计算+图像识别</p>
-<h2 id="6-GIS-BIM"><a href="#6-GIS-BIM" class="headerlink" title="6. GIS+BIM"></a>6. GIS+BIM</h2><p>其实就是CIM平台开发，目前来讲做BIM的华而不实，自然CIM就是为了突破BIM的硬实力羸弱局面，但是很难，目前对于学生而言基本不现实，对于游戏开发或者大型地信企业是有用的。</p>
-<h2 id="7-GIS自身技术突破"><a href="#7-GIS自身技术突破" class="headerlink" title="7. GIS自身技术突破"></a>7. GIS自身技术突破</h2><ul>
-<li>图形学</li>
-<li>三维切片（cesium），点云</li>
-<li>时空GIS（停留在概念阶段）</li>
+<ul>
+<li>Object Detection通常是从图像中输出<strong>多个</strong>目标的Bounding Box以及类别，同时完成了Image Classification何Localization。在Localization中，通常只有<strong>一个</strong>目标，而目标检测更一般化，其图像中出现的目标种类和数目都不定。近年来，目标检测研究趋势主要向更快、更有效的检测系统发展</li>
+<li>经典算法：<ul>
+<li><strong>two-stage</strong>：R-CNN（第一个高效模型）、Fast R-CNN、Faster R-CNN、R-FCN等；</li>
+<li><strong>one-stage</strong>：YOLO、SSD等</li>
+</ul>
+</li>
+<li>PASCAL VOC 包含20个类别。通常是用VOC07和VOC12的trainval并集作为训练，用VOC07的测试集作为测试。</li>
+<li>常用公共数据集（数据复杂度递增）：<ul>
+<li><strong>PASCAL VOC</strong>：20个类别。通常是用VOC07和VOC12的trainval并集作为训练，用VOC07的测试集作为测试</li>
+<li><strong>MS COCO</strong>：COCO比VOC更困难。80k训练图像、40k验证图像、20k没有公开标记的测试图像(test-dev)，80个类别。通常是用80k训练和35k验证图像的并集作为训练，其余5k图像作为验证，20k测试图像用于线上测试</li>
+</ul>
+</li>
+</ul>
+<h3 id="像素级-细粒度级"><a href="#像素级-细粒度级" class="headerlink" title="像素级/细粒度级"></a>像素级/细粒度级</h3><h4 id="SEGMENTATION（分割）"><a href="#SEGMENTATION（分割）" class="headerlink" title="SEGMENTATION（分割）"></a>SEGMENTATION（分割）</h4><p>分割任务是将整个图像分成像素组，然后对其进行标记和分类，难度上比非像素级更大，特征更加复杂</p>
+<h5 id="语义分割"><a href="#语义分割" class="headerlink" title="语义分割"></a>语义分割</h5><ul>
+<li>语义分割试图在语义上理解图像中每个像素在<strong>大类</strong>上的从属（例如天空、汽车、摩托车等）。</li>
+<li>基本思路：<ul>
+<li><strong>二分类</strong>：我们将图像输入模型，得到和图像一样长宽的输出，其输出为单通道<strong>概率图</strong>，每个像素代表其属于第二类的可能性，进行二值化得到分割结果</li>
+<li><strong>多分类</strong>：我们将图像输入模型，得到和图像一样长宽的输出，其输出为<strong>多通道</strong>，每个通道代表不同类别，本质是给每个类别一张二值图以得到多类分割结果</li>
+</ul>
+</li>
+<li>经典算法：FCN（全卷积神经网络）、UNet、PSPNet、DeepLabV3系列、UPerNet等</li>
+<li>常用公共数据集比较杂，涉及了遥感、医学影像、自动驾驶等各个专业和领域，体量庞大且专业性强，这里不做展示</li>
+</ul>
+<h5 id="实例分割"><a href="#实例分割" class="headerlink" title="实例分割"></a>实例分割</h5><ul>
+<li>和语义分割的本质区别在于，语义分割是得到在大类上的从属关系，实例分割进一步区分<strong>大类中不同实体间的区别</strong>。比如，如果一群人打排球，语义分割和实例分割都会将其分割结果归类为「人」，但是语义分割的分割结果是一个大多边形把人都包起来（图1），而实例分割会给每个人一个多边形包起来（图2）</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://pic1.zhimg.com/80/v2-f4a5453a5f9b93752a10d3e6beff39d8_720w.webp">
+        
+      </span></p>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://pic1.zhimg.com/80/v2-6167a115b5a01196e68e394cee412754_720w.webp">
+        
+      </span></p>
+<h4 id="关键点检测"><a href="#关键点检测" class="headerlink" title="关键点检测"></a>关键点检测</h4><ul>
+<li>提取分析对象的关键点，例如人脸的关键点有眼珠、眼角、鼻尖、嘴尖、下颚转折点等等，通过提取这些点的二维坐标就可以得到大概的线状、面状分布特征，如果能够提取三位点坐标，则可以引入深度特征，实现更加复杂的应用</li>
+</ul>
+<h3 id="为何分类是最基础的任务？"><a href="#为何分类是最基础的任务？" class="headerlink" title="为何分类是最基础的任务？"></a>为何分类是最基础的任务？</h3><ul>
+<li>基于分类算法，可以在后面连接到各种其他任务的算法（例如检测、分割等），或者与其他算法头并行。总之，如果没有了分类，检测器的包围框将没有实际的参考价值，分割器的像素之间划分开的差异也没有实际意义，所以分类算法是一切人工智能算法的基础，分类领域的突破是下游任务发展的重要推动力</li>
+</ul>
+<h2 id="DEEPLEARNING算法的设计"><a href="#DEEPLEARNING算法的设计" class="headerlink" title="DEEPLEARNING算法的设计"></a>DEEPLEARNING算法的设计</h2><ul>
+<li>朴素点说，深度学习模型的隐层可以专心负责特征提取，输入层可以任意输入各种模态的数据。声音数据可以经过滤波算法以及可视化算法转化成彩图和视觉算法共用输入层、语言数据可以切分为Seg序列，映射为一维feature vector作为Token输入Transformer算法……所以，DL算法本质上是支持多模态的</li>
+<li>但单纯将各种模态数据映射为统一的输入结构，容易损失数据特征，因此需要针对分析对象的性质和关键特征来设计模型的输入层，以及隐层中的特征提取方式</li>
+<li>而视频和音频数据相比于单帧数据，带有时序特征，在设计上如何考虑多帧之间的时序关系是非常重要的，因此难度也要更高。常见的应用有：<ul>
+<li><strong>片段引导</strong>：划分视频片段，并对应某类片段的受众，引导受众跳转到感兴趣片段</li>
+<li><strong>片段查询</strong>：根据用户的自然语言描述，截取出符合描述条件的片段</li>
+</ul>
+</li>
+</ul>
+<h2 id="子豪兄总结的新颖且有前景的研究领域"><a href="#子豪兄总结的新颖且有前景的研究领域" class="headerlink" title="子豪兄总结的新颖且有前景的研究领域"></a>子豪兄总结的新颖且有前景的研究领域</h2><ul>
+<li><strong>可解释性分析、显著性分析</strong>（<strong>兴趣排名No.3</strong>）</li>
+<li><strong>图机器学习、图神经网络</strong>（<strong>兴趣排名No.1</strong>）</li>
+<li>人工智能+VR AR元宇宙</li>
+<li><strong>轻量化压缩部署</strong>（<strong>兴趣排名No.2</strong>）</li>
+<li>各行各业垂直细分应用</li>
+<li>NERF</li>
+<li>Diffusion</li>
+<li>隐私计算、联邦学习、可信计算</li>
+<li>AI基础设施平台</li>
+<li>预训练大模型</li>
 </ul>
 ]]></content>
       <categories>
-        <category>地信原理特辑</category>
+        <category>Computer Vision 计算机视觉</category>
       </categories>
-      <tags>
-        <tag>GIS</tag>
-        <tag>GISer</tag>
-        <tag>思想</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GISer的思想</title>
-    <url>/posts/20343/</url>
-    <content><![CDATA[<blockquote>
-<p>ESRI出版的《Modeling Our World》讲解了成熟的GIS思想方法</p>
-</blockquote>
-<h1 id="GIS相比传统制图工具"><a href="#GIS相比传统制图工具" class="headerlink" title="GIS相比传统制图工具"></a>GIS相比传统制图工具</h1><p>制图工具只能在不同维度制作可视的现实还原，无法展开空间分析。GIS相当于传统制图的下一发展阶段，为整个世界创造了空间分析的可视化制图方法。值得一提的是，以CAD为代表的传统制图和GIS齐头并进，各有千秋，应当进一步融合。</p>
-<h1 id="分层概念："><a href="#分层概念：" class="headerlink" title="分层概念："></a>分层概念：</h1><p>Feature In FeatureClass：一座城市有许多独立的、多种类的水厂，整个城市的各种水厂形成单独的群体。这就像当于面向对象中抽象的概念，各种feature继承了featureClass基类，但是feature和featureClass在GIS中都是作为独立一层存储的。</p>
-<h1 id="抽象简化"><a href="#抽象简化" class="headerlink" title="抽象简化"></a>抽象简化</h1><ul>
-<li>空间抽象：现实信息组织入虚拟一般有抽象简化的过程，空间万物都是立体的，但是可以抽象成点线面存储在GIS中。</li>
-<li>属性抽象：就像猫狗都是生物但是不同种类一般，不同的空间要素不能在同一图层，因为字段组织不一致。但是他们抽象出来的特征可能一致，即可能属于同一图层。<br>
-        <span class="lazyload-img-span">
-        <img data-src="GISer%E7%9A%84%E6%80%9D%E6%83%B3/1.png">
-        
-      </span></li>
-</ul>
-]]></content>
-      <categories>
-        <category>地信原理特辑</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
-        <tag>GISer</tag>
-        <tag>思想</tag>
-      </tags>
   </entry>
   <entry>
     <title>GIS的应用</title>
@@ -184,187 +190,282 @@ pip install -i https://pypi.douban.com/simple opencv-python
       </tags>
   </entry>
   <entry>
-    <title>Keras·gpu训练「单\多」</title>
-    <url>/posts/58468/</url>
-    <content><![CDATA[<h1 id="在一切开始前，请确定计算机拥有英伟达的显卡。"><a href="#在一切开始前，请确定计算机拥有英伟达的显卡。" class="headerlink" title="在一切开始前，请确定计算机拥有英伟达的显卡。"></a>在一切开始前，请确定计算机拥有英伟达的显卡。</h1><p>（不是英特尔！不是英特尔！不是英特尔！）</p>
-<blockquote>
-<p>参考版本号</p>
-<ul>
-<li>keras==2.2.4</li>
-<li>Tensorflow-gpu==1.12.0</li>
-<li>CUDA==9.0.176</li>
-<li>cuDNN==7.6.5 for CUDA 9.0</li>
-<li>Scikit-image</li>
-<li>Opencv-python</li>
-</ul>
-</blockquote>
-<h1 id="CUDA下载"><a href="#CUDA下载" class="headerlink" title="CUDA下载"></a>CUDA下载</h1><p>从 <a href="https://developer.nvidia.com/cuda-toolkit-archive">https://developer.nvidia.com/cuda-toolkit-archive</a> 中打开下载中心，找到相应版本，点击版本号即可进入下载页面<br>
-        <span class="lazyload-img-span">
-        <img data-src="Keras%C2%B7GPU%E8%AE%AD%E7%BB%83%EF%BC%88%E5%8D%95-%E5%A4%9A%EF%BC%89/%E5%9B%BE1.png">
-        
-      <br>选择要下载的平台、版本号等，点击DOWNLOAD即可<br>
-        <span class="lazyload-img-span">
-        <img data-src="Keras%C2%B7GPU%E8%AE%AD%E7%BB%83%EF%BC%88%E5%8D%95-%E5%A4%9A%EF%BC%89/%E5%9B%BE2.png">
-        
-      </span></span></p>
-<h1 id="cuDNN下载·安装"><a href="#cuDNN下载·安装" class="headerlink" title="cuDNN下载·安装"></a>cuDNN下载·安装</h1><p>首先，把CUDA安装好，从 NVIDIA cuDNN | NVIDIA Developer <a href="https://developer.nvidia.com/zh-cn/cudnn">https://developer.nvidia.com/zh-cn/cudnn</a> 中打开cuDNN中心，点击“下载cuDNN”，登录之后填写问卷即可下载。最后bin、include、lib三个文件夹里的文件复制到CUDA的对应文件夹中就行了。<br>
-        <span class="lazyload-img-span">
-        <img data-src="Keras%C2%B7GPU%E8%AE%AD%E7%BB%83%EF%BC%88%E5%8D%95-%E5%A4%9A%EF%BC%89/%E5%9B%BE3.png">
-        
-      <br>
-        <span class="lazyload-img-span">
-        <img data-src="Keras%C2%B7GPU%E8%AE%AD%E7%BB%83%EF%BC%88%E5%8D%95-%E5%A4%9A%EF%BC%89/%E5%9B%BE4.png">
-        
-      <br>
-        <span class="lazyload-img-span">
-        <img data-src="Keras%C2%B7GPU%E8%AE%AD%E7%BB%83%EF%BC%88%E5%8D%95-%E5%A4%9A%EF%BC%89/%E5%9B%BE5.png">
-        
-      </span></span></span></p>
-<h1 id="单gpu训练-多gpu训练"><a href="#单gpu训练-多gpu训练" class="headerlink" title="单gpu训练/多gpu训练"></a>单gpu训练/多gpu训练</h1><p>单gpu非常简单，只需要写图中语句即可用keras实现单gpu训练<br>
-        <span class="lazyload-img-span">
-        <img data-src="Keras%C2%B7GPU%E8%AE%AD%E7%BB%83%EF%BC%88%E5%8D%95-%E5%A4%9A%EF%BC%89/%E5%9B%BE6.png">
-        
-      <br>多gpu需要用到muti函数生成模型，代码如下<br>
-        <span class="lazyload-img-span">
-        <img data-src="Keras%C2%B7GPU%E8%AE%AD%E7%BB%83%EF%BC%88%E5%8D%95-%E5%A4%9A%EF%BC%89/%E5%9B%BE7.png">
-        
-      </span></span></p>
-<h1 id="若找不到第二条gpu"><a href="#若找不到第二条gpu" class="headerlink" title="若找不到第二条gpu"></a>若找不到第二条gpu</h1><p>有时候keras识别不了电脑的第二条gpu，执行muti会报错如下：<br>
-        <span class="lazyload-img-span">
-        <img data-src="Keras%C2%B7GPU%E8%AE%AD%E7%BB%83%EF%BC%88%E5%8D%95-%E5%A4%9A%EF%BC%89/%E5%9B%BE8.png">
-        
-      <br>我这次是因为执行了这个语句造成的，这个语句只能供单gpu的model使用<br>
-        <span class="lazyload-img-span">
-        <img data-src="Keras%C2%B7GPU%E8%AE%AD%E7%BB%83%EF%BC%88%E5%8D%95-%E5%A4%9A%EF%BC%89/%E5%9B%BE9.png">
-        
-      </span></span></p>
-]]></content>
-      <categories>
-        <category>计算机视觉特辑</category>
-      </categories>
-      <tags>
-        <tag>深度学习</tag>
-        <tag>语义分割</tag>
-        <tag>Keras</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GIS的简要定义</title>
-    <url>/posts/8739/</url>
-    <content><![CDATA[<h1 id="GIS的四层定义"><a href="#GIS的四层定义" class="headerlink" title="GIS的四层定义"></a>GIS的四层定义</h1><ul>
-<li>第一层面，表现层（最直观的，非科班出身的理解），就是一张地图的可视化；</li>
-<li>第二层面，应用层（最对口的，接触最多的领域），是一类软件，集合了对地理要素的编辑查询分析等功能；</li>
-<li>第三层面，服务层（最近走入人们的视野），读取地图数据后，提供一系列API，面向开发者和最终用户提供数据处理、数据分析、数据发布等服务包；</li>
-<li>第四层面，数据层，GIS主要的两个数据类型：矢量和栅格；这两个数据类型又有多种格式如SHP、GDB、GRID等。这一层体现了GIS的数据结构以及存储方式。</li>
-</ul>
-<h1 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h1><ul>
-<li>从第一层到第四层GIS的认识是逐步加深的，GIS作为一个系统，用于建模（modeling our world）人类认知的世界中的地理要素，存在着从现实到虚拟的概要简化，作为矢量格式或者栅格格式存储。将一系列底层功能如数据处理、数据分析、数据发布的代码整合到API发布给开发者，最后开发者包装数据编辑、查询、分析等功能形成软件平台提供给用户，数据最终都转换为数字化地图。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>地信原理特辑</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
-        <tag>GISer</tag>
-        <tag>思想</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>TensorboardX训练可视化</title>
-    <url>/posts/34859/</url>
+    <title>MMLAB PR 指南</title>
+    <url>/posts/4/</url>
     <content><![CDATA[<blockquote>
-<p>conda环境参考</p>
-<ul>
-<li>tensorboardX==2.2</li>
-<li>Tensorboard==2.5.0</li>
-<li>PyTorch==1.8.1</li>
-<li>Torchvision==0.9.1</li>
+<p>ref：<br>贡献指南：<a href="https://mmengine.readthedocs.io/zh_CN/latest/notes/contributing.html">https://mmengine.readthedocs.io/zh_CN/latest/notes/contributing.html</a><br>代码规范：<a href="https://mmengine.readthedocs.io/zh_CN/latest/notes/code_style.html">https://mmengine.readthedocs.io/zh_CN/latest/notes/code_style.html</a></p>
+</blockquote>
+<h2 id="PR-描述规范"><a href="#PR-描述规范" class="headerlink" title="PR 描述规范"></a>PR 描述规范</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><ul>
+<li><strong>sample</strong>： [Docs] Refine contribute.md</li>
+<li>在开头使用英文括号描述修改的对象，常见修改对象有<table>
+<thead>
+<tr>
+<th>对象</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Docs</td>
+<td align="left">官方文档更新 可以是refine也可以补充</td>
+</tr>
+<tr>
+<td>Feature</td>
+<td align="left">新功能 新功能support对xxx的支持</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td align="left">修复bug</td>
+</tr>
+<tr>
+<td>WIP</td>
+<td align="left">先提出来 等待开发完成 暂时不用review</td>
+</tr>
+</tbody></table>
+</li>
 </ul>
-</blockquote>
-<h1 id="查看记录"><a href="#查看记录" class="headerlink" title="查看记录"></a>查看记录</h1><p>首先学习以下tensorboardX怎么用。一般训练代码运行之后会同时生成tensorboardX的日志文件。这时复制日志文件所在文件夹路径，打开Anaconda命令行，切换环境至torch，输入图中语句为日志文件夹创建tensorboardX默认的本地端口（格式：tensorboard –logdir PATH）<br>
+<h2 id="REFINE-DOCs"><a href="#REFINE-DOCs" class="headerlink" title="REFINE DOCs"></a>REFINE DOCs</h2><h3 id="代码快-to-提示框"><a href="#代码快-to-提示框" class="headerlink" title="代码快 to 提示框"></a>代码快 to 提示框</h3><ul>
+<li>基于代码快的语法，通过特殊的标注实现代码快到提示框的转换<ul>
+<li>注解{Note}<br>
         <span class="lazyload-img-span">
-        <img data-src="TensorboardX%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/%E5%9B%BE1.png">
+        <img data-src="https://i.imgur.com/mqtDx3A.jpg">
         
-      <br>执行得到端口地址，复制到浏览器打开即可查看训练可视化内容<br>
+      </span></li>
+<li>参见{SeeAlso}<br>
         <span class="lazyload-img-span">
-        <img data-src="TensorboardX%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/%E5%9B%BE2.png">
+        <img data-src="https://i.imgur.com/oNjmsqz.jpg">
         
-      <br>
+      </span></li>
+<li>警告{Warning}<br>
         <span class="lazyload-img-span">
-        <img data-src="TensorboardX%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/%E5%9B%BE3.png">
+        <img data-src="https://i.imgur.com/eJxjNl5.jpg">
         
-      <br>关闭端口占用，只需长按CTRL + C</span></span></span></p>
-<h1 id="训练记录"><a href="#训练记录" class="headerlink" title="训练记录"></a>训练记录</h1><p>导入SummaryWriter<br>
-        <span class="lazyload-img-span">
-        <img data-src="TensorboardX%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/%E5%9B%BE4.png">
-        
-      <br>在代码中初始化SummaryWriter实例，参数填记录的存储文件夹位置（有其他初始化方法，这里不常用）<br>
-        <span class="lazyload-img-span">
-        <img data-src="TensorboardX%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/%E5%9B%BE5.png">
-        
-      </span></span></p>
-<ul>
-<li><p>训练常用记录类型：</p>
-<ul>
-<li><p>（scalar）单个数值</p>
-<blockquote>
-<p>参数：<br>Tag：该数据名称（如train_acc），不同名称数据会用独立图表表示<br>Scalar_value：数据值来源，一般是个python变量（如train_acc）<br>Global_step：存放当前epoch值<br>walltime：默认值time.time()，记录当下时间，一般填None不用</p>
-<pre><code>用法：如writer.add_scalar()
-</code></pre>
-</blockquote>
-</li>
-<li><p>（scalars）多个数值<br>多个数值的记录类型利用python字典生成日志</p>
-<blockquote>
-<p>参数：<br>Main_tag：该图表总的名称<br>Tag_scalar_dict：各类值的字典（如下）<br>
-        <span class="lazyload-img-span">
-        <img data-src="TensorboardX%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/%E5%9B%BE6.png">
-        
-      <br>Global_step：存放当前epoch值<br>walltime：默认值time.time()，记录当下时间，一般填None不用</span></p>
-<pre><code>用法：如writer.add_scalars()
-</code></pre>
-</blockquote>
-</li>
-<li><p>（graph）网络结构/运行图</p>
-<blockquote>
-<p>参数：<br>model：待可视化的网络模型<br>Input_to_model：输入的一组真图片或者伪造的零值图片</p>
-<pre><code>用法：
-   1. 首先使用torch.randn(num,z,x,y)生成假数据，然后正常调用模型并切换至train状态
-   ![图7](TensorboardX训练可视化/图7.png)
-   2. 然后使用with语句生成SummaryWriter实例并添加运行图
-   ![图8](TensorboardX训练可视化/图8.png)
-   3. 当下文件夹目录会生成runs文件夹，这个文件路径为日志地址
-   ![图9](TensorboardX训练可视化/图9.gif)
-</code></pre>
-</blockquote>
-</li>
+      </span></li>
 </ul>
 </li>
 </ul>
-<h1 id="一些问题"><a href="#一些问题" class="headerlink" title="一些问题"></a>一些问题</h1><p>如果执行 add 操作后没有实时在网页可视化界面看到效果，试试重启 tensorboard</p>
 ]]></content>
       <categories>
-        <category>计算机视觉特辑</category>
+        <category>For OpenMMLab</category>
       </categories>
-      <tags>
-        <tag>深度学习</tag>
-        <tag>语义分割</tag>
-        <tag>可视化</tag>
-        <tag>TensorboardX</tag>
-      </tags>
+  </entry>
+  <entry>
+    <title>一键锁定目标的检测算法</title>
+    <url>/posts/1/</url>
+    <content><![CDATA[<blockquote>
+<p>学习心得：计算机视觉之目标检测算法基础 注：基于OpenMMLab实战营的教授内容，做了有用的补充，会缺少一部分课上的内容</p>
+</blockquote>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://picx.zhimg.com/80/v2-a447ea83ea84fcad99c59dab0634d7d7_720w.png?source=d16d100b">
+        
+      </span></p>
+<h2 id="常用数据集"><a href="#常用数据集" class="headerlink" title="常用数据集"></a>常用数据集</h2><ul>
+<li><strong>PASCAL VOC</strong>：20个类别。通常是用VOC07和VOC12的trainval并集作为训练，用VOC07的测试集作为测试</li>
+<li><strong>MS COCO</strong>：COCO比VOC更困难。80k训练图像、40k验证图像、20k没有公开标记的测试图像(test-dev)，80个类别。通常是用80k训练和35k验证图像的并集作为训练，其余5k图像作为验证，20k测试图像用于线上测试</li>
+</ul>
+<h2 id="常用精度指标"><a href="#常用精度指标" class="headerlink" title="常用精度指标"></a>常用精度指标</h2><ul>
+<li><strong>mAP (mean average precision)</strong> ：目标检测中的常用评价指标，计算方法如下。当预测的包围盒和真实包围盒的交并比大于某一阈值(通常为0.5)，则认为该预测正确。对每个类别，我们画出它的查准率-查全率(precision-recall)曲线，平均准确率是曲线下的面积。之后再对所有类别的平均准确率求平均，即可得到mAP，其取值为[0, 100%]</li>
+<li>**交并比(intersection over union, IoU)**：算法预测的包围盒和真实包围盒交集的面积除以这两个包围盒并集的面积，取值为[0, 1]。交并比度量了算法预测的包围盒和真实包围盒的接近程度，交并比越大，两个包围盒的重叠程度越高</li>
+</ul>
+<h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><ul>
+<li>Object Detection通常是从图像中输出多个目标的Bounding Box以及类别，同时完成了Image Classification何Localization。在Localization中，通常只有一个目标，而目标检测更一般化，其图像中出现的目标种类和数目都不定。近年来，目标检测研究趋势主要向更快、更有效的检测系统发展。目前检测算法主要分为Two-Stage和One-Stage两种算法。前者，先生成很多可能候选区，然后再对所有候选区进行分类和校准；后者，不生成各种候选区直接给出检测结果。前者以R-CNN为代表，后者以YOLO和SSD为典型</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://picx.zhimg.com/80/v2-6260e70fbe1b5727ac2507dfad1834e0_720w.png?source=d16d100b">
+        
+      </span></p>
+<h2 id="关于检测窗口的选择"><a href="#关于检测窗口的选择" class="headerlink" title="关于检测窗口的选择"></a>关于检测窗口的选择</h2><h3 id="滑动窗口法"><a href="#滑动窗口法" class="headerlink" title="滑动窗口法"></a>滑动窗口法</h3><ul>
+<li>步骤：<ol>
+<li>生成不同大小的窗口，在图片上设置步长滑动</li>
+<li>每次滑动对窗口执行分类器，若概率超过某个阈值则认为检测到了物体，生成候选框</li>
+<li>最后，在不同大小窗口生成的检测结果中，经过非极大值抑制（NMS）的方法进行筛选，确定最终检测到的物体</li>
+</ol>
+</li>
+<li>缺点：滑动一次就要分类一次，效率太低了，缺少应用价值</li>
+<li>优化方案：不在输入数据上滑窗，而是在尺寸更小单信息跟丰富的特征图上滑窗</li>
+</ul>
+<h3 id="SELECTIVE-SEARCH-选择性搜索"><a href="#SELECTIVE-SEARCH-选择性搜索" class="headerlink" title="SELECTIVE SEARCH 选择性搜索"></a>SELECTIVE SEARCH 选择性搜索</h3><ul>
+<li>步骤：<ol>
+<li>基于滑动窗口法，更改了候选框的搜索方法</li>
+<li>首先对图像做分割算法，产生很多的子区域</li>
+<li>然后根据子区域的相似性，如颜色、纹理、尺寸等，进行区域的合并，不断迭代下去</li>
+<li>每次迭代的时候对不同子区域生成外接矩形，也就是提议框</li>
+<li>最后同滑动窗口法</li>
+</ol>
+</li>
+<li>缺点：效率依然不够高，时间成本太大</li>
+<li>优化方案：PRN</li>
+</ul>
+<h3 id="RPN-区域候选网络"><a href="#RPN-区域候选网络" class="headerlink" title="RPN 区域候选网络"></a>RPN 区域候选网络</h3><ul>
+<li>步骤：<ol>
+<li>输入图像通过卷积神经网络，得到特征图</li>
+<li>基于特征图运行，对于每个滑动窗口，生成一组特定的Anchor（锚）</li>
+<li>可能有很多盒子里没有任何物体，模型需要学习哪些Anchor可能有对象</li>
+<li>Anchor的定位和分类由回归层和分类器完成</li>
+</ol>
+</li>
+</ul>
+<h2 id="经典-TWO-STAGE算法"><a href="#经典-TWO-STAGE算法" class="headerlink" title="经典 TWO-STAGE算法"></a>经典 TWO-STAGE算法</h2><h3 id="R-CNN（SELECTIVE-SEARCH-CNN-SVM）"><a href="#R-CNN（SELECTIVE-SEARCH-CNN-SVM）" class="headerlink" title="R-CNN（SELECTIVE SEARCH + CNN + SVM）"></a>R-CNN（SELECTIVE SEARCH + CNN + SVM）</h3><ul>
+<li>步骤：<ol>
+<li>首先，对输入图像采用Selective Search生成大概1~2k个候选框</li>
+<li>每个候选区投入CNN提取特征（神经网络中卷积层不需要固定的出入尺寸，但全连接层需要，所以传统投入网络的时候可能会做crop裁切或者warp拉伸等操作）</li>
+<li>特征送入SVM分类器判断分类</li>
+<li>最后使用回归器对候选框位置进行精修</li>
+</ol>
+</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://pic1.zhimg.com/80/v2-27ce1521962b06714fbecfbd40b733e0_720w.png?source=d16d100b">
+        
+      </span></p>
+<ul>
+<li>缺点<ul>
+<li>重复的计算。虽然R-CNN不是在穷举，但是候选框太多，计算量依然会很大，而且候选框之间往往有大量重叠部分</li>
+<li>训练很麻烦，候选区提取、分类、回归都是单独的代码块，需要分开运行，中间的数据还要单独存储</li>
+</ul>
+</li>
+</ul>
+<h3 id="SPP-NET（ROI-POOLING，SPP-空间金字塔池化）"><a href="#SPP-NET（ROI-POOLING，SPP-空间金字塔池化）" class="headerlink" title="SPP-NET（ROI POOLING，SPP 空间金字塔池化）"></a>SPP-NET（ROI POOLING，SPP 空间金字塔池化）</h3><ul>
+<li>作者何凯明注意到，传统网络中由于全连接层的存在，通常要固定网络输入的尺寸，这种方法往往造成空间信息的损失和部分特征的放大或扭曲，于是他在卷积层的结尾创造了SPP空间金字塔池化。物体检测精度确实有所提高</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://pic1.zhimg.com/80/v2-07e04149737cbfb59e0a52fb3e9a1ddf_720w.png?source=d16d100b">
+        
+      </span></p>
+<ul>
+<li>这一层对卷积层的输出做多种固定的池化，无论输入尺寸如何最后都会按照固定的比率池化，比如W，H变换为W/n，H/n，于是就确保了全连接层接受的数量不变</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://pica.zhimg.com/80/v2-ad4e42bec28dd18461e0de4a6a156c93_720w.png?source=d16d100b">
+        
+      </span></p>
+<ul>
+<li>步骤：<ol>
+<li>首先通过Selective Search生成1~2k个候选框，这一步和R-CNN一样</li>
+<li>特征提取阶段就是和最大的区别了，由于SPP一次就可以对整张图片做全面的特征提取，所以效率大大增加</li>
+<li>最后几步也适合R-CNN一样</li>
+</ol>
+</li>
+<li>缺点同R-CNN类似</li>
+</ul>
+<h3 id="FAST-R-CNN（SELECTIVE-SEARCH-CNN-ROI）"><a href="#FAST-R-CNN（SELECTIVE-SEARCH-CNN-ROI）" class="headerlink" title="FAST R-CNN（SELECTIVE SEARCH + CNN + ROI）"></a>FAST R-CNN（SELECTIVE SEARCH + CNN + ROI）</h3><p>
+        <span class="lazyload-img-span">
+        <img data-src="https://picx.zhimg.com/80/v2-35dd28eb799ef2af85d99e0468671fcf_720w.png?source=d16d100b">
+        
+      </span></p>
+<ul>
+<li>传统R-CNN要生成不同尺寸滑动窗下的分类结果，因此每次投入分类器的都是固定的某一尺寸，需要对视窗进行Resize或Warp。ROI pooling就能避免这个问题</li>
+<li>其过程和SPP的一部分类似，首先生将region proposal候选框划分为H * W的网格</li>
+<li>对每个网格进行MaxPooling，形成H * W大小的feature maps。其优点就是提高了处理速度</li>
+<li>Fast R-CNN提出了多任务损失函数，将分类器损失和边框回归损失放在一起统一训练，最终输出对应的分类和边框坐标</li>
+</ul>
+<h3 id="R-FCN"><a href="#R-FCN" class="headerlink" title="R-FCN"></a>R-FCN</h3><p>
+        <span class="lazyload-img-span">
+        <img data-src="https://picx.zhimg.com/80/v2-c603f134d541bd4bd5facf0b4ebc8cf9_720w.png?source=d16d100b">
+        
+      </span></p>
+<ul>
+<li>R-FCN是Faster-RCNN的改进，速度得到了很大提升，但精度提升不大。主要解决的问题是位置敏感性：一个图片在任何方向稍微经过裁切，都可以被分类器认出，然而检测任务不希望出现这种位置上的偏差。R-FCN提出了Position-sensitive score maps位置敏感网络层来解决这个问题</li>
+<li>位置敏感网络层维度k * k * （C + 1），k一般等于3，构成能够表达敏感位置（左上，正上，右上，正左，正中，正右，左下，正下，右下）的Grid格网编码结构</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://picx.zhimg.com/80/v2-291ac6728f65eaf667750ce345d0b06f_720w.png?source=d16d100b">
+        
+      </span></p>
+<h2 id="经典One-Stage算法"><a href="#经典One-Stage算法" class="headerlink" title="经典One-Stage算法"></a>经典One-Stage算法</h2><h3 id="YoLoV1"><a href="#YoLoV1" class="headerlink" title="YoLoV1"></a>YoLoV1</h3><p>
+        <span class="lazyload-img-span">
+        <img data-src="https://pica.zhimg.com/80/v2-9b24e325b437fb2440a66f63684cc96e_720w.png?source=d16d100b">
+        
+      <br>​</span></p>
+<ul>
+<li>步骤：<ol>
+<li>输入一个图像，YoLoV1会把图像看成一个 s * s 的栅格格网，如图中 s = 7 ，若某个物体的ground truth中心落在某个栅格，则这个栅格要负责该物体的预测</li>
+<li>对于上述每个栅格，要预测回归两个bounding box的坐标及其含有对象的置信度，同时预测物体所属类别</li>
+<li>根据上一步可以预测出的目标窗口，然后根据阈值去除可能性比较低的目标窗口，然后根据NMS去除冗余窗口</li>
+<li>YoLoV1最后的输出是7x7x30，这里是7x7代表输入图像的7x7栅格，维数30的前十个代表2个bounding boxes， 每个bounding box要预测5个值</li>
+</ol>
+</li>
+</ul>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<li>YoLo对相互靠得很近的物体、过于细小的物体检测效果不好，这是因为一个栅格只预测两个bounding box，并且只属于一个类别</li>
+<li>测试时，如果某类物体出现了奇葩的长宽比或者奇怪的角度时，泛化能力显著下降</li>
+<li>由于损失函数的问题，定位误差是影响检测效果的主要原因，尤其是对于大物体小物体的处理还待加强</li>
+</ul>
+<h3 id="SSD（Single-shot-MultiBox-Detector）"><a href="#SSD（Single-shot-MultiBox-Detector）" class="headerlink" title="SSD（Single shot MultiBox Detector）"></a>SSD（Single shot MultiBox Detector）</h3><p>
+        <span class="lazyload-img-span">
+        <img data-src="https://picx.zhimg.com/80/v2-f0776451ff869de7aad947961279878b_720w.png?source=d16d100b">
+        
+      </span></p>
+<ul>
+<li>Single shot表明了SSD和YoLo一样属于One-Stage算法，MultiBox表明了SSD可以检测多个物体 </li>
+</ul>
+<h3 id="主要改进"><a href="#主要改进" class="headerlink" title="主要改进"></a>主要改进</h3><ul>
+<li>使用了类似RPN中的Anchor锚点机制，增加bounding box多样性。卷积输出的feature map，每个点对应为原图的一个区域的中心点。以这个点为中心，构造出6个宽高比例不同，大小不同的Anchor（SSD中称为default box）。每个anchor对应4个位置参数(x,y,w,h)和21个类别概率</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://pic1.zhimg.com/80/v2-c2197c05bb2a8598f0a3d52141cee802_720w.png?source=d16d100b">
+        
+      </span></p>
+<ul>
+<li>使用全卷积网络，效率得到提高</li>
+<li>网络中间会生成多个阶段不同感受野的Feature Maps丰富特征多样性，因此SSD能够在不同感受野下进行不同的目标检测，实现多尺度预测，克服了YoLo在大物体小物体上的缺陷</li>
+<li>步骤：<ol>
+<li>卷积层。借鉴了VGG16，惯用先经过CNN获得特征图，再进行定位和分类的方法。</li>
+<li>目标检测层。这一层由五个卷积层和一个平均池化层构成。因为SSD认为目标检测中的物体只与周围信息相关，感受野不是全局的，所以去掉了全连接层</li>
+<li>筛选层。与YoLo基本一致，先过滤类别概率低于阈值的default box，再采用NMS筛掉重叠度较高的。不过，SSD综合了各种feature maps上的default box </li>
+</ol>
+</li>
+<li>SSD基本可以满足手机端的实时物体检测需求了，许多框架比如Tensorflow基于MobileNet在移动设备就使用了SSD算法实现。</li>
+</ul>
+<h2 id="近期受关注算法"><a href="#近期受关注算法" class="headerlink" title="近期受关注算法"></a>近期受关注算法</h2><h3 id="FCOS"><a href="#FCOS" class="headerlink" title="FCOS"></a>FCOS</h3><ul>
+<li>FCOS不使用Anchor，而且整个结构都是纯粹的CNN。先预测特征图上的各像素类别，再预测各点的bbox的大小和位置。</li>
+<li>对于Ambiguity问题，FCOS利用FPN和Center Sampling来解决。同时创新了Center-Ness分支帮助NMS抑制低质量框</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://picx.zhimg.com/80/v2-fabf74e5cf48be22623183f9028c6a37_720w.png?source=d16d100b">
+        
+      </span></p>
+<h3 id="CENTERNET"><a href="#CENTERNET" class="headerlink" title="CENTERNET"></a>CENTERNET</h3><ul>
+<li>CenterNet将检测任务的思路从以点为核心转换到以框为核心</li>
+<li>基本思路：<ol>
+<li>Resnet50提取图像特征得到特征图</li>
+<li>经过反卷积模块，三次上采样</li>
+<li>输入三个分支进行预测，得到Heatmap、预测框尺寸和中心点偏移量</li>
+</ol>
+</li>
+</ul>
+<h3 id="DETR-and-DEFORMABLE-DETR"><a href="#DETR-and-DEFORMABLE-DETR" class="headerlink" title="DETR and DEFORMABLE DETR"></a>DETR and DEFORMABLE DETR</h3><ul>
+<li>DETR第一次系统地考虑将Transformer引入图像检测任务，实现了端到端算法，本质是特征序列道框序列的流程</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://picx.zhimg.com/80/v2-285fa40180bff4eb72d6fac1f1ac278c_720w.png?source=d16d100b">
+        
+      </span></p>
+]]></content>
+      <categories>
+        <category>Computer Vision 计算机视觉</category>
+      </categories>
   </entry>
   <entry>
     <title>写给mmsegmentation工具箱新手的避坑指南</title>
-    <url>/posts/82323/</url>
-    <content><![CDATA[<h1 id="写给mmsegmentation工具箱新手的避坑指南"><a href="#写给mmsegmentation工具箱新手的避坑指南" class="headerlink" title="写给mmsegmentation工具箱新手的避坑指南"></a>写给mmsegmentation工具箱新手的避坑指南</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h2><p>我在 Windows 环境使用 MMClassification、MMDetection 都还算轻轻松松，但是走完 MMSegmentation 全流程之后，真的想感叹一句“踩了不少坑啊”，所以想把自己的遇坑经验凝练总结出来，写一个专门给新手无伤通关的避坑教程。</p>
-<h2 id="Windows-配置环境的痛：mmcv-full"><a href="#Windows-配置环境的痛：mmcv-full" class="headerlink" title="Windows 配置环境的痛：mmcv-full"></a><strong>Windows 配置环境的痛：mmcv-full</strong></h2><p>在 v1.4.0 之前，mmcv-full 的安装没有针对 Windows 的现成预编译包，所以大部分新手会卡在 build MMCV 的过程中……这种情况下有两种解决方案。</p>
-<h3 id="方案-1：新版编译版本自动安装"><a href="#方案-1：新版编译版本自动安装" class="headerlink" title="方案 1：新版编译版本自动安装"></a><strong>方案 1：新版编译版本自动安装</strong></h3><p>在 1.4.0 之后，MMCV 会跟上 PyTorch 版本更新 <a href="https://zhuanlan.zhihu.com/p/441653536"> Windows 环境下的mmcv-full预编译包</a>，但是可用的版本范围比较局限，依赖 PyTorch、CUDA、mmcv-full 低版本的炼丹师自然就不适合这种安装方式了（看方案2），下面是以 PyTorch1.11.0、 CUDA11.3 为例的安装命令。</p>
+    <url>/posts/2/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我在 Windows 环境使用 MMClassification、MMDetection 都还算轻轻松松，但是走完 MMSegmentation 全流程之后，真的想感叹一句“踩了不少坑啊”，所以想把自己的遇坑经验凝练总结出来，写一个专门给新手无伤通关的避坑教程。</p>
+<h2 id="Windows-配置环境的痛：mmcv-full"><a href="#Windows-配置环境的痛：mmcv-full" class="headerlink" title="Windows 配置环境的痛：mmcv-full"></a>Windows 配置环境的痛：mmcv-full</h2><p>在 v1.4.0 之前，mmcv-full 的安装没有针对 Windows 的现成预编译包，所以大部分新手会卡在 build MMCV 的过程中……这种情况下有两种解决方案。</p>
+<h3 id="方案-1：新版编译版本自动安装"><a href="#方案-1：新版编译版本自动安装" class="headerlink" title="方案 1：新版编译版本自动安装"></a>方案 1：新版编译版本自动安装</h3><p>在 1.4.0 之后，MMCV 会跟上 PyTorch 版本更新 <a href="https://zhuanlan.zhihu.com/p/441653536"> Windows 环境下的mmcv-full预编译包</a>，但是可用的版本范围比较局限，依赖 PyTorch、CUDA、mmcv-full 低版本的炼丹师自然就不适合这种安装方式了（看方案2），下面是以 PyTorch1.11.0、 CUDA11.3 为例的安装命令。</p>
 <ul>
 <li>一句命令安装 <code>mmcv-full</code>，下载速度还是不错的</li>
 </ul>
 <pre><code class="PowerShell">pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu113/torch1.11/index.html
 </code></pre>
-<h3 id="方案-2：手动操作"><a href="#方案-2：手动操作" class="headerlink" title="方案 2：手动操作"></a><strong>方案 2：手动操作</strong></h3><p>如果你不希望更新到新版 MMSegmentation 或者 MMCV，也可以尝试手动安装，下面以在 GPU+CPU 双环境运行的目标来安装 <code>mmcv-full</code>，参考了<a href="https://mmcv.readthedocs.io/zh_CN/latest/get_started/build.html#id1">官方文档</a>，所有命令行运行在 <code>powershell</code>，使用 <code>cmd</code> 的炼丹师需要注意两个命令行的命令差异。</p>
+<h3 id="方案-2：手动操作"><a href="#方案-2：手动操作" class="headerlink" title="方案 2：手动操作"></a>方案 2：手动操作</h3><p>如果你不希望更新到新版 MMSegmentation 或者 MMCV，也可以尝试手动安装，下面以在 GPU+CPU 双环境运行的目标来安装 <code>mmcv-full</code>，参考了<a href="https://mmcv.readthedocs.io/zh_CN/latest/get_started/build.html#id1">官方文档</a>，所有命令行运行在 <code>powershell</code>，使用 <code>cmd</code> 的炼丹师需要注意两个命令行的命令差异。</p>
 <ul>
 <li>创建虚拟环境</li>
 </ul>
@@ -401,7 +502,7 @@ python setup.py develop # 执行安装
 </ul>
 <pre><code class="PowerShell">pip list # 使用anaconda的话，也可以在openmmlab依赖的虚拟环境下 =conda list
 </code></pre>
-<h2 id="数据集自定义类别"><a href="#数据集自定义类别" class="headerlink" title="数据集自定义类别"></a><strong>数据集自定义类别</strong></h2><h3 id="更改-CLASSES-和-num-classes"><a href="#更改-CLASSES-和-num-classes" class="headerlink" title="更改 CLASSES 和 num_classes"></a>更改 CLASSES 和 num_classes</h3><p>不敢调试的新手炼丹师首次面对 <code>mmseg</code> 的项目可能无所适从，因此也很难养成自己编写数据集加载代码的习惯。其实能搜到很多水平不一的资料教你编辑现有的数据集加载方式（比如常见的 <code>ADEDataset</code>），修改 <code>CLASSES</code>，然后设置 <code>num_classes</code>，可能更改完发现编辑后的代码根本没应用上，网络 decoder 不断吐槽你 <code>num_classes</code> 不对，然后你又去检查手里的数据集……其实是因为认识较浅，下面展示更合理的走通指南：</p>
+<h2 id="数据集自定义类别"><a href="#数据集自定义类别" class="headerlink" title="数据集自定义类别"></a>数据集自定义类别</h2><h3 id="更改-CLASSES-和-num-classes"><a href="#更改-CLASSES-和-num-classes" class="headerlink" title="更改 CLASSES 和 num_classes"></a>更改 CLASSES 和 num_classes</h3><p>不敢调试的新手炼丹师首次面对 <code>mmseg</code> 的项目可能无所适从，因此也很难养成自己编写数据集加载代码的习惯。其实能搜到很多水平不一的资料教你编辑现有的数据集加载方式（比如常见的 <code>ADEDataset</code>），修改 <code>CLASSES</code>，然后设置 <code>num_classes</code>，可能更改完发现编辑后的代码根本没应用上，网络 decoder 不断吐槽你 <code>num_classes</code> 不对，然后你又去检查手里的数据集……其实是因为认识较浅，下面展示更合理的走通指南：</p>
 <ul>
 <li><p>选择好模型后，先把相关联配置文件里的全部 <code>num_classes</code> 设置好值，比如经典 ADE 数据集提取并划分了 150 个实例类， <code>num_classes</code> 就是 <code>150</code>，计入 <code>num_classes</code> 的所有类的名称下一步都要写入 <code>CLASSES</code>。（背景类未算入 150，下一节会讲解为什么）</p>
 </li>
@@ -436,7 +537,7 @@ pip install -v -e . # 重新安装 英文句点表示安装当前路径下的项
 <ul>
 <li>也有可能会有小伙伴问可不可以用 <code>python setup.py develop</code>，我没做过实验。但是 <code>setup.py</code> 也是门学问，既然官方文档教新手们用 <code>pip</code> 的方式就能成，也就没必要找太多替换方案了，新手上来没必要钻研在这上面。</li>
 </ul>
-<h2 id="独特的数据集参数-：reduce-zero-label"><a href="#独特的数据集参数-：reduce-zero-label" class="headerlink" title="独特的数据集参数****：reduce_zero_label"></a><strong>独特的<strong><strong>数据集</strong></strong>参数****：reduce_zero_label</strong></h2><h3 id="借助-reduce-zero-label-管理-0-值背景"><a href="#借助-reduce-zero-label-管理-0-值背景" class="headerlink" title="借助 reduce_zero_label 管理 0 值背景"></a>借助 reduce_zero_label 管理 0 值背景</h3><p><code>mmseg</code> 中已经为各种公共分割数据集编写了描述文件和加载代码，对于有用过 PyTorch 的小伙伴而言，学习各种数据集的描述文件还是很自如的，只有 <code>reduce_zero_label</code> 对于 <code>mmseg</code> 的新手比较陌生，所以，在搭建自己的 <code>mmseg</code> 数据集时，新手最疑惑的大概就是 <code>reduce_zero_label</code> 到底应该是 <code>True</code> 还是 <code>False</code>。</p>
+<h2 id="独特的数据集参数：reduce-zero-label"><a href="#独特的数据集参数：reduce-zero-label" class="headerlink" title="独特的数据集参数：reduce_zero_label"></a>独特的数据集参数：reduce_zero_label</h2><h3 id="借助-reduce-zero-label-管理-0-值背景"><a href="#借助-reduce-zero-label-管理-0-值背景" class="headerlink" title="借助 reduce_zero_label 管理 0 值背景"></a>借助 reduce_zero_label 管理 0 值背景</h3><p><code>mmseg</code> 中已经为各种公共分割数据集编写了描述文件和加载代码，对于有用过 PyTorch 的小伙伴而言，学习各种数据集的描述文件还是很自如的，只有 <code>reduce_zero_label</code> 对于 <code>mmseg</code> 的新手比较陌生，所以，在搭建自己的 <code>mmseg</code> 数据集时，新手最疑惑的大概就是 <code>reduce_zero_label</code> 到底应该是 <code>True</code> 还是 <code>False</code>。</p>
 <p>它有什么用呢？从名字直译过来就是“减少 0 值标签”。在多类分割任务中，如果你的数据集中 <code>0</code> 值作为 label 文件中的背景类别，是建议忽略的。</p>
 <p>打开加载数据的源码片段可以看到一段处理 <code>reduce_zero_label</code> 的代码，意思是：若开启了 <code>reduce_zero_label</code>，原本为 <code>0</code> 的所有标注设置为 <code>255</code>，也就是损失函数中 <code>ignore_index</code> 参数的默认值，该参数默认避免值为 <code>255</code> 的标注参与损失计算。前文按下不表的 <code>150</code> 类的 ADE 数据集，它不包含背景的原因就是开了 <code>reduce zero label</code>，原本为 <code>0</code> 值的背景设置为了 <code>ignore_index</code>。</p>
 <pre><code class="Python"># mmseg/datasets/pipelines/loading.py
@@ -463,7 +564,7 @@ train_pipeline = [
 <p>label 中实际参加训练的确实只有 <code>150</code> 类，定义在 <code>CLASSES</code> 中，但 label 文件中实际包含了 <code>151</code> 类，而背景类（剩下仍没有标记的，或者被意外忽略的区域都归为背景，在 label 中值为 <code>0</code>）不包含在 <code>150</code> 个 <code>CLASSES</code> 中，需要在训练的时候设置成 <code>ignore_index</code>，所以我们借助上一小节的 <code>reduce_zero_label</code> 将背景从 151 个类中提出来单独设置为了 <code>ignore_index</code>，我们倘若错误地将 <code>reduce_zero_label</code> 关掉了，那 <code>num_classes</code> 就是 <code>151</code> 了。</p>
 <h3 id="如何增强对数据集更多参数的理解？"><a href="#如何增强对数据集更多参数的理解？" class="headerlink" title="如何增强对数据集更多参数的理解？"></a>如何增强对数据集更多参数的理解？</h3><p>实际工程中的数据集往往是我们自己设计预测类别和标注规则的，如果背景真的很重要，那无论是修改 ADE 的配置文件，还是硬搬 ADE 格式数据集的使用方式，都不如尊重开发者写好的数据集加载代码，改用自己编写的数据集加载方式（只需继承自 <code>CustomDataset</code> 即可）。</p>
 <p>在一行行编写的过程中，新手炼丹师可以不断参考研究现存的其他数据集的解决方案，如果遇到不懂的地方也能有查漏补缺的方向，尤其是 <code>reduce_zero_label</code> 这种参数，需要充分理解消化才能运用自如。不断尝试尝试尝试的过程中，新手炼丹师也会对各式各样的数据集加载方式产生自己的理解和看法，在迎接特殊任务的时候能够分析自己的数据集，创新设计出自己独特的数据集加载方式。</p>
-<h2 id="数据集文件后缀的坑：大小写"><a href="#数据集文件后缀的坑：大小写" class="headerlink" title="数据集文件后缀的坑：大小写"></a><strong>数据集文件后缀的坑：大小写</strong></h2><p>接着看 <code>mmseg``/``datasets</code> 的 <code>ade.py</code>，这里 <code>ADE20KDataset</code> 类有两个 suffix（文件后缀）相关的参数配置，<code>img_suffix</code> 负责定义图像文件的后缀名，<code>seg_map_suffix</code> 定义标签文件的后缀名。默认配置：</p>
+<h2 id="数据集文件后缀的坑：大小写"><a href="#数据集文件后缀的坑：大小写" class="headerlink" title="数据集文件后缀的坑：大小写"></a>数据集文件后缀的坑：大小写</h2><p>接着看 <code>mmseg``/``datasets</code> 的 <code>ade.py</code>，这里 <code>ADE20KDataset</code> 类有两个 suffix（文件后缀）相关的参数配置，<code>img_suffix</code> 负责定义图像文件的后缀名，<code>seg_map_suffix</code> 定义标签文件的后缀名。默认配置：</p>
 <pre><code class="Python"># mmseg/datasets/ade.py
 
 ...
@@ -510,17 +611,11 @@ cudnn_benchmark = True
 <ul>
 <li>执行成功之后可以看到终端打印了一个本地 IP 和端口，默认是 <code>http://localhost:6006/</code>，按住 <code>ctrl</code> 键鼠标点击即可进入浏览器打开可视化页面，终端连续多次按下 <code>ctrl + c</code> 组合键可以停止 <code>tensorboard</code> 服务。</li>
 </ul>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a><strong>后记</strong></h2><p>我使用 OpenMMLab 各种工具箱的时候编写的几个辅助脚本在<a href="https://github.com/TianWen580/myscripts-openmmlab">我的GitHub</a>，涵盖了数据集预处理、维护和质检等功能，大家可以去看看有没有能帮上自己的。 MMSegmentation 的大小坑真的让我哭笑不得哈哈哈，也辛苦 MMSegmentation 开源开发者的付出，祝自己有一天能加入 OpenMMLab 的大家庭一起维护这个开源之星，也祝各位炼丹师实验顺利。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>我使用 OpenMMLab 各种工具箱的时候编写的几个辅助脚本在<a href="https://github.com/TianWen580/myscripts-openmmlab">我的GitHub</a>，涵盖了数据集预处理、维护和质检等功能，大家可以去看看有没有能帮上自己的。 MMSegmentation 的大小坑真的让我哭笑不得哈哈哈，也辛苦 MMSegmentation 开源开发者的付出，祝自己有一天能加入 OpenMMLab 的大家庭一起维护这个开源之星，也祝各位炼丹师实验顺利。</p>
 ]]></content>
       <categories>
-        <category>计算机视觉特辑</category>
+        <category>For OpenMMLab</category>
       </categories>
-      <tags>
-        <tag>深度学习</tag>
-        <tag>语义分割</tag>
-        <tag>OpenMMLab</tag>
-        <tag>MMSeg</tag>
-      </tags>
   </entry>
   <entry>
     <title>地图制图「上」标准制图流程展示</title>
@@ -645,412 +740,101 @@ cudnn_benchmark = True
       </tags>
   </entry>
   <entry>
-    <title>更全计算机视觉任务整理</title>
-    <url>/posts/17208/</url>
-    <content><![CDATA[<h1 id="主要任务"><a href="#主要任务" class="headerlink" title="主要任务"></a>主要任务</h1><h2 id="图像分类（Image-Classification）"><a href="#图像分类（Image-Classification）" class="headerlink" title="图像分类（Image Classification）"></a>图像分类（Image Classification）</h2><ul>
-<li>一张图像中是否包含某种物体，对图像进行特征描述是物体分类的主要研究内容。一般说来，物体分类算法通过手工特征或者特征学习方法对整个图像进行全局描述，然后使用分类器判断是否存在某类物体。</li>
-<li>图像分类流程：给定一组各自被标记为单一类别的图像，我们对一组新的测试图像的类别进行预测，并测量预测的准确性结果。</li>
-<li>对于图像分类而言，最受欢迎的方法是卷积神经网络（CNN）。CNN网络结构基本是由卷积层、池化层以及全连接层组成。通常，输入图像送入卷积神经网络中，通过卷积层进行特征提取，之后通过池化层过滤细节（一般采用最大值池化、平均池化），最后在全连接层进行特征展开，送入相应的分类器得到其分类结果。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E6%9B%B4%E5%85%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E4%BB%BB%E5%8A%A1%E6%95%B4%E7%90%86/%E5%9B%BE1.jpg">
-        
-      </span></li>
-<li>在分类任务中，CNN经典神经网络结构是AlexNet网络模型，在其之后，有很多基于CNN的算法也在ImageNet上取得了特别好的成绩，比如ZFNet（2013）、GoogleNet（2014）、VGGNet（2014）、ResNet（2015）以及DenseNet（2016）等。</li>
-</ul>
-<h2 id="图像定位（Image-location）"><a href="#图像定位（Image-location）" class="headerlink" title="图像定位（Image location）"></a>图像定位（Image location）</h2><ul>
-<li>在图像分类的基础上，我们还想知道图像中的目标具体在图像的什么位置，通常是以包围盒的(bounding box)形式。</li>
-<li>多任务学习，网络带有两个输出分支。一个分支用于做图像分类，即全连接+softmax判断目标类别，和单纯图像分类区别在于这里还另外需要一个“背景”类。另一个分支用于判断目标位置，即完成回归任务输出四个数字标记包围盒位置(例如中心点横纵坐标和包围盒长宽)，该分支输出结果只有在分类分支判断不为“背景”时才使用。</li>
-</ul>
-<h2 id="目标检测（Object-Dection）"><a href="#目标检测（Object-Dection）" class="headerlink" title="目标检测（Object Dection）"></a>目标检测（Object Dection）</h2><ul>
-<li>目标检测通常是从图像中输出单个目标的Bounding Box（边框）以及标签。在目标定位中，通常只有一个或固定数目的目标，而目标检测更一般化，其图像中出现的目标种类和数目都不定。因此，目标检测是比目标定位更具挑战性的任务。</li>
-<li>第一个高效模型是R-CNN（基于区域的卷积神经网络,后期又出现了Fast R-CNN算法以及Faster R-CNN算法。近年来，目标检测研究趋势主要向更快、更有效的检测系统发展。目前已经有一些其它的方法可供使用，比如YOLO、SSD以及R-FCN等。</li>
-</ul>
-<h2 id="目标跟踪"><a href="#目标跟踪" class="headerlink" title="目标跟踪"></a>目标跟踪</h2><ul>
-<li>目标跟踪是指在给定场景中跟踪感兴趣的具体对象或多个对象的过程。简单来说，给出目标在<strong>跟踪视频第一帧</strong>中的初始状态（如位置、尺寸），自动<strong>估计目标物体在后续帧中的状态。</strong></li>
-<li>使用SAE方法进行目标跟踪的最经典深层网络是Deep Learning Tracker（DLT），提出了离线预训练和在线微调。</li>
-<li>基于CNN完成目标跟踪的典型算法是FCNT和MD Net。</li>
-</ul>
-<h2 id="语义分割（Semantic-Segmentation）"><a href="#语义分割（Semantic-Segmentation）" class="headerlink" title="语义分割（Semantic Segmentation）"></a>语义分割（Semantic Segmentation）</h2><ul>
-<li>计算机视觉的核心是分割过程，它将整个图像分成像素组，然后对其进行标记和分类。语言分割试图在语义上理解图像中每个像素的角色（例如，汽车、摩托车等）。语义分割是目标检测更进阶的任务，目标检测只需要框出每个目标的包围盒，语义分割需要进一步判断图像中哪些像素属于哪个目标。</li>
-<li>基本思路:逐像素进行图像分类。我们将整张图像输入网络，使输出的空间大小和输入一致，通道数等于类别数，分别代表了各空间位置属于各类别的概率，即可以逐像素地进行分类。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E6%9B%B4%E5%85%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E4%BB%BB%E5%8A%A1%E6%95%B4%E7%90%86/%E5%9B%BE2.jpg">
-        
-      </span></li>
-<li>CNN同样在此项任务中展现了其优异的性能。典型的方法是FCN。FCN模型输入一幅图像后直接在输出端得到密度预测，即每个像素所属的类别，从而得到一个端到端的方法来实现图像语义分割。</li>
-</ul>
-<h2 id="实例分割"><a href="#实例分割" class="headerlink" title="实例分割"></a>实例分割</h2><ul>
-<li>与语义分割有所不同，物体分割不仅需要对图像中不同的对象进行分类，而且还需要确定它们之间的界限、差异和关系。</li>
-<li>基本思路:目标检测+语义分割。先用目标检测方法将图像中的不同实例框出，再用语义分割方法在不同包围盒内进行逐像素标记。</li>
-<li>CNN在此项任务中同样表现优异，典型算法是Mask R-CNN。Mask R-CNN在Faster R-CNN的基础上添加了一个分支以输出二元掩膜。</li>
-</ul>
-<h2 id="其他任务"><a href="#其他任务" class="headerlink" title="其他任务"></a>其他任务</h2><h3 id="图像标注-（Image-Captioning）"><a href="#图像标注-（Image-Captioning）" class="headerlink" title="图像标注 （Image Captioning）"></a>图像标注 （Image Captioning）</h3><p>图像标注是一项引人注目的研究领域，它的研究目的是给出<strong>一张图片</strong>，你给我<strong>用一段文字描述它</strong>。（根据图片生成描述文字）</p>
-<h3 id="图像生成（Image-Generator）"><a href="#图像生成（Image-Generator）" class="headerlink" title="图像生成（Image Generator）"></a>图像生成（Image Generator）</h3><h3 id="文字转图像"><a href="#文字转图像" class="headerlink" title="文字转图像"></a>文字转图像</h3><h3 id="超分辨率、风格迁移、着色超分辨率、风格迁移、着色"><a href="#超分辨率、风格迁移、着色超分辨率、风格迁移、着色" class="headerlink" title="超分辨率、风格迁移、着色超分辨率、风格迁移、着色"></a>超分辨率、风格迁移、着色超分辨率、风格迁移、着色</h3><ul>
-<li>超分辨率指的是从低分辨率对应物估计高分辨率图像的过程，以及不同放大倍数下图像特征的预测，这是人脑几乎毫不费力地完成的。最初的超分辨率是通过简单的技术，如bicubic-interpolation和最近邻。在商业应用方面，克服低分辨率限制和实现“CSI Miami”风格图像增强的愿望推动了该领域的研究。</li>
-<li>风格转换作为一个主题，一旦可视化是相当直观的，比如，拍摄一幅图像，并用不同的图像的风格特征呈现。</li>
-<li>着色是将单色图像更改为新的全色版本的过程。最初，这是由那些精心挑选的颜色由负责每个图像中的特定像素的人手动完成的。2016年，这一过程自动化成为可能，同时保持了以人类为中心的色彩过程的现实主义的外观。</li>
-</ul>
-<h3 id="显著性检测"><a href="#显著性检测" class="headerlink" title="显著性检测"></a>显著性检测</h3><p>显著性目标检测，是指对于一幅图像，以最接近于人眼关注范围的方法将图像的<strong>较为突出或者比较重要的目标区域标注出来</strong>以便后续利用。显著性检测任务从原理上可以分为两种，即眼动点检测和显著性目标检测.后者显著性检测任务与目标检测与分割等任务联系紧密。</p>
-<h3 id="行为识别"><a href="#行为识别" class="headerlink" title="行为识别"></a>行为识别</h3><p>行为识别的任务是指在给定的视频帧内动作的分类，以及最近才出现的，用算法<strong>预测在动作发生之前几帧的可能的相互作用的结果。</strong></p>
-<h3 id="人体姿势估计"><a href="#人体姿势估计" class="headerlink" title="人体姿势估计"></a>人体姿势估计</h3><p>人体姿势估计试图找出人体部位的方向和构型。 2D人体姿势估计或关键点检测一般是指定人体的身体部位，例如<strong>寻找膝盖，眼睛，脚等的二维位置。</strong></p>
-<h3 id="场景理解"><a href="#场景理解" class="headerlink" title="场景理解"></a>场景理解</h3><p>在物体识别问题已经很大程度上解决以后，我们的下一个目标是走出物体本身，关注更为广泛的<strong>对象之间的关系、语言等等。</strong>👇<br><a href="https://link.zhihu.com/?target=https://www.leiphone.com/news/201709/sgR1SCxaWEOGchl3.html" title="李飞飞：在物体识别之后，计算机视觉还要多久才能理解这个世界">李飞飞：在物体识别之后，计算机视觉还要多久才能理解这个世界</a></p>
-<h3 id="图像恢复"><a href="#图像恢复" class="headerlink" title="图像恢复"></a>图像恢复</h3><h3 id="图像合成"><a href="#图像合成" class="headerlink" title="图像合成"></a>图像合成</h3><h3 id="图像重建"><a href="#图像重建" class="headerlink" title="图像重建"></a>图像重建</h3><h3 id="自然场景文本检测与识别"><a href="#自然场景文本检测与识别" class="headerlink" title="自然场景文本检测与识别"></a>自然场景<strong>文本检测与识别</strong></h3><p><a href="https://www.jiqizhixin.com/articles/2018-08-24-12" title="论文推荐">这里有一些论文推荐</a></p>
-<h3 id="3D视觉"><a href="#3D视觉" class="headerlink" title="3D视觉"></a>3D视觉</h3><ul>
-<li>3D理解传统上面临着几个障碍。首先关注“自我和正常遮挡”问题以及适合给定2D表示的众多3D形状。由于无法将相同结构的不同图像映射到相同的3D空间以及处理这些表示的多模态，所以理解问题变得更加复杂。最后，实况3D数据集传统上相当昂贵且难以获得，当与表示3D结构的不同方法结合时，可能导致训练限制。</li>
-<li><strong>场景重构，多视点和单视点重建，运动结构（SfM），SLAM等。</strong></li>
-</ul>
-<h2 id="主要深度学习技术"><a href="#主要深度学习技术" class="headerlink" title="主要深度学习技术"></a>主要深度学习技术</h2><h3 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h3><p>给定样本一个固定标签，然后去训练模型</p>
-<h3 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h3><p>深度无监督学习（Deep Unsupervised Learning）–预测学习。推荐一篇2017年初Ian GoodFellow结合他在NIPS2016的演讲写出的综述性论文—— 《NIPS 2016 Tutorial: Generative Adversarial Networks》</p>
-<h3 id="强化学习（Reinforcement-Learning）"><a href="#强化学习（Reinforcement-Learning）" class="headerlink" title="强化学习（Reinforcement Learning）"></a>强化学习（Reinforcement Learning）</h3><p>给定一些奖励或惩罚，强化学习就是让模型自己去试错，模型自己去优化怎么才能得到更多的分数。</p>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><ul>
-<li>人脸识别：人脸检测算法，能够<strong>从照片中认出某人的身份；</strong></li>
-<li> 图像检索：类似于谷歌图像使用基于内容的查询来搜索相关图像，算法返回与<strong>查询内容最佳匹配的图像。</strong></li>
-<li>游戏和控制：<strong>体感游戏；</strong></li>
-<li>监控：公共场所随处可见的监控摄像机，用来<strong>监视可疑行为；</strong></li>
-<li>生物识别技术：<strong>指纹、虹膜和人脸匹配是生物特征识别</strong>中常用的方法；</li>
-<li>智能<strong>汽车</strong>：视觉仍然是观察交通标志、信号灯及其它视觉特征的主要信息来源；</li>
-<li>遥感分析：视觉可以降低<strong>遥感抠图</strong>工作量，或者提高<strong>分析</strong>精度。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>计算机视觉特辑</category>
-      </categories>
-      <tags>
-        <tag>深度学习</tag>
-        <tag>计算机视觉前沿</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/posts/1/</url>
-    <content><![CDATA[<h1 id="一键锁定目标的检测算法"><a href="#一键锁定目标的检测算法" class="headerlink" title="一键锁定目标的检测算法"></a>一键锁定目标的检测算法</h1><hr>
-<blockquote>
-<p>学习心得：计算机视觉之目标检测算法基础</p>
-<p>注：基于OpenMMLab实战营的教授内容，做了有用的补充，会缺少一部分课上的内容</p>
+    <title>实验命令汇总</title>
+    <url>/posts/3/</url>
+    <content><![CDATA[<blockquote>
+<p>学习心得：MMLab 实战营全程</p>
+<p>注：本文总结了实验过程中跨平台通用的技术方案，主要结合了自己的笔记</p>
 </blockquote>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/gG6Ck22.jpg">
-        
-      </span></p>
-<h1 id="常用数据集"><a href="#常用数据集" class="headerlink" title="常用数据集"></a>常用数据集</h1><ul>
-<li><strong>PASCAL  VOC</strong>：20个类别。通常是用VOC07和VOC12的trainval并集作为训练，用VOC07的测试集作为测试</li>
-<li><strong>MS COCO</strong>：COCO比VOC更困难。80k训练图像、40k验证图像、20k没有公开标记的测试图像(test-dev)，80个类别。通常是用80k训练和35k验证图像的并集作为训练，其余5k图像作为验证，20k测试图像用于线上测试</li>
+<h2 id="ANACONDA-常用命令与一些解决方案"><a href="#ANACONDA-常用命令与一些解决方案" class="headerlink" title="ANACONDA 常用命令与一些解决方案"></a>ANACONDA 常用命令与一些解决方案</h2><h3 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h3><pre><code class="shell">conda create -n your_env_name python=X.X
+</code></pre>
+<h3 id="更新conda（慎用！！！，新conda可能用不了）"><a href="#更新conda（慎用！！！，新conda可能用不了）" class="headerlink" title="更新conda（慎用！！！，新conda可能用不了）"></a>更新conda（慎用！！！，新conda可能用不了）</h3><pre><code class="shell">conda updata conda
+</code></pre>
+<h3 id="查看虚拟环境菜单和环境内已载入库"><a href="#查看虚拟环境菜单和环境内已载入库" class="headerlink" title="查看虚拟环境菜单和环境内已载入库"></a>查看虚拟环境菜单和环境内已载入库</h3><pre><code class="shell">conda env list
+conda list
+</code></pre>
+<h3 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h3><pre><code class="shell">Conda activate your_env_name
+</code></pre>
+<h3 id="如果遇到conda安装频繁报错，使用如下语句："><a href="#如果遇到conda安装频繁报错，使用如下语句：" class="headerlink" title="如果遇到conda安装频繁报错，使用如下语句："></a>如果遇到conda安装频繁报错，使用如下语句：</h3><pre><code class="shell">conda clean -i
+</code></pre>
+<h3 id="如果不幸要删除虚拟环境"><a href="#如果不幸要删除虚拟环境" class="headerlink" title="如果不幸要删除虚拟环境"></a>如果不幸要删除虚拟环境</h3><pre><code class="shell">conda remove -n your_env_name --all
+</code></pre>
+<h3 id="PyTorch推荐安装命令"><a href="#PyTorch推荐安装命令" class="headerlink" title="PyTorch推荐安装命令"></a>PyTorch推荐安装命令</h3><pre><code class="Shell">pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 -f https://download.pytorch.org/whl/cu116/torch_stable.html
+</code></pre>
+<h3 id="我常用的-pip-镜像"><a href="#我常用的-pip-镜像" class="headerlink" title="我常用的 pip 镜像"></a>我常用的 pip 镜像</h3><pre><code class="shell">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple # 清华  
+pip install -i https://pypi.douban.com/simple # 豆瓣（推荐）
+</code></pre>
+<h3 id="安装其他项目的requirements-txt"><a href="#安装其他项目的requirements-txt" class="headerlink" title="安装其他项目的requirements.txt"></a>安装其他项目的requirements.txt</h3><pre><code class="shell">pip install -r requirements.txt
+</code></pre>
+<h3 id="mac上python3配置第三方库"><a href="#mac上python3配置第三方库" class="headerlink" title="mac上python3配置第三方库"></a>mac上python3配置第三方库</h3><pre><code class="shell">python3 -m pip install xxx 
+</code></pre>
+<h2 id="TENSORBOARD-可视化"><a href="#TENSORBOARD-可视化" class="headerlink" title="TENSORBOARD 可视化"></a>TENSORBOARD 可视化</h2><ul>
+<li>首先学习以下 tensorboardX 怎么用。在 OpenMMLab 中，只需找到 <em>configs/<em>base</em>/default_runtime.py</em> 中的如下代码，解除 <code>dict(type=&#39;TensorboardLoggerHook&#39;)</code> 注释部分即可开启 tensorboard 记录器</li>
 </ul>
-<h1 id="常用精度指标"><a href="#常用精度指标" class="headerlink" title="常用精度指标"></a>常用精度指标</h1><ul>
-<li><strong>mAP (mean average precision)</strong> ：目标检测中的常用评价指标，计算方法如下。当预测的包围盒和真实包围盒的交并比大于某一阈值(通常为0.5)，则认为该预测正确。对每个类别，我们画出它的查准率-查全率(precision-recall)曲线，平均准确率是曲线下的面积。之后再对所有类别的平均准确率求平均，即可得到mAP，其取值为[0, 100%]</li>
-<li>**交并比(intersection over union, IoU)**：算法预测的包围盒和真实包围盒交集的面积除以这两个包围盒并集的面积，取值为[0, 1]。交并比度量了算法预测的包围盒和真实包围盒的接近程度，交并比越大，两个包围盒的重叠程度越高</li>
-</ul>
-<h1 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h1><p>Object Detection通常是从图像中输出<strong>多个</strong>目标的Bounding Box以及类别，同时完成了Image Classification何Localization。在Localization中，通常只有<strong>一个</strong>目标，而目标检测更一般化，其图像中出现的目标种类和数目都不定。近年来，目标检测研究趋势主要向更快、更有效的检测系统发展。目前检测算法主要分为Two-Stage和One-Stage两种算法。前者，先生成很多可能候选区，然后再对所有候选区进行分类和校准；后者，不生成各种候选区直接给出检测结果。前者以R-CNN为代表，后者以YOLO和SSD为典型<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/DRlyJeb.jpg">
-        
-      </span></p>
-<h2 id="目标检测算法的3个模块"><a href="#目标检测算法的3个模块" class="headerlink" title="目标检测算法的3个模块"></a>目标检测算法的3个模块</h2><ul>
-<li>选择检测窗口</li>
-<li>图像特征提取</li>
-<li>分类器设计</li>
-</ul>
-<h2 id="关于检测窗口的选择"><a href="#关于检测窗口的选择" class="headerlink" title="关于检测窗口的选择"></a>关于检测窗口的选择</h2><h3 id="滑动窗口法"><a href="#滑动窗口法" class="headerlink" title="滑动窗口法"></a>滑动窗口法</h3><ol>
-<li>生成不同大小的窗口，在图片上设置步长滑动</li>
-<li>每次滑动对窗口执行分类器，若概率超过某个阈值则认为检测到了物体，生成候选框</li>
-<li>最后，在不同大小窗口生成的检测结果中，经过非极大值抑制（NMS）的方法进行筛选，确定最终检测到的物体</li>
-</ol>
+<pre><code class="python">log_config = dict(  
+    interval=50,  
+    hooks=[  
+        dict(type=&#39;TextLoggerHook&#39;, by_epoch=False),  
+        # dict(type=&#39;TensorboardLoggerHook&#39;)  
+        # dict(type=&#39;PaviLoggerHook&#39;) # for internal services  
+    ])
+</code></pre>
 <ul>
-<li>缺点：滑动一次就要分类一次，效率太低了，缺少应用价值</li>
-<li>优化方案：不在输入数据上滑窗，而是在尺寸更小单信息跟丰富的特征图上滑窗</li>
-</ul>
-<h3 id="SELECTIVE-SEARCH-选择性搜索"><a href="#SELECTIVE-SEARCH-选择性搜索" class="headerlink" title="SELECTIVE SEARCH 选择性搜索"></a>SELECTIVE SEARCH 选择性搜索</h3><ol>
-<li>基于滑动窗口法，更改了候选框的搜索方法</li>
-<li>首先对图像做分割算法，产生很多的子区域</li>
-<li>然后根据子区域的相似性，如颜色、纹理、尺寸等，进行区域的合并，不断迭代下去</li>
-<li>每次迭代的时候对不同子区域生成外接矩形，也就是提议框</li>
-<li>最后同滑动窗口法</li>
-</ol>
-<ul>
-<li>缺点：效率依然不够高，时间成本太大</li>
-<li>优化方案：PRN</li>
-</ul>
-<h3 id="RPN-区域候选网络"><a href="#RPN-区域候选网络" class="headerlink" title="RPN 区域候选网络"></a>RPN 区域候选网络</h3><ol>
-<li>输入图像通过卷积神经网络，得到特征图</li>
-<li>基于特征图运行，对于每个滑动窗口，生成一组特定的Anchor（锚）</li>
-<li>可能有很多盒子里没有任何物体，模型需要学习哪些Anchor可能有对象</li>
-<li>Anchor的定位和分类由回归层和分类器完成</li>
-</ol>
-<h2 id="经典-TWO-STAGE算法"><a href="#经典-TWO-STAGE算法" class="headerlink" title="经典 TWO-STAGE算法"></a>经典 TWO-STAGE算法</h2><h3 id="R-CNN（SELECTIVE-SEARCH-CNN-SVM）"><a href="#R-CNN（SELECTIVE-SEARCH-CNN-SVM）" class="headerlink" title="R-CNN（SELECTIVE SEARCH + CNN + SVM）"></a>R-CNN（SELECTIVE SEARCH + CNN + SVM）</h3><blockquote>
-<p>步骤</p>
-<ol>
-<li>首先，对输入图像采用Selective Search生成大概1~2k个候选框</li>
-<li>每个候选区投入CNN提取特征（神经网络中卷积层不需要固定的出入尺寸，但全连接层需要，所以传统投入网络的时候可能会做crop裁切或者warp拉伸等操作）</li>
-<li>特征送入SVM分类器判断分类</li>
-<li>最后使用回归器对候选框位置进行精修<br>
+<li><p>如果遇到环境问题，则按照提示配置 tensorboard 环境即可</p>
+</li>
+<li><p>一般训练代码运行之后会同时生成 tensorboardX 的日志文件。这时复制日志文件所在文件夹路径，打开 Anaconda 命令行，切换环境至 torch，输入图中语句为日志文件夹创建 tensorboardX 默认的本地端口</p>
+<pre><code class="shell">tensorboard --logdir PATH &#123;log_file_abs_path&#125;
+</code></pre>
+</li>
+<li><p>执行得到端口地址，复制到浏览器打开即可查看训练可视化内容<br>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/BDo66iD.jpg">
+        <img data-src="https://i.imgur.com/fY83Oja.jpg">
         
-      </span></li>
-</ol>
-</blockquote>
-<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
-<li>重复的计算。虽然R-CNN不是在穷举，但是候选框太多，计算量依然会很大，而且候选框之间往往有大量重叠部分</li>
-<li>训练很麻烦，候选区提取、分类、回归都是单独的代码块，需要分开运行，中间的数据还要单独存储</li>
-</ul>
-<h3 id="SPP-NET（ROI-POOLING，SPP-空间金字塔池化）"><a href="#SPP-NET（ROI-POOLING，SPP-空间金字塔池化）" class="headerlink" title="SPP-NET（ROI POOLING，SPP 空间金字塔池化）"></a>SPP-NET（ROI POOLING，SPP 空间金字塔池化）</h3><ul>
-<li>作者何凯明注意到，传统网络中由于全连接层的存在，通常要固定网络输入的尺寸，这种方法往往造成空间信息的损失和部分特征的放大或扭曲，于是他在卷积层的结尾创造了SPP空间金字塔池化。物体检测精度确实有所提高<br>
+       
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/JqjNFXI.jpg">
-        
-      </span></li>
-<li>这一层对卷积层的输出做多种固定的池化，无论输入尺寸如何最后都会按照固定的比率池化，比如$W$，$H$变换为$W/n$，$H/n$，于是就确保了全连接层接受的数量不变<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/kFewlol.jpg">
-        
-      </span></li>
-</ul>
-<blockquote>
-<p>步骤</p>
-<ol>
-<li>首先通过Selective Search生成1~2k个候选框，这一步和R-CNN一样</li>
-<li>特征提取阶段就是和最大的区别了，由于SPP一次就可以对整张图片做全面的特征提取，所以效率大大增加</li>
-<li>最后几步也适合R-CNN一样</li>
-</ol>
-</blockquote>
-<ul>
-<li>缺点同R-CNN类似<h3 id="FAST-R-CNN（SELECTIVE-SEARCH-CNN-ROI）"><a href="#FAST-R-CNN（SELECTIVE-SEARCH-CNN-ROI）" class="headerlink" title="FAST R-CNN（SELECTIVE SEARCH + CNN + ROI）"></a>FAST R-CNN（SELECTIVE SEARCH + CNN + ROI）</h3>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/QijlNxM.jpg">
-        
-      </span></li>
-<li>传统R-CNN要生成不同尺寸滑动窗下的分类结果，因此每次投入分类器的都是固定的某一尺寸，需要对视窗进行Resize或Warp。ROI pooling就能避免这个问题</li>
-<li>其过程和SPP的一部分类似，首先生将region proposal候选框划分为H * W的网格</li>
-<li>对每个网格进行MaxPooling，形成H * W大小的feature maps。其优点就是提高了处理速度</li>
-<li>Fast R-CNN提出了多任务损失函数，将分类器损失和边框回归损失放在一起统一训练，最终输出对应的分类和边框坐标</li>
-</ul>
-<h3 id="R-FCN"><a href="#R-FCN" class="headerlink" title="R-FCN"></a>R-FCN</h3><p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/QBZVZM5.jpg">
-        
-      </span></p>
-<ul>
-<li>R-FCN是Faster-RCNN的改进，速度得到了很大提升，但精度提升不大。主要解决的问题是位置敏感性：一个图片在任何方向稍微经过裁切，都可以被分类器认出，然而检测任务不希望出现这种位置上的偏差。R-FCN提出了Position-sensitive score maps位置敏感网络层来解决这个问题<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/Can99R0.jpg">
-        
-      </span></li>
-<li>位置敏感网络层维度k * k * （C + 1），k一般等于3，构成能够表达敏感位置（左上，正上，右上，正左，正中，正右，左下，正下，右下）的Grid格网编码结构<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/7R7Z0if.jpg">
-        
-      </span></li>
-</ul>
-<h2 id="经典One-Stage算法"><a href="#经典One-Stage算法" class="headerlink" title="经典One-Stage算法"></a>经典One-Stage算法</h2><h3 id="YoLoV1"><a href="#YoLoV1" class="headerlink" title="YoLoV1"></a>YoLoV1</h3><p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/6DVlUh3.jpg">
-        
-      </span></p>
-<blockquote>
-<p>步骤</p>
-<ol>
-<li>输入一个图像，YoLoV1会把图像看成一个 s * s 的栅格格网，如图中 s = 7 ，若某个物体的ground truth中心落在某个栅格，则这个栅格要负责该物体的预测<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/zCZSyDG.jpg">
-        
-      </span></li>
-<li>对于上述每个栅格，要预测回归两个bounding box的坐标及其含有对象的置信度，同时预测物体所属类别<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/HHPw6Us.jpg">
-        
-      </span></li>
-<li>根据上一步可以预测出的目标窗口，然后根据阈值去除可能性比较低的目标窗口，然后根据NMS去除冗余窗口</li>
-<li>YoLoV1最后的输出是7x7x30，这里是7x7代表输入图像的7x7栅格，维数30的前十个代表2个bounding boxes，<br>每个bounding box要预测5个值👇<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/pSHtKYV.jpg">
-        
-      <br>两个bounding box就10个值；<br>维数30的后20个是该论文中的类别数</span></li>
-</ol>
-</blockquote>
-<h4 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h4><ul>
-<li>YoLo对相互靠得很近的物体、过于细小的物体检测效果不好，这是因为一个栅格只预测两个bounding box，并且只属于一个类别</li>
-<li>测试时，如果某类物体出现了奇葩的长宽比或者奇怪的角度时，泛化能力显著下降</li>
-<li>由于损失函数的问题，定位误差是影响检测效果的主要原因，尤其是对于大物体小物体的处理还待加强</li>
-</ul>
-<h3 id="SSD（Single-shot-MultiBox-Detector）"><a href="#SSD（Single-shot-MultiBox-Detector）" class="headerlink" title="SSD（Single shot MultiBox Detector）"></a>SSD（Single shot MultiBox Detector）</h3><p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/PGZKgAj.jpg">
-        
-      <br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/0EhRA2r.jpg">
+        <img data-src="https://i.imgur.com/omCSC0U.jpg">
         
       </span></span></p>
-<ul>
-<li>Single shot表明了SSD和YoLo一样属于One-Stage算法，MultiBox表明了SSD可以检测多个物体</li>
-</ul>
-<h4 id="主要改进"><a href="#主要改进" class="headerlink" title="主要改进"></a>主要改进</h4><ul>
-<li>使用了类似RPN中的Anchor锚点机制，增加bounding box多样性。卷积输出的feature map，每个点对应为原图的一个区域的中心点。以这个点为中心，构造出6个宽高比例不同，大小不同的Anchor（SSD中称为default box）。每个anchor对应4个位置参数(x,y,w,h)和21个类别概率<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/7tqs2vc.jpg">
-        
-      </span></li>
-<li>使用全卷积网络，效率得到提高</li>
-<li>网络中间会生成多个阶段不同感受野的Feature Maps丰富特征多样性，因此SSD能够在不同感受野下进行不同的目标检测，实现多尺度预测，克服了YoLo在大物体小物体上的缺陷</li>
-</ul>
-<blockquote>
-<p>步骤</p>
-<ol>
-<li>卷积层。借鉴了VGG16，惯用先经过CNN获得特征图，再进行定位和分类的方法。</li>
-<li>目标检测层。这一层由五个卷积层和一个平均池化层构成。因为SSD认为目标检测中的物体只与周围信息相关，感受野不是全局的，所以去掉了全连接层</li>
-<li>筛选层。与YoLo基本一致，先过滤类别概率低于阈值的default box，再采用NMS筛掉重叠度较高的。不过，SSD综合了各种feature maps上的default box</li>
-</ol>
-</blockquote>
-<ul>
-<li>SSD基本可以满足手机端的实时物体检测需求了，许多框架比如Tensorflow基于MobileNet在移动设备就使用了SSD算法实现。</li>
-</ul>
-<h3 id="YoLoV2"><a href="#YoLoV2" class="headerlink" title="YoLoV2"></a>YoLoV2</h3><h4 id="主要改进-1"><a href="#主要改进-1" class="headerlink" title="主要改进"></a>主要改进</h4><ul>
-<li>批归一化<br>将数据的分布映射到相对集聚的分布上，让网络更快更好地学习，避免过拟合（提升了2%mAP）</li>
-<li>高分辨率分类器<br>YoLoV2根据输入图像尺寸微调分类网络，然后迁移到目标检测网络中去，这样就不需要目标检测网络适应输入分辨率了（提升了4%mAP）</li>
-<li>Anchor<br>借鉴Faster-RCNN锚框思想，利用锚框直接在卷积特征图中滑动采样，代替全连接，保留了空间信息。另外还对ground truth聚类，指导网络更快学到准确位置（提升了5%mAP）</li>
-<li>随着网络加深，细粒度特征容易丢失，引入Passthrough Layer把浅层特征图连接到深层特征图（如26 * 26 * 512 的特征图转为 13 * 13 * 2048）然后跟实际的13 * 13 * 2048特征图Concat（提升了1%mAP）</li>
-<li>每10个epoch采用新的尺寸输入网络训练，提升了多尺度理解，增强鲁棒性（提升了2%mAP）</li>
-</ul>
-<h4 id="速度改进"><a href="#速度改进" class="headerlink" title="速度改进"></a>速度改进</h4><ul>
-<li>YoLoV2简化了网络，只使用了19个卷积层和5个池化层（Darknet19），这提升了精度也提升了效率</li>
-</ul>
-<h4 id="能力改进"><a href="#能力改进" class="headerlink" title="能力改进"></a>能力改进</h4><ul>
-<li>基于YoLoV2提出的YoLo9000能够预测9000个类别，实现了分类和检测的联合训练，训练中也就用到两个数据集，对于大类和在子类的冲突，其利用WordTree建立树结构来解决</li>
-</ul>
-<h3 id="YoLoV3"><a href="#YoLoV3" class="headerlink" title="YoLoV3"></a>YoLoV3</h3><h4 id="主要改进-2"><a href="#主要改进-2" class="headerlink" title="主要改进"></a>主要改进</h4><ul>
-<li>逻辑回归<br>在YoLoV2中每个cell是通过网络回归预测的bounding box坐标和置信度的，YoLoV3则将坐标和置信度分开预测，坐标通过网络回归，置信度通过逻辑回归预测。在分类器方面，作者认为softmax没有提升性能，而且softmax假设一个bounding box只有一个类，这对于迁移到更多类别标签的数据集没有好处，所以使用逻辑回归代替softmax，使用二次交叉熵计算分类损失</li>
-<li>新的特征提取器：DarkNet-53，引入了残差网路</li>
-<li>多尺度预测坐标</li>
-<li>借鉴FPN，将中间层的输出与后层输出融合，进行三个尺度的预测，每个尺度cell预测3个坐标</li>
-</ul>
-<h2 id="近期受关注算法"><a href="#近期受关注算法" class="headerlink" title="近期受关注算法"></a>近期受关注算法</h2><h3 id="FCOS"><a href="#FCOS" class="headerlink" title="FCOS"></a>FCOS</h3><ul>
-<li><p>FCOS不使用Anchor，而且整个结构都是纯粹的CNN。先预测特征图上的各像素类别，再预测各点的bbox的大小和位置。</p>
 </li>
-<li><p>对于Ambiguity问题，FCOS利用FPN和Center Sampling来解决。同时创新了Center-Ness分支帮助NMS抑制低质量框</p>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/ZMpkYca.jpg">
-        
-      </span></p>
+<li><p>关闭端口占用，只需短/长按 <em>CTRL + C</em></p>
 </li>
 </ul>
-<h3 id="CENTERNET"><a href="#CENTERNET" class="headerlink" title="CENTERNET"></a>CENTERNET</h3><ul>
-<li><p>CenterNet将检测任务的思路从以点为核心转换到以框为核心</p>
+<h2 id="利用预训练模型"><a href="#利用预训练模型" class="headerlink" title="利用预训练模型"></a>利用预训练模型</h2><ul>
+<li>OpenMMLab 几乎为 <em>configs/</em> 中的所有模型提供了预训练模型，链接存放在了各个算法文件夹下的 yaml 文件中，将链接以字符串的形式传给 <em>_configs/<em>base</em>/default_runtime.py</em> 中的 load_from 参数即可</li>
+<li>预训练策略：<table>
+<thead>
+<tr>
+<th>待训练数据集</th>
+<th>与预训练模型数据集相似度</th>
+<th>处理方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>较小</td>
+<td>较高</td>
+<td>例如待训练数据集中数据存在于预训练模型中时，不需要重新训练模型，只需要修改最后一层输出层即可</td>
+</tr>
+<tr>
+<td>较小</td>
+<td>较小</td>
+<td>可以冻结模型的前k层，重新模型的后n-k层。冻结模型的前k层，用于弥补数据集较小的问题</td>
+</tr>
+<tr>
+<td>较大</td>
+<td>较高</td>
+<td>采用预训练模型会非常有效，保持模型结构不变和初始权重不变，对模型重新训练</td>
+</tr>
+<tr>
+<td>较大</td>
+<td>较小</td>
+<td>采用预训练模型不会有太大的效果，可以使用预训练模型或者不使用预训练模型，然后进行重新训练</td>
+</tr>
+</tbody></table>
 </li>
-<li><p>基本思路：</p>
-<ul>
-<li><p>Resnet50提取图像特征得到特征图</p>
-</li>
-<li><p>经过反卷积模块，三次上采样</p>
-</li>
-<li><p>输入三个分支进行预测，得到Heatmap、预测框尺寸和中心点偏移量</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="DETR-and-DEFORMABLE-DETR"><a href="#DETR-and-DEFORMABLE-DETR" class="headerlink" title="DETR and DEFORMABLE DETR"></a>DETR and DEFORMABLE DETR</h3><ul>
-<li><p>DETR第一次系统地考虑将Transformer引入图像检测任务，实现了端到端算法，本质是特征序列道框序列的流程</p>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/tuYs2Wa.jpg">
-        
-      </span></p>
-</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>美食之美——《雅舍谈吃》</title>
-    <url>/posts/31855/</url>
-    <content><![CDATA[<blockquote>
-<p>美，不尽收；食，不尽全。 ——题记</p>
-</blockquote>
-<ul>
-<li>谈到美食，正如饥肠辘辘的人，心里面急迫等待着吃的味觉。但不是所谓，仅仅为着生存。追寻美食的目标，不像一种世俗的冲动，正如雅舍先生题序「我以为要求美味固是人欲，然而何曾有背于天理？如果天理不包括美味的要求在内，上天之人，在舌头上为什么要生那么多的味蕾」。</li>
-</ul>
-<hr>
-<ul>
-<li>吃得好，是让人幸福，是对舌尖感受的升华，一旦提到耳熟能详的菜名，人的愉悦便像剑拔弩张，舌尖一触，百般馋舌。左右结构的「馋」字，右边两点比喻两腿迅猛，迅猛狡兔之肉，并非丰足，但人为了啖其美味，愿意逐此狡兔，故写作馋。西施舌、火腿、醋溜鱼、烤羊肉、烧鸭……谁若吃一口，也不至于在脑袋里臆想，两腿一跺，手掌一直，啪的一下，就算有事缠身也无暇顾及。然而，追求高级的味觉，就必然失去点东西，尤其时间宝贵，未必能每次都放纵自己。</li>
-<li>今年除夕，我从繁忙学业中抽身，冒着病毒的风险，踉跄到广东家中度过佳节。目的尚且鲜明，写在文章也就印证我所说为了吃美食。老母亲的美味已经不是天天所得，不回一趟家，不吃慈母饭。而明年除夕，已经计划好的美食清单，都在湖南临武，是为了外婆欢庆大寿，为了庆幸生能继续享用湘菜美味。诚然，计划是幸福的计划，我学业若是耽误，便影响我母亲回乡的心情。</li>
-<li>学业之中，不代表就缺乏美味。学校前门小吃街，第一条正中间的店面以「炒」为技艺，炒粉丝、炒饭、炒土豆粉、炒米线……每份炒制不少料、不过熟，香味浓郁滑入咽喉。旁边五碗小菜随取，勺筷俱全，好不心爽幸福。校外也有全州拌饭，馋嘴烤鱼、淮南牛肉汤、鸡蛋灌饼、特制酸奶等等玲琅满，如饕餮大餐，本人如数家珍，乐子甚广。</li>
-</ul>
-<hr>
-<ul>
-<li>但不是美食就令人幸福的，美食反被美食误，吃得不好，有可能还要怪罪一下美食。</li>
-<li>美食为了尝而点，而不是为了点而尝。打开一个外卖软件，铺天盖地的优惠券、广告条、满减促销，全然改变了美食服务的本质。美食不是为了优惠而美，但你看，我想起26元的双层牛肉芝士汉堡，打开外卖软件，又开始送我优惠券，一张是满27减5，一张是满80减9。我心念的汉堡计划被搁置一旁。现在，我购物车换了又换，想法改了又改，点了一家鸡架，满减很高，大份鸡架配油饼、薯条、龙串、千叶只要81，满减后43，优惠券折至34，天啊，真捡大便宜了，一个人，母亲常骂我浪费，也怕生冷不好吃，终于胃饱难入。于是，半个月后的一天，我说：「我心心念念的大汉堡还没吃到呢」，于是又习惯地，打开了外卖软件……</li>
-<li>啖美味的人是得爽口，而不是失口德。点到为止，也是嘴的道规。母亲常嘱咐我「什么东西都不能吃多」，但你看，考试结束，我路过一家烤番薯，摊主一旁慢悠悠削菠萝，菠萝酸甜爽口，头脑一昏，要来四根。老板连忙感谢，我心生奇怪。一路上我大快朵颐，直到第三根已然不对劲，牙齿酸疼，满口酥麻。是啊，我知道我吃多了，但是当时人已然傻了，没办法，又已然泛起恶心。</li>
-</ul>
-<hr>
-<ul>
-<li>美食之美，若天仙之佳，似陋室之雅。雅舍谈吃，谈世俗之赏，谈高雅之堂。南京翠香阁的早茶、北京全聚德的烧鸭，绝不同于广东潮州的街边烂摊子，不带有地域的歧视，不带有阶层的歧视，雅舍或许能尽情在破烂中寻味潮州，若是「破烂」登上大雅之堂的高级餐席，也不感觉一丝违和。但是，真世上能为高价路边摊买单的人已然不多见，多人不敢斗胆，为了金钱的缺憾。别人跟我谈到吃，我更愿意关注在吃本身上，谈钱，色变。但美食不是阶级之物。凡人也能有凡人的美味，大雅之堂也未必不入凡人；大雅食材未必得凡人认可，没有凡人认可也不称美食。</li>
-<li>美，有庐山仙境，有墙头杏花，观不可尽收；食，有满汉全席，有菜汤小食，尝不可尽全。却有人生百态，五味杂陈。文章，有百科全书，有一本便笺，若不是看不完，怎么会藏书如山，孜孜不倦。吃饭，若不是吃不完，怎么会馋如饕餮，感想良多。我写的字，就是把味蕾的感想说出来。可，不是我的味蕾，是我熙熙攘攘间，听闻的许多味蕾……</li>
 </ul>
 ]]></content>
       <categories>
-        <category>生活随笔</category>
+        <category>Computer Vision 计算机视觉</category>
       </categories>
-      <tags>
-        <tag>美食</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>语义分割网络模型笔记</title>
-    <url>/posts/64432/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
-<li>语义分割是计算机视觉的四大任务之一（四大任务：分类a、定位b、检测b、分割c+d），在语义分割中常用的公共数据集有PASCAL VOC 2012（1.5k train 1.5k validate 20types with background）、MS COCO（83k train 41k validate 80k test 80types）<span id="more"></span>
-
-        <span class="lazyload-img-span">
-        <img data-src="%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E7%AC%94%E8%AE%B0/%E5%9B%BE1.jpg">
-        
-      <br>
-        <span class="lazyload-img-span">
-        <img data-src="%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E7%AC%94%E8%AE%B0/%E5%9B%BE6.jpg">
-        
-      </span></span></li>
-</ul>
-<h1 id="语义分割基本思路"><a href="#语义分割基本思路" class="headerlink" title="语义分割基本思路"></a>语义分割基本思路</h1><h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><blockquote>
-<p>逐个像素分类。输入整张图片进入网络，输出大小和输入一致，通道数等于类别数，分别存放各个类别在某个像元位置的概率，即可逐个像素分类。</p>
-</blockquote>
-<ul>
-<li>全卷积网络+反卷积网络convolution and deconvolution network：<br>为了使输出具有三维结构，全卷积网络中没有全连接层，只有卷积层和汇合层。但是随着卷积和汇合不断进行下去，图像的尺寸越来越小、通道数越来越多，就不能保证输出大小和输入一致，所以全卷积网络要使用反卷积和反汇合来增大空间大小。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E7%AC%94%E8%AE%B0/%E5%9B%BE2.jpg">
-        
-      </span></li>
-<li>反卷积（或称转置卷积） deconvolution or transpose convolution：<br>标准卷积的滤波器在输入的图像上滑动，每次和输入图像的局部区域点乘得到单个输出值，而反卷积的滤波器在输出图像上滑动，局部范围每个神经元值乘以滤波器对应值，得到一个输出的局部区域。标准卷积的后向过程和反卷积的前向过程完成的是同样的数学运算。而且同标准卷积滤波器一样，反卷积滤波器也是从数据中学到的。</li>
-<li>反最大汇合 max-unpooling：<br>通常全卷积网络是对称的结构，在最大汇合时需要记录最大值所处的局部区域范围，在对应的反最大汇合时将对应位置的输出置为输入，其余位置补零。反最大汇合可以弥补最大汇合时的空间信息丢失。反最大汇合的前向过程和最大汇合的后向过程完成的是同样的数学运算。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E7%AC%94%E8%AE%B0/%E5%9B%BE3.jpg">
-        
-      </span></li>
-</ul>
-<h2 id="语义分割常用技巧："><a href="#语义分割常用技巧：" class="headerlink" title="语义分割常用技巧："></a>语义分割常用技巧：</h2><ul>
-<li>膨胀\空洞\扩张卷积 dilated convolution：<br>这是常用于分割任务以增大感受野的一个技巧。标准卷积操作中，每个输出神经元对应的局部区域的范围内是连续的。但是，扩张卷积向标准卷积运算中引入了一个新的超参数扩张量（dilation）用于描述输入局部区域在空间位置上的间距。（当扩张量为1时，扩张卷积退化回标准卷积）扩张卷积可以在参数量不变的情况下有效提高感受野，而与经典计算机视觉手工特征相比，大的感受野是深度学习方法能取得优异性能的重要原因之一。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E7%AC%94%E8%AE%B0/%E5%9B%BE4.jpg">
-        
-      </span></li>
-<li>条件随机场 conditional random field(CRF)：<br>这是一种概率图模型，常用于微调全卷积网络的输出结果，获得更好的细节信息。它的原理是更相近的像元更可能属于相同的类别。但是这样会要考虑两两像元之间的空间关系，会极大降低运行效率。</li>
-<li>利用低层信息：<br>全卷积中，可以记录低层的信息，在对应的反卷积网络中的对应层采用加和（如FCN）或者沿通道方向拼接（如U-net）的方法弥补全卷积网络操作中丢失的细节和边缘信息，后者效果通常更好（如图）<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E7%AC%94%E8%AE%B0/%E5%9B%BE5.jpg">
-        
-      </span></li>
-</ul>
-<blockquote>
-<p>参考</p>
-<ol>
-<li>知乎：<a href="https://zhuanlan.zhihu.com/p/31727402" title="计算机视觉四大基本任务(分类、定位、检测、分割)">计算机视觉四大基本任务(分类、定位、检测、分割)</a></li>
-</ol>
-</blockquote>
-]]></content>
-      <categories>
-        <category>计算机视觉特辑</category>
-      </categories>
-      <tags>
-        <tag>深度学习</tag>
-        <tag>语义分割</tag>
-      </tags>
   </entry>
 </search>

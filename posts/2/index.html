@@ -1,0 +1,476 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  写给Mmsegmentation工具箱新手的避坑指南 |    林天文 Tianwen Lin | Buluwasior</title>
+  <meta name="description" content="HELLO">
+  <!-- 标签页图标 -->
+  
+  <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+  
+
+  <!-- 图标库 -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- 动画库 -->
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fushaolei/cdn-white@1.0/css/animate.css"/>
+  
+  <!-- css文件 -->
+  
+<link rel="stylesheet" href="/css/white.css">
+
+  <!-- 代码高亮 -->
+  
+    
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/github.css">
+
+    
+  
+<!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiper.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiperstyle.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+
+<div class="menu-outer">
+    <div class="menu-inner">
+      <div class="menu-site-name  animate__animated  animate__fadeInUp">
+        <a href="/">
+          林天文 Tianwen Lin | Buluwasior
+        </a>
+        
+      </div>
+      <div class="menu-group">
+        <ul class="menu-ul">
+        
+          <a href="/" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              HOME PAGE
+            </li>
+          </a>
+        
+          <a href="/about" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              ME
+            </li>
+          </a>
+        
+          <a href="/archives" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              BLOGs
+            </li>
+          </a>
+        
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="sort">
+             COLLECTIONs
+             <div class="categories-outer " id="sort-div">
+               <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Vision-%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">Computer Vision 计算机视觉</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/For-OpenMMLab/">For OpenMMLab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIS%E5%AE%9E%E9%AA%8C%E7%89%B9%E8%BE%91/">GIS实验特辑</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9C%B0%E4%BF%A1%E5%8E%9F%E7%90%86%E7%89%B9%E8%BE%91/">地信原理特辑</a></li></ul>
+             </div>
+          </li>
+        
+        
+        <a href="/search">
+          <li class="menu-li  animate__animated  animate__fadeInUp">
+            <i class="ri-search-line"></i>
+          </li>
+        </a>
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="mobile-menu">
+            <i class="ri-menu-line"></i>
+          </li>
+        
+        </ul>
+
+      </div>
+
+    </div>
+</div>
+<div id="mobile-main" class="animate__animated  animate__fadeIn">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-site-name animate__animated  animate__fadeInUp">
+      <a href="/">
+        林天文 Tianwen Lin | Buluwasior
+      </a>
+    </div>
+    <div class="mobile-menu-group" id="mobile-close">
+      <i class="ri-close-line"></i>
+    </div>
+
+  </div>
+
+  <div class="mobile-menu-div">
+  
+    <a href="/" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>HOME PAGE</span>
+      </div>
+    </a>
+  
+    <a href="/about" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>ME</span>
+      </div>
+    </a>
+  
+    <a href="/archives" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>BLOGs</span>
+      </div>
+    </a>
+  
+  
+    <a href="/search">  
+      <div class="mobile-menu-child  animate__animated  animate__fadeInUp">
+        <i class="ri-search-line"></i>
+      </div>
+    </a>
+    
+  </div>
+
+
+</div>
+
+<div class="body-outer">
+  <div class="body-inner">
+    
+<article class="post-inner">
+  <div class="post-content-outer">
+    <div class="post-intro">
+      <div class="post-title animate__animated  animate__fadeInUp">写给mmsegmentation工具箱新手的避坑指南</div>
+      <div class="meta-intro animate__animated  animate__fadeInUp">3月 21 2023</div>
+      
+        <div class="post-cover"><span class="lazyload-img-span"><img data-src="https://user-images.githubusercontent.com/62822224/226601652-aefe7b11-2f9f-4d10-8715-421d3b5640ed.png" class="post-cover-img"><div class="post-cover-img-hover">asas</div><div class="post-cover-img-insert">asas</div></span></div>
+      
+    </div>
+    <div class="post-content-inner">
+      <div class="post-content-inner-space">
+
+      </div>
+      <div class="post-content-main animate__animated  animate__fadeInUp">
+        <!-- top型目录 -->
+        
+          <ol class="toc-top"><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-top-text">前言</span></a></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#Windows-%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E7%9A%84%E7%97%9B%EF%BC%9Ammcv-full"><span class="toc-top-text">Windows 配置环境的痛：mmcv-full</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E6%96%B9%E6%A1%88-1%EF%BC%9A%E6%96%B0%E7%89%88%E7%BC%96%E8%AF%91%E7%89%88%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="toc-top-text">方案 1：新版编译版本自动安装</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E6%96%B9%E6%A1%88-2%EF%BC%9A%E6%89%8B%E5%8A%A8%E6%93%8D%E4%BD%9C"><span class="toc-top-text">方案 2：手动操作</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%88%AB"><span class="toc-top-text">数据集自定义类别</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E6%9B%B4%E6%94%B9-CLASSES-%E5%92%8C-num-classes"><span class="toc-top-text">更改 CLASSES 和 num_classes</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E5%AF%B9%E6%BA%90%E7%A0%81%E7%9A%84%E5%A2%9E%E6%94%B9%E6%B2%A1%E6%9C%89%E6%95%88%E6%9E%9C%EF%BC%9F"><span class="toc-top-text">对源码的增改没有效果？</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E7%8B%AC%E7%89%B9%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E5%8F%82%E6%95%B0%EF%BC%9Areduce-zero-label"><span class="toc-top-text">独特的数据集参数：reduce_zero_label</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E5%80%9F%E5%8A%A9-reduce-zero-label-%E7%AE%A1%E7%90%86-0-%E5%80%BC%E8%83%8C%E6%99%AF"><span class="toc-top-text">借助 reduce_zero_label 管理 0 值背景</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#reduce-zero-label-%E5%AF%BC%E8%87%B4%E7%9A%84%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="toc-top-text">reduce_zero_label 导致的常见问题描述</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E9%94%99%E8%AF%AF%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90"><span class="toc-top-text">错误原因分析</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E5%A6%82%E4%BD%95%E5%A2%9E%E5%BC%BA%E5%AF%B9%E6%95%B0%E6%8D%AE%E9%9B%86%E6%9B%B4%E5%A4%9A%E5%8F%82%E6%95%B0%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%9F"><span class="toc-top-text">如何增强对数据集更多参数的理解？</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80%E7%9A%84%E5%9D%91%EF%BC%9A%E5%A4%A7%E5%B0%8F%E5%86%99"><span class="toc-top-text">数据集文件后缀的坑：大小写</span></a></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E6%97%A5%E5%BF%97%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-top-text">日志可视化</span></a></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-top-text">后记</span></a></li></ol>
+        
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我在 Windows 环境使用 MMClassification、MMDetection 都还算轻轻松松，但是走完 MMSegmentation 全流程之后，真的想感叹一句“踩了不少坑啊”，所以想把自己的遇坑经验凝练总结出来，写一个专门给新手无伤通关的避坑教程。</p>
+<h2 id="Windows-配置环境的痛：mmcv-full"><a href="#Windows-配置环境的痛：mmcv-full" class="headerlink" title="Windows 配置环境的痛：mmcv-full"></a>Windows 配置环境的痛：mmcv-full</h2><p>在 v1.4.0 之前，mmcv-full 的安装没有针对 Windows 的现成预编译包，所以大部分新手会卡在 build MMCV 的过程中……这种情况下有两种解决方案。</p>
+<h3 id="方案-1：新版编译版本自动安装"><a href="#方案-1：新版编译版本自动安装" class="headerlink" title="方案 1：新版编译版本自动安装"></a>方案 1：新版编译版本自动安装</h3><p>在 1.4.0 之后，MMCV 会跟上 PyTorch 版本更新 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/441653536"> Windows 环境下的mmcv-full预编译包</a>，但是可用的版本范围比较局限，依赖 PyTorch、CUDA、mmcv-full 低版本的炼丹师自然就不适合这种安装方式了（看方案2），下面是以 PyTorch1.11.0、 CUDA11.3 为例的安装命令。</p>
+<ul>
+<li>一句命令安装 <code>mmcv-full</code>，下载速度还是不错的</li>
+</ul>
+<pre><code class="PowerShell">pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu113/torch1.11/index.html
+</code></pre>
+<h3 id="方案-2：手动操作"><a href="#方案-2：手动操作" class="headerlink" title="方案 2：手动操作"></a>方案 2：手动操作</h3><p>如果你不希望更新到新版 MMSegmentation 或者 MMCV，也可以尝试手动安装，下面以在 GPU+CPU 双环境运行的目标来安装 <code>mmcv-full</code>，参考了<a target="_blank" rel="noopener" href="https://mmcv.readthedocs.io/zh_CN/latest/get_started/build.html#id1">官方文档</a>，所有命令行运行在 <code>powershell</code>，使用 <code>cmd</code> 的炼丹师需要注意两个命令行的命令差异。</p>
+<ul>
+<li>创建虚拟环境</li>
+</ul>
+<pre><code class="PowerShell">conda create --name mmcv python=3.7 # 经测试，3.6, 3.7, 3.8 也能通过
+conda activate mmcv # 确保做任何操作前先激活环境
+</code></pre>
+<ul>
+<li>进入一个临时文件路径，克隆 <code>mmcv-full</code> 源码</li>
+</ul>
+<pre><code class="PowerShell">git clone https://github.com/open-mmlab/mmcv.git
+cd mmcv # 进入项目文件夹
+</code></pre>
+<ul>
+<li>安装依赖</li>
+</ul>
+<p>所有依赖中，也安装了 <code>ninja</code> 库用于加快最后编译的速度</p>
+<pre><code class="PowerShell">pip install -r requirements.txt
+# 建议使用镜像加速 =pip install -r requirements.txt -i https://pypi.douban.com/simple
+</code></pre>
+<ul>
+<li>配置编译环境</li>
+</ul>
+<p>安装 <code>Microsoft Visual Studio Community 2017/2019/......</code> ，确保环境变量中的 <code>Path</code> 存在编译所需的值。以 VS2019 Community 为例：<code>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\bin\Hostx86\x64</code> 。</p>
+<ul>
+<li>编译安装 <code>mmcv-full</code></li>
+</ul>
+<pre><code class="PowerShell">$env:MMCV_WITH_OPS = 1
+$env:MAX_JOBS = 8 # 根据可用的CPU和内存量进行设置
+python setup.py build_ext # 如果成功, 将会自动弹出来编译 flow_warp
+python setup.py develop # 执行安装
+</code></pre>
+<ul>
+<li>检测是否安装成功</li>
+</ul>
+<pre><code class="PowerShell">pip list # 使用anaconda的话，也可以在openmmlab依赖的虚拟环境下 =conda list
+</code></pre>
+<h2 id="数据集自定义类别"><a href="#数据集自定义类别" class="headerlink" title="数据集自定义类别"></a>数据集自定义类别</h2><h3 id="更改-CLASSES-和-num-classes"><a href="#更改-CLASSES-和-num-classes" class="headerlink" title="更改 CLASSES 和 num_classes"></a>更改 CLASSES 和 num_classes</h3><p>不敢调试的新手炼丹师首次面对 <code>mmseg</code> 的项目可能无所适从，因此也很难养成自己编写数据集加载代码的习惯。其实能搜到很多水平不一的资料教你编辑现有的数据集加载方式（比如常见的 <code>ADEDataset</code>），修改 <code>CLASSES</code>，然后设置 <code>num_classes</code>，可能更改完发现编辑后的代码根本没应用上，网络 decoder 不断吐槽你 <code>num_classes</code> 不对，然后你又去检查手里的数据集……其实是因为认识较浅，下面展示更合理的走通指南：</p>
+<ul>
+<li><p>选择好模型后，先把相关联配置文件里的全部 <code>num_classes</code> 设置好值，比如经典 ADE 数据集提取并划分了 150 个实例类， <code>num_classes</code> 就是 <code>150</code>，计入 <code>num_classes</code> 的所有类的名称下一步都要写入 <code>CLASSES</code>。（背景类未算入 150，下一节会讲解为什么）</p>
+</li>
+<li><p>下面，进入 <code>mmseg</code> 项目下的 <code>mmseg``/``datasets</code>，以遥感语义分割任务为例新建 py 文件 <code>uavdataset.py</code>， 继承自 <code>custom.py</code> 中的 <code>CustomDataset</code>，然后开始实现自己的数据集……在定义 <code>CLASSES</code>的时候， tuple 初始化为自己类名的集合即可（比如关于街区 block、农田 field 和其他利用地 notused 的遥感语义分割任务），用于上色的 <code>PALETTE</code> 也可以用类似的方式配置（配置格式：[<em>R</em>, <em>G</em>, <em>B</em>]）。</p>
+</li>
+</ul>
+<pre><code class="Python"># mmseg/datasets/uavdataset.py
+
+...
+CLASSES = (&#39;block&#39;, &#39;field&#39;, &#39;notused&#39;)
+
+PALETTE = [[120, 120, 120], [180, 120, 120], [120, 180, 120]]
+...
+</code></pre>
+<ul>
+<li>然后参考 <code>configs/_base_/datasets</code> 的其他配置文件编写 <code>uavdataset.py</code> 作为 <code>UAVDataset</code> 的配置文件。最后，在选用的模型配置文件中更换数据集加载方式为 <code>UAVDataset</code>。</li>
+</ul>
+<h3 id="对源码的增改没有效果？"><a href="#对源码的增改没有效果？" class="headerlink" title="对源码的增改没有效果？"></a>对源码的增改没有效果？</h3><ol>
+<li>OpenMMLab 各种工具箱的官方文档中，都会教你用 <code>pip install -v -e .</code> 安装项目，但很多新手对 <code>pip</code> 的这种命令并不了解。其实这个命令是用来开启 <code>mmseg</code> 库编辑模式的，这样修改 <code>mmseg</code> 库内的代码片段可以自动被应用上，无需重新安装（如图截取自 MMSegmentation 官方文档的安装教程，其中注释已经解释了这种 pip 命令的含义）。</li>
+</ol>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://pic4.zhimg.com/80/v2-3c235f7971fed8a696eddc255d756bf7_720w.webp">
+        
+      </span></p>
+<ul>
+<li>切记！使用 <code>python ``setup.py`` install</code> 安装的 <code>mmseg</code> 每次编辑源码都需要重新安装，这也是为什么大部分新手更改 <code>CLASSES</code> 却不生效的原因，建议换用以下安装方法 ：</li>
+</ul>
+<pre><code class="Shell">cd ~/mmsegmentation-master/ # 进入你的mmseg项目路径下
+pip install -v -e . # 重新安装 英文句点表示安装当前路径下的项目
+</code></pre>
+<ul>
+<li>也有可能会有小伙伴问可不可以用 <code>python setup.py develop</code>，我没做过实验。但是 <code>setup.py</code> 也是门学问，既然官方文档教新手们用 <code>pip</code> 的方式就能成，也就没必要找太多替换方案了，新手上来没必要钻研在这上面。</li>
+</ul>
+<h2 id="独特的数据集参数：reduce-zero-label"><a href="#独特的数据集参数：reduce-zero-label" class="headerlink" title="独特的数据集参数：reduce_zero_label"></a>独特的数据集参数：reduce_zero_label</h2><h3 id="借助-reduce-zero-label-管理-0-值背景"><a href="#借助-reduce-zero-label-管理-0-值背景" class="headerlink" title="借助 reduce_zero_label 管理 0 值背景"></a>借助 reduce_zero_label 管理 0 值背景</h3><p><code>mmseg</code> 中已经为各种公共分割数据集编写了描述文件和加载代码，对于有用过 PyTorch 的小伙伴而言，学习各种数据集的描述文件还是很自如的，只有 <code>reduce_zero_label</code> 对于 <code>mmseg</code> 的新手比较陌生，所以，在搭建自己的 <code>mmseg</code> 数据集时，新手最疑惑的大概就是 <code>reduce_zero_label</code> 到底应该是 <code>True</code> 还是 <code>False</code>。</p>
+<p>它有什么用呢？从名字直译过来就是“减少 0 值标签”。在多类分割任务中，如果你的数据集中 <code>0</code> 值作为 label 文件中的背景类别，是建议忽略的。</p>
+<p>打开加载数据的源码片段可以看到一段处理 <code>reduce_zero_label</code> 的代码，意思是：若开启了 <code>reduce_zero_label</code>，原本为 <code>0</code> 的所有标注设置为 <code>255</code>，也就是损失函数中 <code>ignore_index</code> 参数的默认值，该参数默认避免值为 <code>255</code> 的标注参与损失计算。前文按下不表的 <code>150</code> 类的 ADE 数据集，它不包含背景的原因就是开了 <code>reduce zero label</code>，原本为 <code>0</code> 值的背景设置为了 <code>ignore_index</code>。</p>
+<pre><code class="Python"># mmseg/datasets/pipelines/loading.py
+
+...
+# reduce zero_label
+if self.reduce_zero_label:
+    # avoid using underflow conversion
+    gt_semantic_seg[gt_semantic_seg == 0] = 255
+    gt_semantic_seg = gt_semantic_seg - 1
+    gt_semantic_seg[gt_semantic_seg == 254] = 255
+...
+</code></pre>
+<h3 id="reduce-zero-label-导致的常见问题描述"><a href="#reduce-zero-label-导致的常见问题描述" class="headerlink" title="reduce_zero_label 导致的常见问题描述"></a>reduce_zero_label 导致的常见问题描述</h3><p>我们这里以 <code>ADE</code> 数据集源码为例，<code>reduce_zero_label</code> 默认设置为 <code>True</code>，然而，就算新手掌握了上一节的 <code>reduce_zero_label</code>，也可能对 <code>ADE</code> 了解比较肤浅，会怀疑配置文件中开启的 <code>reduce_zero_label</code> 是不是把 150 个实例类中的第一个给忽略掉了，毕竟 <code>num_classes</code> 不就是 <code>150</code> 吗，然后想当然把 <code>reduce_zero_label</code> 关掉。</p>
+<h3 id="错误原因分析"><a href="#错误原因分析" class="headerlink" title="错误原因分析"></a>错误原因分析</h3><pre><code class="R"># configs/_base_/datasets/ade20k.py
+
+train_pipeline = [
+    dict(type=&#39;LoadImageFromFile&#39;),
+    dict(type=&#39;LoadAnnotations&#39;, reduce_zero_label=True), # ADE中reduce_zero_label默认设置为True
+    dict(...),
+    ...
+]
+</code></pre>
+<p>label 中实际参加训练的确实只有 <code>150</code> 类，定义在 <code>CLASSES</code> 中，但 label 文件中实际包含了 <code>151</code> 类，而背景类（剩下仍没有标记的，或者被意外忽略的区域都归为背景，在 label 中值为 <code>0</code>）不包含在 <code>150</code> 个 <code>CLASSES</code> 中，需要在训练的时候设置成 <code>ignore_index</code>，所以我们借助上一小节的 <code>reduce_zero_label</code> 将背景从 151 个类中提出来单独设置为了 <code>ignore_index</code>，我们倘若错误地将 <code>reduce_zero_label</code> 关掉了，那 <code>num_classes</code> 就是 <code>151</code> 了。</p>
+<h3 id="如何增强对数据集更多参数的理解？"><a href="#如何增强对数据集更多参数的理解？" class="headerlink" title="如何增强对数据集更多参数的理解？"></a>如何增强对数据集更多参数的理解？</h3><p>实际工程中的数据集往往是我们自己设计预测类别和标注规则的，如果背景真的很重要，那无论是修改 ADE 的配置文件，还是硬搬 ADE 格式数据集的使用方式，都不如尊重开发者写好的数据集加载代码，改用自己编写的数据集加载方式（只需继承自 <code>CustomDataset</code> 即可）。</p>
+<p>在一行行编写的过程中，新手炼丹师可以不断参考研究现存的其他数据集的解决方案，如果遇到不懂的地方也能有查漏补缺的方向，尤其是 <code>reduce_zero_label</code> 这种参数，需要充分理解消化才能运用自如。不断尝试尝试尝试的过程中，新手炼丹师也会对各式各样的数据集加载方式产生自己的理解和看法，在迎接特殊任务的时候能够分析自己的数据集，创新设计出自己独特的数据集加载方式。</p>
+<h2 id="数据集文件后缀的坑：大小写"><a href="#数据集文件后缀的坑：大小写" class="headerlink" title="数据集文件后缀的坑：大小写"></a>数据集文件后缀的坑：大小写</h2><p>接着看 <code>mmseg``/``datasets</code> 的 <code>ade.py</code>，这里 <code>ADE20KDataset</code> 类有两个 suffix（文件后缀）相关的参数配置，<code>img_suffix</code> 负责定义图像文件的后缀名，<code>seg_map_suffix</code> 定义标签文件的后缀名。默认配置：</p>
+<pre><code class="Python"># mmseg/datasets/ade.py
+
+...
+def __init__(self, **kwargs):
+        super(ADE20KDataset, self).__init__(
+            img_suffix=&#39;.jpg&#39;, # 图像的后缀名
+            seg_map_suffix=&#39;.png&#39;, # 标签的后缀名
+            reduce_zero_label=True,
+            **kwargs)
+        ...
+</code></pre>
+<p>但是有些炼丹师拿到的图像后缀是 <code>.JPG</code>，它和 <code>.jpg</code> 的区别仅仅是大小写不同，但是数据集加载会不断报 <code>FileNotFound</code> 的错误。所以新手遇到此类报错一定要注意大小写差异，直接修改配置文件中的 suffix 相关参数即可。</p>
+<h2 id="日志可视化"><a href="#日志可视化" class="headerlink" title="日志可视化"></a>日志可视化</h2><p>经常可以看到社区的小伙伴在问训练遇到的问题，而且喜欢直接对终端的日志截图，就算是巨佬也不一定对一长串数字敏感。当我遇到这类情况一般会教他们去官方文档找可视化的章节，学习官方提供的绘制日志曲线图的脚本。但是运行脚本可视化是很麻烦的，使用的教程很少还很容易报错，而 <code>tensorboard</code> 可视化库是各工具箱都通用的，可以一句命令可视化训练过程的各种指标，并展示在统一的本地网页上，也给新手提供了更好展现自己训练问题的手段，在 <code>mmseg</code> 使用 <code>tensorboard</code> 的方法也很简单：</p>
+<ul>
+<li>在 <code>config/_base_</code> 中找到 <code>default_runtime.py</code>，第 6 行一般默认是注释起来的，将这行取消注释也就开启了 tensorboard 记录，以后启动的训练都会在 <code>work_dirs</code> 的对应文件夹中生成 <code>tf_log</code> 文件夹。</li>
+</ul>
+<pre><code class="Python"># config/_base_/default_runtime.py
+
+# yapf:disable
+log_config = dict(
+    interval=50,
+    hooks=[
+        dict(type=&#39;TextLoggerHook&#39;, by_epoch=False),
+        dict(type=&#39;TensorboardLoggerHook&#39;) # 启动tensorboard记录（该行一般默认被注释起来）
+    ])
+# yapf:enable
+dist_params = dict(backend=&#39;nccl&#39;)
+log_level = &#39;INFO&#39;
+load_from = None
+resume_from = None
+workflow = [(&#39;train&#39;, 1)]
+cudnn_benchmark = True
+</code></pre>
+<ul>
+<li>那么这个 <code>tf_log</code> 文件夹怎么使用呢？我们只需要复制绝对路径，打开终端，切换到 OpenMMLab 所依赖的环境，并安装 <code>tensorboard</code> 的 python 库。</li>
+</ul>
+<pre><code class="Shell">pip install tensorboard
+</code></pre>
+<ul>
+<li>然后将 tensorboard 日志部署到本地 IP 和端口。</li>
+</ul>
+<pre><code class="Shell">tensorboard --logdir &#123;TF_LOG_PATH&#125; # TF_LOG_PATH替换为自己的tf_log文件夹绝对路径即可
+</code></pre>
+<ul>
+<li>执行成功之后可以看到终端打印了一个本地 IP 和端口，默认是 <code>http://localhost:6006/</code>，按住 <code>ctrl</code> 键鼠标点击即可进入浏览器打开可视化页面，终端连续多次按下 <code>ctrl + c</code> 组合键可以停止 <code>tensorboard</code> 服务。</li>
+</ul>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>我使用 OpenMMLab 各种工具箱的时候编写的几个辅助脚本在<a target="_blank" rel="noopener" href="https://github.com/TianWen580/myscripts-openmmlab">我的GitHub</a>，涵盖了数据集预处理、维护和质检等功能，大家可以去看看有没有能帮上自己的。 MMSegmentation 的大小坑真的让我哭笑不得哈哈哈，也辛苦 MMSegmentation 开源开发者的付出，祝自己有一天能加入 OpenMMLab 的大家庭一起维护这个开源之星，也祝各位炼丹师实验顺利。</p>
+
+        <!-- 分类文章 -->
+        
+          <div class="post-categoris-bottom">
+            <div class="post-categoris-name">For OpenMMLab</div>
+            <ul>
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="me base">
+                  <a  href="/posts/2/" class="post-categoris-bottom-link">
+                  写给mmsegmentation工具箱新手的避坑指南
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/posts/4/" class="post-categoris-bottom-link">
+                  MMLAB PR 指南
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            </ul>
+
+          </div>
+
+        
+      </div>
+      <div class="post-content-inner-space">
+        
+      </div>
+   </div>
+    <!-- 评论 -->
+    
+  </div>
+</article>
+  </div>
+</div>
+
+
+
+<!-- 如果是home模式的话，不在首页就显示footer，如果不是home模式的话 所有都显示footer -->
+
+  <div class="footer-outer animate__animated  animate__fadeInUp">
+    <div class="footer-inner">
+    <div class="footer-text">
+    <p>Have a <strong>NICE</strong> day.</p>
+
+    </div>
+    <div class="footer-contact">
+    <ul class="footer-ul">
+        
+        <li class="footer-li">
+            <a href="mailto:Tianwen580@hotmail.com" target="_blank">
+                <i class="ri-mail-send-fill"></i>
+            </a>
+        </li>
+        
+        <li class="footer-li">
+            <a href="tel:+8613622309458" target="_blank">
+                <i class="ri-phone-line"></i>
+            </a>
+        </li>
+        
+        <li class="footer-li">
+            <a href="weixin://lindaxia12138tik" target="_blank">
+                <i class="ri-wechat-fill"></i>
+            </a>
+        </li>
+        
+    </ul>
+    </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script src="/js/white.js"></script>
+
+
+
+    
+      
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+<!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='all'|| 'all' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="http://buluwasior.me/categories/地信原理特辑/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🌍 GIS的攻略合集 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="http://buluwasior.me/categories/GIS实验特辑/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💻 小林的GIS实验课 (2)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="http://buluwasior.me/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f7f7f7;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #f2f2f2}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:#0088ff}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style> <script data-pjax>if(document.getElementById('recent-posts') && location.pathname =='/'){
+    
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms"></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载swiper')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script>
+<script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiper.min.js"></script>
+<script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper@0.18/swiper/swiperindex.js"></script>
+<style></style>
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://python-github-calendar-api.vercel.app/api?TianWen580";
+            var git_color =['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f'];
+            var git_user ="TianWen580";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="height:100%;display: flex;align-items: center;justify-content: center;"><svg style="height:50px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:248px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":250},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
