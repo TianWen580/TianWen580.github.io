@@ -9,6 +9,13 @@
   </url>
   
   <url>
+    <loc>http://buluwasior.me/posts/46040/</loc>
+    
+    <lastmod>2023-03-21</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://buluwasior.me/posts/14607/</loc>
     
     <lastmod>2023-03-21</lastmod>
@@ -16,7 +23,14 @@
   </url>
   
   <url>
-    <loc>http://buluwasior.me/posts/46040/</loc>
+    <loc>http://buluwasior.me/posts/31855/</loc>
+    
+    <lastmod>2023-03-21</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://buluwasior.me/about/index.html</loc>
     
     <lastmod>2023-03-21</lastmod>
     
@@ -65,13 +79,6 @@
   </url>
   
   <url>
-    <loc>http://buluwasior.me/about/index.html</loc>
-    
-    <lastmod>2023-03-21</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://buluwasior.me/search.html</loc>
     
     <lastmod>2023-03-21</lastmod>
@@ -94,59 +101,10 @@
   </url>
 
   
-  <url>
-    <loc>http://buluwasior.me/tags/GIS/</loc>
-    <lastmod>2023-03-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://buluwasior.me/tags/GISer/</loc>
-    <lastmod>2023-03-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://buluwasior.me/tags/%E6%80%9D%E6%83%B3/</loc>
-    <lastmod>2023-03-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://buluwasior.me/tags/%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE/</loc>
-    <lastmod>2023-03-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://buluwasior.me/tags/ArcGIS/</loc>
-    <lastmod>2023-03-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://buluwasior.me/tags/%E5%9C%B0%E5%9B%BE%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1/</loc>
-    <lastmod>2023-03-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   
   <url>
-    <loc>http://buluwasior.me/categories/Computer-Vision-%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
-    <lastmod>2023-03-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://buluwasior.me/categories/%E5%9C%B0%E4%BF%A1%E5%8E%9F%E7%90%86%E7%89%B9%E8%BE%91/</loc>
+    <loc>http://buluwasior.me/categories/GIS-Experiments/</loc>
     <lastmod>2023-03-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -160,7 +118,14 @@
   </url>
   
   <url>
-    <loc>http://buluwasior.me/categories/GIS%E5%AE%9E%E9%AA%8C%E7%89%B9%E8%BE%91/</loc>
+    <loc>http://buluwasior.me/categories/Computer-Vision-%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
+    <lastmod>2023-03-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://buluwasior.me/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2023-03-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

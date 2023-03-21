@@ -60,7 +60,7 @@ span {
   margin: 20px;
   border: 0px;
   border-radius: 10px;
-  background-color: #faf0e6;
+  background-image: url("https://user-images.githubusercontent.com/62822224/226611861-430417c7-3a02-4c02-a36e-5fb27da8b8b5.png");
 }
 .menu-inner {
   width: 1130px;
@@ -311,6 +311,18 @@ a {
 .gitalk-saysay > #gitalk-container .gt-counts {
   display: none;
 }
+::-webkit-scrollbar-thumb {
+  background-color: #fbf1e8;
+  border-radius: 3em;
+}
+::-webkit-scrollbar-track {
+  background-color: #fff;
+  border-radius: 3em;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
 .img-show-inner {
   margin-top: 50px;
   display: flex;
@@ -329,7 +341,7 @@ a {
   text-align: center;
   font-size: 1.4em;
   font-family: hack-regular;
-  margin-top: 30px;
+  margin: 30px;
 }
 .img-show-post-date {
   text-align: center;
@@ -674,7 +686,7 @@ li p {
 .post-categoris-bottom {
   margin-top: 30px;
   margin-bottom: 30px;
-  border: 1px solid #e3e3e3;
+  border: 3px solid #e3e3e3;
   border-radius: 5px;
   padding: 20px 20px;
 }
