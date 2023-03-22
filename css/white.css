@@ -54,10 +54,10 @@ span {
 }
 .menu-outer {
   font-family: Gothic;
-  width: 98%;
+  width: 96%;
+  margin: 2%;
   display: flex;
   justify-content: center;
-  margin: 20px;
   border: 0px;
   border-radius: 10px;
   background-image: url("https://user-images.githubusercontent.com/62822224/226611861-430417c7-3a02-4c02-a36e-5fb27da8b8b5.png");
@@ -146,7 +146,7 @@ span {
   background-color: #fff;
 }
 .intro-section {
-  margin-left: 60px;
+  margin-left: 40px;
 }
 .intro-content {
   margin-top: 150px;
@@ -154,7 +154,7 @@ span {
 }
 .intro-title {
   font-family: Hack-Regular;
-  font-size: 4.5em;
+  font-size: 3.5em;
   font-weight: 1000;
   margin: 0;
   padding: 0;

@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>  AI入门知识 |    林天文 Tianwen Lin | Buluwasior</title>
+  <title>  AI 入门知识 |    林天文 Tianwen Lin | Buluwasior</title>
   <meta name="description" content="HELLO">
   <!-- 标签页图标 -->
   
@@ -160,7 +160,7 @@
 <article class="post-inner">
   <div class="post-content-outer">
     <div class="post-intro">
-      <div class="post-title animate__animated  animate__fadeInUp">AI入门知识</div>
+      <div class="post-title animate__animated  animate__fadeInUp">AI 入门知识</div>
       <div class="meta-intro animate__animated  animate__fadeInUp">3月 21 2023</div>
       
         <div class="post-cover"><span class="lazyload-img-span"><img data-src="https://user-images.githubusercontent.com/62822224/226589599-d1ba5c46-1f1e-4e0b-9dd6-4f77522b4c0f.png" class="post-cover-img"><div class="post-cover-img-hover">asas</div><div class="post-cover-img-insert">asas</div></span></div>
@@ -176,7 +176,7 @@
           <ol class="toc-top"><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-top-text">机器学习的本质</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E7%AE%80%E5%8D%95%E9%97%AE%E9%A2%98%E7%9A%84%E5%AD%A6%E4%B9%A0"><span class="toc-top-text">简单问题的学习</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E9%9D%9E%E7%BB%93%E6%9E%84%E5%8C%96%E9%97%AE%E9%A2%98%E7%9A%84%E5%AD%A6%E4%B9%A0"><span class="toc-top-text">非结构化问题的学习</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#HIDEN-LAYER%E7%9A%84CELL"><span class="toc-top-text">HIDEN LAYER的CELL</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#CV%E7%9A%84%E5%9F%BA%E7%A1%80%E4%BB%BB%E5%8A%A1"><span class="toc-top-text">CV的基础任务</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E9%9D%9E%E5%83%8F%E7%B4%A0%E7%BA%A7"><span class="toc-top-text">非像素级</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E5%83%8F%E7%B4%A0%E7%BA%A7-%E7%BB%86%E7%B2%92%E5%BA%A6%E7%BA%A7"><span class="toc-top-text">像素级&#x2F;细粒度级</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E4%B8%BA%E4%BD%95%E5%88%86%E7%B1%BB%E6%98%AF%E6%9C%80%E5%9F%BA%E7%A1%80%E7%9A%84%E4%BB%BB%E5%8A%A1%EF%BC%9F"><span class="toc-top-text">为何分类是最基础的任务？</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#DEEPLEARNING%E7%AE%97%E6%B3%95%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-top-text">DEEPLEARNING算法的设计</span></a></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E5%AD%90%E8%B1%AA%E5%85%84%E6%80%BB%E7%BB%93%E7%9A%84%E6%96%B0%E9%A2%96%E4%B8%94%E6%9C%89%E5%89%8D%E6%99%AF%E7%9A%84%E7%A0%94%E7%A9%B6%E9%A2%86%E5%9F%9F"><span class="toc-top-text">子豪兄总结的新颖且有前景的研究领域</span></a></li></ol>
         
         <blockquote>
-<p>学习心得：计算机视觉之算法基础与OpenMMLab入门</p>
+<p>学习心得：计算机视觉之算法基础与 OpenMMLab 入门</p>
 <p>注：基于子豪兄的讲解，我重点发散了计算机视觉之算法基础的相关部分，主要参考的是我现有的笔记</p>
 </blockquote>
 <h2 id="机器学习的本质"><a href="#机器学习的本质" class="headerlink" title="机器学习的本质"></a>机器学习的本质</h2><h3 id="简单问题的学习"><a href="#简单问题的学习" class="headerlink" title="简单问题的学习"></a>简单问题的学习</h3><p>简单问题的学习过程是寻求最拟合方程的过程（以不同面积房价预测为例）</p>
@@ -185,10 +185,10 @@
         <img data-src="https://img-blog.csdnimg.cn/img_convert/c4ceecf25a107672517273f0a0dcd821.jpeg">
         
       </span></p>
-<p>其中$w$、$b$是Learnable，代表了其对于预测精度的决定性，也代表了它是后期得到的，经优化确定之后模型就有了最好的预测能力</p>
+<p>其中 $w$、$b$ 是 Learnable，代表了其对于预测精度的决定性，也代表了它是后期得到的，经优化确定之后模型就有了最好的预测能力</p>
 <h3 id="非结构化问题的学习"><a href="#非结构化问题的学习" class="headerlink" title="非结构化问题的学习"></a>非结构化问题的学习</h3><ul>
-<li>所习得的转换为多层非线性变换，实现对DATA的高层抽象</li>
-<li>DATA输入也会更复杂，需要更多数据预处理操作</li>
+<li>所习得的转换为多层非线性变换，实现对 DATA 的高层抽象</li>
+<li>DATA 输入也会更复杂，需要更多数据预处理操作</li>
 </ul>
 <p>
         <span class="lazyload-img-span">
@@ -196,7 +196,7 @@
         
       </span></p>
 <h3 id="HIDEN-LAYER的CELL"><a href="#HIDEN-LAYER的CELL" class="headerlink" title="HIDEN LAYER的CELL"></a>HIDEN LAYER的CELL</h3><ul>
-<li>在多层感知机中，隐层由图示的CELL组建而成，每一个CELL接受上一层的多个CELL输入（$S_n$），经过Activation（激活函数，此处以ReLU为例），得到该CELL对下一层的输出（$S^{\prime}$）</li>
+<li>在多层感知机中，隐层由图示的CELL组建而成，每一个 CELL 接受上一层的多个 CELL 输入（$S_n$），经过 Activation（激活函数，此处以 ReLU 为例），得到该 CELL 对下一层的输出（$S^{\prime}$）</li>
 </ul>
 <p>
         <span class="lazyload-img-span">
@@ -209,7 +209,7 @@
 <li>$S^{\prime}=Activation(o)$</li>
 </ul>
 <h2 id="CV的基础任务"><a href="#CV的基础任务" class="headerlink" title="CV的基础任务"></a>CV的基础任务</h2><h3 id="非像素级"><a href="#非像素级" class="headerlink" title="非像素级"></a>非像素级</h3><h4 id="IMAGE-CLASSIFICTIOIN（分类）"><a href="#IMAGE-CLASSIFICTIOIN（分类）" class="headerlink" title="IMAGE CLASSIFICTIOIN（分类）"></a>IMAGE CLASSIFICTIOIN（分类）</h4><ul>
-<li>一张图像中是否包含某种物体，<strong>对图像进行类别描述</strong>是Image Classification的主要研究内容</li>
+<li>一张图像中是否包含某种物体，<strong>对图像进行类别描述</strong>是 Image Classification 的主要研究内容</li>
 </ul>
 <p>
         <span class="lazyload-img-span">
@@ -217,17 +217,17 @@
         
       </span></p>
 <ul>
-<li>经典CNN：AlexNet（2012），在其之后，有很多基于CNN的算法也在ImageNet上取得了特别好的成绩，比如GoogleNet（2014）、VGGNet（2014）、ResNet（2015）以及DenseNet（2016）等</li>
+<li>经典 CNN：AlexNet（2012），在其之后，有很多基于CNN的算法也在 ImageNet 上取得了特别好的成绩，比如 GoogleNet（2014）、VGGNet（2014）、ResNet（2015）以及 DenseNet（2016）等</li>
 <li>常用公共数据集（数据复杂度递增）：<ul>
-<li><strong>MNIST</strong>：60k训练图像、10k测试图像、10个类别、图像大小1×28×28、内容是0-9手写数字</li>
-<li><strong>CIFAR-10</strong>：50k训练图像、10k测试图像、10个类别、图像大小3×32×32</li>
-<li><strong>CIFAR-100</strong>：50k训练图像、10k测试图像、100个类别、图像大小3×32×32</li>
-<li><strong>ImageNet</strong>：1.2M训练图像、50k验证图像、1k个类别。2017年及之前，每年会举行基于ImageNet数据集的ILSVRC竞赛</li>
+<li><strong>MNIST</strong>：60k 训练图像、10k 测试图像、10个类别、图像大小1×28×28、内容是0-9手写数字</li>
+<li><strong>CIFAR-10</strong>：50k 训练图像、10k 测试图像、10个类别、图像大小3×32×32</li>
+<li><strong>CIFAR-100</strong>：50k 训练图像、10k 测试图像、100个类别、图像大小3×32×32</li>
+<li><strong>ImageNet</strong>：1.2M 训练图像、50k 验证图像、1k 个类别。2017年及之前，每年会举行基于 ImageNet 数据集的 ILSVRC 竞赛</li>
 </ul>
 </li>
 </ul>
 <h4 id="LOCALIZATION（定位）"><a href="#LOCALIZATION（定位）" class="headerlink" title="LOCALIZATION（定位）"></a>LOCALIZATION（定位）</h4><ul>
-<li>在Image Classification的基础上，还想知道图像中的<strong>单个</strong>主体对象具体在图像的什么位置，通常是以包围盒（bounding box）的形式。网络带有<strong>两个输出头</strong>。一个分支用于做图像分类，另一个分支用于判断目标位置，即输出四个数字标记包围盒位置（例如中心点横纵坐标和包围盒长宽），<strong>该分支输出结果只有在分类分支判断不为“背景”时才使用</strong></li>
+<li>在 Image Classification 的基础上，还想知道图像中的<strong>单个</strong>主体对象具体在图像的什么位置，通常是以包围盒（bounding box）的形式。网络带有<strong>两个输出头</strong>。一个分支用于做图像分类，另一个分支用于判断目标位置，即输出四个数字标记包围盒位置（例如中心点横纵坐标和包围盒长宽），<strong>该分支输出结果只有在分类分支判断不为“背景”时才使用</strong></li>
 </ul>
 <p>
         <span class="lazyload-img-span">
@@ -240,16 +240,16 @@
         
       </span></p>
 <ul>
-<li>Object Detection通常是从图像中输出<strong>多个</strong>目标的Bounding Box以及类别，同时完成了Image Classification何Localization。在Localization中，通常只有<strong>一个</strong>目标，而目标检测更一般化，其图像中出现的目标种类和数目都不定。近年来，目标检测研究趋势主要向更快、更有效的检测系统发展</li>
+<li>Object Detection 通常是从图像中输出<strong>多个</strong>目标的 Bounding Box 以及类别，同时完成了 Image Classification 和 Localization 。在 Localization 中，通常只有<strong>一个</strong>目标，而目标检测更一般化，其图像中出现的目标种类和数目都不定。近年来，目标检测研究趋势主要向更快、更有效的检测系统发展</li>
 <li>经典算法：<ul>
-<li><strong>two-stage</strong>：R-CNN（第一个高效模型）、Fast R-CNN、Faster R-CNN、R-FCN等；</li>
-<li><strong>one-stage</strong>：YOLO、SSD等</li>
+<li><strong>two-stage</strong>：R-CNN（第一个高效模型）、Fast R-CNN、Faster R-CNN、R-FCN 等；</li>
+<li><strong>one-stage</strong>：YOLO、SSD 等</li>
 </ul>
 </li>
-<li>PASCAL VOC 包含20个类别。通常是用VOC07和VOC12的trainval并集作为训练，用VOC07的测试集作为测试。</li>
+<li>PASCAL VOC 包含20个类别。通常是用 VOC07 和 VOC12 的 trainval 并集作为训练，用 VOC07 的测试集作为测试。</li>
 <li>常用公共数据集（数据复杂度递增）：<ul>
-<li><strong>PASCAL VOC</strong>：20个类别。通常是用VOC07和VOC12的trainval并集作为训练，用VOC07的测试集作为测试</li>
-<li><strong>MS COCO</strong>：COCO比VOC更困难。80k训练图像、40k验证图像、20k没有公开标记的测试图像(test-dev)，80个类别。通常是用80k训练和35k验证图像的并集作为训练，其余5k图像作为验证，20k测试图像用于线上测试</li>
+<li><strong>PASCAL VOC</strong>：20个类别。通常是用 VOC07 和 VOC12 的 trainval 并集作为训练，用 VOC07 的测试集作为测试</li>
+<li><strong>MS COCO</strong>：COCO 比 VOC 更困难。80k 训练图像、40k 验证图像、20k 没有公开标记的测试图像(test-dev)，80个类别。通常是用80k 训练和35k 验证图像的并集作为训练，其余5k 图像作为验证，20k 测试图像用于线上测试</li>
 </ul>
 </li>
 </ul>
@@ -261,7 +261,7 @@
 <li><strong>多分类</strong>：我们将图像输入模型，得到和图像一样长宽的输出，其输出为<strong>多通道</strong>，每个通道代表不同类别，本质是给每个类别一张二值图以得到多类分割结果</li>
 </ul>
 </li>
-<li>经典算法：FCN（全卷积神经网络）、UNet、PSPNet、DeepLabV3系列、UPerNet等</li>
+<li>经典算法：FCN（全卷积神经网络）、UNet、PSPNet、DeepLabV3 系列、UPerNet 等</li>
 <li>常用公共数据集比较杂，涉及了遥感、医学影像、自动驾驶等各个专业和领域，体量庞大且专业性强，这里不做展示</li>
 </ul>
 <h5 id="实例分割"><a href="#实例分割" class="headerlink" title="实例分割"></a>实例分割</h5><ul>
@@ -284,7 +284,7 @@
 <li>基于分类算法，可以在后面连接到各种其他任务的算法（例如检测、分割等），或者与其他算法头并行。总之，如果没有了分类，检测器的包围框将没有实际的参考价值，分割器的像素之间划分开的差异也没有实际意义，所以分类算法是一切人工智能算法的基础，分类领域的突破是下游任务发展的重要推动力</li>
 </ul>
 <h2 id="DEEPLEARNING算法的设计"><a href="#DEEPLEARNING算法的设计" class="headerlink" title="DEEPLEARNING算法的设计"></a>DEEPLEARNING算法的设计</h2><ul>
-<li>朴素点说，深度学习模型的隐层可以专心负责特征提取，输入层可以任意输入各种模态的数据。声音数据可以经过滤波算法以及可视化算法转化成彩图和视觉算法共用输入层、语言数据可以切分为Seg序列，映射为一维feature vector作为Token输入Transformer算法……所以，DL算法本质上是支持多模态的</li>
+<li>朴素点说，深度学习模型的隐层可以专心负责特征提取，输入层可以任意输入各种模态的数据。声音数据可以经过滤波算法以及可视化算法转化成彩图和视觉算法共用输入层、语言数据可以切分为 Seg 序列，映射为一维 feature vector 作为 Token 输入 Transformer 算法……所以，DL 算法本质上是支持多模态的</li>
 <li>但单纯将各种模态数据映射为统一的输入结构，容易损失数据特征，因此需要针对分析对象的性质和关键特征来设计模型的输入层，以及隐层中的特征提取方式</li>
 <li>而视频和音频数据相比于单帧数据，带有时序特征，在设计上如何考虑多帧之间的时序关系是非常重要的，因此难度也要更高。常见的应用有：<ul>
 <li><strong>片段引导</strong>：划分视频片段，并对应某类片段的受众，引导受众跳转到感兴趣片段</li>
@@ -295,13 +295,13 @@
 <h2 id="子豪兄总结的新颖且有前景的研究领域"><a href="#子豪兄总结的新颖且有前景的研究领域" class="headerlink" title="子豪兄总结的新颖且有前景的研究领域"></a>子豪兄总结的新颖且有前景的研究领域</h2><ul>
 <li><strong>可解释性分析、显著性分析</strong>（<strong>兴趣排名No.3</strong>）</li>
 <li><strong>图机器学习、图神经网络</strong>（<strong>兴趣排名No.1</strong>）</li>
-<li>人工智能+VR AR元宇宙</li>
+<li>人工智能+VR AR 元宇宙</li>
 <li><strong>轻量化压缩部署</strong>（<strong>兴趣排名No.2</strong>）</li>
 <li>各行各业垂直细分应用</li>
 <li>NERF</li>
 <li>Diffusion</li>
 <li>隐私计算、联邦学习、可信计算</li>
-<li>AI基础设施平台</li>
+<li>AI 基础设施平台</li>
 <li>预训练大模型</li>
 </ul>
 
@@ -331,7 +331,7 @@
               
                 <li class="me base">
                   <a  href="/posts/5/" class="post-categoris-bottom-link">
-                  AI入门知识
+                  AI 入门知识
                 </a>
                 </li>
               
@@ -437,21 +437,6 @@
       <script>hljs.initHighlightingOnLoad();</script>
     
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='all'|| 'all' ==='all')){
     var parent = document.getElementById('recent-posts');
     var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="http://buluwasior.me/categories/生活随笔/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🐱‍👓 林天文的生活随笔 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item" style="visibility: hidden"></div><a class="magnet_link_more"  href="http://buluwasior.me/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';

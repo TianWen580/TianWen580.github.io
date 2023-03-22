@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>AI入门知识</title>
+    <title>AI 入门知识</title>
     <url>/posts/5/</url>
     <content><![CDATA[<blockquote>
-<p>学习心得：计算机视觉之算法基础与OpenMMLab入门</p>
+<p>学习心得：计算机视觉之算法基础与 OpenMMLab 入门</p>
 <p>注：基于子豪兄的讲解，我重点发散了计算机视觉之算法基础的相关部分，主要参考的是我现有的笔记</p>
 </blockquote>
 <h2 id="机器学习的本质"><a href="#机器学习的本质" class="headerlink" title="机器学习的本质"></a>机器学习的本质</h2><h3 id="简单问题的学习"><a href="#简单问题的学习" class="headerlink" title="简单问题的学习"></a>简单问题的学习</h3><p>简单问题的学习过程是寻求最拟合方程的过程（以不同面积房价预测为例）</p>
@@ -13,10 +13,10 @@
         <img data-src="https://img-blog.csdnimg.cn/img_convert/c4ceecf25a107672517273f0a0dcd821.jpeg">
         
       </span></p>
-<p>其中$w$、$b$是Learnable，代表了其对于预测精度的决定性，也代表了它是后期得到的，经优化确定之后模型就有了最好的预测能力</p>
+<p>其中 $w$、$b$ 是 Learnable，代表了其对于预测精度的决定性，也代表了它是后期得到的，经优化确定之后模型就有了最好的预测能力</p>
 <h3 id="非结构化问题的学习"><a href="#非结构化问题的学习" class="headerlink" title="非结构化问题的学习"></a>非结构化问题的学习</h3><ul>
-<li>所习得的转换为多层非线性变换，实现对DATA的高层抽象</li>
-<li>DATA输入也会更复杂，需要更多数据预处理操作</li>
+<li>所习得的转换为多层非线性变换，实现对 DATA 的高层抽象</li>
+<li>DATA 输入也会更复杂，需要更多数据预处理操作</li>
 </ul>
 <p>
         <span class="lazyload-img-span">
@@ -24,7 +24,7 @@
         
       </span></p>
 <h3 id="HIDEN-LAYER的CELL"><a href="#HIDEN-LAYER的CELL" class="headerlink" title="HIDEN LAYER的CELL"></a>HIDEN LAYER的CELL</h3><ul>
-<li>在多层感知机中，隐层由图示的CELL组建而成，每一个CELL接受上一层的多个CELL输入（$S_n$），经过Activation（激活函数，此处以ReLU为例），得到该CELL对下一层的输出（$S^{\prime}$）</li>
+<li>在多层感知机中，隐层由图示的CELL组建而成，每一个 CELL 接受上一层的多个 CELL 输入（$S_n$），经过 Activation（激活函数，此处以 ReLU 为例），得到该 CELL 对下一层的输出（$S^{\prime}$）</li>
 </ul>
 <p>
         <span class="lazyload-img-span">
@@ -37,7 +37,7 @@
 <li>$S^{\prime}=Activation(o)$</li>
 </ul>
 <h2 id="CV的基础任务"><a href="#CV的基础任务" class="headerlink" title="CV的基础任务"></a>CV的基础任务</h2><h3 id="非像素级"><a href="#非像素级" class="headerlink" title="非像素级"></a>非像素级</h3><h4 id="IMAGE-CLASSIFICTIOIN（分类）"><a href="#IMAGE-CLASSIFICTIOIN（分类）" class="headerlink" title="IMAGE CLASSIFICTIOIN（分类）"></a>IMAGE CLASSIFICTIOIN（分类）</h4><ul>
-<li>一张图像中是否包含某种物体，<strong>对图像进行类别描述</strong>是Image Classification的主要研究内容</li>
+<li>一张图像中是否包含某种物体，<strong>对图像进行类别描述</strong>是 Image Classification 的主要研究内容</li>
 </ul>
 <p>
         <span class="lazyload-img-span">
@@ -45,17 +45,17 @@
         
       </span></p>
 <ul>
-<li>经典CNN：AlexNet（2012），在其之后，有很多基于CNN的算法也在ImageNet上取得了特别好的成绩，比如GoogleNet（2014）、VGGNet（2014）、ResNet（2015）以及DenseNet（2016）等</li>
+<li>经典 CNN：AlexNet（2012），在其之后，有很多基于CNN的算法也在 ImageNet 上取得了特别好的成绩，比如 GoogleNet（2014）、VGGNet（2014）、ResNet（2015）以及 DenseNet（2016）等</li>
 <li>常用公共数据集（数据复杂度递增）：<ul>
-<li><strong>MNIST</strong>：60k训练图像、10k测试图像、10个类别、图像大小1×28×28、内容是0-9手写数字</li>
-<li><strong>CIFAR-10</strong>：50k训练图像、10k测试图像、10个类别、图像大小3×32×32</li>
-<li><strong>CIFAR-100</strong>：50k训练图像、10k测试图像、100个类别、图像大小3×32×32</li>
-<li><strong>ImageNet</strong>：1.2M训练图像、50k验证图像、1k个类别。2017年及之前，每年会举行基于ImageNet数据集的ILSVRC竞赛</li>
+<li><strong>MNIST</strong>：60k 训练图像、10k 测试图像、10个类别、图像大小1×28×28、内容是0-9手写数字</li>
+<li><strong>CIFAR-10</strong>：50k 训练图像、10k 测试图像、10个类别、图像大小3×32×32</li>
+<li><strong>CIFAR-100</strong>：50k 训练图像、10k 测试图像、100个类别、图像大小3×32×32</li>
+<li><strong>ImageNet</strong>：1.2M 训练图像、50k 验证图像、1k 个类别。2017年及之前，每年会举行基于 ImageNet 数据集的 ILSVRC 竞赛</li>
 </ul>
 </li>
 </ul>
 <h4 id="LOCALIZATION（定位）"><a href="#LOCALIZATION（定位）" class="headerlink" title="LOCALIZATION（定位）"></a>LOCALIZATION（定位）</h4><ul>
-<li>在Image Classification的基础上，还想知道图像中的<strong>单个</strong>主体对象具体在图像的什么位置，通常是以包围盒（bounding box）的形式。网络带有<strong>两个输出头</strong>。一个分支用于做图像分类，另一个分支用于判断目标位置，即输出四个数字标记包围盒位置（例如中心点横纵坐标和包围盒长宽），<strong>该分支输出结果只有在分类分支判断不为“背景”时才使用</strong></li>
+<li>在 Image Classification 的基础上，还想知道图像中的<strong>单个</strong>主体对象具体在图像的什么位置，通常是以包围盒（bounding box）的形式。网络带有<strong>两个输出头</strong>。一个分支用于做图像分类，另一个分支用于判断目标位置，即输出四个数字标记包围盒位置（例如中心点横纵坐标和包围盒长宽），<strong>该分支输出结果只有在分类分支判断不为“背景”时才使用</strong></li>
 </ul>
 <p>
         <span class="lazyload-img-span">
@@ -68,16 +68,16 @@
         
       </span></p>
 <ul>
-<li>Object Detection通常是从图像中输出<strong>多个</strong>目标的Bounding Box以及类别，同时完成了Image Classification何Localization。在Localization中，通常只有<strong>一个</strong>目标，而目标检测更一般化，其图像中出现的目标种类和数目都不定。近年来，目标检测研究趋势主要向更快、更有效的检测系统发展</li>
+<li>Object Detection 通常是从图像中输出<strong>多个</strong>目标的 Bounding Box 以及类别，同时完成了 Image Classification 和 Localization 。在 Localization 中，通常只有<strong>一个</strong>目标，而目标检测更一般化，其图像中出现的目标种类和数目都不定。近年来，目标检测研究趋势主要向更快、更有效的检测系统发展</li>
 <li>经典算法：<ul>
-<li><strong>two-stage</strong>：R-CNN（第一个高效模型）、Fast R-CNN、Faster R-CNN、R-FCN等；</li>
-<li><strong>one-stage</strong>：YOLO、SSD等</li>
+<li><strong>two-stage</strong>：R-CNN（第一个高效模型）、Fast R-CNN、Faster R-CNN、R-FCN 等；</li>
+<li><strong>one-stage</strong>：YOLO、SSD 等</li>
 </ul>
 </li>
-<li>PASCAL VOC 包含20个类别。通常是用VOC07和VOC12的trainval并集作为训练，用VOC07的测试集作为测试。</li>
+<li>PASCAL VOC 包含20个类别。通常是用 VOC07 和 VOC12 的 trainval 并集作为训练，用 VOC07 的测试集作为测试。</li>
 <li>常用公共数据集（数据复杂度递增）：<ul>
-<li><strong>PASCAL VOC</strong>：20个类别。通常是用VOC07和VOC12的trainval并集作为训练，用VOC07的测试集作为测试</li>
-<li><strong>MS COCO</strong>：COCO比VOC更困难。80k训练图像、40k验证图像、20k没有公开标记的测试图像(test-dev)，80个类别。通常是用80k训练和35k验证图像的并集作为训练，其余5k图像作为验证，20k测试图像用于线上测试</li>
+<li><strong>PASCAL VOC</strong>：20个类别。通常是用 VOC07 和 VOC12 的 trainval 并集作为训练，用 VOC07 的测试集作为测试</li>
+<li><strong>MS COCO</strong>：COCO 比 VOC 更困难。80k 训练图像、40k 验证图像、20k 没有公开标记的测试图像(test-dev)，80个类别。通常是用80k 训练和35k 验证图像的并集作为训练，其余5k 图像作为验证，20k 测试图像用于线上测试</li>
 </ul>
 </li>
 </ul>
@@ -89,7 +89,7 @@
 <li><strong>多分类</strong>：我们将图像输入模型，得到和图像一样长宽的输出，其输出为<strong>多通道</strong>，每个通道代表不同类别，本质是给每个类别一张二值图以得到多类分割结果</li>
 </ul>
 </li>
-<li>经典算法：FCN（全卷积神经网络）、UNet、PSPNet、DeepLabV3系列、UPerNet等</li>
+<li>经典算法：FCN（全卷积神经网络）、UNet、PSPNet、DeepLabV3 系列、UPerNet 等</li>
 <li>常用公共数据集比较杂，涉及了遥感、医学影像、自动驾驶等各个专业和领域，体量庞大且专业性强，这里不做展示</li>
 </ul>
 <h5 id="实例分割"><a href="#实例分割" class="headerlink" title="实例分割"></a>实例分割</h5><ul>
@@ -112,7 +112,7 @@
 <li>基于分类算法，可以在后面连接到各种其他任务的算法（例如检测、分割等），或者与其他算法头并行。总之，如果没有了分类，检测器的包围框将没有实际的参考价值，分割器的像素之间划分开的差异也没有实际意义，所以分类算法是一切人工智能算法的基础，分类领域的突破是下游任务发展的重要推动力</li>
 </ul>
 <h2 id="DEEPLEARNING算法的设计"><a href="#DEEPLEARNING算法的设计" class="headerlink" title="DEEPLEARNING算法的设计"></a>DEEPLEARNING算法的设计</h2><ul>
-<li>朴素点说，深度学习模型的隐层可以专心负责特征提取，输入层可以任意输入各种模态的数据。声音数据可以经过滤波算法以及可视化算法转化成彩图和视觉算法共用输入层、语言数据可以切分为Seg序列，映射为一维feature vector作为Token输入Transformer算法……所以，DL算法本质上是支持多模态的</li>
+<li>朴素点说，深度学习模型的隐层可以专心负责特征提取，输入层可以任意输入各种模态的数据。声音数据可以经过滤波算法以及可视化算法转化成彩图和视觉算法共用输入层、语言数据可以切分为 Seg 序列，映射为一维 feature vector 作为 Token 输入 Transformer 算法……所以，DL 算法本质上是支持多模态的</li>
 <li>但单纯将各种模态数据映射为统一的输入结构，容易损失数据特征，因此需要针对分析对象的性质和关键特征来设计模型的输入层，以及隐层中的特征提取方式</li>
 <li>而视频和音频数据相比于单帧数据，带有时序特征，在设计上如何考虑多帧之间的时序关系是非常重要的，因此难度也要更高。常见的应用有：<ul>
 <li><strong>片段引导</strong>：划分视频片段，并对应某类片段的受众，引导受众跳转到感兴趣片段</li>
@@ -123,13 +123,13 @@
 <h2 id="子豪兄总结的新颖且有前景的研究领域"><a href="#子豪兄总结的新颖且有前景的研究领域" class="headerlink" title="子豪兄总结的新颖且有前景的研究领域"></a>子豪兄总结的新颖且有前景的研究领域</h2><ul>
 <li><strong>可解释性分析、显著性分析</strong>（<strong>兴趣排名No.3</strong>）</li>
 <li><strong>图机器学习、图神经网络</strong>（<strong>兴趣排名No.1</strong>）</li>
-<li>人工智能+VR AR元宇宙</li>
+<li>人工智能+VR AR 元宇宙</li>
 <li><strong>轻量化压缩部署</strong>（<strong>兴趣排名No.2</strong>）</li>
 <li>各行各业垂直细分应用</li>
 <li>NERF</li>
 <li>Diffusion</li>
 <li>隐私计算、联邦学习、可信计算</li>
-<li>AI基础设施平台</li>
+<li>AI 基础设施平台</li>
 <li>预训练大模型</li>
 </ul>
 ]]></content>
@@ -147,8 +147,8 @@
         
       </span></p>
 <h1 id="GIS模型-具体行业模型（集成）"><a href="#GIS模型-具体行业模型（集成）" class="headerlink" title="GIS模型+具体行业模型（集成）"></a>GIS模型+具体行业模型（集成）</h1><ul>
-<li>举例复杂应用：水务行业的排水管网SWMM模型（排水管网属于GIS模型，SWMM属于税务行业模型）<ul>
-<li>对应GISer的思想：<ul>
+<li>举例复杂应用：水务行业的排水管网 SWMM 模型（排水管网属于 GIS 模型，SWMM 属于税务行业模型）<ul>
+<li>对应 GISer 的思想：<ul>
 <li>给排水管建模</li>
 <li>分层：根据用户需求分析得到的设备类型抽象图层：检查井、管线、汇水区……</li>
 <li>抽象：<ul>
@@ -160,13 +160,13 @@
 </li>
 <li>针对思想的复杂应用构建：<ul>
 <li>输入：<ul>
-<li>检查井：坐标、高程……&lt;&lt;DEM高程提取</li>
+<li>检查井：坐标、高程……&lt;&lt;DEM 高程提取</li>
 <li>管线：上下游井、埋深、管长、管径……&lt;&lt;上下游网络拓扑</li>
-<li>汇水区：面积……&lt;&lt;小流域Basin划分工具</li>
+<li>汇水区：面积……&lt;&lt;小流域 Basin 划分工具</li>
 </ul>
 </li>
 <li>处理：<ul>
-<li>SWMM模型引擎（和GIS关系不大，主要来源于行业模型）</li>
+<li>SWMM 模型引擎（和 GIS 关系不大，主要来源于行业模型）</li>
 </ul>
 </li>
 <li>输出（行业用户对应需求）：<ul>
@@ -247,7 +247,7 @@
     <title>一键锁定目标的检测算法</title>
     <url>/posts/1/</url>
     <content><![CDATA[<blockquote>
-<p>学习心得：计算机视觉之目标检测算法基础 注：基于OpenMMLab实战营的教授内容，做了有用的补充，会缺少一部分课上的内容</p>
+<p>学习心得：计算机视觉之目标检测算法基础 注：基于 OpenMMLab 实战营的教授内容，做了有用的补充，会缺少一部分课上的内容</p>
 </blockquote>
 <p>
         <span class="lazyload-img-span">
@@ -255,15 +255,15 @@
         
       </span></p>
 <h2 id="常用数据集"><a href="#常用数据集" class="headerlink" title="常用数据集"></a>常用数据集</h2><ul>
-<li><strong>PASCAL VOC</strong>：20个类别。通常是用VOC07和VOC12的trainval并集作为训练，用VOC07的测试集作为测试</li>
-<li><strong>MS COCO</strong>：COCO比VOC更困难。80k训练图像、40k验证图像、20k没有公开标记的测试图像(test-dev)，80个类别。通常是用80k训练和35k验证图像的并集作为训练，其余5k图像作为验证，20k测试图像用于线上测试</li>
+<li><strong>PASCAL VOC</strong>：20个类别。通常是用 VOC07 和 VOC12 的 trainval 并集作为训练，用 VOC07 的测试集作为测试</li>
+<li><strong>MS COCO</strong>：COCO 比 VOC 更困难。80k 训练图像、40k 验证图像、20k 没有公开标记的测试图像(test-dev)，80个类别。通常是用80k 训练和35k 验证图像的并集作为训练，其余5k 图像作为验证，20k 测试图像用于线上测试</li>
 </ul>
 <h2 id="常用精度指标"><a href="#常用精度指标" class="headerlink" title="常用精度指标"></a>常用精度指标</h2><ul>
-<li><strong>mAP (mean average precision)</strong> ：目标检测中的常用评价指标，计算方法如下。当预测的包围盒和真实包围盒的交并比大于某一阈值(通常为0.5)，则认为该预测正确。对每个类别，我们画出它的查准率-查全率(precision-recall)曲线，平均准确率是曲线下的面积。之后再对所有类别的平均准确率求平均，即可得到mAP，其取值为[0, 100%]</li>
+<li><strong>mAP (mean average precision)</strong> ：目标检测中的常用评价指标，计算方法如下。当预测的包围盒和真实包围盒的交并比大于某一阈值(通常为0.5)，则认为该预测正确。对每个类别，我们画出它的查准率-查全率(precision-recall)曲线，平均准确率是曲线下的面积。之后再对所有类别的平均准确率求平均，即可得到 mAP，其取值为[0, 100%]</li>
 <li>**交并比(intersection over union, IoU)**：算法预测的包围盒和真实包围盒交集的面积除以这两个包围盒并集的面积，取值为[0, 1]。交并比度量了算法预测的包围盒和真实包围盒的接近程度，交并比越大，两个包围盒的重叠程度越高</li>
 </ul>
 <h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><ul>
-<li>Object Detection通常是从图像中输出多个目标的Bounding Box以及类别，同时完成了Image Classification何Localization。在Localization中，通常只有一个目标，而目标检测更一般化，其图像中出现的目标种类和数目都不定。近年来，目标检测研究趋势主要向更快、更有效的检测系统发展。目前检测算法主要分为Two-Stage和One-Stage两种算法。前者，先生成很多可能候选区，然后再对所有候选区进行分类和校准；后者，不生成各种候选区直接给出检测结果。前者以R-CNN为代表，后者以YOLO和SSD为典型</li>
+<li>Object Detection 通常是从图像中输出多个目标的Bounding Box以及类别，同时完成了 Image Classification 和 Localization。在 Localization中，通常只有一个目标，而目标检测更一般化，其图像中出现的目标种类和数目都不定。近年来，目标检测研究趋势主要向更快、更有效的检测系统发展。目前检测算法主要分为 Two-Stage 和 One-Stage 两种算法。前者，先生成很多可能候选区，然后再对所有候选区进行分类和校准；后者，不生成各种候选区直接给出检测结果。前者以 R-CNN 为代表，后者以 YOLO 和 SSD 为典型</li>
 </ul>
 <p>
         <span class="lazyload-img-span">
@@ -295,17 +295,17 @@
 <h3 id="RPN-区域候选网络"><a href="#RPN-区域候选网络" class="headerlink" title="RPN 区域候选网络"></a>RPN 区域候选网络</h3><ul>
 <li>步骤：<ol>
 <li>输入图像通过卷积神经网络，得到特征图</li>
-<li>基于特征图运行，对于每个滑动窗口，生成一组特定的Anchor（锚）</li>
-<li>可能有很多盒子里没有任何物体，模型需要学习哪些Anchor可能有对象</li>
-<li>Anchor的定位和分类由回归层和分类器完成</li>
+<li>基于特征图运行，对于每个滑动窗口，生成一组特定的 Anchor（锚）</li>
+<li>可能有很多盒子里没有任何物体，模型需要学习哪些 Anchor 可能有对象</li>
+<li>Anchor 的定位和分类由回归层和分类器完成</li>
 </ol>
 </li>
 </ul>
 <h2 id="经典-TWO-STAGE算法"><a href="#经典-TWO-STAGE算法" class="headerlink" title="经典 TWO-STAGE算法"></a>经典 TWO-STAGE算法</h2><h3 id="R-CNN（SELECTIVE-SEARCH-CNN-SVM）"><a href="#R-CNN（SELECTIVE-SEARCH-CNN-SVM）" class="headerlink" title="R-CNN（SELECTIVE SEARCH + CNN + SVM）"></a>R-CNN（SELECTIVE SEARCH + CNN + SVM）</h3><ul>
 <li>步骤：<ol>
-<li>首先，对输入图像采用Selective Search生成大概1~2k个候选框</li>
-<li>每个候选区投入CNN提取特征（神经网络中卷积层不需要固定的出入尺寸，但全连接层需要，所以传统投入网络的时候可能会做crop裁切或者warp拉伸等操作）</li>
-<li>特征送入SVM分类器判断分类</li>
+<li>首先，对输入图像采用 Selective Search 生成大概1~2k 个候选框</li>
+<li>每个候选区投入 CNN 提取特征（神经网络中卷积层不需要固定的出入尺寸，但全连接层需要，所以传统投入网络的时候可能会做crop裁切或者 warp 拉伸等操作）</li>
+<li>特征送入 SVM 分类器判断分类</li>
 <li>最后使用回归器对候选框位置进行精修</li>
 </ol>
 </li>
@@ -317,13 +317,13 @@
       </span></p>
 <ul>
 <li>缺点<ul>
-<li>重复的计算。虽然R-CNN不是在穷举，但是候选框太多，计算量依然会很大，而且候选框之间往往有大量重叠部分</li>
+<li>重复的计算。虽然 R-CNN 不是在穷举，但是候选框太多，计算量依然会很大，而且候选框之间往往有大量重叠部分</li>
 <li>训练很麻烦，候选区提取、分类、回归都是单独的代码块，需要分开运行，中间的数据还要单独存储</li>
 </ul>
 </li>
 </ul>
 <h3 id="SPP-NET（ROI-POOLING，SPP-空间金字塔池化）"><a href="#SPP-NET（ROI-POOLING，SPP-空间金字塔池化）" class="headerlink" title="SPP-NET（ROI POOLING，SPP 空间金字塔池化）"></a>SPP-NET（ROI POOLING，SPP 空间金字塔池化）</h3><ul>
-<li>作者何凯明注意到，传统网络中由于全连接层的存在，通常要固定网络输入的尺寸，这种方法往往造成空间信息的损失和部分特征的放大或扭曲，于是他在卷积层的结尾创造了SPP空间金字塔池化。物体检测精度确实有所提高</li>
+<li>作者何凯明注意到，传统网络中由于全连接层的存在，通常要固定网络输入的尺寸，这种方法往往造成空间信息的损失和部分特征的放大或扭曲，于是他在卷积层的结尾创造了 SPP 空间金字塔池化。物体检测精度确实有所提高</li>
 </ul>
 <p>
         <span class="lazyload-img-span">
@@ -331,7 +331,7 @@
         
       </span></p>
 <ul>
-<li>这一层对卷积层的输出做多种固定的池化，无论输入尺寸如何最后都会按照固定的比率池化，比如W，H变换为W/n，H/n，于是就确保了全连接层接受的数量不变</li>
+<li>这一层对卷积层的输出做多种固定的池化，无论输入尺寸如何最后都会按照固定的比率池化，比如 W，H 变换为 W/n，H/n，于是就确保了全连接层接受的数量不变</li>
 </ul>
 <p>
         <span class="lazyload-img-span">
@@ -340,12 +340,12 @@
       </span></p>
 <ul>
 <li>步骤：<ol>
-<li>首先通过Selective Search生成1~2k个候选框，这一步和R-CNN一样</li>
-<li>特征提取阶段就是和最大的区别了，由于SPP一次就可以对整张图片做全面的特征提取，所以效率大大增加</li>
-<li>最后几步也适合R-CNN一样</li>
+<li>首先通过 Selective Search 生成1~2k 个候选框，这一步和 R-CNN 一样</li>
+<li>特征提取阶段就是和最大的区别了，由于 SPP 一次就可以对整张图片做全面的特征提取，所以效率大大增加</li>
+<li>最后几步也适合 R-CNN 一样</li>
 </ol>
 </li>
-<li>缺点同R-CNN类似</li>
+<li>缺点同 R-CNN 类似</li>
 </ul>
 <h3 id="FAST-R-CNN（SELECTIVE-SEARCH-CNN-ROI）"><a href="#FAST-R-CNN（SELECTIVE-SEARCH-CNN-ROI）" class="headerlink" title="FAST R-CNN（SELECTIVE SEARCH + CNN + ROI）"></a>FAST R-CNN（SELECTIVE SEARCH + CNN + ROI）</h3><p>
         <span class="lazyload-img-span">
@@ -353,10 +353,10 @@
         
       </span></p>
 <ul>
-<li>传统R-CNN要生成不同尺寸滑动窗下的分类结果，因此每次投入分类器的都是固定的某一尺寸，需要对视窗进行Resize或Warp。ROI pooling就能避免这个问题</li>
-<li>其过程和SPP的一部分类似，首先生将region proposal候选框划分为H * W的网格</li>
-<li>对每个网格进行MaxPooling，形成H * W大小的feature maps。其优点就是提高了处理速度</li>
-<li>Fast R-CNN提出了多任务损失函数，将分类器损失和边框回归损失放在一起统一训练，最终输出对应的分类和边框坐标</li>
+<li>传统 R-CNN 要生成不同尺寸滑动窗下的分类结果，因此每次投入分类器的都是固定的某一尺寸，需要对视窗进行 Resize 或 Warp。ROI pooling 就能避免这个问题</li>
+<li>其过程和 SPP 的一部分类似，首先生将 region proposal 候选框划分为 H * W 的网格</li>
+<li>对每个网格进行 MaxPooling，形成 H * W 大小的 feature maps。其优点就是提高了处理速度</li>
+<li>Fast R-CNN 提出了多任务损失函数，将分类器损失和边框回归损失放在一起统一训练，最终输出对应的分类和边框坐标</li>
 </ul>
 <h3 id="R-FCN"><a href="#R-FCN" class="headerlink" title="R-FCN"></a>R-FCN</h3><p>
         <span class="lazyload-img-span">
@@ -364,8 +364,8 @@
         
       </span></p>
 <ul>
-<li>R-FCN是Faster-RCNN的改进，速度得到了很大提升，但精度提升不大。主要解决的问题是位置敏感性：一个图片在任何方向稍微经过裁切，都可以被分类器认出，然而检测任务不希望出现这种位置上的偏差。R-FCN提出了Position-sensitive score maps位置敏感网络层来解决这个问题</li>
-<li>位置敏感网络层维度k * k * （C + 1），k一般等于3，构成能够表达敏感位置（左上，正上，右上，正左，正中，正右，左下，正下，右下）的Grid格网编码结构</li>
+<li>R-FCN 是 Faster-RCNN 的改进，速度得到了很大提升，但精度提升不大。主要解决的问题是位置敏感性：一个图片在任何方向稍微经过裁切，都可以被分类器认出，然而检测任务不希望出现这种位置上的偏差。R-FCN 提出了 Position-sensitive score maps 位置敏感网络层来解决这个问题</li>
+<li>位置敏感网络层维度 k * k * （C + 1），k 一般等于3，构成能够表达敏感位置（左上，正上，右上，正左，正中，正右，左下，正下，右下）的 Grid 格网编码结构</li>
 </ul>
 <p>
         <span class="lazyload-img-span">
@@ -379,15 +379,15 @@
       <br>​</span></p>
 <ul>
 <li>步骤：<ol>
-<li>输入一个图像，YoLoV1会把图像看成一个 s * s 的栅格格网，如图中 s = 7 ，若某个物体的ground truth中心落在某个栅格，则这个栅格要负责该物体的预测</li>
-<li>对于上述每个栅格，要预测回归两个bounding box的坐标及其含有对象的置信度，同时预测物体所属类别</li>
-<li>根据上一步可以预测出的目标窗口，然后根据阈值去除可能性比较低的目标窗口，然后根据NMS去除冗余窗口</li>
-<li>YoLoV1最后的输出是7x7x30，这里是7x7代表输入图像的7x7栅格，维数30的前十个代表2个bounding boxes， 每个bounding box要预测5个值</li>
+<li>输入一个图像，YoLoV1 会把图像看成一个 s * s 的栅格格网，如图中 s = 7 ，若某个物体的 ground truth 中心落在某个栅格，则这个栅格要负责该物体的预测</li>
+<li>对于上述每个栅格，要预测回归两个 bounding box 的坐标及其含有对象的置信度，同时预测物体所属类别</li>
+<li>根据上一步可以预测出的目标窗口，然后根据阈值去除可能性比较低的目标窗口，然后根据 NMS 去除冗余窗口</li>
+<li>YoLoV1 最后的输出是7x7x30，这里是7x7代表输入图像的7x7栅格，维数30的前十个代表2个 bounding boxes， 每个 bounding box 要预测5个值</li>
 </ol>
 </li>
 </ul>
 <h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
-<li>YoLo对相互靠得很近的物体、过于细小的物体检测效果不好，这是因为一个栅格只预测两个bounding box，并且只属于一个类别</li>
+<li>YoLo 对相互靠得很近的物体、过于细小的物体检测效果不好，这是因为一个栅格只预测两个 bounding box，并且只属于一个类别</li>
 <li>测试时，如果某类物体出现了奇葩的长宽比或者奇怪的角度时，泛化能力显著下降</li>
 <li>由于损失函数的问题，定位误差是影响检测效果的主要原因，尤其是对于大物体小物体的处理还待加强</li>
 </ul>
@@ -397,10 +397,10 @@
         
       </span></p>
 <ul>
-<li>Single shot表明了SSD和YoLo一样属于One-Stage算法，MultiBox表明了SSD可以检测多个物体 </li>
+<li>Single shot 表明了 SSD 和 YoLo 一样属于 One-Stage 算法，MultiBox 表明了 SSD 可以检测多个物体 </li>
 </ul>
 <h3 id="主要改进"><a href="#主要改进" class="headerlink" title="主要改进"></a>主要改进</h3><ul>
-<li>使用了类似RPN中的Anchor锚点机制，增加bounding box多样性。卷积输出的feature map，每个点对应为原图的一个区域的中心点。以这个点为中心，构造出6个宽高比例不同，大小不同的Anchor（SSD中称为default box）。每个anchor对应4个位置参数(x,y,w,h)和21个类别概率</li>
+<li>使用了类似 RPN 中的 Anchor 锚点机制，增加 bounding box 多样性。卷积输出的 feature map，每个点对应为原图的一个区域的中心点。以这个点为中心，构造出6个宽高比例不同，大小不同的 Anchor（SSD 中称为 default box）。每个 anchor 对应4个位置参数(x,y,w,h)和21个类别概率</li>
 </ul>
 <p>
         <span class="lazyload-img-span">
@@ -409,18 +409,18 @@
       </span></p>
 <ul>
 <li>使用全卷积网络，效率得到提高</li>
-<li>网络中间会生成多个阶段不同感受野的Feature Maps丰富特征多样性，因此SSD能够在不同感受野下进行不同的目标检测，实现多尺度预测，克服了YoLo在大物体小物体上的缺陷</li>
+<li>网络中间会生成多个阶段不同感受野的 Feature Maps 丰富特征多样性，因此 SSD 能够在不同感受野下进行不同的目标检测，实现多尺度预测，克服了 YoLo 在大物体小物体上的缺陷</li>
 <li>步骤：<ol>
-<li>卷积层。借鉴了VGG16，惯用先经过CNN获得特征图，再进行定位和分类的方法。</li>
-<li>目标检测层。这一层由五个卷积层和一个平均池化层构成。因为SSD认为目标检测中的物体只与周围信息相关，感受野不是全局的，所以去掉了全连接层</li>
-<li>筛选层。与YoLo基本一致，先过滤类别概率低于阈值的default box，再采用NMS筛掉重叠度较高的。不过，SSD综合了各种feature maps上的default box </li>
+<li>卷积层。借鉴了 VGG16，惯用先经过 CNN 获得特征图，再进行定位和分类的方法。</li>
+<li>目标检测层。这一层由五个卷积层和一个平均池化层构成。因为 SSD 认为目标检测中的物体只与周围信息相关，感受野不是全局的，所以去掉了全连接层</li>
+<li>筛选层。与 YoLo 基本一致，先过滤类别概率低于阈值的 default box，再采用NMS筛掉重叠度较高的。不过，SSD 综合了各种 feature maps 上的 default box </li>
 </ol>
 </li>
-<li>SSD基本可以满足手机端的实时物体检测需求了，许多框架比如Tensorflow基于MobileNet在移动设备就使用了SSD算法实现。</li>
+<li>SSD 基本可以满足手机端的实时物体检测需求了，许多框架比如 Tensorflow 基于 MobileNet 在移动设备就使用了SSD算法实现。</li>
 </ul>
 <h2 id="近期受关注算法"><a href="#近期受关注算法" class="headerlink" title="近期受关注算法"></a>近期受关注算法</h2><h3 id="FCOS"><a href="#FCOS" class="headerlink" title="FCOS"></a>FCOS</h3><ul>
-<li>FCOS不使用Anchor，而且整个结构都是纯粹的CNN。先预测特征图上的各像素类别，再预测各点的bbox的大小和位置。</li>
-<li>对于Ambiguity问题，FCOS利用FPN和Center Sampling来解决。同时创新了Center-Ness分支帮助NMS抑制低质量框</li>
+<li>FCOS 不使用 Anchor，而且整个结构都是纯粹的 CNN。先预测特征图上的各像素类别，再预测各点的 bbox 的大小和位置。</li>
+<li>对于 Ambiguity 问题，FCOS 利用 FPN 和 Center Sampling 来解决。同时创新了 Center-Ness 分支帮助 NMS 抑制低质量框</li>
 </ul>
 <p>
         <span class="lazyload-img-span">
@@ -428,16 +428,16 @@
         
       </span></p>
 <h3 id="CENTERNET"><a href="#CENTERNET" class="headerlink" title="CENTERNET"></a>CENTERNET</h3><ul>
-<li>CenterNet将检测任务的思路从以点为核心转换到以框为核心</li>
+<li>CenterNet 将检测任务的思路从以点为核心转换到以框为核心</li>
 <li>基本思路：<ol>
-<li>Resnet50提取图像特征得到特征图</li>
+<li>Resnet50 提取图像特征得到特征图</li>
 <li>经过反卷积模块，三次上采样</li>
-<li>输入三个分支进行预测，得到Heatmap、预测框尺寸和中心点偏移量</li>
+<li>输入三个分支进行预测，得到 Heatmap、预测框尺寸和中心点偏移量</li>
 </ol>
 </li>
 </ul>
 <h3 id="DETR-and-DEFORMABLE-DETR"><a href="#DETR-and-DEFORMABLE-DETR" class="headerlink" title="DETR and DEFORMABLE DETR"></a>DETR and DEFORMABLE DETR</h3><ul>
-<li>DETR第一次系统地考虑将Transformer引入图像检测任务，实现了端到端算法，本质是特征序列道框序列的流程</li>
+<li>DETR 第一次系统地考虑将 Transformer 引入图像检测任务，实现了端到端算法，本质是特征序列道框序列的流程</li>
 </ul>
 <p>
         <span class="lazyload-img-span">
@@ -450,7 +450,7 @@
       </categories>
   </entry>
   <entry>
-    <title>写给mmsegmentation工具箱新手的避坑指南</title>
+    <title>写给 mmsegmentation 工具箱新手的避坑指南</title>
     <url>/posts/2/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我在 Windows 环境使用 MMClassification、MMDetection 都还算轻轻松松，但是走完 MMSegmentation 全流程之后，真的想感叹一句“踩了不少坑啊”，所以想把自己的遇坑经验凝练总结出来，写一个专门给新手无伤通关的避坑教程。</p>
 <h2 id="Windows-配置环境的痛：mmcv-full"><a href="#Windows-配置环境的痛：mmcv-full" class="headerlink" title="Windows 配置环境的痛：mmcv-full"></a>Windows 配置环境的痛：mmcv-full</h2><p>在 v1.4.0 之前，mmcv-full 的安装没有针对 Windows 的现成预编译包，所以大部分新手会卡在 build MMCV 的过程中……这种情况下有两种解决方案。</p>
