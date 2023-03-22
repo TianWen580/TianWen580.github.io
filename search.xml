@@ -1,11 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>GIS的应用</title>
+    <url>/posts/40930/</url>
+    <content><![CDATA[<h1 id="输入（蓝）、处理（橙）、输出（绿）："><a href="#输入（蓝）、处理（橙）、输出（绿）：" class="headerlink" title="输入（蓝）、处理（橙）、输出（绿）："></a>输入（蓝）、处理（橙）、输出（绿）：</h1><p>输入处理输出是最基本最简化的应用逻辑</p>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="GIS%E7%9A%84%E5%BA%94%E7%94%A8/%E5%9B%BE1.png">
+        
+      </span></p>
+<h1 id="GIS模型-具体行业模型（集成）"><a href="#GIS模型-具体行业模型（集成）" class="headerlink" title="GIS模型+具体行业模型（集成）"></a>GIS模型+具体行业模型（集成）</h1><ul>
+<li>举例复杂应用：水务行业的排水管网 SWMM 模型（排水管网属于 GIS 模型，SWMM 属于税务行业模型）<ul>
+<li>对应 GISer 的思想：<ul>
+<li>给排水管建模</li>
+<li>分层：根据用户需求分析得到的设备类型抽象图层：检查井、管线、汇水区……</li>
+<li>抽象：<ul>
+<li>检查井，点类型：坐标、高程……</li>
+<li>管线，线类型：上下游井、埋深、管长、管径……<br>  □ 汇水区，面类型：面积……</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>针对思想的复杂应用构建：<ul>
+<li>输入：<ul>
+<li>检查井：坐标、高程……&lt;&lt;DEM 高程提取</li>
+<li>管线：上下游井、埋深、管长、管径……&lt;&lt;上下游网络拓扑</li>
+<li>汇水区：面积……&lt;&lt;小流域 Basin 划分工具</li>
+</ul>
+</li>
+<li>处理：<ul>
+<li>SWMM 模型引擎（和 GIS 关系不大，主要来源于行业模型）</li>
+</ul>
+</li>
+<li>输出（行业用户对应需求）：<ul>
+<li>检查井的水位变化序列的动态专题渲染</li>
+<li>管线流量、充满度变化序列的动态专题渲染</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>GIS Experiments</category>
+      </categories>
+  </entry>
+  <entry>
     <title>AI 入门知识</title>
     <url>/posts/5/</url>
     <content><![CDATA[<blockquote>
-<p>学习心得：计算机视觉之算法基础与 OpenMMLab 入门</p>
-<p>注：基于子豪兄的讲解，我重点发散了计算机视觉之算法基础的相关部分，主要参考的是我现有的笔记</p>
+<p>学习心得：计算机视觉之算法基础与 OpenMMLab 入门<br>注：基于子豪兄的讲解，我重点发散了计算机视觉之算法基础的相关部分，主要参考的是我现有的笔记</p>
 </blockquote>
 <h2 id="机器学习的本质"><a href="#机器学习的本质" class="headerlink" title="机器学习的本质"></a>机器学习的本质</h2><h3 id="简单问题的学习"><a href="#简单问题的学习" class="headerlink" title="简单问题的学习"></a>简单问题的学习</h3><p>简单问题的学习过程是寻求最拟合方程的过程（以不同面积房价预测为例）</p>
 <p>
@@ -135,53 +181,6 @@
 ]]></content>
       <categories>
         <category>Computer Vision 计算机视觉</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>GIS的应用</title>
-    <url>/posts/40930/</url>
-    <content><![CDATA[<h1 id="输入（蓝）、处理（橙）、输出（绿）："><a href="#输入（蓝）、处理（橙）、输出（绿）：" class="headerlink" title="输入（蓝）、处理（橙）、输出（绿）："></a>输入（蓝）、处理（橙）、输出（绿）：</h1><p>输入处理输出是最基本最简化的应用逻辑</p>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="GIS%E7%9A%84%E5%BA%94%E7%94%A8/%E5%9B%BE1.png">
-        
-      </span></p>
-<h1 id="GIS模型-具体行业模型（集成）"><a href="#GIS模型-具体行业模型（集成）" class="headerlink" title="GIS模型+具体行业模型（集成）"></a>GIS模型+具体行业模型（集成）</h1><ul>
-<li>举例复杂应用：水务行业的排水管网 SWMM 模型（排水管网属于 GIS 模型，SWMM 属于税务行业模型）<ul>
-<li>对应 GISer 的思想：<ul>
-<li>给排水管建模</li>
-<li>分层：根据用户需求分析得到的设备类型抽象图层：检查井、管线、汇水区……</li>
-<li>抽象：<ul>
-<li>检查井，点类型：坐标、高程……</li>
-<li>管线，线类型：上下游井、埋深、管长、管径……<br>  □ 汇水区，面类型：面积……</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>针对思想的复杂应用构建：<ul>
-<li>输入：<ul>
-<li>检查井：坐标、高程……&lt;&lt;DEM 高程提取</li>
-<li>管线：上下游井、埋深、管长、管径……&lt;&lt;上下游网络拓扑</li>
-<li>汇水区：面积……&lt;&lt;小流域 Basin 划分工具</li>
-</ul>
-</li>
-<li>处理：<ul>
-<li>SWMM 模型引擎（和 GIS 关系不大，主要来源于行业模型）</li>
-</ul>
-</li>
-<li>输出（行业用户对应需求）：<ul>
-<li>检查井的水位变化序列的动态专题渲染</li>
-<li>管线流量、充满度变化序列的动态专题渲染</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>GIS Experiments</category>
       </categories>
   </entry>
   <entry>
@@ -613,6 +612,64 @@ cudnn_benchmark = True
       </categories>
   </entry>
   <entry>
+    <title>地图制图「上」标准制图流程展示</title>
+    <url>/posts/46040/</url>
+    <content><![CDATA[<h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><h2 id="ArcMap中的添加数据"><a href="#ArcMap中的添加数据" class="headerlink" title="ArcMap中的添加数据"></a>ArcMap中的添加数据</h2><p>在ArcMap默认的软件页面中可以很容易找到「添加文件」按钮，这个是ArcGIS操作逻辑中用来添加某一个已有数据的按钮。单击，打开添加数据窗口。我是用顶部下拉菜单可以选择“catelog”中提前链接好的文件目录，这里我第一次使用，因此要单击顶部「链接文件夹」按钮以添加实验数据所在文件夹。添加完成后，将新荣县1：10000地形图矢量数据，随后可以看到图层管理器已经有了我需要的文件(在ArcMap中图层管理器称为“内容列表”)。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE1.png">
+        
+      <br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE2.png">
+        
+      </span></span></p>
+<h1 id="编辑与设计"><a href="#编辑与设计" class="headerlink" title="编辑与设计"></a>编辑与设计</h1><h2 id="挑选符号"><a href="#挑选符号" class="headerlink" title="挑选符号"></a>挑选符号</h2><p>内容列表有非常多的点类，现在将他们直接导入进来是初始化符号的，千篇一律。双击其中的地名符号，我发现可以打开符号系统来挑选一些默认的ESRI符号，右边可以更改必要的参数值来调整颜色、大小、形状等等。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE3.png">
+        
+      </span></p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>首先地图的符号之间是分好类别的，必要的区分度需要在符号的选择上体现出来。诚然，默认符号库中的符号可能不足以完成全部的符号更换，但是已经能体现出符号之间的差别了。</p>
+<h1 id="布局视图"><a href="#布局视图" class="headerlink" title="布局视图"></a>布局视图</h1><h2 id="打开布局视图"><a href="#打开布局视图" class="headerlink" title="打开布局视图"></a>打开布局视图</h2><p>为了输出我的地图，我需要打开布局视图窗口来编辑版式和其他显示要素。我可以在顶部视图菜单中打开，也可以单击底下非常小的「布局视图」按钮来切换。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE4.png">
+        
+      </span></p>
+<h2 id="调整布局"><a href="#调整布局" class="headerlink" title="调整布局"></a>调整布局</h2><p>实验指导书说拖动数据框角点以填充工作空间，但是其实可以右键布局区域，选择Distribute-&gt;Fit to Margins来自动完成。完成后更换比例尺为1:10000<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE5.png">
+        
+      </span></p>
+<p>但是考虑到最终出图是一个类似正方形的工作空间，所以我还需要调整页面，如页面大小、页面方向等等，这个可以在顶部文件菜单中找到Page and Print setup窗口来设置。这里我设置为横向视图、宽25cm、高23cm。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE6.png">
+        
+      </span></p>
+<p>为了给地图添加一个标题，在顶部插入菜单中选择title，在布局视图的顶部合适位置插入，并输入“新荣县”。双击该文本可以进入属性设置，以调整字体、大小等参数。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE7.png">
+        
+      </span></p>
+<p>顶部插入菜单中还可以插入图例，选择legend设置图例各个位置文本的参数，并调整图例内容。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE8.png">
+        
+      </span></p>
+<p>这次插入比例尺(scale bar)，在比例尺的候选框中选择合适的比例尺符号，拖动比例尺到地图合适位置。随后在顶部文件菜单点击保存，将本次实验的工作空间保存在实验文件夹下。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE9.png">
+        
+      </span></p>
+<h1 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h1><p>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE10.png">
+        
+      </span></p>
+]]></content>
+      <categories>
+        <category>GIS Experiments</category>
+      </categories>
+  </entry>
+  <entry>
     <title>地图制图「下」符号设计流程展示</title>
     <url>/posts/14607/</url>
     <content><![CDATA[<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><h2 id="关于ESRI符号库"><a href="#关于ESRI符号库" class="headerlink" title="关于ESRI符号库"></a>关于ESRI符号库</h2><p>在ArcMap中打开顶部菜单中Customize-&gt;Style Manager工具,在这里面可以看见有黄色和黑色文件夹，都是ArcGIS默认的地理符号库，黄色的是空的，而黑色的包含了ESRI默认自带有的所有符号。如果需要自定义一些符号，我们可以在黄色的文件夹中添加，当然也可以使用新建文件夹的方式在新文件路径下添加自定义符号。<br>
@@ -674,25 +731,23 @@ cudnn_benchmark = True
 </blockquote>
 <h2 id="ANACONDA-常用命令与一些解决方案"><a href="#ANACONDA-常用命令与一些解决方案" class="headerlink" title="ANACONDA 常用命令与一些解决方案"></a>ANACONDA 常用命令与一些解决方案</h2><h3 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h3><pre><code class="shell">conda create -n your_env_name python=X.X
 </code></pre>
-<h3 id="更新conda（慎用！！！，新conda可能用不了）"><a href="#更新conda（慎用！！！，新conda可能用不了）" class="headerlink" title="更新conda（慎用！！！，新conda可能用不了）"></a>更新conda（慎用！！！，新conda可能用不了）</h3><pre><code class="shell">conda updata conda
+<h3 id="更新-conda（慎用！！！，新-conda-可能用不了）"><a href="#更新-conda（慎用！！！，新-conda-可能用不了）" class="headerlink" title="更新 conda（慎用！！！，新 conda 可能用不了）"></a>更新 conda（慎用！！！，新 conda 可能用不了）</h3><pre><code class="shell">conda updata conda
 </code></pre>
 <h3 id="查看虚拟环境菜单和环境内已载入库"><a href="#查看虚拟环境菜单和环境内已载入库" class="headerlink" title="查看虚拟环境菜单和环境内已载入库"></a>查看虚拟环境菜单和环境内已载入库</h3><pre><code class="shell">conda env list
 conda list
 </code></pre>
 <h3 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h3><pre><code class="shell">Conda activate your_env_name
 </code></pre>
-<h3 id="如果遇到conda安装频繁报错，使用如下语句："><a href="#如果遇到conda安装频繁报错，使用如下语句：" class="headerlink" title="如果遇到conda安装频繁报错，使用如下语句："></a>如果遇到conda安装频繁报错，使用如下语句：</h3><pre><code class="shell">conda clean -i
+<h3 id="如果遇到-conda-安装频繁报错，使用如下语句："><a href="#如果遇到-conda-安装频繁报错，使用如下语句：" class="headerlink" title="如果遇到 conda 安装频繁报错，使用如下语句："></a>如果遇到 conda 安装频繁报错，使用如下语句：</h3><pre><code class="shell">conda clean -i
 </code></pre>
 <h3 id="如果不幸要删除虚拟环境"><a href="#如果不幸要删除虚拟环境" class="headerlink" title="如果不幸要删除虚拟环境"></a>如果不幸要删除虚拟环境</h3><pre><code class="shell">conda remove -n your_env_name --all
 </code></pre>
-<h3 id="PyTorch推荐安装命令"><a href="#PyTorch推荐安装命令" class="headerlink" title="PyTorch推荐安装命令"></a>PyTorch推荐安装命令</h3><pre><code class="Shell">pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 -f https://download.pytorch.org/whl/cu116/torch_stable.html
+<h3 id="PyTorch-推荐安装命令"><a href="#PyTorch-推荐安装命令" class="headerlink" title="PyTorch 推荐安装命令"></a>PyTorch 推荐安装命令</h3><pre><code class="Shell">pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 -f https://download.pytorch.org/whl/cu116/torch_stable.html
 </code></pre>
 <h3 id="我常用的-pip-镜像"><a href="#我常用的-pip-镜像" class="headerlink" title="我常用的 pip 镜像"></a>我常用的 pip 镜像</h3><pre><code class="shell">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple # 清华  
 pip install -i https://pypi.douban.com/simple # 豆瓣（推荐）
 </code></pre>
-<h3 id="安装其他项目的requirements-txt"><a href="#安装其他项目的requirements-txt" class="headerlink" title="安装其他项目的requirements.txt"></a>安装其他项目的requirements.txt</h3><pre><code class="shell">pip install -r requirements.txt
-</code></pre>
-<h3 id="mac上python3配置第三方库"><a href="#mac上python3配置第三方库" class="headerlink" title="mac上python3配置第三方库"></a>mac上python3配置第三方库</h3><pre><code class="shell">python3 -m pip install xxx 
+<h3 id="安装其他项目的-requirements-txt"><a href="#安装其他项目的-requirements-txt" class="headerlink" title="安装其他项目的 requirements.txt"></a>安装其他项目的 requirements.txt</h3><pre><code class="shell">pip install -r requirements.txt
 </code></pre>
 <h2 id="TENSORBOARD-可视化"><a href="#TENSORBOARD-可视化" class="headerlink" title="TENSORBOARD 可视化"></a>TENSORBOARD 可视化</h2><ul>
 <li>首先学习以下 tensorboardX 怎么用。在 OpenMMLab 中，只需找到 <em>configs/<em>base</em>/default_runtime.py</em> 中的如下代码，解除 <code>dict(type=&#39;TensorboardLoggerHook&#39;)</code> 注释部分即可开启 tensorboard 记录器</li>
@@ -761,64 +816,6 @@ pip install -i https://pypi.douban.com/simple # 豆瓣（推荐）
 ]]></content>
       <categories>
         <category>Computer Vision 计算机视觉</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>地图制图「上」标准制图流程展示</title>
-    <url>/posts/46040/</url>
-    <content><![CDATA[<h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><h2 id="ArcMap中的添加数据"><a href="#ArcMap中的添加数据" class="headerlink" title="ArcMap中的添加数据"></a>ArcMap中的添加数据</h2><p>在ArcMap默认的软件页面中可以很容易找到「添加文件」按钮，这个是ArcGIS操作逻辑中用来添加某一个已有数据的按钮。单击，打开添加数据窗口。我是用顶部下拉菜单可以选择“catelog”中提前链接好的文件目录，这里我第一次使用，因此要单击顶部「链接文件夹」按钮以添加实验数据所在文件夹。添加完成后，将新荣县1：10000地形图矢量数据，随后可以看到图层管理器已经有了我需要的文件(在ArcMap中图层管理器称为“内容列表”)。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE1.png">
-        
-      <br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE2.png">
-        
-      </span></span></p>
-<h1 id="编辑与设计"><a href="#编辑与设计" class="headerlink" title="编辑与设计"></a>编辑与设计</h1><h2 id="挑选符号"><a href="#挑选符号" class="headerlink" title="挑选符号"></a>挑选符号</h2><p>内容列表有非常多的点类，现在将他们直接导入进来是初始化符号的，千篇一律。双击其中的地名符号，我发现可以打开符号系统来挑选一些默认的ESRI符号，右边可以更改必要的参数值来调整颜色、大小、形状等等。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE3.png">
-        
-      </span></p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>首先地图的符号之间是分好类别的，必要的区分度需要在符号的选择上体现出来。诚然，默认符号库中的符号可能不足以完成全部的符号更换，但是已经能体现出符号之间的差别了。</p>
-<h1 id="布局视图"><a href="#布局视图" class="headerlink" title="布局视图"></a>布局视图</h1><h2 id="打开布局视图"><a href="#打开布局视图" class="headerlink" title="打开布局视图"></a>打开布局视图</h2><p>为了输出我的地图，我需要打开布局视图窗口来编辑版式和其他显示要素。我可以在顶部视图菜单中打开，也可以单击底下非常小的「布局视图」按钮来切换。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE4.png">
-        
-      </span></p>
-<h2 id="调整布局"><a href="#调整布局" class="headerlink" title="调整布局"></a>调整布局</h2><p>实验指导书说拖动数据框角点以填充工作空间，但是其实可以右键布局区域，选择Distribute-&gt;Fit to Margins来自动完成。完成后更换比例尺为1:10000<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE5.png">
-        
-      </span></p>
-<p>但是考虑到最终出图是一个类似正方形的工作空间，所以我还需要调整页面，如页面大小、页面方向等等，这个可以在顶部文件菜单中找到Page and Print setup窗口来设置。这里我设置为横向视图、宽25cm、高23cm。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE6.png">
-        
-      </span></p>
-<p>为了给地图添加一个标题，在顶部插入菜单中选择title，在布局视图的顶部合适位置插入，并输入“新荣县”。双击该文本可以进入属性设置，以调整字体、大小等参数。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE7.png">
-        
-      </span></p>
-<p>顶部插入菜单中还可以插入图例，选择legend设置图例各个位置文本的参数，并调整图例内容。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE8.png">
-        
-      </span></p>
-<p>这次插入比例尺(scale bar)，在比例尺的候选框中选择合适的比例尺符号，拖动比例尺到地图合适位置。随后在顶部文件菜单点击保存，将本次实验的工作空间保存在实验文件夹下。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE9.png">
-        
-      </span></p>
-<h1 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h1><p>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE10.png">
-        
-      </span></p>
-]]></content>
-      <categories>
-        <category>GIS Experiments</category>
       </categories>
   </entry>
   <entry>
