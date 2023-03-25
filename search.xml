@@ -1,8 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>GIS的应用</title>
+    <url>/2021/0740930.html</url>
+    <content><![CDATA[<h1 id="输入（蓝）、处理（橙）、输出（绿）："><a href="#输入（蓝）、处理（橙）、输出（绿）：" class="headerlink" title="输入（蓝）、处理（橙）、输出（绿）："></a>输入（蓝）、处理（橙）、输出（绿）：</h1><p>输入处理输出是最基本最简化的应用逻辑</p>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="GIS%E7%9A%84%E5%BA%94%E7%94%A8/%E5%9B%BE1.png">
+        
+      </span></p>
+<h1 id="GIS模型-具体行业模型（集成）"><a href="#GIS模型-具体行业模型（集成）" class="headerlink" title="GIS模型+具体行业模型（集成）"></a>GIS模型+具体行业模型（集成）</h1><ul>
+<li>举例复杂应用：水务行业的排水管网 SWMM 模型（排水管网属于 GIS 模型，SWMM 属于税务行业模型）<ul>
+<li>对应 GISer 的思想：<ul>
+<li>给排水管建模</li>
+<li>分层：根据用户需求分析得到的设备类型抽象图层：检查井、管线、汇水区……</li>
+<li>抽象：<ul>
+<li>检查井，点类型：坐标、高程……</li>
+<li>管线，线类型：上下游井、埋深、管长、管径……<br>  □ 汇水区，面类型：面积……</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>针对思想的复杂应用构建：<ul>
+<li>输入：<ul>
+<li>检查井：坐标、高程……&lt;&lt;DEM 高程提取</li>
+<li>管线：上下游井、埋深、管长、管径……&lt;&lt;上下游网络拓扑</li>
+<li>汇水区：面积……&lt;&lt;小流域 Basin 划分工具</li>
+</ul>
+</li>
+<li>处理：<ul>
+<li>SWMM 模型引擎（和 GIS 关系不大，主要来源于行业模型）</li>
+</ul>
+</li>
+<li>输出（行业用户对应需求）：<ul>
+<li>检查井的水位变化序列的动态专题渲染</li>
+<li>管线流量、充满度变化序列的动态专题渲染</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>GIS Experiments</category>
+      </categories>
+  </entry>
+  <entry>
     <title>AI 入门知识</title>
-    <url>/posts/5/</url>
+    <url>/2023/035.html</url>
     <content><![CDATA[<blockquote>
 <p>学习心得：计算机视觉之算法基础与 OpenMMLab 入门<br>注：基于子豪兄的讲解，我重点发散了计算机视觉之算法基础的相关部分，主要参考的是我现有的笔记</p>
 </blockquote>
@@ -137,55 +184,8 @@
       </categories>
   </entry>
   <entry>
-    <title>GIS的应用</title>
-    <url>/posts/40930/</url>
-    <content><![CDATA[<h1 id="输入（蓝）、处理（橙）、输出（绿）："><a href="#输入（蓝）、处理（橙）、输出（绿）：" class="headerlink" title="输入（蓝）、处理（橙）、输出（绿）："></a>输入（蓝）、处理（橙）、输出（绿）：</h1><p>输入处理输出是最基本最简化的应用逻辑</p>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="GIS%E7%9A%84%E5%BA%94%E7%94%A8/%E5%9B%BE1.png">
-        
-      </span></p>
-<h1 id="GIS模型-具体行业模型（集成）"><a href="#GIS模型-具体行业模型（集成）" class="headerlink" title="GIS模型+具体行业模型（集成）"></a>GIS模型+具体行业模型（集成）</h1><ul>
-<li>举例复杂应用：水务行业的排水管网 SWMM 模型（排水管网属于 GIS 模型，SWMM 属于税务行业模型）<ul>
-<li>对应 GISer 的思想：<ul>
-<li>给排水管建模</li>
-<li>分层：根据用户需求分析得到的设备类型抽象图层：检查井、管线、汇水区……</li>
-<li>抽象：<ul>
-<li>检查井，点类型：坐标、高程……</li>
-<li>管线，线类型：上下游井、埋深、管长、管径……<br>  □ 汇水区，面类型：面积……</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>针对思想的复杂应用构建：<ul>
-<li>输入：<ul>
-<li>检查井：坐标、高程……&lt;&lt;DEM 高程提取</li>
-<li>管线：上下游井、埋深、管长、管径……&lt;&lt;上下游网络拓扑</li>
-<li>汇水区：面积……&lt;&lt;小流域 Basin 划分工具</li>
-</ul>
-</li>
-<li>处理：<ul>
-<li>SWMM 模型引擎（和 GIS 关系不大，主要来源于行业模型）</li>
-</ul>
-</li>
-<li>输出（行业用户对应需求）：<ul>
-<li>检查井的水位变化序列的动态专题渲染</li>
-<li>管线流量、充满度变化序列的动态专题渲染</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>GIS Experiments</category>
-      </categories>
-  </entry>
-  <entry>
     <title>MMLAB PR 指南</title>
-    <url>/posts/4/</url>
+    <url>/2023/034.html</url>
     <content><![CDATA[<blockquote>
 <p>ref：<br>贡献指南：<a href="https://mmengine.readthedocs.io/zh_CN/latest/notes/contributing.html">https://mmengine.readthedocs.io/zh_CN/latest/notes/contributing.html</a><br>代码规范：<a href="https://mmengine.readthedocs.io/zh_CN/latest/notes/code_style.html">https://mmengine.readthedocs.io/zh_CN/latest/notes/code_style.html</a></p>
 </blockquote>
@@ -244,7 +244,7 @@
   </entry>
   <entry>
     <title>一键锁定目标的检测算法</title>
-    <url>/posts/1/</url>
+    <url>/2023/031.html</url>
     <content><![CDATA[<blockquote>
 <p>学习心得：计算机视觉之目标检测算法基础 注：基于 OpenMMLab 实战营的教授内容，做了有用的补充，会缺少一部分课上的内容</p>
 </blockquote>
@@ -450,7 +450,7 @@
   </entry>
   <entry>
     <title>写给 mmsegmentation 工具箱新手的避坑指南</title>
-    <url>/posts/2/</url>
+    <url>/2023/032.html</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我在 Windows 环境使用 MMClassification、MMDetection 都还算轻轻松松，但是走完 MMSegmentation 全流程之后，真的想感叹一句“踩了不少坑啊”，所以想把自己的遇坑经验凝练总结出来，写一个专门给新手无伤通关的避坑教程。</p>
 <h2 id="Windows-配置环境的痛：mmcv-full"><a href="#Windows-配置环境的痛：mmcv-full" class="headerlink" title="Windows 配置环境的痛：mmcv-full"></a>Windows 配置环境的痛：mmcv-full</h2><p>在 v1.4.0 之前，mmcv-full 的安装没有针对 Windows 的现成预编译包，所以大部分新手会卡在 build MMCV 的过程中……这种情况下有两种解决方案。</p>
 <h3 id="方案-1：新版编译版本自动安装"><a href="#方案-1：新版编译版本自动安装" class="headerlink" title="方案 1：新版编译版本自动安装"></a>方案 1：新版编译版本自动安装</h3><p>在 1.4.0 之后，MMCV 会跟上 PyTorch 版本更新 <a href="https://zhuanlan.zhihu.com/p/441653536"> Windows 环境下的mmcv-full预编译包</a>，但是可用的版本范围比较局限，依赖 PyTorch、CUDA、mmcv-full 低版本的炼丹师自然就不适合这种安装方式了（看方案2），下面是以 PyTorch1.11.0、 CUDA11.3 为例的安装命令。</p>
@@ -613,7 +613,7 @@ cudnn_benchmark = True
   </entry>
   <entry>
     <title>地图制图「上」标准制图流程展示</title>
-    <url>/posts/46040/</url>
+    <url>/2021/0946040.html</url>
     <content><![CDATA[<h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><h2 id="ArcMap中的添加数据"><a href="#ArcMap中的添加数据" class="headerlink" title="ArcMap中的添加数据"></a>ArcMap中的添加数据</h2><p>在ArcMap默认的软件页面中可以很容易找到「添加文件」按钮，这个是ArcGIS操作逻辑中用来添加某一个已有数据的按钮。单击，打开添加数据窗口。我是用顶部下拉菜单可以选择“catelog”中提前链接好的文件目录，这里我第一次使用，因此要单击顶部「链接文件夹」按钮以添加实验数据所在文件夹。添加完成后，将新荣县1：10000地形图矢量数据，随后可以看到图层管理器已经有了我需要的文件(在ArcMap中图层管理器称为“内容列表”)。<br>
         <span class="lazyload-img-span">
         <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE1.png">
@@ -671,7 +671,7 @@ cudnn_benchmark = True
   </entry>
   <entry>
     <title>地图制图「下」符号设计流程展示</title>
-    <url>/posts/14607/</url>
+    <url>/2021/0914607.html</url>
     <content><![CDATA[<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><h2 id="关于ESRI符号库"><a href="#关于ESRI符号库" class="headerlink" title="关于ESRI符号库"></a>关于ESRI符号库</h2><p>在ArcMap中打开顶部菜单中Customize-&gt;Style Manager工具,在这里面可以看见有黄色和黑色文件夹，都是ArcGIS默认的地理符号库，黄色的是空的，而黑色的包含了ESRI默认自带有的所有符号。如果需要自定义一些符号，我们可以在黄色的文件夹中添加，当然也可以使用新建文件夹的方式在新文件路径下添加自定义符号。<br>
         <span class="lazyload-img-span">
         <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE1.png">
@@ -724,7 +724,7 @@ cudnn_benchmark = True
   </entry>
   <entry>
     <title>实验命令汇总</title>
-    <url>/posts/3/</url>
+    <url>/2023/033.html</url>
     <content><![CDATA[<blockquote>
 <p>学习心得：MMLab 实战营全程</p>
 <p>注：本文总结了实验过程中跨平台通用的技术方案，主要结合了自己的笔记</p>
@@ -820,7 +820,7 @@ pip install -i https://pypi.douban.com/simple # 豆瓣（推荐）
   </entry>
   <entry>
     <title>美食之美——《雅舍谈吃》</title>
-    <url>/posts/31855/</url>
+    <url>/2021/0731855.html</url>
     <content><![CDATA[<blockquote>
 <p>美，不尽收；食，不尽全。 ——题记</p>
 </blockquote>

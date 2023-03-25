@@ -6,6 +6,8 @@
     
     <lastmod>2023-03-25</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -13,41 +15,53 @@
     
     <lastmod>2023-03-22</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://buluwasior.me/posts/3/</loc>
+    <loc>http://buluwasior.me/2023/033.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://buluwasior.me/posts/5/</loc>
+    <loc>http://buluwasior.me/2023/035.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://buluwasior.me/posts/1/</loc>
+    <loc>http://buluwasior.me/2023/031.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://buluwasior.me/posts/40930/</loc>
+    <loc>http://buluwasior.me/2021/0740930.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://buluwasior.me/posts/2/</loc>
+    <loc>http://buluwasior.me/2023/032.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -55,34 +69,44 @@
     
     <lastmod>2023-03-21</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://buluwasior.me/posts/46040/</loc>
+    <loc>http://buluwasior.me/2021/0946040.html</loc>
     
     <lastmod>2023-03-21</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://buluwasior.me/posts/14607/</loc>
+    <loc>http://buluwasior.me/2021/0914607.html</loc>
     
     <lastmod>2023-03-21</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://buluwasior.me/posts/31855/</loc>
+    <loc>http://buluwasior.me/2021/0731855.html</loc>
     
     <lastmod>2023-03-21</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://buluwasior.me/posts/4/</loc>
+    <loc>http://buluwasior.me/2023/034.html</loc>
     
     <lastmod>2023-03-21</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -90,6 +114,8 @@
     
     <lastmod>2023-03-21</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -97,6 +123,8 @@
     
     <lastmod>2021-09-27</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
 
@@ -111,31 +139,31 @@
 
   
   <url>
-    <loc>http://buluwasior.me/categories/Computer-Vision-%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
+    <loc>http://buluwasior.me/categories/GIS-Experiments/</loc>
     <lastmod>2023-03-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://buluwasior.me/categories/GIS-Experiments/</loc>
+    <loc>http://buluwasior.me/categories/Computer-Vision-%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
     <lastmod>2023-03-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://buluwasior.me/categories/For-OpenMMLab/</loc>
     <lastmod>2023-03-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://buluwasior.me/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2023-03-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
   </url>
   
 </urlset>
