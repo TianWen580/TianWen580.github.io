@@ -449,64 +449,6 @@
       </categories>
   </entry>
   <entry>
-    <title>地图制图「上」标准制图流程展示</title>
-    <url>/posts/46040/</url>
-    <content><![CDATA[<h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><h2 id="ArcMap中的添加数据"><a href="#ArcMap中的添加数据" class="headerlink" title="ArcMap中的添加数据"></a>ArcMap中的添加数据</h2><p>在ArcMap默认的软件页面中可以很容易找到「添加文件」按钮，这个是ArcGIS操作逻辑中用来添加某一个已有数据的按钮。单击，打开添加数据窗口。我是用顶部下拉菜单可以选择“catelog”中提前链接好的文件目录，这里我第一次使用，因此要单击顶部「链接文件夹」按钮以添加实验数据所在文件夹。添加完成后，将新荣县1：10000地形图矢量数据，随后可以看到图层管理器已经有了我需要的文件(在ArcMap中图层管理器称为“内容列表”)。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE1.png">
-        
-      <br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE2.png">
-        
-      </span></span></p>
-<h1 id="编辑与设计"><a href="#编辑与设计" class="headerlink" title="编辑与设计"></a>编辑与设计</h1><h2 id="挑选符号"><a href="#挑选符号" class="headerlink" title="挑选符号"></a>挑选符号</h2><p>内容列表有非常多的点类，现在将他们直接导入进来是初始化符号的，千篇一律。双击其中的地名符号，我发现可以打开符号系统来挑选一些默认的ESRI符号，右边可以更改必要的参数值来调整颜色、大小、形状等等。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE3.png">
-        
-      </span></p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>首先地图的符号之间是分好类别的，必要的区分度需要在符号的选择上体现出来。诚然，默认符号库中的符号可能不足以完成全部的符号更换，但是已经能体现出符号之间的差别了。</p>
-<h1 id="布局视图"><a href="#布局视图" class="headerlink" title="布局视图"></a>布局视图</h1><h2 id="打开布局视图"><a href="#打开布局视图" class="headerlink" title="打开布局视图"></a>打开布局视图</h2><p>为了输出我的地图，我需要打开布局视图窗口来编辑版式和其他显示要素。我可以在顶部视图菜单中打开，也可以单击底下非常小的「布局视图」按钮来切换。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE4.png">
-        
-      </span></p>
-<h2 id="调整布局"><a href="#调整布局" class="headerlink" title="调整布局"></a>调整布局</h2><p>实验指导书说拖动数据框角点以填充工作空间，但是其实可以右键布局区域，选择Distribute-&gt;Fit to Margins来自动完成。完成后更换比例尺为1:10000<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE5.png">
-        
-      </span></p>
-<p>但是考虑到最终出图是一个类似正方形的工作空间，所以我还需要调整页面，如页面大小、页面方向等等，这个可以在顶部文件菜单中找到Page and Print setup窗口来设置。这里我设置为横向视图、宽25cm、高23cm。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE6.png">
-        
-      </span></p>
-<p>为了给地图添加一个标题，在顶部插入菜单中选择title，在布局视图的顶部合适位置插入，并输入“新荣县”。双击该文本可以进入属性设置，以调整字体、大小等参数。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE7.png">
-        
-      </span></p>
-<p>顶部插入菜单中还可以插入图例，选择legend设置图例各个位置文本的参数，并调整图例内容。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE8.png">
-        
-      </span></p>
-<p>这次插入比例尺(scale bar)，在比例尺的候选框中选择合适的比例尺符号，拖动比例尺到地图合适位置。随后在顶部文件菜单点击保存，将本次实验的工作空间保存在实验文件夹下。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE9.png">
-        
-      </span></p>
-<h1 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h1><p>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE10.png">
-        
-      </span></p>
-]]></content>
-      <categories>
-        <category>GIS Experiments</category>
-      </categories>
-  </entry>
-  <entry>
     <title>写给 mmsegmentation 工具箱新手的避坑指南</title>
     <url>/posts/2/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我在 Windows 环境使用 MMClassification、MMDetection 都还算轻轻松松，但是走完 MMSegmentation 全流程之后，真的想感叹一句“踩了不少坑啊”，所以想把自己的遇坑经验凝练总结出来，写一个专门给新手无伤通关的避坑教程。</p>
@@ -667,6 +609,64 @@ cudnn_benchmark = True
 ]]></content>
       <categories>
         <category>For OpenMMLab</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>地图制图「上」标准制图流程展示</title>
+    <url>/posts/46040/</url>
+    <content><![CDATA[<h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><h2 id="ArcMap中的添加数据"><a href="#ArcMap中的添加数据" class="headerlink" title="ArcMap中的添加数据"></a>ArcMap中的添加数据</h2><p>在ArcMap默认的软件页面中可以很容易找到「添加文件」按钮，这个是ArcGIS操作逻辑中用来添加某一个已有数据的按钮。单击，打开添加数据窗口。我是用顶部下拉菜单可以选择“catelog”中提前链接好的文件目录，这里我第一次使用，因此要单击顶部「链接文件夹」按钮以添加实验数据所在文件夹。添加完成后，将新荣县1：10000地形图矢量数据，随后可以看到图层管理器已经有了我需要的文件(在ArcMap中图层管理器称为“内容列表”)。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE1.png">
+        
+      <br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE2.png">
+        
+      </span></span></p>
+<h1 id="编辑与设计"><a href="#编辑与设计" class="headerlink" title="编辑与设计"></a>编辑与设计</h1><h2 id="挑选符号"><a href="#挑选符号" class="headerlink" title="挑选符号"></a>挑选符号</h2><p>内容列表有非常多的点类，现在将他们直接导入进来是初始化符号的，千篇一律。双击其中的地名符号，我发现可以打开符号系统来挑选一些默认的ESRI符号，右边可以更改必要的参数值来调整颜色、大小、形状等等。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE3.png">
+        
+      </span></p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>首先地图的符号之间是分好类别的，必要的区分度需要在符号的选择上体现出来。诚然，默认符号库中的符号可能不足以完成全部的符号更换，但是已经能体现出符号之间的差别了。</p>
+<h1 id="布局视图"><a href="#布局视图" class="headerlink" title="布局视图"></a>布局视图</h1><h2 id="打开布局视图"><a href="#打开布局视图" class="headerlink" title="打开布局视图"></a>打开布局视图</h2><p>为了输出我的地图，我需要打开布局视图窗口来编辑版式和其他显示要素。我可以在顶部视图菜单中打开，也可以单击底下非常小的「布局视图」按钮来切换。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE4.png">
+        
+      </span></p>
+<h2 id="调整布局"><a href="#调整布局" class="headerlink" title="调整布局"></a>调整布局</h2><p>实验指导书说拖动数据框角点以填充工作空间，但是其实可以右键布局区域，选择Distribute-&gt;Fit to Margins来自动完成。完成后更换比例尺为1:10000<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE5.png">
+        
+      </span></p>
+<p>但是考虑到最终出图是一个类似正方形的工作空间，所以我还需要调整页面，如页面大小、页面方向等等，这个可以在顶部文件菜单中找到Page and Print setup窗口来设置。这里我设置为横向视图、宽25cm、高23cm。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE6.png">
+        
+      </span></p>
+<p>为了给地图添加一个标题，在顶部插入菜单中选择title，在布局视图的顶部合适位置插入，并输入“新荣县”。双击该文本可以进入属性设置，以调整字体、大小等参数。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE7.png">
+        
+      </span></p>
+<p>顶部插入菜单中还可以插入图例，选择legend设置图例各个位置文本的参数，并调整图例内容。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE8.png">
+        
+      </span></p>
+<p>这次插入比例尺(scale bar)，在比例尺的候选框中选择合适的比例尺符号，拖动比例尺到地图合适位置。随后在顶部文件菜单点击保存，将本次实验的工作空间保存在实验文件夹下。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE9.png">
+        
+      </span></p>
+<h1 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h1><p>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE10.png">
+        
+      </span></p>
+]]></content>
+      <categories>
+        <category>GIS Experiments</category>
       </categories>
   </entry>
   <entry>
