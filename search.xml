@@ -1,53 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>GIS的应用</title>
-    <url>/2021/0740930.html</url>
-    <content><![CDATA[<h1 id="输入（蓝）、处理（橙）、输出（绿）："><a href="#输入（蓝）、处理（橙）、输出（绿）：" class="headerlink" title="输入（蓝）、处理（橙）、输出（绿）："></a>输入（蓝）、处理（橙）、输出（绿）：</h1><p>输入处理输出是最基本最简化的应用逻辑</p>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="GIS%E7%9A%84%E5%BA%94%E7%94%A8/%E5%9B%BE1.png">
-        
-      </span></p>
-<h1 id="GIS模型-具体行业模型（集成）"><a href="#GIS模型-具体行业模型（集成）" class="headerlink" title="GIS模型+具体行业模型（集成）"></a>GIS模型+具体行业模型（集成）</h1><ul>
-<li>举例复杂应用：水务行业的排水管网 SWMM 模型（排水管网属于 GIS 模型，SWMM 属于税务行业模型）<ul>
-<li>对应 GISer 的思想：<ul>
-<li>给排水管建模</li>
-<li>分层：根据用户需求分析得到的设备类型抽象图层：检查井、管线、汇水区……</li>
-<li>抽象：<ul>
-<li>检查井，点类型：坐标、高程……</li>
-<li>管线，线类型：上下游井、埋深、管长、管径……<br>  □ 汇水区，面类型：面积……</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>针对思想的复杂应用构建：<ul>
-<li>输入：<ul>
-<li>检查井：坐标、高程……&lt;&lt;DEM 高程提取</li>
-<li>管线：上下游井、埋深、管长、管径……&lt;&lt;上下游网络拓扑</li>
-<li>汇水区：面积……&lt;&lt;小流域 Basin 划分工具</li>
-</ul>
-</li>
-<li>处理：<ul>
-<li>SWMM 模型引擎（和 GIS 关系不大，主要来源于行业模型）</li>
-</ul>
-</li>
-<li>输出（行业用户对应需求）：<ul>
-<li>检查井的水位变化序列的动态专题渲染</li>
-<li>管线流量、充满度变化序列的动态专题渲染</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>GIS Experiments</category>
-      </categories>
-  </entry>
-  <entry>
     <title>AI 入门知识</title>
     <url>/2023/035.html</url>
     <content><![CDATA[<blockquote>
@@ -181,6 +134,53 @@
 ]]></content>
       <categories>
         <category>Computer Vision 计算机视觉</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>GIS的应用</title>
+    <url>/2021/0740930.html</url>
+    <content><![CDATA[<h1 id="输入（蓝）、处理（橙）、输出（绿）："><a href="#输入（蓝）、处理（橙）、输出（绿）：" class="headerlink" title="输入（蓝）、处理（橙）、输出（绿）："></a>输入（蓝）、处理（橙）、输出（绿）：</h1><p>输入处理输出是最基本最简化的应用逻辑</p>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="GIS%E7%9A%84%E5%BA%94%E7%94%A8/%E5%9B%BE1.png">
+        
+      </span></p>
+<h1 id="GIS模型-具体行业模型（集成）"><a href="#GIS模型-具体行业模型（集成）" class="headerlink" title="GIS模型+具体行业模型（集成）"></a>GIS模型+具体行业模型（集成）</h1><ul>
+<li>举例复杂应用：水务行业的排水管网 SWMM 模型（排水管网属于 GIS 模型，SWMM 属于税务行业模型）<ul>
+<li>对应 GISer 的思想：<ul>
+<li>给排水管建模</li>
+<li>分层：根据用户需求分析得到的设备类型抽象图层：检查井、管线、汇水区……</li>
+<li>抽象：<ul>
+<li>检查井，点类型：坐标、高程……</li>
+<li>管线，线类型：上下游井、埋深、管长、管径……<br>  □ 汇水区，面类型：面积……</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>针对思想的复杂应用构建：<ul>
+<li>输入：<ul>
+<li>检查井：坐标、高程……&lt;&lt;DEM 高程提取</li>
+<li>管线：上下游井、埋深、管长、管径……&lt;&lt;上下游网络拓扑</li>
+<li>汇水区：面积……&lt;&lt;小流域 Basin 划分工具</li>
+</ul>
+</li>
+<li>处理：<ul>
+<li>SWMM 模型引擎（和 GIS 关系不大，主要来源于行业模型）</li>
+</ul>
+</li>
+<li>输出（行业用户对应需求）：<ul>
+<li>检查井的水位变化序列的动态专题渲染</li>
+<li>管线流量、充满度变化序列的动态专题渲染</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>GIS Experiments</category>
       </categories>
   </entry>
   <entry>
