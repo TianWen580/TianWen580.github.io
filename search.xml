@@ -449,6 +449,64 @@
       </categories>
   </entry>
   <entry>
+    <title>地图制图「上」标准制图流程展示</title>
+    <url>/2021/0946040.html</url>
+    <content><![CDATA[<h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><h2 id="ArcMap中的添加数据"><a href="#ArcMap中的添加数据" class="headerlink" title="ArcMap中的添加数据"></a>ArcMap中的添加数据</h2><p>在ArcMap默认的软件页面中可以很容易找到「添加文件」按钮，这个是ArcGIS操作逻辑中用来添加某一个已有数据的按钮。单击，打开添加数据窗口。我是用顶部下拉菜单可以选择“catelog”中提前链接好的文件目录，这里我第一次使用，因此要单击顶部「链接文件夹」按钮以添加实验数据所在文件夹。添加完成后，将新荣县1：10000地形图矢量数据，随后可以看到图层管理器已经有了我需要的文件(在ArcMap中图层管理器称为“内容列表”)。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE1.png">
+        
+      <br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE2.png">
+        
+      </span></span></p>
+<h1 id="编辑与设计"><a href="#编辑与设计" class="headerlink" title="编辑与设计"></a>编辑与设计</h1><h2 id="挑选符号"><a href="#挑选符号" class="headerlink" title="挑选符号"></a>挑选符号</h2><p>内容列表有非常多的点类，现在将他们直接导入进来是初始化符号的，千篇一律。双击其中的地名符号，我发现可以打开符号系统来挑选一些默认的ESRI符号，右边可以更改必要的参数值来调整颜色、大小、形状等等。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE3.png">
+        
+      </span></p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>首先地图的符号之间是分好类别的，必要的区分度需要在符号的选择上体现出来。诚然，默认符号库中的符号可能不足以完成全部的符号更换，但是已经能体现出符号之间的差别了。</p>
+<h1 id="布局视图"><a href="#布局视图" class="headerlink" title="布局视图"></a>布局视图</h1><h2 id="打开布局视图"><a href="#打开布局视图" class="headerlink" title="打开布局视图"></a>打开布局视图</h2><p>为了输出我的地图，我需要打开布局视图窗口来编辑版式和其他显示要素。我可以在顶部视图菜单中打开，也可以单击底下非常小的「布局视图」按钮来切换。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE4.png">
+        
+      </span></p>
+<h2 id="调整布局"><a href="#调整布局" class="headerlink" title="调整布局"></a>调整布局</h2><p>实验指导书说拖动数据框角点以填充工作空间，但是其实可以右键布局区域，选择Distribute-&gt;Fit to Margins来自动完成。完成后更换比例尺为1:10000<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE5.png">
+        
+      </span></p>
+<p>但是考虑到最终出图是一个类似正方形的工作空间，所以我还需要调整页面，如页面大小、页面方向等等，这个可以在顶部文件菜单中找到Page and Print setup窗口来设置。这里我设置为横向视图、宽25cm、高23cm。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE6.png">
+        
+      </span></p>
+<p>为了给地图添加一个标题，在顶部插入菜单中选择title，在布局视图的顶部合适位置插入，并输入“新荣县”。双击该文本可以进入属性设置，以调整字体、大小等参数。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE7.png">
+        
+      </span></p>
+<p>顶部插入菜单中还可以插入图例，选择legend设置图例各个位置文本的参数，并调整图例内容。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE8.png">
+        
+      </span></p>
+<p>这次插入比例尺(scale bar)，在比例尺的候选框中选择合适的比例尺符号，拖动比例尺到地图合适位置。随后在顶部文件菜单点击保存，将本次实验的工作空间保存在实验文件夹下。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE9.png">
+        
+      </span></p>
+<h1 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h1><p>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE10.png">
+        
+      </span></p>
+]]></content>
+      <categories>
+        <category>GIS Experiments</category>
+      </categories>
+  </entry>
+  <entry>
     <title>写给 mmsegmentation 工具箱新手的避坑指南</title>
     <url>/2023/032.html</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我在 Windows 环境使用 MMClassification、MMDetection 都还算轻轻松松，但是走完 MMSegmentation 全流程之后，真的想感叹一句“踩了不少坑啊”，所以想把自己的遇坑经验凝练总结出来，写一个专门给新手无伤通关的避坑教程。</p>
@@ -612,64 +670,6 @@ cudnn_benchmark = True
       </categories>
   </entry>
   <entry>
-    <title>地图制图「上」标准制图流程展示</title>
-    <url>/2021/0946040.html</url>
-    <content><![CDATA[<h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><h2 id="ArcMap中的添加数据"><a href="#ArcMap中的添加数据" class="headerlink" title="ArcMap中的添加数据"></a>ArcMap中的添加数据</h2><p>在ArcMap默认的软件页面中可以很容易找到「添加文件」按钮，这个是ArcGIS操作逻辑中用来添加某一个已有数据的按钮。单击，打开添加数据窗口。我是用顶部下拉菜单可以选择“catelog”中提前链接好的文件目录，这里我第一次使用，因此要单击顶部「链接文件夹」按钮以添加实验数据所在文件夹。添加完成后，将新荣县1：10000地形图矢量数据，随后可以看到图层管理器已经有了我需要的文件(在ArcMap中图层管理器称为“内容列表”)。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE1.png">
-        
-      <br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE2.png">
-        
-      </span></span></p>
-<h1 id="编辑与设计"><a href="#编辑与设计" class="headerlink" title="编辑与设计"></a>编辑与设计</h1><h2 id="挑选符号"><a href="#挑选符号" class="headerlink" title="挑选符号"></a>挑选符号</h2><p>内容列表有非常多的点类，现在将他们直接导入进来是初始化符号的，千篇一律。双击其中的地名符号，我发现可以打开符号系统来挑选一些默认的ESRI符号，右边可以更改必要的参数值来调整颜色、大小、形状等等。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE3.png">
-        
-      </span></p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>首先地图的符号之间是分好类别的，必要的区分度需要在符号的选择上体现出来。诚然，默认符号库中的符号可能不足以完成全部的符号更换，但是已经能体现出符号之间的差别了。</p>
-<h1 id="布局视图"><a href="#布局视图" class="headerlink" title="布局视图"></a>布局视图</h1><h2 id="打开布局视图"><a href="#打开布局视图" class="headerlink" title="打开布局视图"></a>打开布局视图</h2><p>为了输出我的地图，我需要打开布局视图窗口来编辑版式和其他显示要素。我可以在顶部视图菜单中打开，也可以单击底下非常小的「布局视图」按钮来切换。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE4.png">
-        
-      </span></p>
-<h2 id="调整布局"><a href="#调整布局" class="headerlink" title="调整布局"></a>调整布局</h2><p>实验指导书说拖动数据框角点以填充工作空间，但是其实可以右键布局区域，选择Distribute-&gt;Fit to Margins来自动完成。完成后更换比例尺为1:10000<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE5.png">
-        
-      </span></p>
-<p>但是考虑到最终出图是一个类似正方形的工作空间，所以我还需要调整页面，如页面大小、页面方向等等，这个可以在顶部文件菜单中找到Page and Print setup窗口来设置。这里我设置为横向视图、宽25cm、高23cm。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE6.png">
-        
-      </span></p>
-<p>为了给地图添加一个标题，在顶部插入菜单中选择title，在布局视图的顶部合适位置插入，并输入“新荣县”。双击该文本可以进入属性设置，以调整字体、大小等参数。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE7.png">
-        
-      </span></p>
-<p>顶部插入菜单中还可以插入图例，选择legend设置图例各个位置文本的参数，并调整图例内容。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE8.png">
-        
-      </span></p>
-<p>这次插入比例尺(scale bar)，在比例尺的候选框中选择合适的比例尺符号，拖动比例尺到地图合适位置。随后在顶部文件菜单点击保存，将本次实验的工作空间保存在实验文件夹下。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE9.png">
-        
-      </span></p>
-<h1 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h1><p>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE10.png">
-        
-      </span></p>
-]]></content>
-      <categories>
-        <category>GIS Experiments</category>
-      </categories>
-  </entry>
-  <entry>
     <title>地图制图「下」符号设计流程展示</title>
     <url>/2021/0914607.html</url>
     <content><![CDATA[<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><h2 id="关于ESRI符号库"><a href="#关于ESRI符号库" class="headerlink" title="关于ESRI符号库"></a>关于ESRI符号库</h2><p>在ArcMap中打开顶部菜单中Customize-&gt;Style Manager工具,在这里面可以看见有黄色和黑色文件夹，都是ArcGIS默认的地理符号库，黄色的是空的，而黑色的包含了ESRI默认自带有的所有符号。如果需要自定义一些符号，我们可以在黄色的文件夹中添加，当然也可以使用新建文件夹的方式在新文件路径下添加自定义符号。<br>
@@ -720,37 +720,6 @@ cudnn_benchmark = True
 ]]></content>
       <categories>
         <category>GIS Experiments</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>美食之美——《雅舍谈吃》</title>
-    <url>/2021/0731855.html</url>
-    <content><![CDATA[<blockquote>
-<p>美，不尽收；食，不尽全。 ——题记</p>
-</blockquote>
-<ul>
-<li>谈到美食，正如饥肠辘辘的人，心里面急迫等待着吃的味觉。但不是所谓，仅仅为着生存。追寻美食的目标，不像一种世俗的冲动，正如雅舍先生题序「我以为要求美味固是人欲，然而何曾有背于天理？如果天理不包括美味的要求在内，上天之人，在舌头上为什么要生那么多的味蕾」。</li>
-</ul>
-<hr>
-<ul>
-<li>吃得好，是让人幸福，是对舌尖感受的升华，一旦提到耳熟能详的菜名，人的愉悦便像剑拔弩张，舌尖一触，百般馋舌。左右结构的「馋」字，右边两点比喻两腿迅猛，迅猛狡兔之肉，并非丰足，但人为了啖其美味，愿意逐此狡兔，故写作馋。西施舌、火腿、醋溜鱼、烤羊肉、烧鸭……谁若吃一口，也不至于在脑袋里臆想，两腿一跺，手掌一直，啪的一下，就算有事缠身也无暇顾及。然而，追求高级的味觉，就必然失去点东西，尤其时间宝贵，未必能每次都放纵自己。</li>
-<li>今年除夕，我从繁忙学业中抽身，冒着病毒的风险，踉跄到广东家中度过佳节。目的尚且鲜明，写在文章也就印证我所说为了吃美食。老母亲的美味已经不是天天所得，不回一趟家，不吃慈母饭。而明年除夕，已经计划好的美食清单，都在湖南临武，是为了外婆欢庆大寿，为了庆幸生能继续享用湘菜美味。诚然，计划是幸福的计划，我学业若是耽误，便影响我母亲回乡的心情。</li>
-<li>学业之中，不代表就缺乏美味。学校前门小吃街，第一条正中间的店面以「炒」为技艺，炒粉丝、炒饭、炒土豆粉、炒米线……每份炒制不少料、不过熟，香味浓郁滑入咽喉。旁边五碗小菜随取，勺筷俱全，好不心爽幸福。校外也有全州拌饭，馋嘴烤鱼、淮南牛肉汤、鸡蛋灌饼、特制酸奶等等玲琅满，如饕餮大餐，本人如数家珍，乐子甚广。</li>
-</ul>
-<hr>
-<ul>
-<li>但不是美食就令人幸福的，美食反被美食误，吃得不好，有可能还要怪罪一下美食。</li>
-<li>美食为了尝而点，而不是为了点而尝。打开一个外卖软件，铺天盖地的优惠券、广告条、满减促销，全然改变了美食服务的本质。美食不是为了优惠而美，但你看，我想起26元的双层牛肉芝士汉堡，打开外卖软件，又开始送我优惠券，一张是满27减5，一张是满80减9。我心念的汉堡计划被搁置一旁。现在，我购物车换了又换，想法改了又改，点了一家鸡架，满减很高，大份鸡架配油饼、薯条、龙串、千叶只要81，满减后43，优惠券折至34，天啊，真捡大便宜了，一个人，母亲常骂我浪费，也怕生冷不好吃，终于胃饱难入。于是，半个月后的一天，我说：「我心心念念的大汉堡还没吃到呢」，于是又习惯地，打开了外卖软件……</li>
-<li>啖美味的人是得爽口，而不是失口德。点到为止，也是嘴的道规。母亲常嘱咐我「什么东西都不能吃多」，但你看，考试结束，我路过一家烤番薯，摊主一旁慢悠悠削菠萝，菠萝酸甜爽口，头脑一昏，要来四根。老板连忙感谢，我心生奇怪。一路上我大快朵颐，直到第三根已然不对劲，牙齿酸疼，满口酥麻。是啊，我知道我吃多了，但是当时人已然傻了，没办法，又已然泛起恶心。</li>
-</ul>
-<hr>
-<ul>
-<li>美食之美，若天仙之佳，似陋室之雅。雅舍谈吃，谈世俗之赏，谈高雅之堂。南京翠香阁的早茶、北京全聚德的烧鸭，绝不同于广东潮州的街边烂摊子，不带有地域的歧视，不带有阶层的歧视，雅舍或许能尽情在破烂中寻味潮州，若是「破烂」登上大雅之堂的高级餐席，也不感觉一丝违和。但是，真世上能为高价路边摊买单的人已然不多见，多人不敢斗胆，为了金钱的缺憾。别人跟我谈到吃，我更愿意关注在吃本身上，谈钱，色变。但美食不是阶级之物。凡人也能有凡人的美味，大雅之堂也未必不入凡人；大雅食材未必得凡人认可，没有凡人认可也不称美食。</li>
-<li>美，有庐山仙境，有墙头杏花，观不可尽收；食，有满汉全席，有菜汤小食，尝不可尽全。却有人生百态，五味杂陈。文章，有百科全书，有一本便笺，若不是看不完，怎么会藏书如山，孜孜不倦。吃饭，若不是吃不完，怎么会馋如饕餮，感想良多。我写的字，就是把味蕾的感想说出来。可，不是我的味蕾，是我熙熙攘攘间，听闻的许多味蕾……</li>
-</ul>
-]]></content>
-      <categories>
-        <category>生活随笔</category>
       </categories>
   </entry>
   <entry>
@@ -848,5 +817,633 @@ pip install -i https://pypi.douban.com/simple # 豆瓣（推荐）
       <categories>
         <category>Computer Vision 计算机视觉</category>
       </categories>
+  </entry>
+  <entry>
+    <title>美食之美——《雅舍谈吃》</title>
+    <url>/2021/0731855.html</url>
+    <content><![CDATA[<blockquote>
+<p>美，不尽收；食，不尽全。 ——题记</p>
+</blockquote>
+<ul>
+<li>谈到美食，正如饥肠辘辘的人，心里面急迫等待着吃的味觉。但不是所谓，仅仅为着生存。追寻美食的目标，不像一种世俗的冲动，正如雅舍先生题序「我以为要求美味固是人欲，然而何曾有背于天理？如果天理不包括美味的要求在内，上天之人，在舌头上为什么要生那么多的味蕾」。</li>
+</ul>
+<hr>
+<ul>
+<li>吃得好，是让人幸福，是对舌尖感受的升华，一旦提到耳熟能详的菜名，人的愉悦便像剑拔弩张，舌尖一触，百般馋舌。左右结构的「馋」字，右边两点比喻两腿迅猛，迅猛狡兔之肉，并非丰足，但人为了啖其美味，愿意逐此狡兔，故写作馋。西施舌、火腿、醋溜鱼、烤羊肉、烧鸭……谁若吃一口，也不至于在脑袋里臆想，两腿一跺，手掌一直，啪的一下，就算有事缠身也无暇顾及。然而，追求高级的味觉，就必然失去点东西，尤其时间宝贵，未必能每次都放纵自己。</li>
+<li>今年除夕，我从繁忙学业中抽身，冒着病毒的风险，踉跄到广东家中度过佳节。目的尚且鲜明，写在文章也就印证我所说为了吃美食。老母亲的美味已经不是天天所得，不回一趟家，不吃慈母饭。而明年除夕，已经计划好的美食清单，都在湖南临武，是为了外婆欢庆大寿，为了庆幸生能继续享用湘菜美味。诚然，计划是幸福的计划，我学业若是耽误，便影响我母亲回乡的心情。</li>
+<li>学业之中，不代表就缺乏美味。学校前门小吃街，第一条正中间的店面以「炒」为技艺，炒粉丝、炒饭、炒土豆粉、炒米线……每份炒制不少料、不过熟，香味浓郁滑入咽喉。旁边五碗小菜随取，勺筷俱全，好不心爽幸福。校外也有全州拌饭，馋嘴烤鱼、淮南牛肉汤、鸡蛋灌饼、特制酸奶等等玲琅满，如饕餮大餐，本人如数家珍，乐子甚广。</li>
+</ul>
+<hr>
+<ul>
+<li>但不是美食就令人幸福的，美食反被美食误，吃得不好，有可能还要怪罪一下美食。</li>
+<li>美食为了尝而点，而不是为了点而尝。打开一个外卖软件，铺天盖地的优惠券、广告条、满减促销，全然改变了美食服务的本质。美食不是为了优惠而美，但你看，我想起26元的双层牛肉芝士汉堡，打开外卖软件，又开始送我优惠券，一张是满27减5，一张是满80减9。我心念的汉堡计划被搁置一旁。现在，我购物车换了又换，想法改了又改，点了一家鸡架，满减很高，大份鸡架配油饼、薯条、龙串、千叶只要81，满减后43，优惠券折至34，天啊，真捡大便宜了，一个人，母亲常骂我浪费，也怕生冷不好吃，终于胃饱难入。于是，半个月后的一天，我说：「我心心念念的大汉堡还没吃到呢」，于是又习惯地，打开了外卖软件……</li>
+<li>啖美味的人是得爽口，而不是失口德。点到为止，也是嘴的道规。母亲常嘱咐我「什么东西都不能吃多」，但你看，考试结束，我路过一家烤番薯，摊主一旁慢悠悠削菠萝，菠萝酸甜爽口，头脑一昏，要来四根。老板连忙感谢，我心生奇怪。一路上我大快朵颐，直到第三根已然不对劲，牙齿酸疼，满口酥麻。是啊，我知道我吃多了，但是当时人已然傻了，没办法，又已然泛起恶心。</li>
+</ul>
+<hr>
+<ul>
+<li>美食之美，若天仙之佳，似陋室之雅。雅舍谈吃，谈世俗之赏，谈高雅之堂。南京翠香阁的早茶、北京全聚德的烧鸭，绝不同于广东潮州的街边烂摊子，不带有地域的歧视，不带有阶层的歧视，雅舍或许能尽情在破烂中寻味潮州，若是「破烂」登上大雅之堂的高级餐席，也不感觉一丝违和。但是，真世上能为高价路边摊买单的人已然不多见，多人不敢斗胆，为了金钱的缺憾。别人跟我谈到吃，我更愿意关注在吃本身上，谈钱，色变。但美食不是阶级之物。凡人也能有凡人的美味，大雅之堂也未必不入凡人；大雅食材未必得凡人认可，没有凡人认可也不称美食。</li>
+<li>美，有庐山仙境，有墙头杏花，观不可尽收；食，有满汉全席，有菜汤小食，尝不可尽全。却有人生百态，五味杂陈。文章，有百科全书，有一本便笺，若不是看不完，怎么会藏书如山，孜孜不倦。吃饭，若不是吃不完，怎么会馋如饕餮，感想良多。我写的字，就是把味蕾的感想说出来。可，不是我的味蕾，是我熙熙攘攘间，听闻的许多味蕾……</li>
+</ul>
+]]></content>
+      <categories>
+        <category>生活随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>遥感深度学习学界综合调查</title>
+    <url>/2023/0333002.html</url>
+    <content><![CDATA[<h2 id="OVERVIEW"><a href="#OVERVIEW" class="headerlink" title="OVERVIEW"></a>OVERVIEW</h2><h3 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h3><ul>
+<li>遥感检索</li>
+<li>目标检测</li>
+<li>地物分类(场景分类 &amp; 语义分割)</li>
+<li>变化检测</li>
+<li>三维重建</li>
+<li>图像描述</li>
+<li>图像融合</li>
+<li>图像配准</li>
+</ul>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
+<li>基于<strong>深度学习</strong>的遥感影像<strong>分类</strong>、<strong>分割</strong>、<strong>检测</strong>、<strong>生成</strong>等</li>
+<li>基于<strong>知识图谱</strong>的遥感影像<strong>语义理解</strong>和<strong>推理</strong>等</li>
+<li>基于<strong>深度强化学习</strong>的遥感影像<strong>目标跟踪和决策支持</strong>等</li>
+<li>基于<strong>生成对抗网络</strong>以及<strong>多模态</strong>的遥感影像<strong>生成</strong>等</li>
+<li>基于<strong>亚像素-像素-超像素</strong>的遥感影像<strong>特征提取</strong>、<strong>表征</strong>及<strong>其他常规任务</strong>中的应用</li>
+</ul>
+<h3 id="价值较高的应用场景"><a href="#价值较高的应用场景" class="headerlink" title="价值较高的应用场景"></a>价值较高的应用场景</h3><ul>
+<li>土地利用</li>
+<li>城市规划</li>
+<li>环境监测 </li>
+<li>农业估产</li>
+<li>灾害评估和预警</li>
+</ul>
+<h3 id="面临的挑战"><a href="#面临的挑战" class="headerlink" title="面临的挑战"></a>面临的挑战</h3><ul>
+<li>遥感影像数据的<strong>多源性</strong>、<strong>多尺度性</strong>、<strong>多模态性</strong>和<strong>动态性</strong></li>
+<li>遥感影像标注数据的<strong>稀缺性</strong>、<strong>不一致性</strong>和<strong>不可靠性</strong></li>
+<li>遥感影像语义理解和推理的<strong>复杂性</strong>、<strong>不确定性</strong>和<strong>多样性</strong></li>
+<li>遥感影像目标跟踪和决策支持的<strong>实时性</strong>、<strong>可解释性</strong>和<strong>可信赖性</strong>等</li>
+</ul>
+<h3 id="当前研究热点"><a href="#当前研究热点" class="headerlink" title="当前研究热点"></a>当前研究热点</h3><p>当前研究者投入最多的遥感深度学习任务仍然是<strong>目标检测</strong>和<strong>语义分割</strong>，两个任务占据了近60%的文献数量。主要原因分析有：</p>
+<ul>
+<li>这两个任务作为 AI 的基础任务，是其他遥感子任务的基础，大多数学者寻求从基础领域突破</li>
+<li>这两个任务具有较高的实用价值，并且发展历史最长</li>
+<li>这两个任务内容最抽象，看待问题的角度也最复杂，虽然不够新，但是可以做的工作还很多</li>
+</ul>
+<h2 id="遥感检索"><a href="#遥感检索" class="headerlink" title="遥感检索"></a>遥感检索</h2><h3 id="任务总览"><a href="#任务总览" class="headerlink" title="任务总览"></a>任务总览</h3><table>
+<thead>
+<tr>
+<th>信息</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>任务描述</td>
+<td>(高级任务)根据自然语言或用户输入的示例图像，检索出所有符合的遥感影像或内含主体</td>
+</tr>
+<tr>
+<td>难度</td>
+<td>4/5</td>
+</tr>
+<tr>
+<td>研究价值</td>
+<td>5/5</td>
+</tr>
+</tbody></table>
+<h3 id="难度分析"><a href="#难度分析" class="headerlink" title="难度分析"></a>难度分析</h3><ul>
+<li>遥感检索的过程受到非常多因素共同影响，比如目标的数量关系、类别关系、尺度关系、大小关系、形状属性、方向、姿态、遮挡关系、光照环境、背景等</li>
+<li>基于深度学习的检索方式能够提取数据各种方面的高层抽象特征，所有影像得到不同表征，然后基于表征做排序检索，或者由神经网络输出相似度，这种方法在复杂场景下是目前性能最先进的，但同时也是进步空间最大的</li>
+</ul>
+<h3 id="研究角度"><a href="#研究角度" class="headerlink" title="研究角度"></a>研究角度</h3><table>
+<thead>
+<tr>
+<th>角度</th>
+<th>方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>更有效的特征表征和深度学习技术</td>
+<td>基于注意力机制、对比学习、多模态融合等</td>
+</tr>
+<tr>
+<td>更智能灵活的检索</td>
+<td>引入自然语言、各种交互或反馈等</td>
+</tr>
+<tr>
+<td>更适应遥感数据复杂性</td>
+<td>基于多源多模态数据、多任务学习、多尺度分析等</td>
+</tr>
+<tr>
+<td>更具挑战性和实用价值的检索任务</td>
+<td>基于视频数据、时相数据、地理位置等</td>
+</tr>
+</tbody></table>
+<h3 id="应用实例"><a href="#应用实例" class="headerlink" title="应用实例"></a>应用实例</h3><ul>
+<li>检索遥感影像中的飞机</li>
+<li>在遥感视频中检索发生特定事件的片段或对应地理范围</li>
+<li>检索与用户自然语言描述相符的图像</li>
+</ul>
+<h3 id="研究价值较高的数据集"><a href="#研究价值较高的数据集" class="headerlink" title="研究价值较高的数据集"></a>研究价值较高的数据集</h3><ul>
+<li>场景分类的数据集如 UC Merced Land Use Dataset、WHU-RS19、RSSCN7、PatternNet 都可以用在检索任务。作为分类任务，这些数据集精度已经够高了，因此不再介绍</li>
+</ul>
+<h2 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h2><table>
+<thead>
+<tr>
+<th>信息</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>任务描述</td>
+<td>(基础任务)从遥感影像中定位和识别不同类别的目标，如飞机、桥梁、农作物。为场景理解、变化检测等下游任务提供较精确的特征</td>
+</tr>
+<tr>
+<td>难度</td>
+<td>4/5</td>
+</tr>
+<tr>
+<td>研究价值</td>
+<td>5/5</td>
+</tr>
+</tbody></table>
+<h3 id="难度分析-1"><a href="#难度分析-1" class="headerlink" title="难度分析"></a>难度分析</h3><ul>
+<li>跟遥感检索类似，目标检测所面对的遥感数据也存在非常多的因素</li>
+<li>此外，目标检测任务还受到目标过小、类别不平衡等因素影响。目前，深度学习算法在该领域已经取得了非常多成绩，但仍然有各种各样的问题要解决</li>
+</ul>
+<h3 id="研究角度-1"><a href="#研究角度-1" class="headerlink" title="研究角度"></a>研究角度</h3><table>
+<thead>
+<tr>
+<th>角度</th>
+<th>方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>继续改进端到端的神经网络</td>
+<td>基于 Transformer、Residual Block等架构或模块</td>
+</tr>
+<tr>
+<td>降低模型对旋转角度的敏感</td>
+<td>利用对旋转敏感的特征学习到任意旋转角度的映射</td>
+</tr>
+<tr>
+<td>降低模型对尺度的敏感</td>
+<td>基于多尺度模块或注意力机制来学习多尺度信息或抑制杂乱</td>
+</tr>
+<tr>
+<td>更强大的多分类能力</td>
+<td>基于增强的多尺度能力充分利用不同类别的上下文信息</td>
+</tr>
+</tbody></table>
+<h3 id="应用实例-1"><a href="#应用实例-1" class="headerlink" title="应用实例"></a>应用实例</h3><ul>
+<li>移动目标探测</li>
+<li>受灾检测</li>
+<li>海上监测</li>
+<li>军事打击</li>
+<li>环境监测</li>
+</ul>
+<h3 id="研究价值较高的数据集-1"><a href="#研究价值较高的数据集-1" class="headerlink" title="研究价值较高的数据集"></a>研究价值较高的数据集</h3><ul>
+<li>DOTA<br>这是一个大规模的遥感图像目标检测数据集，包含<strong>2806张</strong>图像，总共<strong>15个类别</strong>，共计188282个目标。图像来源于不同的传感器和平台，<strong>具有不同的分辨率、尺度、视角、光照和密度</strong>。目标以四边形的形式标注，可以处理任意方向的目标。该数据集还提供了一个评估协议和一个基准测试</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Attr</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>类型</td>
+<td>卫星影像</td>
+</tr>
+<tr>
+<td>数据量</td>
+<td>2806(15 类)</td>
+</tr>
+<tr>
+<td>分辨率</td>
+<td>多样</td>
+</tr>
+<tr>
+<td>论文数</td>
+<td>117</td>
+</tr>
+<tr>
+<td>best perform(mAP)</td>
+<td>81.85%(2023 <a href="https://paperswithcode.com/paper/large-selective-kernel-network-for-remote">LSKNet-S</a>)</td>
+</tr>
+</tbody></table>
+<p>![[Pasted image 20230325225430.png]]</p>
+<ul>
+<li>DIOR<br>来自西北工业大学。含<strong>23463张</strong>图片和190288实例，覆盖<strong>20种目标</strong>，比DOTA数据集更大！2019年9月开始挂在arXiv上面</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Attr</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>类型</td>
+<td>卫星影像</td>
+</tr>
+<tr>
+<td>数据量</td>
+<td>23463(20 类)</td>
+</tr>
+<tr>
+<td>分辨率</td>
+<td>多样</td>
+</tr>
+<tr>
+<td>论文数</td>
+<td>未知</td>
+</tr>
+<tr>
+<td>best perform(mAP)</td>
+<td>64.41%(2022 <a href="https://ieeexplore.ieee.org/document/9795321">AOPG</a>)</td>
+</tr>
+</tbody></table>
+<h2 id="地物分类-语义分割"><a href="#地物分类-语义分割" class="headerlink" title="地物分类(语义分割)"></a>地物分类(语义分割)</h2><h3 id="任务总览-1"><a href="#任务总览-1" class="headerlink" title="任务总览"></a>任务总览</h3><table>
+<thead>
+<tr>
+<th>信息</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>任务描述</td>
+<td>(基础任务)对地表覆盖类型进行分类，可以是场景尺度也可以是像素级尺度</td>
+</tr>
+<tr>
+<td>难度</td>
+<td>5/5</td>
+</tr>
+<tr>
+<td>研究价值</td>
+<td>5/5</td>
+</tr>
+</tbody></table>
+<h3 id="难度分析-2"><a href="#难度分析-2" class="headerlink" title="难度分析"></a>难度分析</h3><ul>
+<li>高分辨率遥感影像中，物体的尺度、角度、光照条件总是有较大的差异</li>
+<li>高分辨率遥感影像的背景更加复杂，而且归类为背景的区域特别复杂，造成类别之间的不确定性较高</li>
+<li>前景的比例远小于背景，造成二分类的不平衡问题</li>
+</ul>
+<h3 id="研究角度-2"><a href="#研究角度-2" class="headerlink" title="研究角度"></a>研究角度</h3><table>
+<thead>
+<tr>
+<th>角度</th>
+<th>方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>继续改进端到端的神经网络</td>
+<td>基于 Transformer、Residual Block等架构或模块</td>
+</tr>
+<tr>
+<td>降低模型对旋转角度的敏感</td>
+<td>利用对旋转敏感的特征学习到任意旋转角度的映射</td>
+</tr>
+<tr>
+<td>降低模型对尺度的敏感</td>
+<td>基于多尺度模块或注意力机制来学习多尺度信息或抑制杂乱</td>
+</tr>
+<tr>
+<td>降低数据量的依赖</td>
+<td>利用迁移学习、伪标签或领域自适应来提高泛化能力</td>
+</tr>
+<tr>
+<td>生成样本</td>
+<td>利用生成模型扩充数据量较少的类别</td>
+</tr>
+</tbody></table>
+<h3 id="应用实例-2"><a href="#应用实例-2" class="headerlink" title="应用实例"></a>应用实例</h3><ul>
+<li>土地利用</li>
+<li>土地覆盖</li>
+<li>自动制图解译</li>
+<li>地球监测</li>
+</ul>
+<h3 id="研究价值较高的数据集-2"><a href="#研究价值较高的数据集-2" class="headerlink" title="研究价值较高的数据集"></a>研究价值较高的数据集</h3><blockquote>
+<p>只介绍语义分割数据集</p>
+</blockquote>
+<ul>
+<li>BigEarthNet<br>BigEarthNet是一个大规模的多标签遥感图像数据集，用于地球观测和环境监测任务。该数据集包含<strong>125,000张</strong>Sentinel-2<strong>卫星图像</strong>，覆盖了整个世界上12个不同地区的陆地表面，并使用<strong>43个类别</strong>的标签进行注释，包括森林、道路、河流等。每个图像都有多个标签，因此可以用于多标签分类任务。这个数据集是公开可用的，可以用于训练和评估遥感图像分析算法的性能。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Attr</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>类型</td>
+<td>卫星影像</td>
+</tr>
+<tr>
+<td>数据量</td>
+<td>10(43 类)</td>
+</tr>
+<tr>
+<td>分辨率</td>
+<td>10 m 到 60 m 不等</td>
+</tr>
+<tr>
+<td>论文数</td>
+<td>43</td>
+</tr>
+<tr>
+<td>best perform</td>
+<td>89.3%(2022 MoCo-v2 微调，来自一篇 Review)</td>
+</tr>
+</tbody></table>
+<p>![[Pasted image 20230320221929.png]]</p>
+<ul>
+<li>ISPRS Potsdam<br>ISPRS Potsdam是一个用于2D语义标记竞赛的数据集。该数据集包含<strong>38个</strong>大小相同的补丁，每个补丁都由从更大的TOP马赛克中提取的真正正射影像（TOP）组成。TOP和DSM的地面采样距离均为5厘米</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Attr</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>类型</td>
+<td>航飞影像</td>
+</tr>
+<tr>
+<td>数据量</td>
+<td>38(6 类)</td>
+</tr>
+<tr>
+<td>分辨率</td>
+<td>5 m</td>
+</tr>
+<tr>
+<td>论文数</td>
+<td>11</td>
+</tr>
+<tr>
+<td>best perform</td>
+<td>92%(2021 DC-Swin &amp; FT-UnetFormer)</td>
+</tr>
+</tbody></table>
+<p>![[Pasted image 20230322165622.png]]</p>
+<ul>
+<li>ISPRS Vaihingen<br>ISPRS Vaihingen数据集是一个用于评估遥感图像分割算法性能的公共数据集。该数据集基于德国城市Vaihingen的<strong>航空摄影图像</strong>，包含<strong>16</strong>个不同区域的高分辨率<strong>RGB图像</strong>和相应的地面真实值图。这些图像涵盖了各种场景，包括建筑物、道路、树木等，可以用于测试和比较不同的遥感图像分割算法的性能。该数据集已成为评估遥感图像分割算法的标准基准数据集之一，广泛应用于学术界和工业界。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Attr</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>类型</td>
+<td>航飞影像</td>
+</tr>
+<tr>
+<td>数据量</td>
+<td>33(6 类)</td>
+</tr>
+<tr>
+<td>分辨率</td>
+<td>9 cm</td>
+</tr>
+<tr>
+<td>论文数</td>
+<td>11</td>
+</tr>
+<tr>
+<td>best perform</td>
+<td>91.6%(2021 DC-Swin &amp; FT-UnetFormer)</td>
+</tr>
+</tbody></table>
+<p>![[Pasted image 20230320214402.png]]</p>
+<ul>
+<li>xBD<br>它包含超过45,000KM^2的<strong>多边形标记的灾前和灾后图像</strong>。该数据集提供了灾后图像，其中从灾前转换的多边形覆盖在建筑物上，并带有损坏分类标签。在xBD上有一个2D语义分割基准测试，其中模型根据其<strong>加权平均F1得分</strong>进行排名。目前在这个基准测试中<strong>最先进的模型是BDANet</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Attr</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>类型</td>
+<td>卫星影像</td>
+</tr>
+<tr>
+<td>数据量</td>
+<td>未知(2 类)</td>
+</tr>
+<tr>
+<td>分辨率</td>
+<td>未知</td>
+</tr>
+<tr>
+<td>论文数</td>
+<td>29</td>
+</tr>
+<tr>
+<td>best perform (F1-score)</td>
+<td>80.6%(2021 BDANet)</td>
+</tr>
+</tbody></table>
+<p>![[Pasted image 20230322161739.png]]</p>
+<h2 id="变化检测"><a href="#变化检测" class="headerlink" title="变化检测"></a>变化检测</h2><h3 id="任务总览-2"><a href="#任务总览-2" class="headerlink" title="任务总览"></a>任务总览</h3><table>
+<thead>
+<tr>
+<th>信息</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>任务描述</td>
+<td>(高级任务)对不同时期的遥感影像进行对比分析，发现特定对象地表覆盖的变化，如灾害、建筑开发、景观演化</td>
+</tr>
+<tr>
+<td>难度</td>
+<td>5/5</td>
+</tr>
+<tr>
+<td>研究价值</td>
+<td>5/5</td>
+</tr>
+</tbody></table>
+<h3 id="难度分析-3"><a href="#难度分析-3" class="headerlink" title="难度分析"></a>难度分析</h3><ul>
+<li>做对比的两张时相数据，往往是多源、多尺度、时相差异较大的，我们要同时考虑影像的配准、辐射校正、去噪等预处理问题。</li>
+<li>强大的深度学习能够更好地学习复杂时相数据地关系，但目前进步空间还很大</li>
+</ul>
+<h3 id="研究角度-3"><a href="#研究角度-3" class="headerlink" title="研究角度"></a>研究角度</h3><table>
+<thead>
+<tr>
+<th>角度</th>
+<th>方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>降低时相差异的干扰</td>
+<td>学习受噪声干扰较小的表征来做深度学习的对比</td>
+</tr>
+<tr>
+<td>学习更丰富的时序差异</td>
+<td>提取两幅以上的时相数据与目标时相的差异</td>
+</tr>
+</tbody></table>
+<h3 id="应用实例-3"><a href="#应用实例-3" class="headerlink" title="应用实例"></a>应用实例</h3><ul>
+<li>城市生长监测</li>
+<li>自然演变检测</li>
+<li>灾害评估与预防</li>
+</ul>
+<h3 id="研究价值较高的数据集-3"><a href="#研究价值较高的数据集-3" class="headerlink" title="研究价值较高的数据集"></a>研究价值较高的数据集</h3><ul>
+<li>LEVIR-CD<br>LEVIR-CD数据集由<strong>637对</strong>非常高分辨率（VHR，<strong>像素0.5米</strong>）的Google Earth（GE）图像补丁组成，每个<strong>补丁大小为1024×1024像素</strong>。这些相隔5至14年的双时相图像有显著的土地利用变化，特别是建筑物增长。LEVIR-CD覆盖了各种类型的建筑物，例如别墅住宅、高层公寓、小车库和大型仓库。我们<strong>主要关注与建筑物相关的变化</strong>，包括建筑物的增长（从土地/草地/硬化地面或正在建造中的建筑物到新的建筑区域的变化）和建筑物的减少。这些双时相图像由遥感影像解译专家使用二进制标签（1表示变化，0表示未变化）进行注释。我们的每个样本都由一个注释者进行注释，然后由另一个注释者进行双重检查以产生高质量的注释。完全注释的LEVIR-CD包含一共31,333个单独的变化建筑实例</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Attr</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>类型</td>
+<td>卫星影像</td>
+</tr>
+<tr>
+<td>数据量</td>
+<td>637对(1 类)</td>
+</tr>
+<tr>
+<td>分辨率</td>
+<td>0.5 m</td>
+</tr>
+<tr>
+<td>论文数</td>
+<td>36</td>
+</tr>
+<tr>
+<td>best perform (F1-score)</td>
+<td>92.33%(2022 Changer-R101)</td>
+</tr>
+</tbody></table>
+<p>![[Pasted image 20230326163447.png]]</p>
+<h2 id="三维重建"><a href="#三维重建" class="headerlink" title="三维重建"></a>三维重建</h2><h3 id="任务总览-3"><a href="#任务总览-3" class="headerlink" title="任务总览"></a>任务总览</h3><table>
+<thead>
+<tr>
+<th>信息</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>任务描述</td>
+<td>(高级任务)从多角度遥感影像中提取高精度的三维信息，如高程、形态</td>
+</tr>
+<tr>
+<td>难度</td>
+<td>5/5</td>
+</tr>
+<tr>
+<td>研究价值</td>
+<td>5/5</td>
+</tr>
+</tbody></table>
+<h3 id="难度分析-4"><a href="#难度分析-4" class="headerlink" title="难度分析"></a>难度分析</h3><ul>
+<li>需要解决图像配准、深度估计、点云生成等子问题</li>
+<li>要克服的挑战有图像的低质量、噪声、遮挡、光照差异、尺度变化等</li>
+</ul>
+<h3 id="研究角度-4"><a href="#研究角度-4" class="headerlink" title="研究角度"></a>研究角度</h3><table>
+<thead>
+<tr>
+<th>角度</th>
+<th>方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>更高精度的深度图或点云</td>
+<td>利用生成模型提取</td>
+</tr>
+<tr>
+<td>降低标注依赖</td>
+<td>利用注意力机制增强表征能力，并利用自监督或弱监督增强泛化能力</td>
+</tr>
+<tr>
+<td>更强的先验约束</td>
+<td>利用拓扑约束来优化点云结构，使用物理规则增强场景理解</td>
+</tr>
+<tr>
+<td>更丰富的数据特征</td>
+<td>利用多源、时序或多模态数据学习到丰富的特征</td>
+</tr>
+</tbody></table>
+<h3 id="应用实例-4"><a href="#应用实例-4" class="headerlink" title="应用实例"></a>应用实例</h3><ul>
+<li>三维可视化</li>
+<li>三维关系表达</li>
+</ul>
+<h2 id="图像描述"><a href="#图像描述" class="headerlink" title="图像描述"></a>图像描述</h2><h3 id="任务总览-4"><a href="#任务总览-4" class="headerlink" title="任务总览"></a>任务总览</h3><table>
+<thead>
+<tr>
+<th>信息</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>任务描述</td>
+<td>用自然语言描述遥感影像的内容，对数量关系和空间位置关系有一定要求</td>
+</tr>
+<tr>
+<td>难度</td>
+<td>5/5</td>
+</tr>
+<tr>
+<td>研究价值</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="图像融合"><a href="#图像融合" class="headerlink" title="图像融合"></a>图像融合</h2><h3 id="任务总览-5"><a href="#任务总览-5" class="headerlink" title="任务总览"></a>任务总览</h3><table>
+<thead>
+<tr>
+<th>信息</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>任务描述</td>
+<td>多源遥感影像进行对齐和融合，提高空间分辨率和光谱分辨率</td>
+</tr>
+<tr>
+<td>难度</td>
+<td>3/5</td>
+</tr>
+<tr>
+<td>研究价值</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="图像配准"><a href="#图像配准" class="headerlink" title="图像配准"></a>图像配准</h2><h3 id="任务总览-6"><a href="#任务总览-6" class="headerlink" title="任务总览"></a>任务总览</h3><table>
+<thead>
+<tr>
+<th>信息</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>任务描述</td>
+<td>多源遥感影像进行几何变换和灰度匹配，以消除或减少多源图像之间的空间差异</td>
+</tr>
+<tr>
+<td>难度</td>
+<td>4/5</td>
+</tr>
+<tr>
+<td>研究价值</td>
+<td></td>
+</tr>
+</tbody></table>
+]]></content>
+      <tags>
+        <tag>Computer Vision 计算机视觉</tag>
+      </tags>
   </entry>
 </search>

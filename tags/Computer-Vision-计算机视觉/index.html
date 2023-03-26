@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>  实验命令汇总 |    林天文 Tianwen Lin | Buluwasior</title>
+  <title>  Computer Vision 计算机视觉 |    林天文 Tianwen Lin | Buluwasior</title>
   <meta name="description" content="HELLO">
   <!-- 标签页图标 -->
   
@@ -157,192 +157,37 @@
 <div class="body-outer">
   <div class="body-inner">
     
-<article class="post-inner">
-  <div class="post-content-outer">
-    <div class="post-intro">
-      <div class="post-title animate__animated  animate__fadeInUp">实验命令汇总</div>
-      <div class="meta-intro animate__animated  animate__fadeInUp">3月 21 2023</div>
-      
-        <div class="post-cover"><span class="lazyload-img-span"><img data-src="https://user-images.githubusercontent.com/62822224/226604246-d9eeac67-0d77-4c0e-b66c-84b2abe70216.png" class="post-cover-img"><div class="post-cover-img-hover">asas</div><div class="post-cover-img-insert">asas</div></span></div>
-      
-    </div>
-    <div class="post-content-inner">
-      <div class="post-content-inner-space">
-
-      </div>
-      <div class="post-content-main animate__animated  animate__fadeInUp">
-        <!-- top型目录 -->
-        
-          <ol class="toc-top"><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#ANACONDA-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%B8%8E%E4%B8%80%E4%BA%9B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-top-text">ANACONDA 常用命令与一些解决方案</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-top-text">创建虚拟环境</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E6%9B%B4%E6%96%B0-conda%EF%BC%88%E6%85%8E%E7%94%A8%EF%BC%81%EF%BC%81%EF%BC%81%EF%BC%8C%E6%96%B0-conda-%E5%8F%AF%E8%83%BD%E7%94%A8%E4%B8%8D%E4%BA%86%EF%BC%89"><span class="toc-top-text">更新 conda（慎用！！！，新 conda 可能用不了）</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E6%9F%A5%E7%9C%8B%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E8%8F%9C%E5%8D%95%E5%92%8C%E7%8E%AF%E5%A2%83%E5%86%85%E5%B7%B2%E8%BD%BD%E5%85%A5%E5%BA%93"><span class="toc-top-text">查看虚拟环境菜单和环境内已载入库</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E6%BF%80%E6%B4%BB%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-top-text">激活虚拟环境</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E5%A6%82%E6%9E%9C%E9%81%87%E5%88%B0-conda-%E5%AE%89%E8%A3%85%E9%A2%91%E7%B9%81%E6%8A%A5%E9%94%99%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%A6%82%E4%B8%8B%E8%AF%AD%E5%8F%A5%EF%BC%9A"><span class="toc-top-text">如果遇到 conda 安装频繁报错，使用如下语句：</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E5%A6%82%E6%9E%9C%E4%B8%8D%E5%B9%B8%E8%A6%81%E5%88%A0%E9%99%A4%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-top-text">如果不幸要删除虚拟环境</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#PyTorch-%E6%8E%A8%E8%8D%90%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4"><span class="toc-top-text">PyTorch 推荐安装命令</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E6%88%91%E5%B8%B8%E7%94%A8%E7%9A%84-pip-%E9%95%9C%E5%83%8F"><span class="toc-top-text">我常用的 pip 镜像</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E5%AE%89%E8%A3%85%E5%85%B6%E4%BB%96%E9%A1%B9%E7%9B%AE%E7%9A%84-requirements-txt"><span class="toc-top-text">安装其他项目的 requirements.txt</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#TENSORBOARD-%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-top-text">TENSORBOARD 可视化</span></a></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E5%88%A9%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B"><span class="toc-top-text">利用预训练模型</span></a></li></ol>
-        
-        <blockquote>
-<p>学习心得：MMLab 实战营全程</p>
-<p>注：本文总结了实验过程中跨平台通用的技术方案，主要结合了自己的笔记</p>
-</blockquote>
-<h2 id="ANACONDA-常用命令与一些解决方案"><a href="#ANACONDA-常用命令与一些解决方案" class="headerlink" title="ANACONDA 常用命令与一些解决方案"></a>ANACONDA 常用命令与一些解决方案</h2><h3 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h3><pre><code class="shell">conda create -n your_env_name python=X.X
-</code></pre>
-<h3 id="更新-conda（慎用！！！，新-conda-可能用不了）"><a href="#更新-conda（慎用！！！，新-conda-可能用不了）" class="headerlink" title="更新 conda（慎用！！！，新 conda 可能用不了）"></a>更新 conda（慎用！！！，新 conda 可能用不了）</h3><pre><code class="shell">conda updata conda
-</code></pre>
-<h3 id="查看虚拟环境菜单和环境内已载入库"><a href="#查看虚拟环境菜单和环境内已载入库" class="headerlink" title="查看虚拟环境菜单和环境内已载入库"></a>查看虚拟环境菜单和环境内已载入库</h3><pre><code class="shell">conda env list
-conda list
-</code></pre>
-<h3 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h3><pre><code class="shell">Conda activate your_env_name
-</code></pre>
-<h3 id="如果遇到-conda-安装频繁报错，使用如下语句："><a href="#如果遇到-conda-安装频繁报错，使用如下语句：" class="headerlink" title="如果遇到 conda 安装频繁报错，使用如下语句："></a>如果遇到 conda 安装频繁报错，使用如下语句：</h3><pre><code class="shell">conda clean -i
-</code></pre>
-<h3 id="如果不幸要删除虚拟环境"><a href="#如果不幸要删除虚拟环境" class="headerlink" title="如果不幸要删除虚拟环境"></a>如果不幸要删除虚拟环境</h3><pre><code class="shell">conda remove -n your_env_name --all
-</code></pre>
-<h3 id="PyTorch-推荐安装命令"><a href="#PyTorch-推荐安装命令" class="headerlink" title="PyTorch 推荐安装命令"></a>PyTorch 推荐安装命令</h3><pre><code class="Shell">pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 -f https://download.pytorch.org/whl/cu116/torch_stable.html
-</code></pre>
-<h3 id="我常用的-pip-镜像"><a href="#我常用的-pip-镜像" class="headerlink" title="我常用的 pip 镜像"></a>我常用的 pip 镜像</h3><pre><code class="shell">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple # 清华  
-pip install -i https://pypi.douban.com/simple # 豆瓣（推荐）
-</code></pre>
-<h3 id="安装其他项目的-requirements-txt"><a href="#安装其他项目的-requirements-txt" class="headerlink" title="安装其他项目的 requirements.txt"></a>安装其他项目的 requirements.txt</h3><pre><code class="shell">pip install -r requirements.txt
-</code></pre>
-<h2 id="TENSORBOARD-可视化"><a href="#TENSORBOARD-可视化" class="headerlink" title="TENSORBOARD 可视化"></a>TENSORBOARD 可视化</h2><ul>
-<li>首先学习以下 tensorboardX 怎么用。在 OpenMMLab 中，只需找到 <em>configs/<em>base</em>/default_runtime.py</em> 中的如下代码，解除 <code>dict(type=&#39;TensorboardLoggerHook&#39;)</code> 注释部分即可开启 tensorboard 记录器</li>
-</ul>
-<pre><code class="python">log_config = dict(  
-    interval=50,  
-    hooks=[  
-        dict(type=&#39;TextLoggerHook&#39;, by_epoch=False),  
-        # dict(type=&#39;TensorboardLoggerHook&#39;)  
-        # dict(type=&#39;PaviLoggerHook&#39;) # for internal services  
-    ])
-</code></pre>
-<ul>
-<li><p>如果遇到环境问题，则按照提示配置 tensorboard 环境即可</p>
-</li>
-<li><p>一般训练代码运行之后会同时生成 tensorboardX 的日志文件。这时复制日志文件所在文件夹路径，打开 Anaconda 命令行，切换环境至 torch，输入图中语句为日志文件夹创建 tensorboardX 默认的本地端口</p>
-<pre><code class="shell">tensorboard --logdir PATH &#123;log_file_abs_path&#125;
-</code></pre>
-</li>
-<li><p>执行得到端口地址，复制到浏览器打开即可查看训练可视化内容<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/fY83Oja.jpg">
-        
-       
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/omCSC0U.jpg">
-        
-      </span></span></p>
-</li>
-<li><p>关闭端口占用，只需短/长按 <em>CTRL + C</em></p>
-</li>
-</ul>
-<h2 id="利用预训练模型"><a href="#利用预训练模型" class="headerlink" title="利用预训练模型"></a>利用预训练模型</h2><ul>
-<li>OpenMMLab 几乎为 <em>configs/</em> 中的所有模型提供了预训练模型，链接存放在了各个算法文件夹下的 yaml 文件中，将链接以字符串的形式传给 <em>_configs/<em>base</em>/default_runtime.py</em> 中的 load_from 参数即可</li>
-<li>预训练策略：<table>
-<thead>
-<tr>
-<th>待训练数据集</th>
-<th>与预训练模型数据集相似度</th>
-<th>处理方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>较小</td>
-<td>较高</td>
-<td>例如待训练数据集中数据存在于预训练模型中时，不需要重新训练模型，只需要修改最后一层输出层即可</td>
-</tr>
-<tr>
-<td>较小</td>
-<td>较小</td>
-<td>可以冻结模型的前k层，重新模型的后n-k层。冻结模型的前k层，用于弥补数据集较小的问题</td>
-</tr>
-<tr>
-<td>较大</td>
-<td>较高</td>
-<td>采用预训练模型会非常有效，保持模型结构不变和初始权重不变，对模型重新训练</td>
-</tr>
-<tr>
-<td>较大</td>
-<td>较小</td>
-<td>采用预训练模型不会有太大的效果，可以使用预训练模型或者不使用预训练模型，然后进行重新训练</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-
-        <!-- 分类文章 -->
-        
-          <div class="post-categoris-bottom">
-            <div class="post-categoris-name">Computer Vision 计算机视觉</div>
-            <ul>
-            
-            
+  
+<section class="img-show-outer">
+    <section class="img-show-inner">
+          
+          
+          <div class="img-show-post">
+            <div class="img-show-post-cover">
+              <span class="lazyload-img-span">
+              <a  href="/2023/0333002.html">
               
-            
-            
-            
+              <img data-src="https://user-images.githubusercontent.com/62822224/227766766-e2bb4520-450c-40c7-abba-ede028f557e6.png" class="img-show-post-cover-class">
               
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-                <li class="base">
-                  <a  href="/2023/035.html" class="post-categoris-bottom-link">
-                  AI 入门知识
-                </a>
-                </li>
-              
-              
-            
-            
-            
-              
-                <li class="base">
-                  <a  href="/2023/031.html" class="post-categoris-bottom-link">
-                  一键锁定目标的检测算法
-                </a>
-                </li>
-              
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-                <li class="me base">
-                  <a  href="/2023/033.html" class="post-categoris-bottom-link">
-                  实验命令汇总
-                </a>
-                </li>
-              
-              
-            
-            
-            
-            
-            </ul>
-
+              </a>
+              </span>
+            </div>
+            <div class="img-show-post-intro">
+             <a  href="/2023/0333002.html">
+            <div class="img-show-post-title animate__animated  animate__fadeInUp">遥感深度学习学界综合调查</div>
+            </a>
+            <div class="img-show-post-date animate__animated  animate__fadeInUp">3月 26 2023 </div>
+            </div>
           </div>
-
-        
-      </div>
-      <div class="post-content-inner-space">
-        
-      </div>
-   </div>
-    <!-- 评论 -->
+          
+         
+    </section>
     
-  </div>
-</article>
+</section>
+
+
+
+
   </div>
 </div>
 

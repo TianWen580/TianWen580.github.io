@@ -1,0 +1,886 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  遥感深度学习学界综合调查 |    林天文 Tianwen Lin | Buluwasior</title>
+  <meta name="description" content="HELLO">
+  <!-- 标签页图标 -->
+  
+  <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+  
+
+  <!-- 图标库 -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- 动画库 -->
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fushaolei/cdn-white@1.0/css/animate.css"/>
+  
+  <!-- css文件 -->
+  
+<link rel="stylesheet" href="/css/white.css">
+
+  <!-- 代码高亮 -->
+  
+    
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/github.css">
+
+    
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiper.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiperstyle.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+
+<div class="menu-outer">
+    <div class="menu-inner">
+      <div class="menu-site-name  animate__animated  animate__fadeInUp">
+        <a href="/">
+          林天文 Tianwen Lin | Buluwasior
+        </a>
+        
+      </div>
+      <div class="menu-group">
+        <ul class="menu-ul">
+        
+          <a href="/" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              HOME PAGE
+            </li>
+          </a>
+        
+          <a href="/about" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              ME
+            </li>
+          </a>
+        
+          <a href="/archives" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              BLOGs
+            </li>
+          </a>
+        
+          <a href="/publication" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              PUBLICATIONS
+            </li>
+          </a>
+        
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="sort">
+             COLLECTIONs
+             <div class="categories-outer " id="sort-div">
+               <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Vision-%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">Computer Vision 计算机视觉</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/For-OpenMMLab/">For OpenMMLab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIS-Experiments/">GIS Experiments</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/">生活随笔</a></li></ul>
+             </div>
+          </li>
+        
+        
+        <a href="/search">
+          <li class="menu-li  animate__animated  animate__fadeInUp">
+            <i class="ri-search-line"></i>
+          </li>
+        </a>
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="mobile-menu">
+            <i class="ri-menu-line"></i>
+          </li>
+        
+        </ul>
+
+      </div>
+
+    </div>
+</div>
+<div id="mobile-main" class="animate__animated  animate__fadeIn">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-site-name animate__animated  animate__fadeInUp">
+      <a href="/">
+        林天文 Tianwen Lin | Buluwasior
+      </a>
+    </div>
+    <div class="mobile-menu-group" id="mobile-close">
+      <i class="ri-close-line"></i>
+    </div>
+
+  </div>
+
+  <div class="mobile-menu-div">
+  
+    <a href="/" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>HOME PAGE</span>
+      </div>
+    </a>
+  
+    <a href="/about" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>ME</span>
+      </div>
+    </a>
+  
+    <a href="/archives" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>BLOGs</span>
+      </div>
+    </a>
+  
+    <a href="/publication" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>PUBLICATIONS</span>
+      </div>
+    </a>
+  
+  
+    <a href="/search">  
+      <div class="mobile-menu-child  animate__animated  animate__fadeInUp">
+        <i class="ri-search-line"></i>
+      </div>
+    </a>
+    
+  </div>
+
+
+</div>
+
+<div class="body-outer">
+  <div class="body-inner">
+    
+<article class="post-inner">
+  <div class="post-content-outer">
+    <div class="post-intro">
+      <div class="post-title animate__animated  animate__fadeInUp">遥感深度学习学界综合调查</div>
+      <div class="meta-intro animate__animated  animate__fadeInUp">3月 26 2023</div>
+      
+        <div class="post-cover"><span class="lazyload-img-span"><img data-src="https://user-images.githubusercontent.com/62822224/227766766-e2bb4520-450c-40c7-abba-ede028f557e6.png" class="post-cover-img"><div class="post-cover-img-hover">asas</div><div class="post-cover-img-insert">asas</div></span></div>
+      
+    </div>
+    <div class="post-content-inner">
+      <div class="post-content-inner-space">
+
+      </div>
+      <div class="post-content-main animate__animated  animate__fadeInUp">
+        <!-- top型目录 -->
+        
+          <ol class="toc-top"><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#OVERVIEW"><span class="toc-top-text">OVERVIEW</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E4%BB%BB%E5%8A%A1"><span class="toc-top-text">任务</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-top-text">方法</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E4%BB%B7%E5%80%BC%E8%BE%83%E9%AB%98%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-top-text">价值较高的应用场景</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E9%9D%A2%E4%B8%B4%E7%9A%84%E6%8C%91%E6%88%98"><span class="toc-top-text">面临的挑战</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E5%BD%93%E5%89%8D%E7%A0%94%E7%A9%B6%E7%83%AD%E7%82%B9"><span class="toc-top-text">当前研究热点</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E9%81%A5%E6%84%9F%E6%A3%80%E7%B4%A2"><span class="toc-top-text">遥感检索</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E4%BB%BB%E5%8A%A1%E6%80%BB%E8%A7%88"><span class="toc-top-text">任务总览</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E9%9A%BE%E5%BA%A6%E5%88%86%E6%9E%90"><span class="toc-top-text">难度分析</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E7%A0%94%E7%A9%B6%E8%A7%92%E5%BA%A6"><span class="toc-top-text">研究角度</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B"><span class="toc-top-text">应用实例</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E7%A0%94%E7%A9%B6%E4%BB%B7%E5%80%BC%E8%BE%83%E9%AB%98%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-top-text">研究价值较高的数据集</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B"><span class="toc-top-text">目标检测</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E9%9A%BE%E5%BA%A6%E5%88%86%E6%9E%90-1"><span class="toc-top-text">难度分析</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E7%A0%94%E7%A9%B6%E8%A7%92%E5%BA%A6-1"><span class="toc-top-text">研究角度</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B-1"><span class="toc-top-text">应用实例</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E7%A0%94%E7%A9%B6%E4%BB%B7%E5%80%BC%E8%BE%83%E9%AB%98%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86-1"><span class="toc-top-text">研究价值较高的数据集</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E5%9C%B0%E7%89%A9%E5%88%86%E7%B1%BB-%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2"><span class="toc-top-text">地物分类(语义分割)</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E4%BB%BB%E5%8A%A1%E6%80%BB%E8%A7%88-1"><span class="toc-top-text">任务总览</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E9%9A%BE%E5%BA%A6%E5%88%86%E6%9E%90-2"><span class="toc-top-text">难度分析</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E7%A0%94%E7%A9%B6%E8%A7%92%E5%BA%A6-2"><span class="toc-top-text">研究角度</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B-2"><span class="toc-top-text">应用实例</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E7%A0%94%E7%A9%B6%E4%BB%B7%E5%80%BC%E8%BE%83%E9%AB%98%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86-2"><span class="toc-top-text">研究价值较高的数据集</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E5%8F%98%E5%8C%96%E6%A3%80%E6%B5%8B"><span class="toc-top-text">变化检测</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E4%BB%BB%E5%8A%A1%E6%80%BB%E8%A7%88-2"><span class="toc-top-text">任务总览</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E9%9A%BE%E5%BA%A6%E5%88%86%E6%9E%90-3"><span class="toc-top-text">难度分析</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E7%A0%94%E7%A9%B6%E8%A7%92%E5%BA%A6-3"><span class="toc-top-text">研究角度</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B-3"><span class="toc-top-text">应用实例</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E7%A0%94%E7%A9%B6%E4%BB%B7%E5%80%BC%E8%BE%83%E9%AB%98%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86-3"><span class="toc-top-text">研究价值较高的数据集</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA"><span class="toc-top-text">三维重建</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E4%BB%BB%E5%8A%A1%E6%80%BB%E8%A7%88-3"><span class="toc-top-text">任务总览</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E9%9A%BE%E5%BA%A6%E5%88%86%E6%9E%90-4"><span class="toc-top-text">难度分析</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E7%A0%94%E7%A9%B6%E8%A7%92%E5%BA%A6-4"><span class="toc-top-text">研究角度</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B-4"><span class="toc-top-text">应用实例</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E5%9B%BE%E5%83%8F%E6%8F%8F%E8%BF%B0"><span class="toc-top-text">图像描述</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E4%BB%BB%E5%8A%A1%E6%80%BB%E8%A7%88-4"><span class="toc-top-text">任务总览</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E5%9B%BE%E5%83%8F%E8%9E%8D%E5%90%88"><span class="toc-top-text">图像融合</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E4%BB%BB%E5%8A%A1%E6%80%BB%E8%A7%88-5"><span class="toc-top-text">任务总览</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E5%9B%BE%E5%83%8F%E9%85%8D%E5%87%86"><span class="toc-top-text">图像配准</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E4%BB%BB%E5%8A%A1%E6%80%BB%E8%A7%88-6"><span class="toc-top-text">任务总览</span></a></li></ol></li></ol>
+        
+        <h2 id="OVERVIEW"><a href="#OVERVIEW" class="headerlink" title="OVERVIEW"></a>OVERVIEW</h2><h3 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h3><ul>
+<li>遥感检索</li>
+<li>目标检测</li>
+<li>地物分类(场景分类 &amp; 语义分割)</li>
+<li>变化检测</li>
+<li>三维重建</li>
+<li>图像描述</li>
+<li>图像融合</li>
+<li>图像配准</li>
+</ul>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
+<li>基于<strong>深度学习</strong>的遥感影像<strong>分类</strong>、<strong>分割</strong>、<strong>检测</strong>、<strong>生成</strong>等</li>
+<li>基于<strong>知识图谱</strong>的遥感影像<strong>语义理解</strong>和<strong>推理</strong>等</li>
+<li>基于<strong>深度强化学习</strong>的遥感影像<strong>目标跟踪和决策支持</strong>等</li>
+<li>基于<strong>生成对抗网络</strong>以及<strong>多模态</strong>的遥感影像<strong>生成</strong>等</li>
+<li>基于<strong>亚像素-像素-超像素</strong>的遥感影像<strong>特征提取</strong>、<strong>表征</strong>及<strong>其他常规任务</strong>中的应用</li>
+</ul>
+<h3 id="价值较高的应用场景"><a href="#价值较高的应用场景" class="headerlink" title="价值较高的应用场景"></a>价值较高的应用场景</h3><ul>
+<li>土地利用</li>
+<li>城市规划</li>
+<li>环境监测 </li>
+<li>农业估产</li>
+<li>灾害评估和预警</li>
+</ul>
+<h3 id="面临的挑战"><a href="#面临的挑战" class="headerlink" title="面临的挑战"></a>面临的挑战</h3><ul>
+<li>遥感影像数据的<strong>多源性</strong>、<strong>多尺度性</strong>、<strong>多模态性</strong>和<strong>动态性</strong></li>
+<li>遥感影像标注数据的<strong>稀缺性</strong>、<strong>不一致性</strong>和<strong>不可靠性</strong></li>
+<li>遥感影像语义理解和推理的<strong>复杂性</strong>、<strong>不确定性</strong>和<strong>多样性</strong></li>
+<li>遥感影像目标跟踪和决策支持的<strong>实时性</strong>、<strong>可解释性</strong>和<strong>可信赖性</strong>等</li>
+</ul>
+<h3 id="当前研究热点"><a href="#当前研究热点" class="headerlink" title="当前研究热点"></a>当前研究热点</h3><p>当前研究者投入最多的遥感深度学习任务仍然是<strong>目标检测</strong>和<strong>语义分割</strong>，两个任务占据了近60%的文献数量。主要原因分析有：</p>
+<ul>
+<li>这两个任务作为 AI 的基础任务，是其他遥感子任务的基础，大多数学者寻求从基础领域突破</li>
+<li>这两个任务具有较高的实用价值，并且发展历史最长</li>
+<li>这两个任务内容最抽象，看待问题的角度也最复杂，虽然不够新，但是可以做的工作还很多</li>
+</ul>
+<h2 id="遥感检索"><a href="#遥感检索" class="headerlink" title="遥感检索"></a>遥感检索</h2><h3 id="任务总览"><a href="#任务总览" class="headerlink" title="任务总览"></a>任务总览</h3><table>
+<thead>
+<tr>
+<th>信息</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>任务描述</td>
+<td>(高级任务)根据自然语言或用户输入的示例图像，检索出所有符合的遥感影像或内含主体</td>
+</tr>
+<tr>
+<td>难度</td>
+<td>4/5</td>
+</tr>
+<tr>
+<td>研究价值</td>
+<td>5/5</td>
+</tr>
+</tbody></table>
+<h3 id="难度分析"><a href="#难度分析" class="headerlink" title="难度分析"></a>难度分析</h3><ul>
+<li>遥感检索的过程受到非常多因素共同影响，比如目标的数量关系、类别关系、尺度关系、大小关系、形状属性、方向、姿态、遮挡关系、光照环境、背景等</li>
+<li>基于深度学习的检索方式能够提取数据各种方面的高层抽象特征，所有影像得到不同表征，然后基于表征做排序检索，或者由神经网络输出相似度，这种方法在复杂场景下是目前性能最先进的，但同时也是进步空间最大的</li>
+</ul>
+<h3 id="研究角度"><a href="#研究角度" class="headerlink" title="研究角度"></a>研究角度</h3><table>
+<thead>
+<tr>
+<th>角度</th>
+<th>方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>更有效的特征表征和深度学习技术</td>
+<td>基于注意力机制、对比学习、多模态融合等</td>
+</tr>
+<tr>
+<td>更智能灵活的检索</td>
+<td>引入自然语言、各种交互或反馈等</td>
+</tr>
+<tr>
+<td>更适应遥感数据复杂性</td>
+<td>基于多源多模态数据、多任务学习、多尺度分析等</td>
+</tr>
+<tr>
+<td>更具挑战性和实用价值的检索任务</td>
+<td>基于视频数据、时相数据、地理位置等</td>
+</tr>
+</tbody></table>
+<h3 id="应用实例"><a href="#应用实例" class="headerlink" title="应用实例"></a>应用实例</h3><ul>
+<li>检索遥感影像中的飞机</li>
+<li>在遥感视频中检索发生特定事件的片段或对应地理范围</li>
+<li>检索与用户自然语言描述相符的图像</li>
+</ul>
+<h3 id="研究价值较高的数据集"><a href="#研究价值较高的数据集" class="headerlink" title="研究价值较高的数据集"></a>研究价值较高的数据集</h3><ul>
+<li>场景分类的数据集如 UC Merced Land Use Dataset、WHU-RS19、RSSCN7、PatternNet 都可以用在检索任务。作为分类任务，这些数据集精度已经够高了，因此不再介绍</li>
+</ul>
+<h2 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h2><table>
+<thead>
+<tr>
+<th>信息</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>任务描述</td>
+<td>(基础任务)从遥感影像中定位和识别不同类别的目标，如飞机、桥梁、农作物。为场景理解、变化检测等下游任务提供较精确的特征</td>
+</tr>
+<tr>
+<td>难度</td>
+<td>4/5</td>
+</tr>
+<tr>
+<td>研究价值</td>
+<td>5/5</td>
+</tr>
+</tbody></table>
+<h3 id="难度分析-1"><a href="#难度分析-1" class="headerlink" title="难度分析"></a>难度分析</h3><ul>
+<li>跟遥感检索类似，目标检测所面对的遥感数据也存在非常多的因素</li>
+<li>此外，目标检测任务还受到目标过小、类别不平衡等因素影响。目前，深度学习算法在该领域已经取得了非常多成绩，但仍然有各种各样的问题要解决</li>
+</ul>
+<h3 id="研究角度-1"><a href="#研究角度-1" class="headerlink" title="研究角度"></a>研究角度</h3><table>
+<thead>
+<tr>
+<th>角度</th>
+<th>方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>继续改进端到端的神经网络</td>
+<td>基于 Transformer、Residual Block等架构或模块</td>
+</tr>
+<tr>
+<td>降低模型对旋转角度的敏感</td>
+<td>利用对旋转敏感的特征学习到任意旋转角度的映射</td>
+</tr>
+<tr>
+<td>降低模型对尺度的敏感</td>
+<td>基于多尺度模块或注意力机制来学习多尺度信息或抑制杂乱</td>
+</tr>
+<tr>
+<td>更强大的多分类能力</td>
+<td>基于增强的多尺度能力充分利用不同类别的上下文信息</td>
+</tr>
+</tbody></table>
+<h3 id="应用实例-1"><a href="#应用实例-1" class="headerlink" title="应用实例"></a>应用实例</h3><ul>
+<li>移动目标探测</li>
+<li>受灾检测</li>
+<li>海上监测</li>
+<li>军事打击</li>
+<li>环境监测</li>
+</ul>
+<h3 id="研究价值较高的数据集-1"><a href="#研究价值较高的数据集-1" class="headerlink" title="研究价值较高的数据集"></a>研究价值较高的数据集</h3><ul>
+<li>DOTA<br>这是一个大规模的遥感图像目标检测数据集，包含<strong>2806张</strong>图像，总共<strong>15个类别</strong>，共计188282个目标。图像来源于不同的传感器和平台，<strong>具有不同的分辨率、尺度、视角、光照和密度</strong>。目标以四边形的形式标注，可以处理任意方向的目标。该数据集还提供了一个评估协议和一个基准测试</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Attr</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>类型</td>
+<td>卫星影像</td>
+</tr>
+<tr>
+<td>数据量</td>
+<td>2806(15 类)</td>
+</tr>
+<tr>
+<td>分辨率</td>
+<td>多样</td>
+</tr>
+<tr>
+<td>论文数</td>
+<td>117</td>
+</tr>
+<tr>
+<td>best perform(mAP)</td>
+<td>81.85%(2023 <a target="_blank" rel="noopener" href="https://paperswithcode.com/paper/large-selective-kernel-network-for-remote">LSKNet-S</a>)</td>
+</tr>
+</tbody></table>
+<p>![[Pasted image 20230325225430.png]]</p>
+<ul>
+<li>DIOR<br>来自西北工业大学。含<strong>23463张</strong>图片和190288实例，覆盖<strong>20种目标</strong>，比DOTA数据集更大！2019年9月开始挂在arXiv上面</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Attr</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>类型</td>
+<td>卫星影像</td>
+</tr>
+<tr>
+<td>数据量</td>
+<td>23463(20 类)</td>
+</tr>
+<tr>
+<td>分辨率</td>
+<td>多样</td>
+</tr>
+<tr>
+<td>论文数</td>
+<td>未知</td>
+</tr>
+<tr>
+<td>best perform(mAP)</td>
+<td>64.41%(2022 <a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/9795321">AOPG</a>)</td>
+</tr>
+</tbody></table>
+<h2 id="地物分类-语义分割"><a href="#地物分类-语义分割" class="headerlink" title="地物分类(语义分割)"></a>地物分类(语义分割)</h2><h3 id="任务总览-1"><a href="#任务总览-1" class="headerlink" title="任务总览"></a>任务总览</h3><table>
+<thead>
+<tr>
+<th>信息</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>任务描述</td>
+<td>(基础任务)对地表覆盖类型进行分类，可以是场景尺度也可以是像素级尺度</td>
+</tr>
+<tr>
+<td>难度</td>
+<td>5/5</td>
+</tr>
+<tr>
+<td>研究价值</td>
+<td>5/5</td>
+</tr>
+</tbody></table>
+<h3 id="难度分析-2"><a href="#难度分析-2" class="headerlink" title="难度分析"></a>难度分析</h3><ul>
+<li>高分辨率遥感影像中，物体的尺度、角度、光照条件总是有较大的差异</li>
+<li>高分辨率遥感影像的背景更加复杂，而且归类为背景的区域特别复杂，造成类别之间的不确定性较高</li>
+<li>前景的比例远小于背景，造成二分类的不平衡问题</li>
+</ul>
+<h3 id="研究角度-2"><a href="#研究角度-2" class="headerlink" title="研究角度"></a>研究角度</h3><table>
+<thead>
+<tr>
+<th>角度</th>
+<th>方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>继续改进端到端的神经网络</td>
+<td>基于 Transformer、Residual Block等架构或模块</td>
+</tr>
+<tr>
+<td>降低模型对旋转角度的敏感</td>
+<td>利用对旋转敏感的特征学习到任意旋转角度的映射</td>
+</tr>
+<tr>
+<td>降低模型对尺度的敏感</td>
+<td>基于多尺度模块或注意力机制来学习多尺度信息或抑制杂乱</td>
+</tr>
+<tr>
+<td>降低数据量的依赖</td>
+<td>利用迁移学习、伪标签或领域自适应来提高泛化能力</td>
+</tr>
+<tr>
+<td>生成样本</td>
+<td>利用生成模型扩充数据量较少的类别</td>
+</tr>
+</tbody></table>
+<h3 id="应用实例-2"><a href="#应用实例-2" class="headerlink" title="应用实例"></a>应用实例</h3><ul>
+<li>土地利用</li>
+<li>土地覆盖</li>
+<li>自动制图解译</li>
+<li>地球监测</li>
+</ul>
+<h3 id="研究价值较高的数据集-2"><a href="#研究价值较高的数据集-2" class="headerlink" title="研究价值较高的数据集"></a>研究价值较高的数据集</h3><blockquote>
+<p>只介绍语义分割数据集</p>
+</blockquote>
+<ul>
+<li>BigEarthNet<br>BigEarthNet是一个大规模的多标签遥感图像数据集，用于地球观测和环境监测任务。该数据集包含<strong>125,000张</strong>Sentinel-2<strong>卫星图像</strong>，覆盖了整个世界上12个不同地区的陆地表面，并使用<strong>43个类别</strong>的标签进行注释，包括森林、道路、河流等。每个图像都有多个标签，因此可以用于多标签分类任务。这个数据集是公开可用的，可以用于训练和评估遥感图像分析算法的性能。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Attr</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>类型</td>
+<td>卫星影像</td>
+</tr>
+<tr>
+<td>数据量</td>
+<td>10(43 类)</td>
+</tr>
+<tr>
+<td>分辨率</td>
+<td>10 m 到 60 m 不等</td>
+</tr>
+<tr>
+<td>论文数</td>
+<td>43</td>
+</tr>
+<tr>
+<td>best perform</td>
+<td>89.3%(2022 MoCo-v2 微调，来自一篇 Review)</td>
+</tr>
+</tbody></table>
+<p>![[Pasted image 20230320221929.png]]</p>
+<ul>
+<li>ISPRS Potsdam<br>ISPRS Potsdam是一个用于2D语义标记竞赛的数据集。该数据集包含<strong>38个</strong>大小相同的补丁，每个补丁都由从更大的TOP马赛克中提取的真正正射影像（TOP）组成。TOP和DSM的地面采样距离均为5厘米</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Attr</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>类型</td>
+<td>航飞影像</td>
+</tr>
+<tr>
+<td>数据量</td>
+<td>38(6 类)</td>
+</tr>
+<tr>
+<td>分辨率</td>
+<td>5 m</td>
+</tr>
+<tr>
+<td>论文数</td>
+<td>11</td>
+</tr>
+<tr>
+<td>best perform</td>
+<td>92%(2021 DC-Swin &amp; FT-UnetFormer)</td>
+</tr>
+</tbody></table>
+<p>![[Pasted image 20230322165622.png]]</p>
+<ul>
+<li>ISPRS Vaihingen<br>ISPRS Vaihingen数据集是一个用于评估遥感图像分割算法性能的公共数据集。该数据集基于德国城市Vaihingen的<strong>航空摄影图像</strong>，包含<strong>16</strong>个不同区域的高分辨率<strong>RGB图像</strong>和相应的地面真实值图。这些图像涵盖了各种场景，包括建筑物、道路、树木等，可以用于测试和比较不同的遥感图像分割算法的性能。该数据集已成为评估遥感图像分割算法的标准基准数据集之一，广泛应用于学术界和工业界。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Attr</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>类型</td>
+<td>航飞影像</td>
+</tr>
+<tr>
+<td>数据量</td>
+<td>33(6 类)</td>
+</tr>
+<tr>
+<td>分辨率</td>
+<td>9 cm</td>
+</tr>
+<tr>
+<td>论文数</td>
+<td>11</td>
+</tr>
+<tr>
+<td>best perform</td>
+<td>91.6%(2021 DC-Swin &amp; FT-UnetFormer)</td>
+</tr>
+</tbody></table>
+<p>![[Pasted image 20230320214402.png]]</p>
+<ul>
+<li>xBD<br>它包含超过45,000KM^2的<strong>多边形标记的灾前和灾后图像</strong>。该数据集提供了灾后图像，其中从灾前转换的多边形覆盖在建筑物上，并带有损坏分类标签。在xBD上有一个2D语义分割基准测试，其中模型根据其<strong>加权平均F1得分</strong>进行排名。目前在这个基准测试中<strong>最先进的模型是BDANet</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Attr</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>类型</td>
+<td>卫星影像</td>
+</tr>
+<tr>
+<td>数据量</td>
+<td>未知(2 类)</td>
+</tr>
+<tr>
+<td>分辨率</td>
+<td>未知</td>
+</tr>
+<tr>
+<td>论文数</td>
+<td>29</td>
+</tr>
+<tr>
+<td>best perform (F1-score)</td>
+<td>80.6%(2021 BDANet)</td>
+</tr>
+</tbody></table>
+<p>![[Pasted image 20230322161739.png]]</p>
+<h2 id="变化检测"><a href="#变化检测" class="headerlink" title="变化检测"></a>变化检测</h2><h3 id="任务总览-2"><a href="#任务总览-2" class="headerlink" title="任务总览"></a>任务总览</h3><table>
+<thead>
+<tr>
+<th>信息</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>任务描述</td>
+<td>(高级任务)对不同时期的遥感影像进行对比分析，发现特定对象地表覆盖的变化，如灾害、建筑开发、景观演化</td>
+</tr>
+<tr>
+<td>难度</td>
+<td>5/5</td>
+</tr>
+<tr>
+<td>研究价值</td>
+<td>5/5</td>
+</tr>
+</tbody></table>
+<h3 id="难度分析-3"><a href="#难度分析-3" class="headerlink" title="难度分析"></a>难度分析</h3><ul>
+<li>做对比的两张时相数据，往往是多源、多尺度、时相差异较大的，我们要同时考虑影像的配准、辐射校正、去噪等预处理问题。</li>
+<li>强大的深度学习能够更好地学习复杂时相数据地关系，但目前进步空间还很大</li>
+</ul>
+<h3 id="研究角度-3"><a href="#研究角度-3" class="headerlink" title="研究角度"></a>研究角度</h3><table>
+<thead>
+<tr>
+<th>角度</th>
+<th>方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>降低时相差异的干扰</td>
+<td>学习受噪声干扰较小的表征来做深度学习的对比</td>
+</tr>
+<tr>
+<td>学习更丰富的时序差异</td>
+<td>提取两幅以上的时相数据与目标时相的差异</td>
+</tr>
+</tbody></table>
+<h3 id="应用实例-3"><a href="#应用实例-3" class="headerlink" title="应用实例"></a>应用实例</h3><ul>
+<li>城市生长监测</li>
+<li>自然演变检测</li>
+<li>灾害评估与预防</li>
+</ul>
+<h3 id="研究价值较高的数据集-3"><a href="#研究价值较高的数据集-3" class="headerlink" title="研究价值较高的数据集"></a>研究价值较高的数据集</h3><ul>
+<li>LEVIR-CD<br>LEVIR-CD数据集由<strong>637对</strong>非常高分辨率（VHR，<strong>像素0.5米</strong>）的Google Earth（GE）图像补丁组成，每个<strong>补丁大小为1024×1024像素</strong>。这些相隔5至14年的双时相图像有显著的土地利用变化，特别是建筑物增长。LEVIR-CD覆盖了各种类型的建筑物，例如别墅住宅、高层公寓、小车库和大型仓库。我们<strong>主要关注与建筑物相关的变化</strong>，包括建筑物的增长（从土地/草地/硬化地面或正在建造中的建筑物到新的建筑区域的变化）和建筑物的减少。这些双时相图像由遥感影像解译专家使用二进制标签（1表示变化，0表示未变化）进行注释。我们的每个样本都由一个注释者进行注释，然后由另一个注释者进行双重检查以产生高质量的注释。完全注释的LEVIR-CD包含一共31,333个单独的变化建筑实例</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Attr</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>类型</td>
+<td>卫星影像</td>
+</tr>
+<tr>
+<td>数据量</td>
+<td>637对(1 类)</td>
+</tr>
+<tr>
+<td>分辨率</td>
+<td>0.5 m</td>
+</tr>
+<tr>
+<td>论文数</td>
+<td>36</td>
+</tr>
+<tr>
+<td>best perform (F1-score)</td>
+<td>92.33%(2022 Changer-R101)</td>
+</tr>
+</tbody></table>
+<p>![[Pasted image 20230326163447.png]]</p>
+<h2 id="三维重建"><a href="#三维重建" class="headerlink" title="三维重建"></a>三维重建</h2><h3 id="任务总览-3"><a href="#任务总览-3" class="headerlink" title="任务总览"></a>任务总览</h3><table>
+<thead>
+<tr>
+<th>信息</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>任务描述</td>
+<td>(高级任务)从多角度遥感影像中提取高精度的三维信息，如高程、形态</td>
+</tr>
+<tr>
+<td>难度</td>
+<td>5/5</td>
+</tr>
+<tr>
+<td>研究价值</td>
+<td>5/5</td>
+</tr>
+</tbody></table>
+<h3 id="难度分析-4"><a href="#难度分析-4" class="headerlink" title="难度分析"></a>难度分析</h3><ul>
+<li>需要解决图像配准、深度估计、点云生成等子问题</li>
+<li>要克服的挑战有图像的低质量、噪声、遮挡、光照差异、尺度变化等</li>
+</ul>
+<h3 id="研究角度-4"><a href="#研究角度-4" class="headerlink" title="研究角度"></a>研究角度</h3><table>
+<thead>
+<tr>
+<th>角度</th>
+<th>方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>更高精度的深度图或点云</td>
+<td>利用生成模型提取</td>
+</tr>
+<tr>
+<td>降低标注依赖</td>
+<td>利用注意力机制增强表征能力，并利用自监督或弱监督增强泛化能力</td>
+</tr>
+<tr>
+<td>更强的先验约束</td>
+<td>利用拓扑约束来优化点云结构，使用物理规则增强场景理解</td>
+</tr>
+<tr>
+<td>更丰富的数据特征</td>
+<td>利用多源、时序或多模态数据学习到丰富的特征</td>
+</tr>
+</tbody></table>
+<h3 id="应用实例-4"><a href="#应用实例-4" class="headerlink" title="应用实例"></a>应用实例</h3><ul>
+<li>三维可视化</li>
+<li>三维关系表达</li>
+</ul>
+<h2 id="图像描述"><a href="#图像描述" class="headerlink" title="图像描述"></a>图像描述</h2><h3 id="任务总览-4"><a href="#任务总览-4" class="headerlink" title="任务总览"></a>任务总览</h3><table>
+<thead>
+<tr>
+<th>信息</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>任务描述</td>
+<td>用自然语言描述遥感影像的内容，对数量关系和空间位置关系有一定要求</td>
+</tr>
+<tr>
+<td>难度</td>
+<td>5/5</td>
+</tr>
+<tr>
+<td>研究价值</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="图像融合"><a href="#图像融合" class="headerlink" title="图像融合"></a>图像融合</h2><h3 id="任务总览-5"><a href="#任务总览-5" class="headerlink" title="任务总览"></a>任务总览</h3><table>
+<thead>
+<tr>
+<th>信息</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>任务描述</td>
+<td>多源遥感影像进行对齐和融合，提高空间分辨率和光谱分辨率</td>
+</tr>
+<tr>
+<td>难度</td>
+<td>3/5</td>
+</tr>
+<tr>
+<td>研究价值</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="图像配准"><a href="#图像配准" class="headerlink" title="图像配准"></a>图像配准</h2><h3 id="任务总览-6"><a href="#任务总览-6" class="headerlink" title="任务总览"></a>任务总览</h3><table>
+<thead>
+<tr>
+<th>信息</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>任务描述</td>
+<td>多源遥感影像进行几何变换和灰度匹配，以消除或减少多源图像之间的空间差异</td>
+</tr>
+<tr>
+<td>难度</td>
+<td>4/5</td>
+</tr>
+<tr>
+<td>研究价值</td>
+<td></td>
+</tr>
+</tbody></table>
+
+        <!-- 分类文章 -->
+        
+      </div>
+      <div class="post-content-inner-space">
+        
+      </div>
+   </div>
+    <!-- 评论 -->
+    
+  </div>
+</article>
+  </div>
+</div>
+
+
+
+<!-- 如果是home模式的话，不在首页就显示footer，如果不是home模式的话 所有都显示footer -->
+
+  <div class="footer-outer animate__animated  animate__fadeInUp">
+    <div class="footer-inner">
+    <div class="footer-text">
+    <p>Have a <strong>NICE</strong> day.</p>
+
+    </div>
+    <div class="footer-contact">
+    <ul class="footer-ul">
+        
+        <li class="footer-li">
+            <a href="mailto:Tianwen580@hotmail.com" target="_blank">
+                <i class="ri-mail-send-fill"></i>
+            </a>
+        </li>
+        
+        <li class="footer-li">
+            <a href="tel:+8613622309458" target="_blank">
+                <i class="ri-phone-line"></i>
+            </a>
+        </li>
+        
+        <li class="footer-li">
+            <a href="weixin://lindaxia12138tik" target="_blank">
+                <i class="ri-wechat-fill"></i>
+            </a>
+        </li>
+        
+    </ul>
+    </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script src="/js/white.js"></script>
+
+
+
+    
+      
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='all'|| 'all' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="http://buluwasior.me/categories/生活随笔/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🐱‍👓 林天文的生活随笔 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item" style="visibility: hidden"></div><a class="magnet_link_more"  href="http://buluwasior.me/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f7f7f7;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #f2f2f2}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:#0088ff}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style> <script data-pjax>if(document.getElementById('recent-posts') && location.pathname =='/'){
+    
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms"></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载swiper')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script>
+<script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiper.min.js"></script>
+<script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper@0.18/swiper/swiperindex.js"></script>
+<style></style>
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://python-github-calendar-api.vercel.app/api?TianWen580";
+            var git_color =['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f'];
+            var git_user ="TianWen580";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="height:100%;display: flex;align-items: center;justify-content: center;"><svg style="height:50px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:248px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":250},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
