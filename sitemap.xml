@@ -164,6 +164,13 @@
 
   
   <url>
+    <loc>http://buluwasior.me/categories/GIS-Experiments/</loc>
+    <lastmod>2023-05-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://buluwasior.me/categories/Computer-Vision-%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
     <lastmod>2023-05-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -172,13 +179,6 @@
   
   <url>
     <loc>http://buluwasior.me/categories/For-OpenMMLab/</loc>
-    <lastmod>2023-05-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://buluwasior.me/categories/GIS-Experiments/</loc>
     <lastmod>2023-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
