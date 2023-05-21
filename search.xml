@@ -1,53 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>GIS的应用</title>
-    <url>/2021/0740930.html</url>
-    <content><![CDATA[<h1 id="输入（蓝）、处理（橙）、输出（绿）："><a href="#输入（蓝）、处理（橙）、输出（绿）：" class="headerlink" title="输入（蓝）、处理（橙）、输出（绿）："></a>输入（蓝）、处理（橙）、输出（绿）：</h1><p>输入处理输出是最基本最简化的应用逻辑</p>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="GIS%E7%9A%84%E5%BA%94%E7%94%A8/%E5%9B%BE1.png">
-        
-      </span></p>
-<h1 id="GIS模型-具体行业模型（集成）"><a href="#GIS模型-具体行业模型（集成）" class="headerlink" title="GIS模型+具体行业模型（集成）"></a>GIS模型+具体行业模型（集成）</h1><ul>
-<li>举例复杂应用：水务行业的排水管网 SWMM 模型（排水管网属于 GIS 模型，SWMM 属于税务行业模型）<ul>
-<li>对应 GISer 的思想：<ul>
-<li>给排水管建模</li>
-<li>分层：根据用户需求分析得到的设备类型抽象图层：检查井、管线、汇水区……</li>
-<li>抽象：<ul>
-<li>检查井，点类型：坐标、高程……</li>
-<li>管线，线类型：上下游井、埋深、管长、管径……<br>  □ 汇水区，面类型：面积……</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>针对思想的复杂应用构建：<ul>
-<li>输入：<ul>
-<li>检查井：坐标、高程……&lt;&lt;DEM 高程提取</li>
-<li>管线：上下游井、埋深、管长、管径……&lt;&lt;上下游网络拓扑</li>
-<li>汇水区：面积……&lt;&lt;小流域 Basin 划分工具</li>
-</ul>
-</li>
-<li>处理：<ul>
-<li>SWMM 模型引擎（和 GIS 关系不大，主要来源于行业模型）</li>
-</ul>
-</li>
-<li>输出（行业用户对应需求）：<ul>
-<li>检查井的水位变化序列的动态专题渲染</li>
-<li>管线流量、充满度变化序列的动态专题渲染</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>GIS Experiments</category>
-      </categories>
-  </entry>
-  <entry>
     <title>AI 入门知识</title>
     <url>/2023/035.html</url>
     <content><![CDATA[<blockquote>
@@ -184,62 +137,50 @@
       </categories>
   </entry>
   <entry>
-    <title>MMLAB PR 指南</title>
-    <url>/2023/034.html</url>
-    <content><![CDATA[<blockquote>
-<p>ref：<br>贡献指南：<a href="https://mmengine.readthedocs.io/zh_CN/latest/notes/contributing.html">https://mmengine.readthedocs.io/zh_CN/latest/notes/contributing.html</a><br>代码规范：<a href="https://mmengine.readthedocs.io/zh_CN/latest/notes/code_style.html">https://mmengine.readthedocs.io/zh_CN/latest/notes/code_style.html</a></p>
-</blockquote>
-<h2 id="PR-描述规范"><a href="#PR-描述规范" class="headerlink" title="PR 描述规范"></a>PR 描述规范</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><ul>
-<li><strong>sample</strong>： [Docs] Refine contribute.md</li>
-<li>在开头使用英文括号描述修改的对象，常见修改对象有<table>
-<thead>
-<tr>
-<th>对象</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Docs</td>
-<td align="left">官方文档更新 可以是refine也可以补充</td>
-</tr>
-<tr>
-<td>Feature</td>
-<td align="left">新功能 新功能support对xxx的支持</td>
-</tr>
-<tr>
-<td>Fix</td>
-<td align="left">修复bug</td>
-</tr>
-<tr>
-<td>WIP</td>
-<td align="left">先提出来 等待开发完成 暂时不用review</td>
-</tr>
-</tbody></table>
+    <title>GIS的应用</title>
+    <url>/2021/0740930.html</url>
+    <content><![CDATA[<h1 id="输入（蓝）、处理（橙）、输出（绿）："><a href="#输入（蓝）、处理（橙）、输出（绿）：" class="headerlink" title="输入（蓝）、处理（橙）、输出（绿）："></a>输入（蓝）、处理（橙）、输出（绿）：</h1><p>输入处理输出是最基本最简化的应用逻辑</p>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="GIS%E7%9A%84%E5%BA%94%E7%94%A8/%E5%9B%BE1.png">
+        
+      </span></p>
+<h1 id="GIS模型-具体行业模型（集成）"><a href="#GIS模型-具体行业模型（集成）" class="headerlink" title="GIS模型+具体行业模型（集成）"></a>GIS模型+具体行业模型（集成）</h1><ul>
+<li>举例复杂应用：水务行业的排水管网 SWMM 模型（排水管网属于 GIS 模型，SWMM 属于税务行业模型）<ul>
+<li>对应 GISer 的思想：<ul>
+<li>给排水管建模</li>
+<li>分层：根据用户需求分析得到的设备类型抽象图层：检查井、管线、汇水区……</li>
+<li>抽象：<ul>
+<li>检查井，点类型：坐标、高程……</li>
+<li>管线，线类型：上下游井、埋深、管长、管径……<br>  □ 汇水区，面类型：面积……</li>
+</ul>
 </li>
 </ul>
-<h2 id="REFINE-DOCs"><a href="#REFINE-DOCs" class="headerlink" title="REFINE DOCs"></a>REFINE DOCs</h2><h3 id="代码快-to-提示框"><a href="#代码快-to-提示框" class="headerlink" title="代码快 to 提示框"></a>代码快 to 提示框</h3><ul>
-<li>基于代码快的语法，通过特殊的标注实现代码快到提示框的转换<ul>
-<li>注解{Note}<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/mqtDx3A.jpg">
-        
-      </span></li>
-<li>参见{SeeAlso}<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/oNjmsqz.jpg">
-        
-      </span></li>
-<li>警告{Warning}<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/eJxjNl5.jpg">
-        
-      </span></li>
+</li>
+<li>针对思想的复杂应用构建：<ul>
+<li>输入：<ul>
+<li>检查井：坐标、高程……&lt;&lt;DEM 高程提取</li>
+<li>管线：上下游井、埋深、管长、管径……&lt;&lt;上下游网络拓扑</li>
+<li>汇水区：面积……&lt;&lt;小流域 Basin 划分工具</li>
+</ul>
+</li>
+<li>处理：<ul>
+<li>SWMM 模型引擎（和 GIS 关系不大，主要来源于行业模型）</li>
+</ul>
+</li>
+<li>输出（行业用户对应需求）：<ul>
+<li>检查井的水位变化序列的动态专题渲染</li>
+<li>管线流量、充满度变化序列的动态专题渲染</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 ]]></content>
       <categories>
-        <category>For OpenMMLab</category>
+        <category>GIS Experiments</category>
       </categories>
   </entry>
   <entry>
@@ -449,6 +390,65 @@
       </categories>
   </entry>
   <entry>
+    <title>MMLAB PR 指南</title>
+    <url>/2023/034.html</url>
+    <content><![CDATA[<blockquote>
+<p>ref：<br>贡献指南：<a href="https://mmengine.readthedocs.io/zh_CN/latest/notes/contributing.html">https://mmengine.readthedocs.io/zh_CN/latest/notes/contributing.html</a><br>代码规范：<a href="https://mmengine.readthedocs.io/zh_CN/latest/notes/code_style.html">https://mmengine.readthedocs.io/zh_CN/latest/notes/code_style.html</a></p>
+</blockquote>
+<h2 id="PR-描述规范"><a href="#PR-描述规范" class="headerlink" title="PR 描述规范"></a>PR 描述规范</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><ul>
+<li><strong>sample</strong>： [Docs] Refine contribute.md</li>
+<li>在开头使用英文括号描述修改的对象，常见修改对象有<table>
+<thead>
+<tr>
+<th>对象</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Docs</td>
+<td align="left">官方文档更新 可以是refine也可以补充</td>
+</tr>
+<tr>
+<td>Feature</td>
+<td align="left">新功能 新功能support对xxx的支持</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td align="left">修复bug</td>
+</tr>
+<tr>
+<td>WIP</td>
+<td align="left">先提出来 等待开发完成 暂时不用review</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="REFINE-DOCs"><a href="#REFINE-DOCs" class="headerlink" title="REFINE DOCs"></a>REFINE DOCs</h2><h3 id="代码快-to-提示框"><a href="#代码快-to-提示框" class="headerlink" title="代码快 to 提示框"></a>代码快 to 提示框</h3><ul>
+<li>基于代码快的语法，通过特殊的标注实现代码快到提示框的转换<ul>
+<li>注解{Note}<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/mqtDx3A.jpg">
+        
+      </span></li>
+<li>参见{SeeAlso}<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/oNjmsqz.jpg">
+        
+      </span></li>
+<li>警告{Warning}<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/eJxjNl5.jpg">
+        
+      </span></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>For OpenMMLab</category>
+      </categories>
+  </entry>
+  <entry>
     <title>写给 mmsegmentation 工具箱新手的避坑指南</title>
     <url>/2023/032.html</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我在 Windows 环境使用 MMClassification、MMDetection 都还算轻轻松松，但是走完 MMSegmentation 全流程之后，真的想感叹一句“踩了不少坑啊”，所以想把自己的遇坑经验凝练总结出来，写一个专门给新手无伤通关的避坑教程。</p>
@@ -612,6 +612,102 @@ cudnn_benchmark = True
       </categories>
   </entry>
   <entry>
+    <title>实验命令汇总</title>
+    <url>/2023/033.html</url>
+    <content><![CDATA[<blockquote>
+<p>学习心得：MMLab 实战营全程</p>
+<p>注：本文总结了实验过程中跨平台通用的技术方案，主要结合了自己的笔记</p>
+</blockquote>
+<h2 id="ANACONDA-常用命令与一些解决方案"><a href="#ANACONDA-常用命令与一些解决方案" class="headerlink" title="ANACONDA 常用命令与一些解决方案"></a>ANACONDA 常用命令与一些解决方案</h2><h3 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h3><pre><code class="shell">conda create -n your_env_name python=X.X
+</code></pre>
+<h3 id="更新-conda（慎用！！！，新-conda-可能用不了）"><a href="#更新-conda（慎用！！！，新-conda-可能用不了）" class="headerlink" title="更新 conda（慎用！！！，新 conda 可能用不了）"></a>更新 conda（慎用！！！，新 conda 可能用不了）</h3><pre><code class="shell">conda updata conda
+</code></pre>
+<h3 id="查看虚拟环境菜单和环境内已载入库"><a href="#查看虚拟环境菜单和环境内已载入库" class="headerlink" title="查看虚拟环境菜单和环境内已载入库"></a>查看虚拟环境菜单和环境内已载入库</h3><pre><code class="shell">conda env list
+conda list
+</code></pre>
+<h3 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h3><pre><code class="shell">Conda activate your_env_name
+</code></pre>
+<h3 id="如果遇到-conda-安装频繁报错，使用如下语句："><a href="#如果遇到-conda-安装频繁报错，使用如下语句：" class="headerlink" title="如果遇到 conda 安装频繁报错，使用如下语句："></a>如果遇到 conda 安装频繁报错，使用如下语句：</h3><pre><code class="shell">conda clean -i
+</code></pre>
+<h3 id="如果不幸要删除虚拟环境"><a href="#如果不幸要删除虚拟环境" class="headerlink" title="如果不幸要删除虚拟环境"></a>如果不幸要删除虚拟环境</h3><pre><code class="shell">conda remove -n your_env_name --all
+</code></pre>
+<h3 id="PyTorch-推荐安装命令"><a href="#PyTorch-推荐安装命令" class="headerlink" title="PyTorch 推荐安装命令"></a>PyTorch 推荐安装命令</h3><pre><code class="Shell">pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 -f https://download.pytorch.org/whl/cu116/torch_stable.html
+</code></pre>
+<h3 id="我常用的-pip-镜像"><a href="#我常用的-pip-镜像" class="headerlink" title="我常用的 pip 镜像"></a>我常用的 pip 镜像</h3><pre><code class="shell">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple # 清华  
+pip install -i https://pypi.douban.com/simple # 豆瓣（推荐）
+</code></pre>
+<h3 id="安装其他项目的-requirements-txt"><a href="#安装其他项目的-requirements-txt" class="headerlink" title="安装其他项目的 requirements.txt"></a>安装其他项目的 requirements.txt</h3><pre><code class="shell">pip install -r requirements.txt
+</code></pre>
+<h2 id="TENSORBOARD-可视化"><a href="#TENSORBOARD-可视化" class="headerlink" title="TENSORBOARD 可视化"></a>TENSORBOARD 可视化</h2><ul>
+<li>首先学习以下 tensorboardX 怎么用。在 OpenMMLab 中，只需找到 <em>configs/<em>base</em>/default_runtime.py</em> 中的如下代码，解除 <code>dict(type=&#39;TensorboardLoggerHook&#39;)</code> 注释部分即可开启 tensorboard 记录器</li>
+</ul>
+<pre><code class="python">log_config = dict(  
+    interval=50,  
+    hooks=[  
+        dict(type=&#39;TextLoggerHook&#39;, by_epoch=False),  
+        # dict(type=&#39;TensorboardLoggerHook&#39;)  
+        # dict(type=&#39;PaviLoggerHook&#39;) # for internal services  
+    ])
+</code></pre>
+<ul>
+<li><p>如果遇到环境问题，则按照提示配置 tensorboard 环境即可</p>
+</li>
+<li><p>一般训练代码运行之后会同时生成 tensorboardX 的日志文件。这时复制日志文件所在文件夹路径，打开 Anaconda 命令行，切换环境至 torch，输入图中语句为日志文件夹创建 tensorboardX 默认的本地端口</p>
+<pre><code class="shell">tensorboard --logdir PATH &#123;log_file_abs_path&#125;
+</code></pre>
+</li>
+<li><p>执行得到端口地址，复制到浏览器打开即可查看训练可视化内容<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/fY83Oja.jpg">
+        
+       
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/omCSC0U.jpg">
+        
+      </span></span></p>
+</li>
+<li><p>关闭端口占用，只需短/长按 <em>CTRL + C</em></p>
+</li>
+</ul>
+<h2 id="利用预训练模型"><a href="#利用预训练模型" class="headerlink" title="利用预训练模型"></a>利用预训练模型</h2><ul>
+<li>OpenMMLab 几乎为 <em>configs/</em> 中的所有模型提供了预训练模型，链接存放在了各个算法文件夹下的 yaml 文件中，将链接以字符串的形式传给 <em>_configs/<em>base</em>/default_runtime.py</em> 中的 load_from 参数即可</li>
+<li>预训练策略：<table>
+<thead>
+<tr>
+<th>待训练数据集</th>
+<th>与预训练模型数据集相似度</th>
+<th>处理方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>较小</td>
+<td>较高</td>
+<td>例如待训练数据集中数据存在于预训练模型中时，不需要重新训练模型，只需要修改最后一层输出层即可</td>
+</tr>
+<tr>
+<td>较小</td>
+<td>较小</td>
+<td>可以冻结模型的前k层，重新模型的后n-k层。冻结模型的前k层，用于弥补数据集较小的问题</td>
+</tr>
+<tr>
+<td>较大</td>
+<td>较高</td>
+<td>采用预训练模型会非常有效，保持模型结构不变和初始权重不变，对模型重新训练</td>
+</tr>
+<tr>
+<td>较大</td>
+<td>较小</td>
+<td>采用预训练模型不会有太大的效果，可以使用预训练模型或者不使用预训练模型，然后进行重新训练</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Computer Vision 计算机视觉</category>
+      </categories>
+  </entry>
+  <entry>
     <title>地图制图「上」标准制图流程展示</title>
     <url>/2021/0946040.html</url>
     <content><![CDATA[<h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><h2 id="ArcMap中的添加数据"><a href="#ArcMap中的添加数据" class="headerlink" title="ArcMap中的添加数据"></a>ArcMap中的添加数据</h2><p>在ArcMap默认的软件页面中可以很容易找到「添加文件」按钮，这个是ArcGIS操作逻辑中用来添加某一个已有数据的按钮。单击，打开添加数据窗口。我是用顶部下拉菜单可以选择“catelog”中提前链接好的文件目录，这里我第一次使用，因此要单击顶部「链接文件夹」按钮以添加实验数据所在文件夹。添加完成后，将新荣县1：10000地形图矢量数据，随后可以看到图层管理器已经有了我需要的文件(在ArcMap中图层管理器称为“内容列表”)。<br>
@@ -720,102 +816,6 @@ cudnn_benchmark = True
 ]]></content>
       <categories>
         <category>GIS Experiments</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>实验命令汇总</title>
-    <url>/2023/033.html</url>
-    <content><![CDATA[<blockquote>
-<p>学习心得：MMLab 实战营全程</p>
-<p>注：本文总结了实验过程中跨平台通用的技术方案，主要结合了自己的笔记</p>
-</blockquote>
-<h2 id="ANACONDA-常用命令与一些解决方案"><a href="#ANACONDA-常用命令与一些解决方案" class="headerlink" title="ANACONDA 常用命令与一些解决方案"></a>ANACONDA 常用命令与一些解决方案</h2><h3 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h3><pre><code class="shell">conda create -n your_env_name python=X.X
-</code></pre>
-<h3 id="更新-conda（慎用！！！，新-conda-可能用不了）"><a href="#更新-conda（慎用！！！，新-conda-可能用不了）" class="headerlink" title="更新 conda（慎用！！！，新 conda 可能用不了）"></a>更新 conda（慎用！！！，新 conda 可能用不了）</h3><pre><code class="shell">conda updata conda
-</code></pre>
-<h3 id="查看虚拟环境菜单和环境内已载入库"><a href="#查看虚拟环境菜单和环境内已载入库" class="headerlink" title="查看虚拟环境菜单和环境内已载入库"></a>查看虚拟环境菜单和环境内已载入库</h3><pre><code class="shell">conda env list
-conda list
-</code></pre>
-<h3 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h3><pre><code class="shell">Conda activate your_env_name
-</code></pre>
-<h3 id="如果遇到-conda-安装频繁报错，使用如下语句："><a href="#如果遇到-conda-安装频繁报错，使用如下语句：" class="headerlink" title="如果遇到 conda 安装频繁报错，使用如下语句："></a>如果遇到 conda 安装频繁报错，使用如下语句：</h3><pre><code class="shell">conda clean -i
-</code></pre>
-<h3 id="如果不幸要删除虚拟环境"><a href="#如果不幸要删除虚拟环境" class="headerlink" title="如果不幸要删除虚拟环境"></a>如果不幸要删除虚拟环境</h3><pre><code class="shell">conda remove -n your_env_name --all
-</code></pre>
-<h3 id="PyTorch-推荐安装命令"><a href="#PyTorch-推荐安装命令" class="headerlink" title="PyTorch 推荐安装命令"></a>PyTorch 推荐安装命令</h3><pre><code class="Shell">pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 -f https://download.pytorch.org/whl/cu116/torch_stable.html
-</code></pre>
-<h3 id="我常用的-pip-镜像"><a href="#我常用的-pip-镜像" class="headerlink" title="我常用的 pip 镜像"></a>我常用的 pip 镜像</h3><pre><code class="shell">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple # 清华  
-pip install -i https://pypi.douban.com/simple # 豆瓣（推荐）
-</code></pre>
-<h3 id="安装其他项目的-requirements-txt"><a href="#安装其他项目的-requirements-txt" class="headerlink" title="安装其他项目的 requirements.txt"></a>安装其他项目的 requirements.txt</h3><pre><code class="shell">pip install -r requirements.txt
-</code></pre>
-<h2 id="TENSORBOARD-可视化"><a href="#TENSORBOARD-可视化" class="headerlink" title="TENSORBOARD 可视化"></a>TENSORBOARD 可视化</h2><ul>
-<li>首先学习以下 tensorboardX 怎么用。在 OpenMMLab 中，只需找到 <em>configs/<em>base</em>/default_runtime.py</em> 中的如下代码，解除 <code>dict(type=&#39;TensorboardLoggerHook&#39;)</code> 注释部分即可开启 tensorboard 记录器</li>
-</ul>
-<pre><code class="python">log_config = dict(  
-    interval=50,  
-    hooks=[  
-        dict(type=&#39;TextLoggerHook&#39;, by_epoch=False),  
-        # dict(type=&#39;TensorboardLoggerHook&#39;)  
-        # dict(type=&#39;PaviLoggerHook&#39;) # for internal services  
-    ])
-</code></pre>
-<ul>
-<li><p>如果遇到环境问题，则按照提示配置 tensorboard 环境即可</p>
-</li>
-<li><p>一般训练代码运行之后会同时生成 tensorboardX 的日志文件。这时复制日志文件所在文件夹路径，打开 Anaconda 命令行，切换环境至 torch，输入图中语句为日志文件夹创建 tensorboardX 默认的本地端口</p>
-<pre><code class="shell">tensorboard --logdir PATH &#123;log_file_abs_path&#125;
-</code></pre>
-</li>
-<li><p>执行得到端口地址，复制到浏览器打开即可查看训练可视化内容<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/fY83Oja.jpg">
-        
-       
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/omCSC0U.jpg">
-        
-      </span></span></p>
-</li>
-<li><p>关闭端口占用，只需短/长按 <em>CTRL + C</em></p>
-</li>
-</ul>
-<h2 id="利用预训练模型"><a href="#利用预训练模型" class="headerlink" title="利用预训练模型"></a>利用预训练模型</h2><ul>
-<li>OpenMMLab 几乎为 <em>configs/</em> 中的所有模型提供了预训练模型，链接存放在了各个算法文件夹下的 yaml 文件中，将链接以字符串的形式传给 <em>_configs/<em>base</em>/default_runtime.py</em> 中的 load_from 参数即可</li>
-<li>预训练策略：<table>
-<thead>
-<tr>
-<th>待训练数据集</th>
-<th>与预训练模型数据集相似度</th>
-<th>处理方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>较小</td>
-<td>较高</td>
-<td>例如待训练数据集中数据存在于预训练模型中时，不需要重新训练模型，只需要修改最后一层输出层即可</td>
-</tr>
-<tr>
-<td>较小</td>
-<td>较小</td>
-<td>可以冻结模型的前k层，重新模型的后n-k层。冻结模型的前k层，用于弥补数据集较小的问题</td>
-</tr>
-<tr>
-<td>较大</td>
-<td>较高</td>
-<td>采用预训练模型会非常有效，保持模型结构不变和初始权重不变，对模型重新训练</td>
-</tr>
-<tr>
-<td>较大</td>
-<td>较小</td>
-<td>采用预训练模型不会有太大的效果，可以使用预训练模型或者不使用预训练模型，然后进行重新训练</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Computer Vision 计算机视觉</category>
       </categories>
   </entry>
   <entry>

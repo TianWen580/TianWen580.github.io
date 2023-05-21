@@ -60,7 +60,7 @@ span {
   justify-content: center;
   border: 0px;
   border-radius: 10px;
-  background-color: #faebd7;
+  background: radial-gradient(circle at center bottom, #faebd7 0%, #fff 100%);
 }
 .menu-inner {
   width: 1130px;
@@ -144,7 +144,6 @@ span {
 }
 .body-inner {
   width: 1130px;
-  background-color: #fff;
 }
 .intro-section {
   margin-left: 40px;
@@ -154,11 +153,14 @@ span {
   width: 80%;
 }
 .intro-title {
-  font-family: Hack-Regular;
+  font-family: Chalkduster;
   font-size: 3.5em;
   font-weight: 1000;
   margin: 0;
   padding: 0;
+  background-image: radial-gradient(#ffafaf, #deb887);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .intro-sub {
   font-family: Gothic;
@@ -399,7 +401,9 @@ a {
   margin-bottom: 20px;
   font-family: Taiwan;
   font-weight: 1000;
-  color: #11043c;
+  background-image: linear-gradient(to right, #11043c, #0094a3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .post-cover {
   margin-top: 80px;
