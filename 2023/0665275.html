@@ -1,0 +1,651 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  MMLab AI 实战营，从新手到大佬的修炼场 |    林天文 Tianwen Lin | Buluwasior</title>
+  <meta name="description" content="HELLO">
+  <!-- 标签页图标 -->
+  
+  <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+  
+
+  <!-- 图标库 -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- 动画库 -->
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fushaolei/cdn-white@1.0/css/animate.css"/>
+  
+  <!-- css文件 -->
+  
+<link rel="stylesheet" href="/css/white.css">
+
+  <!-- 代码高亮 -->
+  
+    
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/github.css">
+
+    
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiper.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiperstyle.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+
+<div class="menu-outer">
+    <div class="menu-inner">
+      <div class="menu-site-name  animate__animated  animate__fadeInUp">
+        <a href="/">
+          林天文 Tianwen Lin | Buluwasior
+        </a>
+        
+      </div>
+      <div class="menu-group">
+        <ul class="menu-ul">
+        
+          <a href="/" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              HOME PAGE
+            </li>
+          </a>
+        
+          <a href="/about" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              ME
+            </li>
+          </a>
+        
+          <a href="/archives" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              BLOGs
+            </li>
+          </a>
+        
+          <a href="/publication" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              PUBLICATIONS
+            </li>
+          </a>
+        
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="sort">
+             COLLECTIONs
+             <div class="categories-outer " id="sort-div">
+               <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Vision-%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">Computer Vision 计算机视觉</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/For-OpenMMLab/">For OpenMMLab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIS-Experiments/">GIS Experiments</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/">生活随笔</a></li></ul>
+             </div>
+          </li>
+        
+        
+        <a href="/search">
+          <li class="menu-li  animate__animated  animate__fadeInUp">
+            <i class="ri-search-line"></i>
+          </li>
+        </a>
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="mobile-menu">
+            <i class="ri-menu-line"></i>
+          </li>
+        
+        </ul>
+
+      </div>
+
+    </div>
+</div>
+<div id="mobile-main" class="animate__animated  animate__fadeIn">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-site-name animate__animated  animate__fadeInUp">
+      <a href="/">
+        林天文 Tianwen Lin | Buluwasior
+      </a>
+    </div>
+    <div class="mobile-menu-group" id="mobile-close">
+      <i class="ri-close-line"></i>
+    </div>
+
+  </div>
+
+  <div class="mobile-menu-div">
+  
+    <a href="/" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>HOME PAGE</span>
+      </div>
+    </a>
+  
+    <a href="/about" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>ME</span>
+      </div>
+    </a>
+  
+    <a href="/archives" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>BLOGs</span>
+      </div>
+    </a>
+  
+    <a href="/publication" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>PUBLICATIONS</span>
+      </div>
+    </a>
+  
+  
+    <a href="/search">  
+      <div class="mobile-menu-child  animate__animated  animate__fadeInUp">
+        <i class="ri-search-line"></i>
+      </div>
+    </a>
+    
+  </div>
+
+
+</div>
+
+<div class="body-outer">
+  <div class="body-inner">
+    
+<article class="post-inner">
+  <div class="post-content-outer">
+    <div class="post-intro">
+      <div class="post-title animate__animated  animate__fadeInUp">MMLab AI 实战营，从新手到大佬的修炼场</div>
+      <div class="meta-intro animate__animated  animate__fadeInUp">6月 25 2023</div>
+      
+        <div class="post-cover"><span class="lazyload-img-span"><img data-src="https://user-images.githubusercontent.com/62822224/226601652-aefe7b11-2f9f-4d10-8715-421d3b5640ed.png" class="post-cover-img"><div class="post-cover-img-hover">asas</div><div class="post-cover-img-insert">asas</div></span></div>
+      
+    </div>
+    <div class="post-content-inner">
+      <div class="post-content-inner-space">
+
+      </div>
+      <div class="post-content-main animate__animated  animate__fadeInUp">
+        <!-- top型目录 -->
+        
+          <ol class="toc-top"><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%F0%9F%92%BB%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-top-text">💻常用命令</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#ANACONDA-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%B8%8E%E4%B8%80%E4%BA%9B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-top-text">ANACONDA 常用命令与一些解决方案</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%F0%9F%93%8ATENSORBOARD-%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-top-text">📊TENSORBOARD 可视化</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%F0%9F%95%B9%EF%B8%8F%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7"><span class="toc-top-text">🕹️常用工具</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E2%8C%A8%EF%B8%8F%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-top-text">⌨️代码编辑器</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%F0%9F%93%95Obsidian-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0"><span class="toc-top-text">📕Obsidian 技术笔记</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E2%9D%A4%EF%B8%8FGITHUB-%E4%BD%9C%E4%B8%9A%E7%BB%B4%E6%8A%A4"><span class="toc-top-text">❤️GITHUB 作业维护</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%F0%9F%98%82%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98"><span class="toc-top-text">😂网络环境问题</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%F0%9F%99%8B%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE"><span class="toc-top-text">🙋创建自己的项目</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%F0%9F%8D%BB%E5%87%86%E5%A4%87%E4%B8%8A%E4%BC%A0"><span class="toc-top-text">🍻准备上传</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%F0%9F%91%8C%E6%8F%90%E4%BA%A4%E6%9B%B4%E6%94%B9"><span class="toc-top-text">👌提交更改</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%F0%9F%92%96OpenMMLab-%E8%B4%A1%E7%8C%AE%E6%8C%87%E5%8D%97"><span class="toc-top-text">💖OpenMMLab 贡献指南</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%F0%9F%93%83PR-%E6%8F%8F%E8%BF%B0%E8%A7%84%E8%8C%83"><span class="toc-top-text">📃PR 描述规范</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%F0%9F%8C%9FREFINE-DOCs-%E7%9A%84%E4%B8%80%E4%BA%9B%E6%95%88%E6%9E%9C"><span class="toc-top-text">🌟REFINE DOCs 的一些效果</span></a></li></ol></li></ol>
+        
+        <blockquote>
+<p>本文为作者作为 <em>学员+助教</em> 参与 2023 年初 OpenMMLab AI 实战营的经验贴，不能确保适用于未来的实战营，也难免有片面之处，希望发现问题的小伙伴可以在评论区中积极讨论~</p>
+</blockquote>
+<h1 id="💡让美丽周边奖品陪伴一段成长"><a href="#💡让美丽周边奖品陪伴一段成长" class="headerlink" title="💡让美丽周边奖品陪伴一段成长"></a>💡让美丽周边奖品陪伴一段成长</h1><ul>
+<li>💰AI 实战营真的提供了非常丰富的激励</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实战营成就</th>
+<th>激励</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>优秀学员</td>
+<td>证书、周边、OpenMMLab 内推机会</td>
+</tr>
+<tr>
+<td>优秀助教</td>
+<td>证书、进阶周边、MMS（布道师）社区最高荣誉直推通道、社区特邀专访、OpenMMLab 内推机会</td>
+</tr>
+<tr>
+<td>优秀班长</td>
+<td>类似“优秀助教”</td>
+</tr>
+</tbody></table>
+<ul>
+<li>🛠️也带我探索了很多有价值的技术和工具</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/IrAcpls.jpg">
+        
+      </span></p>
+<ul>
+<li>📝学会了项目的维护流程</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/kxlIvNB.jpg">
+        
+      </span></p>
+<ul>
+<li>🤝学会向开源社区提交 pr（pull request）和文章</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/txK4F4X.jpg">
+        
+      </span></p>
+<ul>
+<li>🎶学会……</li>
+</ul>
+<h1 id="📕笔记-amp-经验总结"><a href="#📕笔记-amp-经验总结" class="headerlink" title="📕笔记&amp;经验总结"></a>📕笔记&amp;经验总结</h1><blockquote>
+<p>下面我来总结实战营中学习到的技术和知识，分为 4 个方面：常用命令、常用工具、GitHub 作业维护、OpenMMLab 贡献指南</p>
+</blockquote>
+<h2 id="💻常用命令"><a href="#💻常用命令" class="headerlink" title="💻常用命令"></a>💻常用命令</h2><h3 id="ANACONDA-常用命令与一些解决方案"><a href="#ANACONDA-常用命令与一些解决方案" class="headerlink" title="ANACONDA 常用命令与一些解决方案"></a>ANACONDA 常用命令与一些解决方案</h3><h4 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h4><pre><code class="shell">conda create -n your_env_name python=X.X
+</code></pre>
+<h4 id="更新-conda（慎用！！！，新-conda-可能用不了）"><a href="#更新-conda（慎用！！！，新-conda-可能用不了）" class="headerlink" title="更新 conda（慎用！！！，新 conda 可能用不了）"></a>更新 conda（慎用！！！，新 conda 可能用不了）</h4><pre><code class="shell">conda updata conda
+</code></pre>
+<h4 id="查看虚拟环境菜单和环境内已载入库"><a href="#查看虚拟环境菜单和环境内已载入库" class="headerlink" title="查看虚拟环境菜单和环境内已载入库"></a>查看虚拟环境菜单和环境内已载入库</h4><pre><code class="shell">conda env list
+conda list
+</code></pre>
+<h4 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h4><pre><code class="shell">Conda activate your_env_name
+</code></pre>
+<h4 id="如果遇到-conda-安装频繁报错，使用如下语句："><a href="#如果遇到-conda-安装频繁报错，使用如下语句：" class="headerlink" title="如果遇到 conda 安装频繁报错，使用如下语句："></a>如果遇到 conda 安装频繁报错，使用如下语句：</h4><pre><code class="shell">conda clean -i
+</code></pre>
+<h4 id="如果不幸要删除虚拟环境"><a href="#如果不幸要删除虚拟环境" class="headerlink" title="如果不幸要删除虚拟环境"></a>如果不幸要删除虚拟环境</h4><pre><code class="shell">conda remove -n your_env_name --all
+</code></pre>
+<h4 id="PyTorch-推荐安装命令"><a href="#PyTorch-推荐安装命令" class="headerlink" title="PyTorch 推荐安装命令"></a>PyTorch 推荐安装命令</h4><pre><code class="Shell">pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 -f https://download.pytorch.org/whl/cu117/torch_stable.html
+</code></pre>
+<h4 id="我常用的-pip-镜像"><a href="#我常用的-pip-镜像" class="headerlink" title="我常用的 pip 镜像"></a>我常用的 pip 镜像</h4><pre><code class="shell">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple # 清华  
+pip install -i https://pypi.douban.com/simple # 豆瓣（推荐）
+</code></pre>
+<h4 id="安装其他项目的-requirements-txt"><a href="#安装其他项目的-requirements-txt" class="headerlink" title="安装其他项目的 requirements.txt"></a>安装其他项目的 requirements.txt</h4><pre><code class="shell">pip install -r requirements.txt
+</code></pre>
+<h3 id="📊TENSORBOARD-可视化"><a href="#📊TENSORBOARD-可视化" class="headerlink" title="📊TENSORBOARD 可视化"></a>📊TENSORBOARD 可视化</h3><ul>
+<li>首先学习以下 tensorboardX 怎么用。在 OpenMMLab 中，只需找到 <em>configs/<em>base</em>/default_runtime.py</em> 中的如下代码，解除 <code>dict(type=&#39;TensorboardLoggerHook&#39;)</code> 注释部分即可开启 tensorboard 记录器</li>
+</ul>
+<pre><code class="python">log_config = dict(  
+    interval=50,  
+    hooks=[  
+        dict(type=&#39;TextLoggerHook&#39;, by_epoch=False),  
+        # dict(type=&#39;TensorboardLoggerHook&#39;)  
+        # dict(type=&#39;PaviLoggerHook&#39;) # for internal services  
+    ])
+</code></pre>
+<ul>
+<li><p>如果遇到环境问题，则按照提示配置 tensorboard 环境即可</p>
+</li>
+<li><p>一般训练代码运行之后会同时生成 tensorboardX 的日志文件。这时复制日志文件所在文件夹路径，打开 Anaconda 命令行，切换环境至 torch，输入图中语句为日志文件夹创建 tensorboardX 默认的本地端口</p>
+<pre><code class="shell">tensorboard --logdir PATH &#123;log_file_abs_path&#125;
+</code></pre>
+</li>
+<li><p>执行得到端口地址，复制到浏览器打开即可查看训练可视化内容<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/pAr4nSD.jpg">
+        
+      <br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/q8KcvOt.jpg">
+        
+      </span></span></p>
+</li>
+<li><p>关闭端口占用，只需短/长按 <em>CTRL + C</em></p>
+</li>
+</ul>
+<h2 id="🕹️常用工具"><a href="#🕹️常用工具" class="headerlink" title="🕹️常用工具"></a>🕹️常用工具</h2><h3 id="⌨️代码编辑器"><a href="#⌨️代码编辑器" class="headerlink" title="⌨️代码编辑器"></a>⌨️代码编辑器</h3><blockquote>
+<p>编写代码或配置文件的时候，主要考虑怎么连接项目环境、是否方便代码编写和调试、是否方便连接远程服务器（MMLab 提供免费云 GPU 额度）</p>
+</blockquote>
+<ul>
+<li>PyCharm 专业版或企业版<ul>
+<li>只需要 Anaconda 配置好 Python 环境，并安装好环境依赖，选择环境内部的 Python 解释器路径即可。同时，PyCharm 会自动检测项目中缺失的依赖库，并提供软件内的一键安装（就是很容易遇到国内网络环境的问题）</li>
+<li>PyCharm 提供了非常智能的代码提示和辅助功能，属于忘记语法也能帮你写对的那种。辅助功能如修改原始变量、函数或其他命名时，自动修改调用名、鼠标点击快速跳转到定义等都很实用，编写 Python 项目非常舒服。但是得吐槽一下它的 Typo 识别经常把代码搞得花花的很难看，你想让他忽略还得手动到设置里找</li>
+<li>最大的问题是，如果你使用的服务器对路径约束比较多，并且只提供有限的系统环境的，那PyCharm 不能给你无缝的远程服务器使用体验。因为远程 Python 环境的配置和选择很麻烦，如果解决不了远程环境的问题就无法直接调试</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>项目环境连接</th>
+<th>代码编写与调试</th>
+<th>连接远程服务器</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>⭐⭐⭐⭐⭐</td>
+<td>⭐⭐⭐⭐</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody></table>
+<ul>
+<li>VS Code<ul>
+<li>VS Code 选择环境的过程更简单，它会直接识别 Anaconda 的已有环境，你只需要在状态栏选择即可。但是如果缺失依赖还是需要到终端自行安装</li>
+<li>VS Code 的插件社区比 PyCharm 要发达很多，你可以安装各种功能的插件来接近完整 IDE 的效果。但遗憾的是，我尝试过在记不清楚基本语法的情况下借助 intellisense 搭建一个 PyTorch 下的 ResNet，结果 VS Code 没检查出我继承类和编写函数时的语法错误，导致运行脚本总是报错。最后，用 PyCharm 打开项目成功锁定错误代码并做好了修复</li>
+<li>VS Code 通过 Remote SSH 插件可以很方便得连接并管理云服务器，我可以无缝拖入和导出文件，也可以方便地调试远端脚本。很多小伙伴不知道 VS Code 连接服务器时候应该怎么充分利用其带来的便利，那么可以看看我的一期演示视频(<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19d4y1n7vg">指路</a>)</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>项目环境连接</th>
+<th>代码编写与调试</th>
+<th>连接远程服务器</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>⭐⭐⭐⭐⭐</td>
+<td>⭐⭐⭐</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+</tbody></table>
+<h3 id="📕Obsidian-技术笔记"><a href="#📕Obsidian-技术笔记" class="headerlink" title="📕Obsidian 技术笔记"></a>📕Obsidian 技术笔记</h3><ul>
+<li>众所周知，做技术探索的时候最关键的解决步骤总是怕忘记，到需要复用的时候不知道从何找起。所以方便复制、随时查看、跨平台同步、界面美观的电子技术笔记就非常重要。在实战营中帮助我最多的时 Obsidian。</li>
+<li><strong>Markdown 语法</strong>：首先，Obsidian 官方默认支持的就是 Markdown 语法。花里胡哨的 OneNote 只能在 Office365 中共享文章样式，但是 Markdown 作为开源社区 Github 最重要的、自动化配置样式的、为技术人员熟知的文档技术能很好地实现<u>跨平台、高度一致、对外兼容</u></li>
+<li><strong>完完整整的同步机制</strong>：你不仅可以借助云盘同步你的 MD 文章仓库，还可以同步你的设置、插件。这样无论你切换到哪个设备，Obsidian 都能用一致的界面主题、文本样式、偏好设置向你展现你的文章。此外，任意一个设备的更改都会快速同步到其他设备上</li>
+</ul>
+<h2 id="❤️GITHUB-作业维护"><a href="#❤️GITHUB-作业维护" class="headerlink" title="❤️GITHUB 作业维护"></a>❤️GITHUB 作业维护</h2><blockquote>
+<p>MMLab 实战营的作业成果都是要求在 Github 上维护的，但是大部分学员会遇到网络环境的访问问题，或者不理解 Github 的作用，也不清楚怎么利用 Github 维护一个项目</p>
+</blockquote>
+<h3 id="😂网络环境问题"><a href="#😂网络环境问题" class="headerlink" title="😂网络环境问题"></a>😂网络环境问题</h3><ul>
+<li>一些合法合规的解决思路：<ul>
+<li>使用 Github 的镜像网站： <a target="_blank" rel="noopener" href="https://github.com.cnpmjs.org/">https://github.com.cnpmjs.org</a> 或 <a target="_blank" rel="noopener" href="https://hub.fastgit.org/">https://hub.fastgit.org</a> ，但基本只能在下载的时候用</li>
+<li>使用其他 CDN 服务，对Github的静态文件进行加速</li>
+<li>使用 Gitee 或其他国内的代码托管平台</li>
+<li>修改Hosts文件，将Github的域名和IP地址绑定，从而避免DNS解析的延迟或干扰</li>
+</ul>
+</li>
+</ul>
+<h3 id="🙋创建自己的项目"><a href="#🙋创建自己的项目" class="headerlink" title="🙋创建自己的项目"></a>🙋创建自己的项目</h3><ul>
+<li>首先，在你的 Github 创建新的仓库，注意命名的格式一般是 <em>xxx-yyy</em> 或者 <em>xxxYyy</em>，名字要多用简写，要概括仓库的功能</li>
+</ul>
+<h3 id="🍻准备上传"><a href="#🍻准备上传" class="headerlink" title="🍻准备上传"></a>🍻准备上传</h3><ul>
+<li>然后将你的仓库克隆到本地，如果你嫌命令行中更换文件目录麻烦，也可以下载下来解压缩，自己放到合适的文件路径</li>
+<li>把本地的项目完整复制到克隆下来的仓库文件夹，适当忽略一些和代码库与功能无关的文件或文件夹</li>
+<li>然后在仓库文件夹的首页添加一个 md 文件，命名为 <em>README.md</em>，里面遵循 Markdown 语法，Github 仓库首页会自动展示这个文档在你的代码库下面。一个优秀的 README 需要装点门面，比如提供其他相关页面的跳转链接、向访客介绍仓库的概述、引导访客配置环境并运行必要的功能，也可以提供其他更多的详细信息。注意图文结合，代码块活用</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/VCQ5y2G.jpg">
+        
+      </span></p>
+<h3 id="👌提交更改"><a href="#👌提交更改" class="headerlink" title="👌提交更改"></a>👌提交更改</h3><ul>
+<li>使用 <code>git status</code> 检查当前更改</li>
+<li>使用 <code>git add *</code> 将所有更改添加到上传列表</li>
+<li>使用 <code>git commit</code> 提交当前更改，注意在 <em>-m</em> 后面用字符串写此次提交的标题</li>
+</ul>
+<pre><code class="shell">git commit -m &quot;first commit&quot;
+</code></pre>
+<h2 id="💖OpenMMLab-贡献指南"><a href="#💖OpenMMLab-贡献指南" class="headerlink" title="💖OpenMMLab 贡献指南"></a>💖OpenMMLab 贡献指南</h2><blockquote>
+<p>ref：<br>官方贡献指南：<a target="_blank" rel="noopener" href="https://mmengine.readthedocs.io/zh_CN/latest/notes/contributing.html">贡献代码</a><br>官方代码规范：<a target="_blank" rel="noopener" href="https://mmengine.readthedocs.io/zh_CN/latest/notes/code_style.html">代码规范</a></p>
+</blockquote>
+<h3 id="📃PR-描述规范"><a href="#📃PR-描述规范" class="headerlink" title="📃PR 描述规范"></a>📃PR 描述规范</h3><h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><ul>
+<li><strong>sample</strong>： [Docs] Refine contribute.md</li>
+<li>在开头使用英文括号描述修改的对象，常见修改对象有<table>
+<thead>
+<tr>
+<th>对象</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Docs</td>
+<td align="left">官方文档更新 可以是refine也可以补充</td>
+</tr>
+<tr>
+<td>Feature</td>
+<td align="left">新功能 新功能support对xxx的支持</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td align="left">修复bug</td>
+</tr>
+<tr>
+<td>WIP</td>
+<td align="left">先提出来 等待开发完成 暂时不用review</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h3 id="🌟REFINE-DOCs-的一些效果"><a href="#🌟REFINE-DOCs-的一些效果" class="headerlink" title="🌟REFINE DOCs 的一些效果"></a>🌟REFINE DOCs 的一些效果</h3><h4 id="代码快-to-提示框"><a href="#代码快-to-提示框" class="headerlink" title="代码快 to 提示框"></a>代码快 to 提示框</h4><ul>
+<li>基于代码快的语法，通过特殊的标注实现代码快到提示框的转换<ul>
+<li>注解{Note}<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/mqtDx3A.jpg">
+        
+      </span></li>
+<li>参见{SeeAlso}<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/oNjmsqz.jpg">
+        
+      </span></li>
+<li>警告{Warning}<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/eJxjNl5.jpg">
+        
+      </span></li>
+</ul>
+</li>
+</ul>
+<h1 id="😉最后"><a href="#😉最后" class="headerlink" title="😉最后"></a>😉最后</h1><ul>
+<li>大家都来积极加入 MMLab 实战营吧，祝小伙伴们都能从中收获自己的成长和乐趣！</li>
+</ul>
+<p>本文参与了<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000043648149">SegmentFault 思否写作挑战赛</a>，欢迎正在阅读的你也加入。</p>
+
+        <!-- 分类文章 -->
+        
+          <div class="post-categoris-bottom">
+            <div class="post-categoris-name">For OpenMMLab</div>
+            <ul>
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/034.html" class="post-categoris-bottom-link">
+                  MMLAB PR 指南
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/032.html" class="post-categoris-bottom-link">
+                  写给 mmsegmentation 工具箱新手的避坑指南
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="me base">
+                  <a  href="/2023/0665275.html" class="post-categoris-bottom-link">
+                  MMLab AI 实战营，从新手到大佬的修炼场
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            </ul>
+
+          </div>
+
+        
+      </div>
+      <div class="post-content-inner-space">
+        
+      </div>
+   </div>
+    <!-- 评论 -->
+    
+  </div>
+</article>
+  </div>
+</div>
+
+
+
+<!-- 如果是home模式的话，不在首页就显示footer，如果不是home模式的话 所有都显示footer -->
+
+  <div class="footer-outer animate__animated  animate__fadeInUp">
+    <div class="footer-inner">
+    <div class="footer-text">
+    <p>Have a <strong>NICE</strong> day.</p>
+
+    </div>
+    <div class="footer-contact">
+    <ul class="footer-ul">
+        
+        <li class="footer-li">
+            <a href="mailto:Tianwen580@hotmail.com" target="_blank">
+                <i class="ri-mail-send-fill"></i>
+            </a>
+        </li>
+        
+        <li class="footer-li">
+            <a href="tel:+8613622309458" target="_blank">
+                <i class="ri-phone-line"></i>
+            </a>
+        </li>
+        
+        <li class="footer-li">
+            <a href="weixin://lindaxia12138tik" target="_blank">
+                <i class="ri-wechat-fill"></i>
+            </a>
+        </li>
+        
+    </ul>
+    </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script src="/js/white.js"></script>
+
+
+
+    
+      
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='all'|| 'all' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="http://buluwasior.me/categories/生活随笔/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🐱‍👓 林天文的生活随笔 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item" style="visibility: hidden"></div><a class="magnet_link_more"  href="http://buluwasior.me/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f7f7f7;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #f2f2f2}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:#0088ff}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style> <script data-pjax>if(document.getElementById('recent-posts') && location.pathname =='/'){
+    
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms"></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载swiper')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script>
+<script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiper.min.js"></script>
+<script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper@0.18/swiper/swiperindex.js"></script>
+<style></style>
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://python-github-calendar-api.vercel.app/api?TianWen580";
+            var git_color =['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f'];
+            var git_user ="TianWen580";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="height:100%;display: flex;align-items: center;justify-content: center;"><svg style="height:50px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:248px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":250},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

@@ -60,7 +60,6 @@ span {
   justify-content: center;
   border: 0px;
   border-radius: 10px;
-  background: radial-gradient(circle at center bottom, #faebd7 0%, #fff 100%);
 }
 .menu-inner {
   width: 1130px;
@@ -153,12 +152,12 @@ span {
   width: 80%;
 }
 .intro-title {
-  font-family: Chalkduster;
+  font-family: Arial Rounded MT Bold;
   font-size: 3.5em;
   font-weight: 1000;
   margin: 0;
   padding: 0;
-  background-image: radial-gradient(#ffafaf, #deb887);
+  background-image: conic-gradient(from 38deg, #4f00ff, #277fbe 51.26%, #00ff7d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -866,7 +865,7 @@ li p {
   height: 42px;
   padding-left: 13px;
   padding-right: 46px;
-  background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0), #11043c);
+  background: repeating-conic-gradient(from 225deg, rgba(255,255,255,0), rgba(255,255,255,0), #0054ff);
   border: 3px solid #11043c;
 }
 .search-input-outer button {

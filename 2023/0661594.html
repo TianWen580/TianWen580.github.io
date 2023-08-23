@@ -1,0 +1,541 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  SAM，监督学习已跳出过拟合泥潭？ |    林天文 Tianwen Lin | Buluwasior</title>
+  <meta name="description" content="HELLO">
+  <!-- 标签页图标 -->
+  
+  <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+  
+
+  <!-- 图标库 -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- 动画库 -->
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fushaolei/cdn-white@1.0/css/animate.css"/>
+  
+  <!-- css文件 -->
+  
+<link rel="stylesheet" href="/css/white.css">
+
+  <!-- 代码高亮 -->
+  
+    
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/github.css">
+
+    
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiper.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiperstyle.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+
+<div class="menu-outer">
+    <div class="menu-inner">
+      <div class="menu-site-name  animate__animated  animate__fadeInUp">
+        <a href="/">
+          林天文 Tianwen Lin | Buluwasior
+        </a>
+        
+      </div>
+      <div class="menu-group">
+        <ul class="menu-ul">
+        
+          <a href="/" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              HOME PAGE
+            </li>
+          </a>
+        
+          <a href="/about" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              ME
+            </li>
+          </a>
+        
+          <a href="/archives" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              BLOGs
+            </li>
+          </a>
+        
+          <a href="/publication" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              PUBLICATIONS
+            </li>
+          </a>
+        
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="sort">
+             COLLECTIONs
+             <div class="categories-outer " id="sort-div">
+               <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Vision-%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">Computer Vision 计算机视觉</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/For-OpenMMLab/">For OpenMMLab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIS-Experiments/">GIS Experiments</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/">生活随笔</a></li></ul>
+             </div>
+          </li>
+        
+        
+        <a href="/search">
+          <li class="menu-li  animate__animated  animate__fadeInUp">
+            <i class="ri-search-line"></i>
+          </li>
+        </a>
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="mobile-menu">
+            <i class="ri-menu-line"></i>
+          </li>
+        
+        </ul>
+
+      </div>
+
+    </div>
+</div>
+<div id="mobile-main" class="animate__animated  animate__fadeIn">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-site-name animate__animated  animate__fadeInUp">
+      <a href="/">
+        林天文 Tianwen Lin | Buluwasior
+      </a>
+    </div>
+    <div class="mobile-menu-group" id="mobile-close">
+      <i class="ri-close-line"></i>
+    </div>
+
+  </div>
+
+  <div class="mobile-menu-div">
+  
+    <a href="/" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>HOME PAGE</span>
+      </div>
+    </a>
+  
+    <a href="/about" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>ME</span>
+      </div>
+    </a>
+  
+    <a href="/archives" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>BLOGs</span>
+      </div>
+    </a>
+  
+    <a href="/publication" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>PUBLICATIONS</span>
+      </div>
+    </a>
+  
+  
+    <a href="/search">  
+      <div class="mobile-menu-child  animate__animated  animate__fadeInUp">
+        <i class="ri-search-line"></i>
+      </div>
+    </a>
+    
+  </div>
+
+
+</div>
+
+<div class="body-outer">
+  <div class="body-inner">
+    
+<article class="post-inner">
+  <div class="post-content-outer">
+    <div class="post-intro">
+      <div class="post-title animate__animated  animate__fadeInUp">SAM，监督学习已跳出过拟合泥潭？</div>
+      <div class="meta-intro animate__animated  animate__fadeInUp">6月 25 2023</div>
+      
+        <div class="post-cover"><span class="lazyload-img-span"><img data-src="https://i.imgur.com/fQlqUwi.jpg" class="post-cover-img"><div class="post-cover-img-hover">asas</div><div class="post-cover-img-insert">asas</div></span></div>
+      
+    </div>
+    <div class="post-content-inner">
+      <div class="post-content-inner-space">
+
+      </div>
+      <div class="post-content-main animate__animated  animate__fadeInUp">
+        <!-- top型目录 -->
+        
+          <ol class="toc-top"><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E6%88%91%E7%9A%84%E8%A7%82%E7%82%B9"><span class="toc-top-text">我的观点</span></a></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E4%BD%9C%E8%80%85%E7%9A%84%E8%A7%82%E7%82%B9"><span class="toc-top-text">作者的观点</span></a></li></ol>
+        
+        <ul>
+<li><h1 id="📕总览-SAM-的成就"><a href="#📕总览-SAM-的成就" class="headerlink" title="📕总览 SAM 的成就"></a><strong>📕总览 SAM 的成就</strong></h1><blockquote>
+<p>Demo：<a target="_blank" rel="noopener" href="https://segment-anything.com/demo">https://segment-anything.com/demo</a> </p>
+<p>Paper：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2304.02643">https://arxiv.org/abs/2304.02643</a></p>
+</blockquote>
+<ul>
+<li>提出了新任务：基于提示的分割</li>
+<li>提出了新模型：Segment Anything Moduel（SAM）</li>
+<li>提出了新数据集：SA-1B</li>
+<li>总之，最让人激动的是以上三个成果都是 SAM 在监督任务上挑战 <em><strong>Zero-shot</strong></em> 带来的</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://aicarrier.feishu.cn/space/api/box/stream/download/asynccode/?code=NDRhZDNiOTk3ZmY0YjdiMWE3ZjczODc5NDA5YjAwODNfM0dKaEI1dXpRYmhWMXkxUkdWNDZmT2g0ZkpqYkhQZW5fVG9rZW46UDZ0aWI3TVNRb0pqczF4UnhTZWNwd1FjbnBnXzE2OTI3OTIzNTI6MTY5Mjc5NTk1Ml9WNA">
+        
+      </span></p>
+<h1 id="📃ZERO-SHOT-的基本概念"><a href="#📃ZERO-SHOT-的基本概念" class="headerlink" title="📃ZERO-SHOT 的基本概念"></a><strong>📃ZERO-SHOT 的基本概念</strong></h1><ul>
+<li>😉我们先从生活中的视角去理解 Zero-shot。</li>
+<li>假设小明和爸爸去参观动物园。看到了一只<strong>黑白相间</strong>的「斑马」、一只<strong>喙很大</strong>的「鹦鹉」和一只<strong>圆滚滚</strong>的幼年「海豹」。爸爸给小明提示，让他在动物园找到一只像斑马一样黑白相间、像鹦鹉一样有大喙、像幼年海豹一样圆滚滚的动物。</li>
+<li>假设小明从未见过其他的动物，他也可以通过总结现有动物共有的特征来推断出其他动物的外貌。例如，小明知道斑马、鹦鹉、海豹。当小明看到一只企鹅时，便可以根据已知的属性信息推测出它可能就是爸爸要他找的黑白相间的、有大喙、圆滚滚的动物，因此他能够很自然地把这只企鹅归类为「新知」。这就是 Zero-shot 的基本概念，即通过已知的类别和属性信息对新的未见过的类别进行分类。</li>
+<li>在实际应用中，ZSL（Zero-shot Learning）可以帮助我们解决各种问题，例如图像识别、自然语言处理等领域中的数据不足或无法获得实际标签的问题。通过零样本学习，我们可以先积累先验知识，再推断和预测新的未知类别，从而实现更加灵活和高效的智能化应用。</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://aicarrier.feishu.cn/space/api/box/stream/download/asynccode/?code=YTc3NjA0MDY4YmVmNTU5MWZkM2I5ZmFmMGZiMzI2NDhfYVRUa3dNRTZ5ZTg4ZnlvdnJ3NWI5NnRMRDFrRmE3ZG5fVG9rZW46WXdtUGJsZGRKb2t5Nmt4TVlQYmNSdDMwbnNnXzE2OTI3OTIzNTI6MTY5Mjc5NTk1Ml9WNA">
+        
+      </span></p>
+<h1 id="🤔-什么驱使了-Segment-Anything-可以-ZERO-SHOT"><a href="#🤔-什么驱使了-Segment-Anything-可以-ZERO-SHOT" class="headerlink" title="🤔****什么驱使了 Segment Anything 可以 ZERO-SHOT"></a><strong>🤔****什么驱使了</strong> <strong>Segment Anything</strong> <strong>可以 ZERO-SHOT</strong></h1><blockquote>
+<p>Segment Anything 这篇工作的主要特点有两个：一是在分割算法中搭建提示工程，创造了 3 种以分级抽象为特点的空间模态，并引入了文本模态；二是构建了一个巨大的、多元的分割数据集，比当下最大的分割数据集OpenImage V5大 6 倍，分割量大 400 倍。</p>
+</blockquote>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://aicarrier.feishu.cn/space/api/box/stream/download/asynccode/?code=NWZkNDAwOWRlNmFiOGE5N2IxMTNmZmJlY2Y4MDZjOWJfN2tzME9iMDN3MlZnZzl3cG9zeHdCZFZ6OHpsZXdidkRfVG9rZW46TmhoSmIwT3ZJbzFTRkZ4TVVhQ2NLckNibnZjXzE2OTI3OTIzNTI6MTY5Mjc5NTk1Ml9WNA">
+        
+      </span></p>
+<ul>
+<li><p>在图文模态算法的近期发展进程中，一直围绕着一个关键词，即「n to n」，也就是我们常说的「模态对齐」。让属于特定 1 个词组的 n 种图像对齐到该单词，同时，让属于特定 1 个图像的 n 种词组对齐到该图片，是 <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2103.00020.pdf">Clip</a> 十分擅长举一反三的关键。后续的 ALBEF 工作进一步优化了模态对齐的解决方案。另外，自从 CNN➕Pooling 的架构带飞了基于空间信息的 CNN 算法以来，我们都意识到不同抽象尺度对于学习算法的重要性，只有不断下采样池化，才能强迫模型站在多种尺度上观察空间信息特征，增广空间数据学习的视角。<em><strong>Segment Anything 正是 n to n 与多尺度抽象的实践者，以 n to n 为本，以多尺度抽象为基。</strong></em></p>
+</li>
+<li><p>SAM 利用 <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1706.03762.pdf">Transformer</a> 的 Cross attention 机制，促使图像的特征图创新性地与点模态、定位框模态、掩码模态（不是最终预测的掩码哦）和文本模态相互作用。值得注意的是，这 4 种模态的实例对于它所属的目标图像块并不是唯一确定的，本质上是在鼓励模型关注 n to n 的关系。尤其是点、定位框、掩码这 3 种模态，它们随机采样于最终要预测的掩码中，刻意打乱了清晰确切的空间信息。它们在像素级和对象级两种尺度上分级抽象，原本模型只学习从 1 个目标到 1 个掩码块的映射，现在模型学习 1 个掩码块的同时要关注特征图与 3 个自由度极高的模态，它们的组合以及不同组合之间的联系迫使模型抽象图像的高级语义。曾经我们的 1 to 1 算法相比之下已然成为了模型“偷懒”的捷径。</p>
+</li>
+<li><p>在 SAM 中除了文本模态，其他 3 个模态的<strong>自由度都很高</strong>（注：文本模态受限于数据集，每个图片只能对应一段描述文本，自由度稍逊）。这 3 个模态作为某个图像之外的额外提示（prompt），几乎是无穷无尽的。理论上你可以从一个掩码块中随机取出无穷个点，也可以随机取出无穷个内部定位框和无穷个像素块。<em><strong>这种灵活的抽象关系让模型具有极其复杂的学习视角，这种学习视角在理论上是无穷的。也因此，引入了提示工程（prompt engineering，基于需求对提示做灵活变换）的 SAM 几乎可以做所有分割领域的细分任务，甚至包括了还未曾存在的新任务。</strong></em></p>
+</li>
+<li><p>极其庞大且多元的互联网数据源是 Zero-Shot 能力的另一大核心。SA-1B 涵盖了各种类型、风格、场景和视角的图像。这有利于模型学习更通用和鲁棒的特征表示，从而提高分割算法举一反三的水平。</p>
+</li>
+<li><p>上面已经分析了 SAM 具有 Zero-Shot 性能的几个核心原因，而下面分析的是一些次要的因素。SA-1B 的虽然没有类别标注的概念，但实际上覆盖的分割对象种类特别全面，包含了大量的常见和罕见类别，它们覆盖了自然界和人造界的各个领域。这有利于模型学习更广泛和细致的语义信息，从而提高 Zero-shot 的性能。</p>
+</li>
+<li><p>SA-1B 的<em><strong>标注十分精确</strong></em>，大量噪声被有意修复，有利于模型学习更准确和清晰的边界信息，从而提高 Zero-shot分割的性能。</p>
+<h1 id="💛-监督学习将跳出过拟合泥潭"><a href="#💛-监督学习将跳出过拟合泥潭" class="headerlink" title="💛****监督学习将跳出过拟合泥潭"></a><strong>💛****监督学习将跳出过拟合泥潭</strong></h1><p>
+        <span class="lazyload-img-span">
+        <img data-src="https://aicarrier.feishu.cn/space/api/box/stream/download/asynccode/?code=ZjEzM2NhYmVhNGY3N2NhYjRlMGE1YTYxNDRjMWRhNWZfdkZYT1ptZDlPWUo2WTl6bUo4RGxlZGdqSXRHcUZScUpfVG9rZW46R0duZGJFTHR3b1pxUnR4aUN6cGNtbzdDbm5kXzE2OTI3OTIzNTI6MTY5Mjc5NTk1Ml9WNA">
+        
+      </span></p>
+</li>
+<li><p>SAM 很快就能掌握自动标注能力，在 SA-1B 中，仅仅进行了 **0.012%**（120, 000 张） 的专家标注，就已经具备优秀的全自动分割水平（99.1% 的标注由 SAM 自动生成），其他模型需要 10% 甚至更多的标注量才能达到类似的水平，印证了 SAM 充分挖掘了数量有限的监督数据集，大大降低了监督算法对数据量的依赖，从而大大降低了监督算法过拟合的可能</p>
+</li>
+<li><p>SAM 在监督学习的框架内实现了极其优异的 Zero-shot 性能，这带给我们一个思考——到底是数据集还是多模态带来了这种能力？互联网数据源或许能给出答案。当你提示“猫”，在图像数据集无穷大的时候，理论上“猫”的文本语义对应到了无数张不同的猫的图像，这样只要你给定文本语义，模型总是能准确地提取对应掩模。</p>
+</li>
+<li><p>所以我们首先可以确定，数据量足够庞大足够多元才能充分激发这种 Zero-shot 性能。那就是数据集才是根本吗？并不是。前面我们提到，无论是站在 3 个空间模态的角度来看，还是站在图像模态的角度来看，它们的学习视角十分自由，都近乎是无穷的。也就是说，当你图像模态有效增长了 1 个数据，SAM 的 3 种空间模态就能从分割面中自由提取几乎无数种可以配对的点、框、掩码（标签文本例外）。所以可以这么建模：<em><strong>自由度高的模态选择 x 数据集多元 = 优秀的 Zero-Shot 性能</strong></em>。两个因素理论上是平等的，但实际上，你无法获取无穷的数据，所以自由度高的模态设计更加重要，性价比也更高，这也启发了我们一种降低人工标注成本的预训练模型获取方式</p>
+</li>
+<li><p>而在无监督任务中，我们常定义一对正负样本规则做对比学习。这种模式本身对正负样本的定义有较高的要求。比如 1 张图像与 n-1 个不匹配文本做对比，就能将图像模态与近乎无穷的文本模态建立负相关，反之 1 个文本如果与 n-1 张不匹配图像做对比，就能将文本模态与近乎无穷的图像模态建立负相关。这或许就是无监督目前 Zero-shot 性能的根源，但由于互联网图文对获取困难，质量不一，此处提到的这种正负样本规则还不足以充分激发 Zero-shot 性能，故无监督领域的大部分多模态工作（比如 Clip）只能靠砸钱堆数据来取得成效。它们应当学习 SAM 对模态自由度的精心设计。</p>
+</li>
+</ul>
+<h1 id="🤔-仍有不足"><a href="#🤔-仍有不足" class="headerlink" title="🤔****仍有不足"></a><strong>🤔****仍有不足</strong></h1><h2 id="我的观点"><a href="#我的观点" class="headerlink" title="我的观点"></a><strong>我的观点</strong></h2><ul>
+<li>当前的文本模态在等待变革<ul>
+<li>与 SAM 提出的点模态、检测框模态、掩码模态相反，互联网数据集图片所对应文本难于规范且较为死板，一旦文本过短，就会进一步约束文本模态的自由度，无法充分与图像模态建立 n to n 的对齐。人类在认识未知事物的时候，采用的是<em><strong>具体属性描述</strong></em>的方式，并擅于进一步结合细节抽象和归纳出对未知事物的称呼。从具体的描述开始学习一个新事物名字的好处，就在于较好的规范性、较全面的认知和主动的学习归纳。虽然在人类学生的学习中会更多地关注新事物的名字，但我们都不希望老师让我们对着「斑马」的示意图背诵其名，而是采用描述的方式，比如马的形状，黑白相间的颜色（先验知识），再一步步对「斑马」这个新名词产生具体印象。简单采用互联网的文本模态很难把这种多尺度的语义补充完善，显然并不是完备解。</li>
+<li>在无监督的多模态工作中，Clip 的文本模态来自于社交网络，确实较 SA 所用的文本模态更加多样、更具宽容性，但依然不乏噪声和信息缺失。后续工作大多选择容忍噪声存在，继续拥抱庞大的互联网数据集，比如 ALBEF 从互信息最大化和动量对比学习的角度创新了新的损失函数来抗干扰。在多模态任务中，已经有工作能<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1711.11118.pdf">进行图像描述属性的提取</a>，也有工作通过<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2306.14824.pdf">生成文本片段做多模态工作</a>，不过主流的工作还拥抱着庞大的互联网数据集，还在抗干扰上做文章。<em><strong>如何进一步提升属性文本的生成能力？如何要将提取出来的描述属性引入？如何处理好不同尺度语义信息的关系……这些问题还值得进一步思考</strong></em>。</li>
+<li>从生成式的视角，可能会引入能从图片的文本中挖掘关键词的模型。从优化的视角，或许可以引入专门为形状、颜色等属性提供量化能力的数学建模，并融入到模型整体的损失计算中。从提取式的视角，可能会能从图中推测属性的属性分类器。</li>
+</ul>
+</li>
+<li>进击的提示工程<ul>
+<li>SAM 在考虑引入提示工程到分割任务后，分割算法的或多或少得保留至少 1 个提示模态的输入，不提示单纯输入待预测图的行为相当于司机瞎了、演说家哑了，是对感官的阉割，固然效果不会很好。因此<em><strong>未来带有高自由度模态的算法不得不优化自己的提示词工程</strong></em>。</li>
+<li>第一步，除了需要设计好高自由度的提示模态，还要设计这种模态对于人类交互有什么意义。下一步，便是设计怎样的应用场景让用户与模型充分地舒适地交互。最后，是要复盘，我设计的提示模态效果怎么样，有什么缺陷难以解决，下一步应该更换怎样的模态设计……</li>
+<li>比如当前 SAM 实现实例分割的交互是通过密集规则打点做到的，这种方式最大的问题就在于人类设计的规则点位无法精确命中所有实例，尤其是细小实例。当我们发现人类定义的规则不足以灵活应变的时候，一般会交给模型自己学习。或许我们可以让点模态从分割掩码随机采样的形式转变为模型自己感知定位点的形式，但也必须考虑到这个点模态最终会成为人类视线的定位点，不适合被模型定位器干扰。那么何不进一步把随机采样的点模态与模型定位的点模态结合起来呢，一个既可以跟踪用户视线，又可以在实例分割场景下灵活感知实例的 SAM 不香吗嘿嘿……</li>
+</ul>
+</li>
+</ul>
+<h2 id="作者的观点"><a href="#作者的观点" class="headerlink" title="作者的观点"></a><strong>作者的观点</strong></h2><ul>
+<li>SAM 不适合高精度要求的分割任务</li>
+<li>SAM 的图像编码器太大，拖慢了整体效率。但可以提前完成图像编码，再根据用户需要制作 Prompt 并推理</li>
+<li>文本模态仍不能很好地对应到图像语义，作者还没想明白怎么基于提示实现语义和全景分割任务</li>
+<li>在少数几个任务，比如绘画数据集、X光数据集、模糊场景数据集、细节信息密集的数据集上泛化性能不足</li>
+</ul>
+<h1 id="🕹️总结"><a href="#🕹️总结" class="headerlink" title="🕹️总结"></a><strong>🕹️</strong>总结</h1><ul>
+<li>作为元宇宙概念的拥护者，Meta 公司推出可提示分割器大概率还是一种占领 MR 市场的商业策略，它搭建了一套成熟的<a target="_blank" rel="noopener" href="https://segment-anything.com/demo">官网</a>演示 VR 设备如何跟踪用户视线（点模态）并提取任何被关注的对象。SAM 的商业意义是毋庸置疑的，但正是对 VR 产品交互的设想在学术上启发了我们关于 Zero-shot 更深入的认识并展现了一种可行的实践。</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://aicarrier.feishu.cn/space/api/box/stream/download/asynccode/?code=YmQ3YzI3NGNiZjdmODU1MzRjMTkzNjcxZTcwZDhiMzBfaVd0dHZyOGkwaHZiSEdldlF2NVVnYW1DbndFcnQ0aTZfVG9rZW46RDJTemJKNGtGb0IxS3R4ZmY0RWNOU3o3blNlXzE2OTI3OTIzNTI6MTY5Mjc5NTk1Ml9WNA">
+        
+      </span></p>
+<ul>
+<li>在 SAM 火热的这段时间，OpenMMLab 的开发者们维护了 Playground 项目（<a target="_blank" rel="noopener" href="https://github.com/open-mmlab/playground">跳转到项目地址</a>）。该项目仅在三天的时间内就将 SAM 的 Zero-shot 实例分割应用在的 OpenMMLab 的各项 Demo 上。足以看到 SAM 广泛的应用价值</li>
+<li>由于分割任务涵盖了分类、定位、检测等基本任务于一身，所以 MMDetection、MMOCR、MMEditing 等工具箱就像开胃小菜一样一口一个 SAM。而基于分割掩码的引导，姿态检测、旋转框检测也融合了 SAM 到 SOTA 算法中。随后，Lable Studio 等标注工具也引入了 SAM 做可以提示的辅助标注</li>
+<li>过去我很喜欢打听大公司背后玩的统一模态大模型，而现在我们已经能在 GPT4 的宣传片中感受到一个多模态 AI 带来的冲击力，其本质上就是 Zero-shot 的魅力，并进一步转化为生成式模型的魅力。当我再次回到 SAM 诞生的当天，我会更期待那天看到的不只是一个靠打点画框分割一切的 SAM，而是一个感官更「健全」的 SAM，会期待那天诞生一个可以用语音教导的 SAM，会期待那天遇到一个会开口与我交谈的 SAM……有媒体说 SAM 标志着 CV 终结了，但是我们亦看到了有意思的新可能。<strong>CV 不断发展启发后人，远没有终结，希望越来越多的 AI 贡献者和创业者开拓疆界，打开更多新世界的大门～</strong></li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://aicarrier.feishu.cn/space/api/box/stream/download/asynccode/?code=OTY4M2I3ZGQ2NzFiZmQ5MzEwMmI2Nzk5MTY4MWE2OGJfbjNzSjNNR3oxbEdjTHN1NDdtdUdxNnFHeDBTOE9QOUtfVG9rZW46V2lnWGJuZW1wb0hkTmt4czRWRWNRb3NvbjdmXzE2OTI3OTIzNTI6MTY5Mjc5NTk1Ml9WNA">
+        
+      </span></p>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://aicarrier.feishu.cn/space/api/box/stream/download/asynccode/?code=NWYzYTJkNmQ5ODUwMTBlZTY1MjM2YWFhNTU1YzE2ZGJfR0hyOVZiZnBUanJNeGk5U01KVUxqeVhnQlRiaWVQQjNfVG9rZW46UDVGR2I4cXhVb0lTSjB4VHZYOGM0TG9EbkpkXzE2OTI3OTIzNTI6MTY5Mjc5NTk1Ml9WNA">
+        
+      </span></p>
+<p>本文参与了<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000043648149">SegmentFault 思否写作挑战赛</a>，欢迎正在阅读的你也加入。</p>
+</li>
+</ul>
+
+        <!-- 分类文章 -->
+        
+          <div class="post-categoris-bottom">
+            <div class="post-categoris-name">Computer Vision 计算机视觉</div>
+            <ul>
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/031.html" class="post-categoris-bottom-link">
+                  一键锁定目标的检测算法
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/035.html" class="post-categoris-bottom-link">
+                  AI 入门知识
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/033.html" class="post-categoris-bottom-link">
+                  实验命令汇总
+                </a>
+                </li>
+              
+              
+            
+            
+            
+            
+            
+              
+                <li class="me base">
+                  <a  href="/2023/0661594.html" class="post-categoris-bottom-link">
+                  SAM，监督学习已跳出过拟合泥潭？
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="me base">
+                  <a  href="/2023/0661594.html" class="post-categoris-bottom-link">
+                  SAM，监督学习已跳出过拟合泥潭？
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/0611376.html" class="post-categoris-bottom-link">
+                  阅读文献的十问
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/066282.html" class="post-categoris-bottom-link">
+                  AI 术语备注
+                </a>
+                </li>
+              
+              
+            
+            
+            </ul>
+
+          </div>
+
+        
+      </div>
+      <div class="post-content-inner-space">
+        
+      </div>
+   </div>
+    <!-- 评论 -->
+    
+  </div>
+</article>
+  </div>
+</div>
+
+
+
+<!-- 如果是home模式的话，不在首页就显示footer，如果不是home模式的话 所有都显示footer -->
+
+  <div class="footer-outer animate__animated  animate__fadeInUp">
+    <div class="footer-inner">
+    <div class="footer-text">
+    <p>Have a <strong>NICE</strong> day.</p>
+
+    </div>
+    <div class="footer-contact">
+    <ul class="footer-ul">
+        
+        <li class="footer-li">
+            <a href="mailto:Tianwen580@hotmail.com" target="_blank">
+                <i class="ri-mail-send-fill"></i>
+            </a>
+        </li>
+        
+        <li class="footer-li">
+            <a href="tel:+8613622309458" target="_blank">
+                <i class="ri-phone-line"></i>
+            </a>
+        </li>
+        
+        <li class="footer-li">
+            <a href="weixin://lindaxia12138tik" target="_blank">
+                <i class="ri-wechat-fill"></i>
+            </a>
+        </li>
+        
+    </ul>
+    </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script src="/js/white.js"></script>
+
+
+
+    
+      
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='all'|| 'all' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="http://buluwasior.me/categories/生活随笔/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🐱‍👓 林天文的生活随笔 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item" style="visibility: hidden"></div><a class="magnet_link_more"  href="http://buluwasior.me/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f7f7f7;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #f2f2f2}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:#0088ff}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style> <script data-pjax>if(document.getElementById('recent-posts') && location.pathname =='/'){
+    
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms"></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载swiper')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script>
+<script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiper.min.js"></script>
+<script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper@0.18/swiper/swiperindex.js"></script>
+<style></style>
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://python-github-calendar-api.vercel.app/api?TianWen580";
+            var git_color =['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f'];
+            var git_user ="TianWen580";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="height:100%;display: flex;align-items: center;justify-content: center;"><svg style="height:50px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:248px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":250},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

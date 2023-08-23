@@ -177,47 +177,47 @@
         
         <h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><h2 id="关于ESRI符号库"><a href="#关于ESRI符号库" class="headerlink" title="关于ESRI符号库"></a>关于ESRI符号库</h2><p>在ArcMap中打开顶部菜单中Customize-&gt;Style Manager工具,在这里面可以看见有黄色和黑色文件夹，都是ArcGIS默认的地理符号库，黄色的是空的，而黑色的包含了ESRI默认自带有的所有符号。如果需要自定义一些符号，我们可以在黄色的文件夹中添加，当然也可以使用新建文件夹的方式在新文件路径下添加自定义符号。<br>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE1.png">
+        <img data-src="https://i.imgur.com/dhoLicd.jpg">
         
       </span></p>
 <p>点击“Style”按钮可以看见默认的自带符号库还有非常多，我们可以勾选以添加进Style Manager进行显示和查看。点击Create New Style新建一个新的目录用来创建我的自定义符号。<br>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE2.png">
+        <img data-src="https://i.imgur.com/me2eto4.jpg">
         
       </span></p>
 <h1 id="创建自定义符号"><a href="#创建自定义符号" class="headerlink" title="创建自定义符号"></a>创建自定义符号</h1><h2 id="建立目录"><a href="#建立目录" class="headerlink" title="建立目录"></a>建立目录</h2><p>点击Style窗口中的Create New Style，选择实验文件夹作为符号库路径，命名为“sy2”。右边双击路径Marker Symbols进入点符号路径。右键，选择new-&gt;Marker Sysbol，接下来进入点符号的自定义界面。</p>
 <h2 id="新建Simple-Marker-Symbol符号"><a href="#新建Simple-Marker-Symbol符号" class="headerlink" title="新建Simple Marker Symbol符号"></a>新建Simple Marker Symbol符号</h2><p>顶部的Type中可以选择点符号的定义方法，我们第一个实验任务是创建高程点，形状简单，参数较少，所以此处选择Type：Simple Marker Symbol。在该Type中设置点的大小单位是毫米(Millmeter)，随后设置size:0.5，style：circle保持默认，color：全黑保持默认。单击OK完成编辑，回到Style Manager后将新的符号命名为“高程点”。<br>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE3.png">
+        <img data-src="https://i.imgur.com/Rr6Namy.jpg">
         
       </span></p>
 <h2 id="以新字体的形式新建符号"><a href="#以新字体的形式新建符号" class="headerlink" title="以新字体的形式新建符号"></a>以新字体的形式新建符号</h2><p>ArcMap为了与其他软件共享符号系统，会将符号以字体的形式保存在计算机的内部，用户也可以通过绘制字体来完成复杂符号的自定义。</p>
 <h3 id="设置格式"><a href="#设置格式" class="headerlink" title="设置格式"></a>设置格式</h3><p>打开FontCreator应用，顶部文件中选择新建，命名该字体为“地形图”，字符类选择为符号。单击确定。因为字体制作软件和我们的ArcGIS并没有一个等价的单位相互联系，所以第一步我需要设置软件编辑画布的尺寸，让ArcGIS上可以间接转化尺寸。进入顶部的格式-&gt;设置，我们首先可以调整布局的单位。因为10可以与许多数相除而避免产生无穷小数的情况，所以10的倍数都可以作为沟通该软件与ArcGIS软件单位的桥梁，这里10太小，会产生小数点，故考虑使用1000作为布局单位。<br>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE4.png">
+        <img data-src="https://i.imgur.com/YLMhW7Y.jpg">
         
       </span></p>
 <p>接下来设置一下度量的参数。字型上行字母、上行字母、Win上升设置为1000，右键的属性中选择预置宽度为1000。这样可以使符号的尺寸在1000且居中的时候可以局限在一个方形区域内。<br>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE5.png">
+        <img data-src="https://i.imgur.com/f03mQ2U.jpg">
         
       <br>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE6.png">
+        <img data-src="https://i.imgur.com/HKg80ds.jpg">
         
       </span></span></p>
 <h3 id="绘制符号"><a href="#绘制符号" class="headerlink" title="绘制符号"></a>绘制符号</h3><p>根据实验任务的要求，首先要绘制一个圆形轮廓(直径2mm线宽为默认0.15mm，对应了该软件单位的1000、75)，再绘制一个默认尺寸点(0.3mm对应软件单位的150)。因为该软件只有实心圆，所以需要借助软件的方向功能绘制圆形边界，先绘制(500，500)中心上的尺寸1000<em>1000的大圆，再绘制(500，500)中心上的尺寸850</em>850的小圆，将小圆方向，就形成了尺寸正确的圆形边界，接下来再拖入一个实心圆，绘制于(500，500)中心上，尺寸为150*150。<br>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE7.png">
+        <img data-src="https://i.imgur.com/7fSv3re.jpg">
         
       </span></p>
 <h3 id="绘制完成"><a href="#绘制完成" class="headerlink" title="绘制完成"></a>绘制完成</h3><p>2.3.3保存字体文件并安装入机<br>顶部文件中点击另存为，选择好保存路径方便查找即可，命名为“地形图”。这样子我可以很方便地完成符号的安装。回到ArcMap，我已经可以右键new-&gt;Marker Symbol来导入字体了。这一次选择type：Character Marker Symbol，加载一段时间后就可以选择上我刚安装的字体文件，里面有我绘制的点符号，选择上，在右上角选择尺寸单位为毫米Millmeter。设置size：2。这样点OK就完成了我电脑上的字符点符号创建。回到Style Manager后将符号命名为“导线控制点”。<br>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE8.png">
+        <img data-src="https://i.imgur.com/r3McSoW.jpg">
         
       <br>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE9.png">
+        <img data-src="https://i.imgur.com/XeXsN0o.jpg">
         
       </span></span></p>
 
@@ -226,6 +226,28 @@
           <div class="post-categoris-bottom">
             <div class="post-categoris-name">GIS Experiments</div>
             <ul>
+            
+            
+              
+                <li class="base">
+                  <a  href="/2021/0657209.html" class="post-categoris-bottom-link">
+                  空间分析「一」影像配准和数字化处理
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2021/0657209.html" class="post-categoris-bottom-link">
+                  空间分析「二」拓扑检查与处理
+                </a>
+                </li>
+              
+              
+            
             
             
               
@@ -245,8 +267,41 @@
             
               
                 <li class="base">
+                  <a  href="/2021/0740930.html" class="post-categoris-bottom-link">
+                  GIS的应用
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
                   <a  href="/2021/0946040.html" class="post-categoris-bottom-link">
                   地图制图「上」标准制图流程展示
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2021/0946040.html" class="post-categoris-bottom-link">
+                  地图制图「上」标准制图流程展示
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="me base">
+                  <a  href="/2021/0914607.html" class="post-categoris-bottom-link">
+                  地图制图「下」符号设计流程展示
                 </a>
                 </li>
               
@@ -284,6 +339,26 @@
               
             
             
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
             
             
             </ul>

@@ -3,39 +3,84 @@
   <entry>
     <title>AI 入门知识</title>
     <url>/2023/035.html</url>
-    <content><![CDATA[<blockquote>
-<p>学习心得：计算机视觉之算法基础与 OpenMMLab 入门<br>注：基于子豪兄的讲解，我重点发散了计算机视觉之算法基础的相关部分，主要参考的是我现有的笔记</p>
-</blockquote>
-<h2 id="机器学习的本质"><a href="#机器学习的本质" class="headerlink" title="机器学习的本质"></a>机器学习的本质</h2><h3 id="简单问题的学习"><a href="#简单问题的学习" class="headerlink" title="简单问题的学习"></a>简单问题的学习</h3><p>简单问题的学习过程是寻求最拟合方程的过程（以不同面积房价预测为例）</p>
+    <content><![CDATA[<h2 id="❤️“人工智能”的初生"><a href="#❤️“人工智能”的初生" class="headerlink" title="❤️“人工智能”的初生"></a>❤️“人工智能”的初生</h2><ul>
+<li>人工智能（Artificial Intelligence，简称AI）是指计算机系统通过仿效人的思维和行为方式，实现类似于人类智能的一种技术。20世纪初期，“<em>人工智能</em>”就作为一个概念被提出。当时，科学家们开始思考如何使机器能够模拟人类的思维过程，以便更好地解决复杂的决策问题。20世纪50年代，AI 的概念逐渐具体化，并在达特茅斯会议上被正式提出</li>
+</ul>
+<h2 id="🤷‍♂️如何定义-AI"><a href="#🤷‍♂️如何定义-AI" class="headerlink" title="🤷‍♂️如何定义 AI"></a>🤷‍♂️如何定义 AI</h2><ul>
+<li>现在我们希望 AI 的存在能允许计算机系统具备类似于人类智能的某些能力。这些能力包括：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>能力类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>👀感知能力</td>
+<td>让计算机能够<strong>感知</strong>周围环境，包括听觉、视觉、触觉等多个方面。</td>
+</tr>
+<tr>
+<td>🙋语言能力</td>
+<td>让计算机能够理解并处理人类<strong>语言</strong>，包括自然语言处理、语音识别等技术。</td>
+</tr>
+<tr>
+<td>🕹️推理能力</td>
+<td>让计算机能够根据已有的信息进行<strong>推理</strong>，并做出正确的<strong>决策</strong>。</td>
+</tr>
+<tr>
+<td>🤔学习能力</td>
+<td>让计算机能够<strong>不断从经验中学习</strong>，并提升自身的智能水平。</td>
+</tr>
+<tr>
+<td>🎶创造能力</td>
+<td>让计算机能够<strong>创造</strong>新的知识和思想。</td>
+</tr>
+</tbody></table>
+<ul>
+<li>机器学习时代，计算机算力资源很缺乏，大部分研究着重于如何让计算机从传感器数据中感知世界，而关于推理能力能有多强，大家并没有太高的期望。因此涌现出了很多机器学习方法，大多数工作集中在人工的特征工程上，利用各种独特的技术抽取数据的特征来做决策。机器学习也就成为了 AI 实践的重要<strong>方法论</strong></li>
+<li>2012 年，AlexNet 凭借 CNN（卷积神经网络）突破了机器学习最极限的图像分类性能，自此点燃了神经网络技术的发展星火。同时随着并行计算的快速发展，各种基于 CNN 优化的神经网络算法登上历史舞台，比如耳熟能详的 ResNet，彻底奠定了<strong>神经网络端到端算法</strong>的地位</li>
+<li>其实到 ChatGPT 的诞生，已经标志着 AI 开始全面拥有了以上定义的 5 种能力。AI 能够关注事物的特点，能够从语言联系到现实，能够根据提示工程做出最终的判断，能够自我评价总结反思，能够根据知识生成不存在的事物。<strong>统一大模型</strong>成为了极具诱惑力的香饽饽，为 AI 技术创造出极强的影响力</li>
+</ul>
+<h2 id="🕹️优化算法的本质"><a href="#🕹️优化算法的本质" class="headerlink" title="🕹️优化算法的本质"></a>🕹️优化算法的本质</h2><h3 id="简单问题"><a href="#简单问题" class="headerlink" title="简单问题"></a>简单问题</h3><p>一个线性关系的学习过程是寻求最拟合一元一次方程的过程（以不同面积房价预测为例）</p>
 <p>
         <span class="lazyload-img-span">
         <img data-src="https://img-blog.csdnimg.cn/img_convert/c4ceecf25a107672517273f0a0dcd821.jpeg">
         
       </span></p>
-<p>其中 $w$、$b$ 是 Learnable，代表了其对于预测精度的决定性，也代表了它是后期得到的，经优化确定之后模型就有了最好的预测能力</p>
-<h3 id="非结构化问题的学习"><a href="#非结构化问题的学习" class="headerlink" title="非结构化问题的学习"></a>非结构化问题的学习</h3><ul>
-<li>所习得的转换为多层非线性变换，实现对 DATA 的高层抽象</li>
-<li>DATA 输入也会更复杂，需要更多数据预处理操作</li>
+<p>其中 \( w \)、\( b \) 是 Learnable，代表了其对于预测精度的决定性影像，也代表了它需要一个优化过程，经优化确定之后模型会有越来越好的预测能力</p>
+<h3 id="非结构化问题"><a href="#非结构化问题" class="headerlink" title="非结构化问题"></a>非结构化问题</h3><ul>
+<li>一个非线性关系的学习需要多层非线性变换，实现对 DATA 的高层抽象</li>
+<li>DATA 输入会更复杂，需要更复杂的数据操作</li>
 </ul>
 <p>
         <span class="lazyload-img-span">
         <img data-src="https://i.imgur.com/PqCAyzV.jpg">
         
       </span></p>
-<h3 id="HIDEN-LAYER的CELL"><a href="#HIDEN-LAYER的CELL" class="headerlink" title="HIDEN LAYER的CELL"></a>HIDEN LAYER的CELL</h3><ul>
-<li>在多层感知机中，隐层由图示的CELL组建而成，每一个 CELL 接受上一层的多个 CELL 输入（$S_n$），经过 Activation（激活函数，此处以 ReLU 为例），得到该 CELL 对下一层的输出（$S^{\prime}$）</li>
+<h3 id="从-HIDEN-LAYER-的-CELL-中理解优化算法"><a href="#从-HIDEN-LAYER-的-CELL-中理解优化算法" class="headerlink" title="从 HIDEN LAYER 的 CELL 中理解优化算法"></a>从 HIDEN LAYER 的 CELL 中理解优化算法</h3><ul>
+<li>在多层感知机中，隐层由图示的 CELL 组建而成，每一个 CELL 接受上一层的多个 CELL 输入（\( S_n \)），经过 Activation（激活函数，此处以 ReLU 为例），得到该 CELL 对下一层的输出（\( S^{\prime} \)）</li>
 </ul>
 <p>
         <span class="lazyload-img-span">
         <img data-src="https://i.imgur.com/jxVB8Ba.jpg">
         
       </span></p>
-<ul>
-<li>Learnable：$w1$、$w2$… $wn$；$bias$（可去掉）</li>
-<li>$o=\sum(ws)+bias$</li>
-<li>$S^{\prime}=Activation(o)$</li>
+<p>$$<br>Learnable：w1、w2… wn；bias<br>$$<br>$$<br>o=\sum(ws)+bias<br>$$<br>$$<br>S^{\prime}=Activation(o)<br>$$</p>
+<h3 id="🤔现在我们开始理解什么是学习"><a href="#🤔现在我们开始理解什么是学习" class="headerlink" title="🤔现在我们开始理解什么是学习"></a>🤔现在我们开始理解什么是学习</h3><ul>
+<li>首先，我们总结一下简单问题和非结构化问题的学习目标：<ul>
+<li>在简单线性关系的学习中，我们的拟合函数在学习一套权重（\( w \) 和 \( b \)），每设置一套权重，我们都能评估直线方程与所有数据点的总距离</li>
+<li>在非结构化问题的学习中，我们使用了好复杂的神经网络，权重多了很多。但同样，每当我设置一套神经网络的权重，我就可以根据最后一层的两个神经元的值评估分类的正确性</li>
 </ul>
-<h2 id="CV的基础任务"><a href="#CV的基础任务" class="headerlink" title="CV的基础任务"></a>CV的基础任务</h2><h3 id="非像素级"><a href="#非像素级" class="headerlink" title="非像素级"></a>非像素级</h3><h4 id="IMAGE-CLASSIFICTIOIN（分类）"><a href="#IMAGE-CLASSIFICTIOIN（分类）" class="headerlink" title="IMAGE CLASSIFICTIOIN（分类）"></a>IMAGE CLASSIFICTIOIN（分类）</h4><ul>
+</li>
+<li>两种问题的学习都有一些共同点：1. 都需要学习一个或一组权重来计算结果 2. 计算结果都能利用一个精度指标评估</li>
+<li>现在就好办了，我们只需要找到一个方法，让我们根据精度来调整我们的权重。不断反复这个过程就是不断学习，而调整权重的方法就是优化算法</li>
+<li>这些优化算法的本质，都是根据预测结果与正确结果之间的误差来构建损失函数，并根据损失函数的图像来计算参数更新是正是负、具体更新多少</li>
+</ul>
+<h2 id="👀CV-的基础任务"><a href="#👀CV-的基础任务" class="headerlink" title="👀CV 的基础任务"></a>👀CV 的基础任务</h2><blockquote>
+<p>优化算法的突破需要非常深厚的学科积累，而且现有工作远不如权重结构设计多。因此，在了解了学习的过程后，我们就可以直接开始认识一些主流的神经网络架构啦。这里以最经典的视觉问题为例</p>
+</blockquote>
+<h3 id="非像素级"><a href="#非像素级" class="headerlink" title="非像素级"></a>非像素级</h3><h4 id="IMAGE-CLASSIFICTIOIN（分类）"><a href="#IMAGE-CLASSIFICTIOIN（分类）" class="headerlink" title="IMAGE CLASSIFICTIOIN（分类）"></a>IMAGE CLASSIFICTIOIN（分类）</h4><ul>
 <li>一张图像中是否包含某种物体，<strong>对图像进行类别描述</strong>是 Image Classification 的主要研究内容</li>
 </ul>
 <p>
@@ -107,13 +152,13 @@
 <h4 id="关键点检测"><a href="#关键点检测" class="headerlink" title="关键点检测"></a>关键点检测</h4><ul>
 <li>提取分析对象的关键点，例如人脸的关键点有眼珠、眼角、鼻尖、嘴尖、下颚转折点等等，通过提取这些点的二维坐标就可以得到大概的线状、面状分布特征，如果能够提取三位点坐标，则可以引入深度特征，实现更加复杂的应用</li>
 </ul>
-<h3 id="为何分类是最基础的任务？"><a href="#为何分类是最基础的任务？" class="headerlink" title="为何分类是最基础的任务？"></a>为何分类是最基础的任务？</h3><ul>
+<h3 id="🔍为何分类是最基础的任务？"><a href="#🔍为何分类是最基础的任务？" class="headerlink" title="🔍为何分类是最基础的任务？"></a>🔍为何分类是最基础的任务？</h3><ul>
 <li>基于分类算法，可以在后面连接到各种其他任务的算法（例如检测、分割等），或者与其他算法头并行。总之，如果没有了分类，检测器的包围框将没有实际的参考价值，分割器的像素之间划分开的差异也没有实际意义，所以分类算法是一切人工智能算法的基础，分类领域的突破是下游任务发展的重要推动力</li>
 </ul>
-<h2 id="DEEPLEARNING算法的设计"><a href="#DEEPLEARNING算法的设计" class="headerlink" title="DEEPLEARNING算法的设计"></a>DEEPLEARNING算法的设计</h2><ul>
-<li>朴素点说，深度学习模型的隐层可以专心负责特征提取，输入层可以任意输入各种模态的数据。声音数据可以经过滤波算法以及可视化算法转化成彩图和视觉算法共用输入层、语言数据可以切分为 Seg 序列，映射为一维 feature vector 作为 Token 输入 Transformer 算法……所以，DL 算法本质上是支持多模态的</li>
+<h2 id="📐DEEPLEARNING-神经网络架构的设计"><a href="#📐DEEPLEARNING-神经网络架构的设计" class="headerlink" title="📐DEEPLEARNING 神经网络架构的设计"></a>📐DEEPLEARNING 神经网络架构的设计</h2><ul>
+<li>从朴素的观点来说，深度学习模型的隐层只需专心负责特征提取，输入层可以任意输入各种模态的数据。比如，声音数据可以经过滤波算法以及可视化算法转化成彩图和视觉算法共用输入层;图像数据可以切分为有序的块，然后把每个块映射为高维向量，作为 Token 输入自然语言的 Transformer 算法。所以，DL 算法本质上只要数据兼容做的好，就可以套用到不同模态的学习过程中</li>
 <li>但单纯将各种模态数据映射为统一的输入结构，容易损失数据特征，因此需要针对分析对象的性质和关键特征来设计模型的输入层，以及隐层中的特征提取方式</li>
-<li>而视频和音频数据相比于单帧数据，带有时序特征，在设计上如何考虑多帧之间的时序关系是非常重要的，因此难度也要更高。常见的应用有：<ul>
+<li>例如，而视频和音频数据相比于单帧数据，带有时序特征，在设计上如何考虑多帧之间的时序关系是非常重要的，因此难度也要更高。常见的应用有：<ul>
 <li><strong>片段引导</strong>：划分视频片段，并对应某类片段的受众，引导受众跳转到感兴趣片段</li>
 <li><strong>片段查询</strong>：根据用户的自然语言描述，截取出符合描述条件的片段</li>
 </ul>
@@ -130,6 +175,43 @@
 <li>隐私计算、联邦学习、可信计算</li>
 <li>AI 基础设施平台</li>
 <li>预训练大模型</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Computer Vision 计算机视觉</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>AI 术语备注</title>
+    <url>/2023/066282.html</url>
+    <content><![CDATA[<blockquote>
+<p>在阅读 DL 领域文章时，有非常多的专业术语，并非英语能力强就能理解的。同时，有大量同义术语出现常相互混用或分领域使用的情况，也有很多术语之间比较容易混淆。因此，我将阅读文章时遇到的所有同义表达都列举了出来，并和中文术语、中文释义对应上</p>
+</blockquote>
+<h1 id="同义术语"><a href="#同义术语" class="headerlink" title="同义术语"></a>同义术语</h1><ul>
+<li><p><strong>Feature(Vector/Map)=Latent=Embedding=Token=Patch 特征=表征=表示=向量=嵌入(对应 embedding，少用)</strong></p>
+<ul>
+<li><strong>feature</strong>： 比较常见，模型中间产生的数据都可以称为 feature，在任何领域都常见。</li>
+<li><strong>feature map</strong>： 通常是指卷积神经网络中的 2 维特征图。</li>
+<li>由于 Transformer 头部经常会把各种模态的数据预先编码成高维向量，feature vector/latent/embedding/token/Patch 通常出现在 Transformer 系列的文章中，都表示高维的向量，一般是由 Encoder 编码产生的，其中 Patch 更倾向于表达数据切成多个部分的产物（编码后编码前都可以）。</li>
+</ul>
+</li>
+<li><p><strong>Mlp=Fc(Fully Connected Network)&gt;Linear 多层感知机=全连接网络&gt;线性层</strong></p>
+<ul>
+<li><strong>Mlp</strong>： 诞生于机器学习，用于表达多层的神经网络，后来广泛出现在深度学习的文章中。</li>
+<li><strong>Fc</strong>：少量文章中会称 Mlp 为 Fc，即全连接网络。是因为多层感知机是每个层的所有神经元之间完全联系在一起，所以全连接网络和 Fc 的称呼也会出现在文献中，尤其是会成为 Pytorch 模型脚本中对 Mlp 的实例化变量名。Mlp 则会更多作为类名出现在 Pytorch 工程中。</li>
+<li><strong>Linear</strong>: 在近些年的预训练相关文章中也经常出现，因为有一种基线叫 Linear Probe（只训练一层线性层做下游任务），它和 Fine Tune（在下游任务做全模型微调）共同作为测试预训练模型下游性能的基线任务。在 Pytorch 中，提供给我们搭建 Mlp 或 Fc 的 API 原件也称为 Linear。</li>
+</ul>
+</li>
+<li><p><strong>Ground Truth=Label=Target=Mask=bounding box 真值/标签/掩码/目标框</strong></p>
+</li>
+</ul>
+<h1 id="易混淆术语"><a href="#易混淆术语" class="headerlink" title="易混淆术语"></a>易混淆术语</h1><ul>
+<li><strong>Encoder&amp;Embedding 模型编码器&amp;特征编码器</strong><ul>
+<li><strong>Encoder</strong>：一般 Encoder 的概念大于 Embedding，它们都是指用于编码的模块。</li>
+<li>但 Encoder 的具体形式很多，可以是 Transformer 或 CNN，同时出现的地方也很灵活，比如既可以是代指一个完整算法，也可以代指 Transformer 或 CNN 中的下采样模块。</li>
+<li><strong>Embedding</strong>：而 Embedding 就很具体了，通常出现在 Transformer 系列的文章中，代指将各种模态数据编码成统一长度向量(Token/Patch/Feature Vector)的模块，这个编码的过程被称为 Patch Embedding/Token Embedding，编码长度即特征向量长度称为 Embed_dim</li>
+</ul>
+</li>
 </ul>
 ]]></content>
       <categories>
@@ -181,6 +263,598 @@
 ]]></content>
       <categories>
         <category>GIS Experiments</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>GIS的应用</title>
+    <url>/2021/0740930.html</url>
+    <content><![CDATA[<h1 id="输入（蓝）、处理（橙）、输出（绿）："><a href="#输入（蓝）、处理（橙）、输出（绿）：" class="headerlink" title="输入（蓝）、处理（橙）、输出（绿）："></a>输入（蓝）、处理（橙）、输出（绿）：</h1><p>输入处理输出是最基本最简化的应用逻辑</p>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/0SlBhTn.jpg">
+        
+      </span></p>
+<h1 id="GIS模型-具体行业模型（集成）"><a href="#GIS模型-具体行业模型（集成）" class="headerlink" title="GIS模型+具体行业模型（集成）"></a>GIS模型+具体行业模型（集成）</h1><ul>
+<li>举例复杂应用：水务行业的排水管网 SWMM 模型（排水管网属于 GIS 模型，SWMM 属于税务行业模型）<ul>
+<li>对应 GISer 的思想：<ul>
+<li>给排水管建模</li>
+<li>分层：根据用户需求分析得到的设备类型抽象图层：检查井、管线、汇水区……</li>
+<li>抽象：<ul>
+<li>检查井，点类型：坐标、高程……</li>
+<li>管线，线类型：上下游井、埋深、管长、管径……<br>  □ 汇水区，面类型：面积……</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>针对思想的复杂应用构建：<ul>
+<li>输入：<ul>
+<li>检查井：坐标、高程……&lt;&lt;DEM 高程提取</li>
+<li>管线：上下游井、埋深、管长、管径……&lt;&lt;上下游网络拓扑</li>
+<li>汇水区：面积……&lt;&lt;小流域 Basin 划分工具</li>
+</ul>
+</li>
+<li>处理：<ul>
+<li>SWMM 模型引擎（和 GIS 关系不大，主要来源于行业模型）</li>
+</ul>
+</li>
+<li>输出（行业用户对应需求）：<ul>
+<li>检查井的水位变化序列的动态专题渲染</li>
+<li>管线流量、充满度变化序列的动态专题渲染</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>GIS Experiments</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>MMLAB PR 指南</title>
+    <url>/2023/034.html</url>
+    <content><![CDATA[<blockquote>
+<p>ref：<br>贡献指南：<a href="https://mmengine.readthedocs.io/zh_CN/latest/notes/contributing.html">https://mmengine.readthedocs.io/zh_CN/latest/notes/contributing.html</a><br>代码规范：<a href="https://mmengine.readthedocs.io/zh_CN/latest/notes/code_style.html">https://mmengine.readthedocs.io/zh_CN/latest/notes/code_style.html</a></p>
+</blockquote>
+<h2 id="PR-描述规范"><a href="#PR-描述规范" class="headerlink" title="PR 描述规范"></a>PR 描述规范</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><ul>
+<li><strong>sample</strong>： [Docs] Refine contribute.md</li>
+<li>在开头使用英文括号描述修改的对象，常见修改对象有<table>
+<thead>
+<tr>
+<th>对象</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Docs</td>
+<td align="left">官方文档更新 可以是refine也可以补充</td>
+</tr>
+<tr>
+<td>Feature</td>
+<td align="left">新功能 新功能support对xxx的支持</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td align="left">修复bug</td>
+</tr>
+<tr>
+<td>WIP</td>
+<td align="left">先提出来 等待开发完成 暂时不用review</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="REFINE-DOCs"><a href="#REFINE-DOCs" class="headerlink" title="REFINE DOCs"></a>REFINE DOCs</h2><h3 id="代码快-to-提示框"><a href="#代码快-to-提示框" class="headerlink" title="代码快 to 提示框"></a>代码快 to 提示框</h3><ul>
+<li>基于代码快的语法，通过特殊的标注实现代码快到提示框的转换<ul>
+<li>注解{Note}<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/mqtDx3A.jpg">
+        
+      </span></li>
+<li>参见{SeeAlso}<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/oNjmsqz.jpg">
+        
+      </span></li>
+<li>警告{Warning}<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/eJxjNl5.jpg">
+        
+      </span></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>For OpenMMLab</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>MMLab AI 实战营，从新手到大佬的修炼场</title>
+    <url>/2023/0665275.html</url>
+    <content><![CDATA[<blockquote>
+<p>本文为作者作为 <em>学员+助教</em> 参与 2023 年初 OpenMMLab AI 实战营的经验贴，不能确保适用于未来的实战营，也难免有片面之处，希望发现问题的小伙伴可以在评论区中积极讨论~</p>
+</blockquote>
+<h1 id="💡让美丽周边奖品陪伴一段成长"><a href="#💡让美丽周边奖品陪伴一段成长" class="headerlink" title="💡让美丽周边奖品陪伴一段成长"></a>💡让美丽周边奖品陪伴一段成长</h1><ul>
+<li>💰AI 实战营真的提供了非常丰富的激励</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实战营成就</th>
+<th>激励</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>优秀学员</td>
+<td>证书、周边、OpenMMLab 内推机会</td>
+</tr>
+<tr>
+<td>优秀助教</td>
+<td>证书、进阶周边、MMS（布道师）社区最高荣誉直推通道、社区特邀专访、OpenMMLab 内推机会</td>
+</tr>
+<tr>
+<td>优秀班长</td>
+<td>类似“优秀助教”</td>
+</tr>
+</tbody></table>
+<ul>
+<li>🛠️也带我探索了很多有价值的技术和工具</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/IrAcpls.jpg">
+        
+      </span></p>
+<ul>
+<li>📝学会了项目的维护流程</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/kxlIvNB.jpg">
+        
+      </span></p>
+<ul>
+<li>🤝学会向开源社区提交 pr（pull request）和文章</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/txK4F4X.jpg">
+        
+      </span></p>
+<ul>
+<li>🎶学会……</li>
+</ul>
+<h1 id="📕笔记-amp-经验总结"><a href="#📕笔记-amp-经验总结" class="headerlink" title="📕笔记&amp;经验总结"></a>📕笔记&amp;经验总结</h1><blockquote>
+<p>下面我来总结实战营中学习到的技术和知识，分为 4 个方面：常用命令、常用工具、GitHub 作业维护、OpenMMLab 贡献指南</p>
+</blockquote>
+<h2 id="💻常用命令"><a href="#💻常用命令" class="headerlink" title="💻常用命令"></a>💻常用命令</h2><h3 id="ANACONDA-常用命令与一些解决方案"><a href="#ANACONDA-常用命令与一些解决方案" class="headerlink" title="ANACONDA 常用命令与一些解决方案"></a>ANACONDA 常用命令与一些解决方案</h3><h4 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h4><pre><code class="shell">conda create -n your_env_name python=X.X
+</code></pre>
+<h4 id="更新-conda（慎用！！！，新-conda-可能用不了）"><a href="#更新-conda（慎用！！！，新-conda-可能用不了）" class="headerlink" title="更新 conda（慎用！！！，新 conda 可能用不了）"></a>更新 conda（慎用！！！，新 conda 可能用不了）</h4><pre><code class="shell">conda updata conda
+</code></pre>
+<h4 id="查看虚拟环境菜单和环境内已载入库"><a href="#查看虚拟环境菜单和环境内已载入库" class="headerlink" title="查看虚拟环境菜单和环境内已载入库"></a>查看虚拟环境菜单和环境内已载入库</h4><pre><code class="shell">conda env list
+conda list
+</code></pre>
+<h4 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h4><pre><code class="shell">Conda activate your_env_name
+</code></pre>
+<h4 id="如果遇到-conda-安装频繁报错，使用如下语句："><a href="#如果遇到-conda-安装频繁报错，使用如下语句：" class="headerlink" title="如果遇到 conda 安装频繁报错，使用如下语句："></a>如果遇到 conda 安装频繁报错，使用如下语句：</h4><pre><code class="shell">conda clean -i
+</code></pre>
+<h4 id="如果不幸要删除虚拟环境"><a href="#如果不幸要删除虚拟环境" class="headerlink" title="如果不幸要删除虚拟环境"></a>如果不幸要删除虚拟环境</h4><pre><code class="shell">conda remove -n your_env_name --all
+</code></pre>
+<h4 id="PyTorch-推荐安装命令"><a href="#PyTorch-推荐安装命令" class="headerlink" title="PyTorch 推荐安装命令"></a>PyTorch 推荐安装命令</h4><pre><code class="Shell">pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 -f https://download.pytorch.org/whl/cu117/torch_stable.html
+</code></pre>
+<h4 id="我常用的-pip-镜像"><a href="#我常用的-pip-镜像" class="headerlink" title="我常用的 pip 镜像"></a>我常用的 pip 镜像</h4><pre><code class="shell">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple # 清华  
+pip install -i https://pypi.douban.com/simple # 豆瓣（推荐）
+</code></pre>
+<h4 id="安装其他项目的-requirements-txt"><a href="#安装其他项目的-requirements-txt" class="headerlink" title="安装其他项目的 requirements.txt"></a>安装其他项目的 requirements.txt</h4><pre><code class="shell">pip install -r requirements.txt
+</code></pre>
+<h3 id="📊TENSORBOARD-可视化"><a href="#📊TENSORBOARD-可视化" class="headerlink" title="📊TENSORBOARD 可视化"></a>📊TENSORBOARD 可视化</h3><ul>
+<li>首先学习以下 tensorboardX 怎么用。在 OpenMMLab 中，只需找到 <em>configs/<em>base</em>/default_runtime.py</em> 中的如下代码，解除 <code>dict(type=&#39;TensorboardLoggerHook&#39;)</code> 注释部分即可开启 tensorboard 记录器</li>
+</ul>
+<pre><code class="python">log_config = dict(  
+    interval=50,  
+    hooks=[  
+        dict(type=&#39;TextLoggerHook&#39;, by_epoch=False),  
+        # dict(type=&#39;TensorboardLoggerHook&#39;)  
+        # dict(type=&#39;PaviLoggerHook&#39;) # for internal services  
+    ])
+</code></pre>
+<ul>
+<li><p>如果遇到环境问题，则按照提示配置 tensorboard 环境即可</p>
+</li>
+<li><p>一般训练代码运行之后会同时生成 tensorboardX 的日志文件。这时复制日志文件所在文件夹路径，打开 Anaconda 命令行，切换环境至 torch，输入图中语句为日志文件夹创建 tensorboardX 默认的本地端口</p>
+<pre><code class="shell">tensorboard --logdir PATH &#123;log_file_abs_path&#125;
+</code></pre>
+</li>
+<li><p>执行得到端口地址，复制到浏览器打开即可查看训练可视化内容<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/pAr4nSD.jpg">
+        
+      <br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/q8KcvOt.jpg">
+        
+      </span></span></p>
+</li>
+<li><p>关闭端口占用，只需短/长按 <em>CTRL + C</em></p>
+</li>
+</ul>
+<h2 id="🕹️常用工具"><a href="#🕹️常用工具" class="headerlink" title="🕹️常用工具"></a>🕹️常用工具</h2><h3 id="⌨️代码编辑器"><a href="#⌨️代码编辑器" class="headerlink" title="⌨️代码编辑器"></a>⌨️代码编辑器</h3><blockquote>
+<p>编写代码或配置文件的时候，主要考虑怎么连接项目环境、是否方便代码编写和调试、是否方便连接远程服务器（MMLab 提供免费云 GPU 额度）</p>
+</blockquote>
+<ul>
+<li>PyCharm 专业版或企业版<ul>
+<li>只需要 Anaconda 配置好 Python 环境，并安装好环境依赖，选择环境内部的 Python 解释器路径即可。同时，PyCharm 会自动检测项目中缺失的依赖库，并提供软件内的一键安装（就是很容易遇到国内网络环境的问题）</li>
+<li>PyCharm 提供了非常智能的代码提示和辅助功能，属于忘记语法也能帮你写对的那种。辅助功能如修改原始变量、函数或其他命名时，自动修改调用名、鼠标点击快速跳转到定义等都很实用，编写 Python 项目非常舒服。但是得吐槽一下它的 Typo 识别经常把代码搞得花花的很难看，你想让他忽略还得手动到设置里找</li>
+<li>最大的问题是，如果你使用的服务器对路径约束比较多，并且只提供有限的系统环境的，那PyCharm 不能给你无缝的远程服务器使用体验。因为远程 Python 环境的配置和选择很麻烦，如果解决不了远程环境的问题就无法直接调试</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>项目环境连接</th>
+<th>代码编写与调试</th>
+<th>连接远程服务器</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>⭐⭐⭐⭐⭐</td>
+<td>⭐⭐⭐⭐</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody></table>
+<ul>
+<li>VS Code<ul>
+<li>VS Code 选择环境的过程更简单，它会直接识别 Anaconda 的已有环境，你只需要在状态栏选择即可。但是如果缺失依赖还是需要到终端自行安装</li>
+<li>VS Code 的插件社区比 PyCharm 要发达很多，你可以安装各种功能的插件来接近完整 IDE 的效果。但遗憾的是，我尝试过在记不清楚基本语法的情况下借助 intellisense 搭建一个 PyTorch 下的 ResNet，结果 VS Code 没检查出我继承类和编写函数时的语法错误，导致运行脚本总是报错。最后，用 PyCharm 打开项目成功锁定错误代码并做好了修复</li>
+<li>VS Code 通过 Remote SSH 插件可以很方便得连接并管理云服务器，我可以无缝拖入和导出文件，也可以方便地调试远端脚本。很多小伙伴不知道 VS Code 连接服务器时候应该怎么充分利用其带来的便利，那么可以看看我的一期演示视频(<a href="https://www.bilibili.com/video/BV19d4y1n7vg">指路</a>)</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>项目环境连接</th>
+<th>代码编写与调试</th>
+<th>连接远程服务器</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>⭐⭐⭐⭐⭐</td>
+<td>⭐⭐⭐</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+</tbody></table>
+<h3 id="📕Obsidian-技术笔记"><a href="#📕Obsidian-技术笔记" class="headerlink" title="📕Obsidian 技术笔记"></a>📕Obsidian 技术笔记</h3><ul>
+<li>众所周知，做技术探索的时候最关键的解决步骤总是怕忘记，到需要复用的时候不知道从何找起。所以方便复制、随时查看、跨平台同步、界面美观的电子技术笔记就非常重要。在实战营中帮助我最多的时 Obsidian。</li>
+<li><strong>Markdown 语法</strong>：首先，Obsidian 官方默认支持的就是 Markdown 语法。花里胡哨的 OneNote 只能在 Office365 中共享文章样式，但是 Markdown 作为开源社区 Github 最重要的、自动化配置样式的、为技术人员熟知的文档技术能很好地实现<u>跨平台、高度一致、对外兼容</u></li>
+<li><strong>完完整整的同步机制</strong>：你不仅可以借助云盘同步你的 MD 文章仓库，还可以同步你的设置、插件。这样无论你切换到哪个设备，Obsidian 都能用一致的界面主题、文本样式、偏好设置向你展现你的文章。此外，任意一个设备的更改都会快速同步到其他设备上</li>
+</ul>
+<h2 id="❤️GITHUB-作业维护"><a href="#❤️GITHUB-作业维护" class="headerlink" title="❤️GITHUB 作业维护"></a>❤️GITHUB 作业维护</h2><blockquote>
+<p>MMLab 实战营的作业成果都是要求在 Github 上维护的，但是大部分学员会遇到网络环境的访问问题，或者不理解 Github 的作用，也不清楚怎么利用 Github 维护一个项目</p>
+</blockquote>
+<h3 id="😂网络环境问题"><a href="#😂网络环境问题" class="headerlink" title="😂网络环境问题"></a>😂网络环境问题</h3><ul>
+<li>一些合法合规的解决思路：<ul>
+<li>使用 Github 的镜像网站： <a href="https://github.com.cnpmjs.org/">https://github.com.cnpmjs.org</a> 或 <a href="https://hub.fastgit.org/">https://hub.fastgit.org</a> ，但基本只能在下载的时候用</li>
+<li>使用其他 CDN 服务，对Github的静态文件进行加速</li>
+<li>使用 Gitee 或其他国内的代码托管平台</li>
+<li>修改Hosts文件，将Github的域名和IP地址绑定，从而避免DNS解析的延迟或干扰</li>
+</ul>
+</li>
+</ul>
+<h3 id="🙋创建自己的项目"><a href="#🙋创建自己的项目" class="headerlink" title="🙋创建自己的项目"></a>🙋创建自己的项目</h3><ul>
+<li>首先，在你的 Github 创建新的仓库，注意命名的格式一般是 <em>xxx-yyy</em> 或者 <em>xxxYyy</em>，名字要多用简写，要概括仓库的功能</li>
+</ul>
+<h3 id="🍻准备上传"><a href="#🍻准备上传" class="headerlink" title="🍻准备上传"></a>🍻准备上传</h3><ul>
+<li>然后将你的仓库克隆到本地，如果你嫌命令行中更换文件目录麻烦，也可以下载下来解压缩，自己放到合适的文件路径</li>
+<li>把本地的项目完整复制到克隆下来的仓库文件夹，适当忽略一些和代码库与功能无关的文件或文件夹</li>
+<li>然后在仓库文件夹的首页添加一个 md 文件，命名为 <em>README.md</em>，里面遵循 Markdown 语法，Github 仓库首页会自动展示这个文档在你的代码库下面。一个优秀的 README 需要装点门面，比如提供其他相关页面的跳转链接、向访客介绍仓库的概述、引导访客配置环境并运行必要的功能，也可以提供其他更多的详细信息。注意图文结合，代码块活用</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/VCQ5y2G.jpg">
+        
+      </span></p>
+<h3 id="👌提交更改"><a href="#👌提交更改" class="headerlink" title="👌提交更改"></a>👌提交更改</h3><ul>
+<li>使用 <code>git status</code> 检查当前更改</li>
+<li>使用 <code>git add *</code> 将所有更改添加到上传列表</li>
+<li>使用 <code>git commit</code> 提交当前更改，注意在 <em>-m</em> 后面用字符串写此次提交的标题</li>
+</ul>
+<pre><code class="shell">git commit -m &quot;first commit&quot;
+</code></pre>
+<h2 id="💖OpenMMLab-贡献指南"><a href="#💖OpenMMLab-贡献指南" class="headerlink" title="💖OpenMMLab 贡献指南"></a>💖OpenMMLab 贡献指南</h2><blockquote>
+<p>ref：<br>官方贡献指南：<a href="https://mmengine.readthedocs.io/zh_CN/latest/notes/contributing.html">贡献代码</a><br>官方代码规范：<a href="https://mmengine.readthedocs.io/zh_CN/latest/notes/code_style.html">代码规范</a></p>
+</blockquote>
+<h3 id="📃PR-描述规范"><a href="#📃PR-描述规范" class="headerlink" title="📃PR 描述规范"></a>📃PR 描述规范</h3><h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><ul>
+<li><strong>sample</strong>： [Docs] Refine contribute.md</li>
+<li>在开头使用英文括号描述修改的对象，常见修改对象有<table>
+<thead>
+<tr>
+<th>对象</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Docs</td>
+<td align="left">官方文档更新 可以是refine也可以补充</td>
+</tr>
+<tr>
+<td>Feature</td>
+<td align="left">新功能 新功能support对xxx的支持</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td align="left">修复bug</td>
+</tr>
+<tr>
+<td>WIP</td>
+<td align="left">先提出来 等待开发完成 暂时不用review</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h3 id="🌟REFINE-DOCs-的一些效果"><a href="#🌟REFINE-DOCs-的一些效果" class="headerlink" title="🌟REFINE DOCs 的一些效果"></a>🌟REFINE DOCs 的一些效果</h3><h4 id="代码快-to-提示框"><a href="#代码快-to-提示框" class="headerlink" title="代码快 to 提示框"></a>代码快 to 提示框</h4><ul>
+<li>基于代码快的语法，通过特殊的标注实现代码快到提示框的转换<ul>
+<li>注解{Note}<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/mqtDx3A.jpg">
+        
+      </span></li>
+<li>参见{SeeAlso}<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/oNjmsqz.jpg">
+        
+      </span></li>
+<li>警告{Warning}<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/eJxjNl5.jpg">
+        
+      </span></li>
+</ul>
+</li>
+</ul>
+<h1 id="😉最后"><a href="#😉最后" class="headerlink" title="😉最后"></a>😉最后</h1><ul>
+<li>大家都来积极加入 MMLab 实战营吧，祝小伙伴们都能从中收获自己的成长和乐趣！</li>
+</ul>
+<p>本文参与了<a href="https://segmentfault.com/a/1190000043648149">SegmentFault 思否写作挑战赛</a>，欢迎正在阅读的你也加入。</p>
+]]></content>
+      <categories>
+        <category>For OpenMMLab</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>SAM，监督学习已跳出过拟合泥潭？</title>
+    <url>/2023/0661594.html</url>
+    <content><![CDATA[<h1 id="📕总览-SAM-的成就"><a href="#📕总览-SAM-的成就" class="headerlink" title="📕总览 SAM 的成就"></a>📕总览 SAM 的成就</h1><blockquote>
+<p>Demo：<a href="https://segment-anything.com/demo">Segment Anything | Meta AI (segment-anything.com)</a><br>Paper：<a href="https://arxiv.org/abs/2304.02643">arxiv</a></p>
+</blockquote>
+<ul>
+<li>提出了新任务：基于提示的分割</li>
+<li>提出了新模型：SAM（Segment Anything Moduel）</li>
+<li>提出了新数据集：SA-1B</li>
+<li>总之，最让人激动的是以上三个成果都是 SAM 在监督任务上挑战 <strong>Zero-Shot</strong> 带来的</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/g2p2oBR.jpg">
+        
+      </span></p>
+<h1 id="📃ZERO-SHOT-的基本概念"><a href="#📃ZERO-SHOT-的基本概念" class="headerlink" title="📃ZERO-SHOT 的基本概念"></a>📃ZERO-SHOT 的基本概念</h1><ul>
+<li>😉我们先从生活中的视角去理解 Zero-Shot</li>
+<li>假设小明和爸爸去参观动物园。开到了一只<strong>黑白相间</strong>的斑马、一只<strong>喙很大</strong>的鹦鹉和一只<strong>圆滚滚</strong>的幼年海豹。爸爸给小明提示，让他在动物园找到一只像斑马一样黑白相间、像鹦鹉一样有大喙、像幼年海报一样圆滚滚的动物</li>
+<li>假设小明从未见过其他的动物，但他可以通过总结现有动物共有的特征来推断出其他动物的外貌。例如，小明知道斑马、鹦鹉、海豹。当小明看到一只企鹅时，他可以根据已知的属性信息推测出它可能就是爸爸要他找的黑白相间的、有大喙、圆滚滚的动物，因此他能够很自然地把这只企鹅归类为“未知”。这就是 Zero-Shot 的基本概念，即通过已知的类别和属性信息对新的未见过的类别进行分类</li>
+<li>在实际应用中，ZSL可以帮助我们解决各种问题，例如图像识别、自然语言处理等领域中的数据不足或无法获得实际标签的问题。通过零样本学习，我们可以先积累先验知识，再推断和预测新的未知类别，从而实现更加灵活和高效的智能化应用</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/bM3b2AB.jpg">
+        
+      </span></p>
+<h1 id="🤔什么驱使了模型可以-ZERO-SHOT"><a href="#🤔什么驱使了模型可以-ZERO-SHOT" class="headerlink" title="🤔什么驱使了模型可以 ZERO-SHOT"></a>🤔什么驱使了模型可以 ZERO-SHOT</h1><blockquote>
+<p>Segment Anything 这篇工作的主要特点有两个：一是在分割算法中引入了 3 种宽容度高的模态，二是构建了一个巨大的、多元的分割数据集，比最大的分割数据集大 6 倍，分割量大 400 倍。</p>
+</blockquote>
+<ul>
+<li>利用 Transformer 的注意力架构，促使图像的特征同时与文本模态、点模态、定位框模态相互作用。原本模型只学得到从 1 个图像到 1 个标签的映射，现在模型学习 1 个标签的同时要关注图像模态与 3 个模态的组合以及不同组合之间的联系。<strong>曾经我们认为完整的 1 to 1 算法已然成为了模型“偷懒”的捷径</strong>。</li>
+<li>另外，这<strong>三种辅助模态的宽容度好（注：标签文本模态略逊）</strong>。作为图像输入之外的额外提示（prompt），只要是属于分割对象的所有点、框或者同义文本都能作为辅助模态的输入。反之，每一个点、框或者文本都对应了各式各样的图像对象，这让模型在某个模态和某种图像对象中同时具有多个学习视角，无论是对于 3 个额外模态还是图像模态，这种学习视角都近乎是无穷的。也因此，基于提示工程（prompt engineering，基于需求对提示做灵活变换）的 SA 几乎可以做所有分割领域的细分任务，甚至还未曾存在的新任务。</li>
+<li>极其庞大且多元的互联网数据源是 Zero-Shot 能力的另一大核心。SA-1B 涵盖了各种类型、风格、场景和视角的图像。这有利于模型学习<strong>更通用和鲁棒的特征表示</strong>，从而提高 Zero-Shot 分割的性能。</li>
+<li>上面已经分析的 SA（Segment Anything） 具有 Zero-Shot 性能的几个核心原因，而下面分析的是一些次要的因素。SA-1B 的<strong>类别虽然不细但是特别全</strong>，包含了大量的常见和罕见类别，它们覆盖了自然界和人造界的各个领域。这有利于模型学习更广泛和细致的语义信息，从而提高零样本分割的性能。</li>
+<li>SA-1B 的<strong>标注十分精确</strong>，大量噪声被有意修复，有利于模型学习更准确和清晰的边界信息，从而提高零样本分割的性能。</li>
+</ul>
+<h1 id="📊零训练与完全监督的算法-PK"><a href="#📊零训练与完全监督的算法-PK" class="headerlink" title="📊零训练与完全监督的算法 PK"></a>📊零训练与完全监督的算法 PK</h1><ul>
+<li>在从未训练过的 COCO-Stuff 数据集上，以 <strong>35.9%</strong> 的 mIoU 超越了完全监督学习的 SOTA——**34.1%**。</li>
+</ul>
+<h1 id="💖监督学习将跳出过拟合泥潭"><a href="#💖监督学习将跳出过拟合泥潭" class="headerlink" title="💖监督学习将跳出过拟合泥潭"></a>💖监督学习将跳出过拟合泥潭</h1><ul>
+<li>SAM 很快就能掌握自动标注能力，在 SA-1B 中，仅仅进行了 **0.012%**（120, 000张） 的专家标注，就已经具备优秀的全自动分割水平（99.1%的标注由 SAM 自动生成），其他模型需要 10% 甚至更多的标注量才能达到类似的水平，印证了 SAM 大大降低了监督算法对数据量的依赖，从而大大降低了监督算法过拟合的可能。</li>
+<li>SA 在监督学习的框架内实现了极其优异的 Zero-Shot 性能，这带给我们一个思考——<strong>到底是数据集还是多模态带来了这种能力？</strong>互联网数据源或许能给出答案。当你提示“猫”，在图像数据集无穷大的时候，理论上“猫”的文本语义对应到了无数张不同的猫的图像，这样只要你给定文本语义，模型总是能准确地提取对应掩模。</li>
+<li>所以我们首先可以确定，数据量足够庞大足够多元才能充分激发这种 Zero-Shot 性能。那然道就是数据集才是根本吗？并不是。前面我们提到，无论是站在 3 个额外模态的角度来看，还是站在图像模态的角度来看，它们的学习视角都近乎是无穷的。也就是说，当你图像模态有效增长了 1 个数据，SA 的 3 种额外模态就能从分割面中提取几乎无数的点、框（标签文本例外）。所以，<em><strong>宽容度高的模态选择* x <em>数据集多元</em> = *优秀的 Zero-Shot 性能</strong></em>。两个因素理论上是平等的，但实际上，你无法获取无穷的数据，所以宽容度高的模态设计更加重要，性价比也更高，<strong>这也启发了我们一种降低人工标注成本的预训练模型的获取方式</strong>。</li>
+<li>而在无监督任务中，我们常定义一对正负样本规则做对比学习。这种模式本身对正负样本的定义有较高的要求。比如 1 张图像与 n-1 个不匹配文本做对比，就能将图像模态与近乎无穷的文本模态建立负相关，反之 1 个文本如果与 n-1 张不匹配图像做对比，就能将文本模态与近乎无穷的图像模态建立负相关。这也是无监督目前 Zero-Shot 性能的根源，但由于高质量的图与配文的获取困难，此处提到的这种正负样本规则不足以充分激发 Zero-Shot 性能，故<strong>无监督领域的大部分多模态工作（比如 Clip）只能靠砸钱堆数据来取得成效</strong>。它们应当学习 SA 对各模态的精心设计。</li>
+</ul>
+<h1 id="🕹️未来可能基于-SA-的工作"><a href="#🕹️未来可能基于-SA-的工作" class="headerlink" title="🕹️未来可能基于 SA 的工作"></a>🕹️未来可能基于 SA 的工作</h1><ul>
+<li>在 SAM 火热的这段时间，OpenMMLab 的开发者们维护了 Playground 项目（<a href="https://github.com/open-mmlab/playground">项目地址</a>）。该项目仅在三天的时间内就将 SAM 的 Zero-Shot 实力分割能力应用在的 MMLab 的各项 Demo 上</li>
+<li>由于分割任务涵盖了分类、定位、检测等基本任务于一身，所以 MMDet、MMOCR、MMEditing 等工具箱就像开胃小菜一样一口一个 SAM。而基于分割掩码的引导，姿态检测、旋转框检测也融合了 SAM 到 SOTA 算法中。随后，Lable Studio 等标注工具也引入了 SAM 做可以提示的辅助标注。</li>
+</ul>
+<h1 id="🤔仍有不足"><a href="#🤔仍有不足" class="headerlink" title="🤔仍有不足"></a>🤔仍有不足</h1><h2 id="我的观点"><a href="#我的观点" class="headerlink" title="我的观点"></a>我的观点</h2><ul>
+<li>当前的标签文本模态羸弱<ul>
+<li>与点模态、检测框模态相反，标签文本的多样性和宽容性不足。人类在认识未知事物的时候，采用的是<strong>具体属性描述</strong>的方式，并擅于进一步结合描述细节赋予其恰当的命名。虽然直接授予名字的方式常出现在人类教师的教学中，但我们都不希望老师让我们对着斑马的示意图背诵其名字，而是采用描述的方式，比如$$马^+$$的形状，$$黑白相间^+$$的颜色，其中$$^+$$标注的是人类的先验知识</li>
+<li>在无监督的多模态工作中，Clip 的文本模态来自于社交网络的自然语句，较 SA 所用的标签文本模态更加多样、更具宽容性，但不乏噪声和信息缺失，后续工作都选择压制而不是革新，比如 ALBEF 从生成式和优化的角度引入了动量编码器+专门的损失函数来去噪。在监督的多模态任务中，<strong>还没有工作能提出一种模块进行图像描述属性的提取，更没有基于描述属性的文本做多模态工作的</strong>。反观点模态、检测框模态，都来源于分割面，具有很好的概括性、客观性和天生的宽容性。为此，采用了标签命名或互联网的文本模态或许并不是完备解。不过，现有标签命名是人类基于具体描述高度抽象的结果，并不是完全没有作用，且其属于人类生活中真正高频使用的文本，应当与文本新模态平等对待</li>
+<li>如何建立和融合基于具体描述属性的文本新模态，甚至进一步赋予命名生成能力，成为了 SA 可能的优化方向。从生成式的视角，可能会引入能从图中生成描述属性关键词的模型，或能从图片的文本中挖掘关键词的模型，作为先验模型生成所有图片的文本新模态。从优化的视角，或许可以引入有形状、颜色等描述属性量化能力的数学建模，并融入到模型整体的损失计算中。从提取式的视角，可能会引入通道注意力（关注色彩）、多尺度模块（抽象形态与细节纹理）等来弥补文本新模态的缺失。但缺少了文本新模态后，提取式的优化空间十分有限</li>
+<li>还有很多因素需要我们去思考~<h2 id="作者的观点"><a href="#作者的观点" class="headerlink" title="作者的观点"></a>作者的观点</h2></li>
+</ul>
+</li>
+<li>SA 不适合高精度要求的分割任务</li>
+<li>SA 的图像编码器太大，拖慢了整体效率。但可以提前完成图像编码，再根据用户需要制作 Prompt 并推理</li>
+<li>文本模态仍不能很好地对应到图像语义，作者还没想明白怎么基于提示实现语义和全景分割任务。</li>
+<li>在少数几个任务，比如绘画数据集、X光数据集、模糊场景数据集、细节信息密集的数据集上泛化性能不足。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Computer Vision 计算机视觉</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>写给 mmsegmentation 工具箱新手的避坑指南</title>
+    <url>/2023/032.html</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我在 Windows 环境使用 MMClassification、MMDetection 都还算轻轻松松，但是走完 MMSegmentation 全流程之后，真的想感叹一句“踩了不少坑啊”，所以想把自己的遇坑经验凝练总结出来，写一个专门给新手无伤通关的避坑教程。</p>
+<h2 id="Windows-配置环境的痛：mmcv-full"><a href="#Windows-配置环境的痛：mmcv-full" class="headerlink" title="Windows 配置环境的痛：mmcv-full"></a>Windows 配置环境的痛：mmcv-full</h2><p>在 v1.4.0 之前，mmcv-full 的安装没有针对 Windows 的现成预编译包，所以大部分新手会卡在 build MMCV 的过程中……这种情况下有两种解决方案。</p>
+<h3 id="方案-1：新版编译版本自动安装"><a href="#方案-1：新版编译版本自动安装" class="headerlink" title="方案 1：新版编译版本自动安装"></a>方案 1：新版编译版本自动安装</h3><p>在 1.4.0 之后，MMCV 会跟上 PyTorch 版本更新 <a href="https://zhuanlan.zhihu.com/p/441653536"> Windows 环境下的mmcv-full预编译包</a>，但是可用的版本范围比较局限，依赖 PyTorch、CUDA、mmcv-full 低版本的炼丹师自然就不适合这种安装方式了（看方案2），下面是以 PyTorch1.11.0、 CUDA11.3 为例的安装命令。</p>
+<ul>
+<li>一句命令安装 <code>mmcv-full</code>，下载速度还是不错的</li>
+</ul>
+<pre><code class="PowerShell">pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu113/torch1.11/index.html
+</code></pre>
+<h3 id="方案-2：手动操作"><a href="#方案-2：手动操作" class="headerlink" title="方案 2：手动操作"></a>方案 2：手动操作</h3><p>如果你不希望更新到新版 MMSegmentation 或者 MMCV，也可以尝试手动安装，下面以在 GPU+CPU 双环境运行的目标来安装 <code>mmcv-full</code>，参考了<a href="https://mmcv.readthedocs.io/zh_CN/latest/get_started/build.html#id1">官方文档</a>，所有命令行运行在 <code>powershell</code>，使用 <code>cmd</code> 的炼丹师需要注意两个命令行的命令差异。</p>
+<ul>
+<li>创建虚拟环境</li>
+</ul>
+<pre><code class="PowerShell">conda create --name mmcv python=3.7 # 经测试，3.6, 3.7, 3.8 也能通过
+conda activate mmcv # 确保做任何操作前先激活环境
+</code></pre>
+<ul>
+<li>进入一个临时文件路径，克隆 <code>mmcv-full</code> 源码</li>
+</ul>
+<pre><code class="PowerShell">git clone https://github.com/open-mmlab/mmcv.git
+cd mmcv # 进入项目文件夹
+</code></pre>
+<ul>
+<li>安装依赖</li>
+</ul>
+<p>所有依赖中，也安装了 <code>ninja</code> 库用于加快最后编译的速度</p>
+<pre><code class="PowerShell">pip install -r requirements.txt
+# 建议使用镜像加速 =pip install -r requirements.txt -i https://pypi.douban.com/simple
+</code></pre>
+<ul>
+<li>配置编译环境</li>
+</ul>
+<p>安装 <code>Microsoft Visual Studio Community 2017/2019/......</code> ，确保环境变量中的 <code>Path</code> 存在编译所需的值。以 VS2019 Community 为例：<code>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\bin\Hostx86\x64</code> 。</p>
+<ul>
+<li>编译安装 <code>mmcv-full</code></li>
+</ul>
+<pre><code class="PowerShell">$env:MMCV_WITH_OPS = 1
+$env:MAX_JOBS = 8 # 根据可用的CPU和内存量进行设置
+python setup.py build_ext # 如果成功, 将会自动弹出来编译 flow_warp
+python setup.py develop # 执行安装
+</code></pre>
+<ul>
+<li>检测是否安装成功</li>
+</ul>
+<pre><code class="PowerShell">pip list # 使用anaconda的话，也可以在openmmlab依赖的虚拟环境下 =conda list
+</code></pre>
+<h2 id="数据集自定义类别"><a href="#数据集自定义类别" class="headerlink" title="数据集自定义类别"></a>数据集自定义类别</h2><h3 id="更改-CLASSES-和-num-classes"><a href="#更改-CLASSES-和-num-classes" class="headerlink" title="更改 CLASSES 和 num_classes"></a>更改 CLASSES 和 num_classes</h3><p>不敢调试的新手炼丹师首次面对 <code>mmseg</code> 的项目可能无所适从，因此也很难养成自己编写数据集加载代码的习惯。其实能搜到很多水平不一的资料教你编辑现有的数据集加载方式（比如常见的 <code>ADEDataset</code>），修改 <code>CLASSES</code>，然后设置 <code>num_classes</code>，可能更改完发现编辑后的代码根本没应用上，网络 decoder 不断吐槽你 <code>num_classes</code> 不对，然后你又去检查手里的数据集……其实是因为认识较浅，下面展示更合理的走通指南：</p>
+<ul>
+<li><p>选择好模型后，先把相关联配置文件里的全部 <code>num_classes</code> 设置好值，比如经典 ADE 数据集提取并划分了 150 个实例类， <code>num_classes</code> 就是 <code>150</code>，计入 <code>num_classes</code> 的所有类的名称下一步都要写入 <code>CLASSES</code>。（背景类未算入 150，下一节会讲解为什么）</p>
+</li>
+<li><p>下面，进入 <code>mmseg</code> 项目下的 <code>mmseg``/``datasets</code>，以遥感语义分割任务为例新建 py 文件 <code>uavdataset.py</code>， 继承自 <code>custom.py</code> 中的 <code>CustomDataset</code>，然后开始实现自己的数据集……在定义 <code>CLASSES</code>的时候， tuple 初始化为自己类名的集合即可（比如关于街区 block、农田 field 和其他利用地 notused 的遥感语义分割任务），用于上色的 <code>PALETTE</code> 也可以用类似的方式配置（配置格式：[<em>R</em>, <em>G</em>, <em>B</em>]）。</p>
+</li>
+</ul>
+<pre><code class="Python"># mmseg/datasets/uavdataset.py
+
+...
+CLASSES = (&#39;block&#39;, &#39;field&#39;, &#39;notused&#39;)
+
+PALETTE = [[120, 120, 120], [180, 120, 120], [120, 180, 120]]
+...
+</code></pre>
+<ul>
+<li>然后参考 <code>configs/_base_/datasets</code> 的其他配置文件编写 <code>uavdataset.py</code> 作为 <code>UAVDataset</code> 的配置文件。最后，在选用的模型配置文件中更换数据集加载方式为 <code>UAVDataset</code>。</li>
+</ul>
+<h3 id="对源码的增改没有效果？"><a href="#对源码的增改没有效果？" class="headerlink" title="对源码的增改没有效果？"></a>对源码的增改没有效果？</h3><ol>
+<li>OpenMMLab 各种工具箱的官方文档中，都会教你用 <code>pip install -v -e .</code> 安装项目，但很多新手对 <code>pip</code> 的这种命令并不了解。其实这个命令是用来开启 <code>mmseg</code> 库编辑模式的，这样修改 <code>mmseg</code> 库内的代码片段可以自动被应用上，无需重新安装（如图截取自 MMSegmentation 官方文档的安装教程，其中注释已经解释了这种 pip 命令的含义）。</li>
+</ol>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://pic4.zhimg.com/80/v2-3c235f7971fed8a696eddc255d756bf7_720w.webp">
+        
+      </span></p>
+<ul>
+<li>切记！使用 <code>python ``setup.py`` install</code> 安装的 <code>mmseg</code> 每次编辑源码都需要重新安装，这也是为什么大部分新手更改 <code>CLASSES</code> 却不生效的原因，建议换用以下安装方法 ：</li>
+</ul>
+<pre><code class="Shell">cd ~/mmsegmentation-master/ # 进入你的mmseg项目路径下
+pip install -v -e . # 重新安装 英文句点表示安装当前路径下的项目
+</code></pre>
+<ul>
+<li>也有可能会有小伙伴问可不可以用 <code>python setup.py develop</code>，我没做过实验。但是 <code>setup.py</code> 也是门学问，既然官方文档教新手们用 <code>pip</code> 的方式就能成，也就没必要找太多替换方案了，新手上来没必要钻研在这上面。</li>
+</ul>
+<h2 id="独特的数据集参数：reduce-zero-label"><a href="#独特的数据集参数：reduce-zero-label" class="headerlink" title="独特的数据集参数：reduce_zero_label"></a>独特的数据集参数：reduce_zero_label</h2><h3 id="借助-reduce-zero-label-管理-0-值背景"><a href="#借助-reduce-zero-label-管理-0-值背景" class="headerlink" title="借助 reduce_zero_label 管理 0 值背景"></a>借助 reduce_zero_label 管理 0 值背景</h3><p><code>mmseg</code> 中已经为各种公共分割数据集编写了描述文件和加载代码，对于有用过 PyTorch 的小伙伴而言，学习各种数据集的描述文件还是很自如的，只有 <code>reduce_zero_label</code> 对于 <code>mmseg</code> 的新手比较陌生，所以，在搭建自己的 <code>mmseg</code> 数据集时，新手最疑惑的大概就是 <code>reduce_zero_label</code> 到底应该是 <code>True</code> 还是 <code>False</code>。</p>
+<p>它有什么用呢？从名字直译过来就是“减少 0 值标签”。在多类分割任务中，如果你的数据集中 <code>0</code> 值作为 label 文件中的背景类别，是建议忽略的。</p>
+<p>打开加载数据的源码片段可以看到一段处理 <code>reduce_zero_label</code> 的代码，意思是：若开启了 <code>reduce_zero_label</code>，原本为 <code>0</code> 的所有标注设置为 <code>255</code>，也就是损失函数中 <code>ignore_index</code> 参数的默认值，该参数默认避免值为 <code>255</code> 的标注参与损失计算。前文按下不表的 <code>150</code> 类的 ADE 数据集，它不包含背景的原因就是开了 <code>reduce zero label</code>，原本为 <code>0</code> 值的背景设置为了 <code>ignore_index</code>。</p>
+<pre><code class="Python"># mmseg/datasets/pipelines/loading.py
+
+...
+# reduce zero_label
+if self.reduce_zero_label:
+    # avoid using underflow conversion
+    gt_semantic_seg[gt_semantic_seg == 0] = 255
+    gt_semantic_seg = gt_semantic_seg - 1
+    gt_semantic_seg[gt_semantic_seg == 254] = 255
+...
+</code></pre>
+<h3 id="reduce-zero-label-导致的常见问题描述"><a href="#reduce-zero-label-导致的常见问题描述" class="headerlink" title="reduce_zero_label 导致的常见问题描述"></a>reduce_zero_label 导致的常见问题描述</h3><p>我们这里以 <code>ADE</code> 数据集源码为例，<code>reduce_zero_label</code> 默认设置为 <code>True</code>，然而，就算新手掌握了上一节的 <code>reduce_zero_label</code>，也可能对 <code>ADE</code> 了解比较肤浅，会怀疑配置文件中开启的 <code>reduce_zero_label</code> 是不是把 150 个实例类中的第一个给忽略掉了，毕竟 <code>num_classes</code> 不就是 <code>150</code> 吗，然后想当然把 <code>reduce_zero_label</code> 关掉。</p>
+<h3 id="错误原因分析"><a href="#错误原因分析" class="headerlink" title="错误原因分析"></a>错误原因分析</h3><pre><code class="R"># configs/_base_/datasets/ade20k.py
+
+train_pipeline = [
+    dict(type=&#39;LoadImageFromFile&#39;),
+    dict(type=&#39;LoadAnnotations&#39;, reduce_zero_label=True), # ADE中reduce_zero_label默认设置为True
+    dict(...),
+    ...
+]
+</code></pre>
+<p>label 中实际参加训练的确实只有 <code>150</code> 类，定义在 <code>CLASSES</code> 中，但 label 文件中实际包含了 <code>151</code> 类，而背景类（剩下仍没有标记的，或者被意外忽略的区域都归为背景，在 label 中值为 <code>0</code>）不包含在 <code>150</code> 个 <code>CLASSES</code> 中，需要在训练的时候设置成 <code>ignore_index</code>，所以我们借助上一小节的 <code>reduce_zero_label</code> 将背景从 151 个类中提出来单独设置为了 <code>ignore_index</code>，我们倘若错误地将 <code>reduce_zero_label</code> 关掉了，那 <code>num_classes</code> 就是 <code>151</code> 了。</p>
+<h3 id="如何增强对数据集更多参数的理解？"><a href="#如何增强对数据集更多参数的理解？" class="headerlink" title="如何增强对数据集更多参数的理解？"></a>如何增强对数据集更多参数的理解？</h3><p>实际工程中的数据集往往是我们自己设计预测类别和标注规则的，如果背景真的很重要，那无论是修改 ADE 的配置文件，还是硬搬 ADE 格式数据集的使用方式，都不如尊重开发者写好的数据集加载代码，改用自己编写的数据集加载方式（只需继承自 <code>CustomDataset</code> 即可）。</p>
+<p>在一行行编写的过程中，新手炼丹师可以不断参考研究现存的其他数据集的解决方案，如果遇到不懂的地方也能有查漏补缺的方向，尤其是 <code>reduce_zero_label</code> 这种参数，需要充分理解消化才能运用自如。不断尝试尝试尝试的过程中，新手炼丹师也会对各式各样的数据集加载方式产生自己的理解和看法，在迎接特殊任务的时候能够分析自己的数据集，创新设计出自己独特的数据集加载方式。</p>
+<h2 id="数据集文件后缀的坑：大小写"><a href="#数据集文件后缀的坑：大小写" class="headerlink" title="数据集文件后缀的坑：大小写"></a>数据集文件后缀的坑：大小写</h2><p>接着看 <code>mmseg``/``datasets</code> 的 <code>ade.py</code>，这里 <code>ADE20KDataset</code> 类有两个 suffix（文件后缀）相关的参数配置，<code>img_suffix</code> 负责定义图像文件的后缀名，<code>seg_map_suffix</code> 定义标签文件的后缀名。默认配置：</p>
+<pre><code class="Python"># mmseg/datasets/ade.py
+
+...
+def __init__(self, **kwargs):
+        super(ADE20KDataset, self).__init__(
+            img_suffix=&#39;.jpg&#39;, # 图像的后缀名
+            seg_map_suffix=&#39;.png&#39;, # 标签的后缀名
+            reduce_zero_label=True,
+            **kwargs)
+        ...
+</code></pre>
+<p>但是有些炼丹师拿到的图像后缀是 <code>.JPG</code>，它和 <code>.jpg</code> 的区别仅仅是大小写不同，但是数据集加载会不断报 <code>FileNotFound</code> 的错误。所以新手遇到此类报错一定要注意大小写差异，直接修改配置文件中的 suffix 相关参数即可。</p>
+<h2 id="日志可视化"><a href="#日志可视化" class="headerlink" title="日志可视化"></a>日志可视化</h2><p>经常可以看到社区的小伙伴在问训练遇到的问题，而且喜欢直接对终端的日志截图，就算是巨佬也不一定对一长串数字敏感。当我遇到这类情况一般会教他们去官方文档找可视化的章节，学习官方提供的绘制日志曲线图的脚本。但是运行脚本可视化是很麻烦的，使用的教程很少还很容易报错，而 <code>tensorboard</code> 可视化库是各工具箱都通用的，可以一句命令可视化训练过程的各种指标，并展示在统一的本地网页上，也给新手提供了更好展现自己训练问题的手段，在 <code>mmseg</code> 使用 <code>tensorboard</code> 的方法也很简单：</p>
+<ul>
+<li>在 <code>config/_base_</code> 中找到 <code>default_runtime.py</code>，第 6 行一般默认是注释起来的，将这行取消注释也就开启了 tensorboard 记录，以后启动的训练都会在 <code>work_dirs</code> 的对应文件夹中生成 <code>tf_log</code> 文件夹。</li>
+</ul>
+<pre><code class="Python"># config/_base_/default_runtime.py
+
+# yapf:disable
+log_config = dict(
+    interval=50,
+    hooks=[
+        dict(type=&#39;TextLoggerHook&#39;, by_epoch=False),
+        dict(type=&#39;TensorboardLoggerHook&#39;) # 启动tensorboard记录（该行一般默认被注释起来）
+    ])
+# yapf:enable
+dist_params = dict(backend=&#39;nccl&#39;)
+log_level = &#39;INFO&#39;
+load_from = None
+resume_from = None
+workflow = [(&#39;train&#39;, 1)]
+cudnn_benchmark = True
+</code></pre>
+<ul>
+<li>那么这个 <code>tf_log</code> 文件夹怎么使用呢？我们只需要复制绝对路径，打开终端，切换到 OpenMMLab 所依赖的环境，并安装 <code>tensorboard</code> 的 python 库。</li>
+</ul>
+<pre><code class="Shell">pip install tensorboard
+</code></pre>
+<ul>
+<li>然后将 tensorboard 日志部署到本地 IP 和端口。</li>
+</ul>
+<pre><code class="Shell">tensorboard --logdir &#123;TF_LOG_PATH&#125; # TF_LOG_PATH替换为自己的tf_log文件夹绝对路径即可
+</code></pre>
+<ul>
+<li>执行成功之后可以看到终端打印了一个本地 IP 和端口，默认是 <code>http://localhost:6006/</code>，按住 <code>ctrl</code> 键鼠标点击即可进入浏览器打开可视化页面，终端连续多次按下 <code>ctrl + c</code> 组合键可以停止 <code>tensorboard</code> 服务。</li>
+</ul>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>我使用 OpenMMLab 各种工具箱的时候编写的几个辅助脚本在<a href="https://github.com/TianWen580/myscripts-openmmlab">我的GitHub</a>，涵盖了数据集预处理、维护和质检等功能，大家可以去看看有没有能帮上自己的。 MMSegmentation 的大小坑真的让我哭笑不得哈哈哈，也辛苦 MMSegmentation 开源开发者的付出，祝自己有一天能加入 OpenMMLab 的大家庭一起维护这个开源之星，也祝各位炼丹师实验顺利。</p>
+]]></content>
+      <categories>
+        <category>For OpenMMLab</category>
       </categories>
   </entry>
   <entry>
@@ -390,225 +1064,225 @@
       </categories>
   </entry>
   <entry>
-    <title>MMLAB PR 指南</title>
-    <url>/2023/034.html</url>
-    <content><![CDATA[<blockquote>
-<p>ref：<br>贡献指南：<a href="https://mmengine.readthedocs.io/zh_CN/latest/notes/contributing.html">https://mmengine.readthedocs.io/zh_CN/latest/notes/contributing.html</a><br>代码规范：<a href="https://mmengine.readthedocs.io/zh_CN/latest/notes/code_style.html">https://mmengine.readthedocs.io/zh_CN/latest/notes/code_style.html</a></p>
-</blockquote>
-<h2 id="PR-描述规范"><a href="#PR-描述规范" class="headerlink" title="PR 描述规范"></a>PR 描述规范</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><ul>
-<li><strong>sample</strong>： [Docs] Refine contribute.md</li>
-<li>在开头使用英文括号描述修改的对象，常见修改对象有<table>
-<thead>
-<tr>
-<th>对象</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Docs</td>
-<td align="left">官方文档更新 可以是refine也可以补充</td>
-</tr>
-<tr>
-<td>Feature</td>
-<td align="left">新功能 新功能support对xxx的支持</td>
-</tr>
-<tr>
-<td>Fix</td>
-<td align="left">修复bug</td>
-</tr>
-<tr>
-<td>WIP</td>
-<td align="left">先提出来 等待开发完成 暂时不用review</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-<h2 id="REFINE-DOCs"><a href="#REFINE-DOCs" class="headerlink" title="REFINE DOCs"></a>REFINE DOCs</h2><h3 id="代码快-to-提示框"><a href="#代码快-to-提示框" class="headerlink" title="代码快 to 提示框"></a>代码快 to 提示框</h3><ul>
-<li>基于代码快的语法，通过特殊的标注实现代码快到提示框的转换<ul>
-<li>注解{Note}<br>
+    <title>地图制图「上」标准制图流程展示</title>
+    <url>/2021/0946040.html</url>
+    <content><![CDATA[<h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><h2 id="ArcMap中的添加数据"><a href="#ArcMap中的添加数据" class="headerlink" title="ArcMap中的添加数据"></a>ArcMap中的添加数据</h2><p>在ArcMap默认的软件页面中可以很容易找到「添加文件」按钮，这个是ArcGIS操作逻辑中用来添加某一个已有数据的按钮。单击，打开添加数据窗口。我是用顶部下拉菜单可以选择“catelog”中提前链接好的文件目录，这里我第一次使用，因此要单击顶部「链接文件夹」按钮以添加实验数据所在文件夹。添加完成后，将新荣县1：10000地形图矢量数据，随后可以看到图层管理器已经有了我需要的文件(在ArcMap中图层管理器称为“内容列表”)。<br>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/mqtDx3A.jpg">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE1.png">
         
-      </span></li>
-<li>参见{SeeAlso}<br>
+      <br>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/oNjmsqz.jpg">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE2.png">
         
-      </span></li>
-<li>警告{Warning}<br>
+      </span></span></p>
+<h1 id="编辑与设计"><a href="#编辑与设计" class="headerlink" title="编辑与设计"></a>编辑与设计</h1><h2 id="挑选符号"><a href="#挑选符号" class="headerlink" title="挑选符号"></a>挑选符号</h2><p>内容列表有非常多的点类，现在将他们直接导入进来是初始化符号的，千篇一律。双击其中的地名符号，我发现可以打开符号系统来挑选一些默认的ESRI符号，右边可以更改必要的参数值来调整颜色、大小、形状等等。<br>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/eJxjNl5.jpg">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE3.png">
         
-      </span></li>
-</ul>
-</li>
-</ul>
+      </span></p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>首先地图的符号之间是分好类别的，必要的区分度需要在符号的选择上体现出来。诚然，默认符号库中的符号可能不足以完成全部的符号更换，但是已经能体现出符号之间的差别了。</p>
+<h1 id="布局视图"><a href="#布局视图" class="headerlink" title="布局视图"></a>布局视图</h1><h2 id="打开布局视图"><a href="#打开布局视图" class="headerlink" title="打开布局视图"></a>打开布局视图</h2><p>为了输出我的地图，我需要打开布局视图窗口来编辑版式和其他显示要素。我可以在顶部视图菜单中打开，也可以单击底下非常小的「布局视图」按钮来切换。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE4.png">
+        
+      </span></p>
+<h2 id="调整布局"><a href="#调整布局" class="headerlink" title="调整布局"></a>调整布局</h2><p>实验指导书说拖动数据框角点以填充工作空间，但是其实可以右键布局区域，选择Distribute-&gt;Fit to Margins来自动完成。完成后更换比例尺为1:10000<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE5.png">
+        
+      </span></p>
+<p>但是考虑到最终出图是一个类似正方形的工作空间，所以我还需要调整页面，如页面大小、页面方向等等，这个可以在顶部文件菜单中找到Page and Print setup窗口来设置。这里我设置为横向视图、宽25cm、高23cm。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE6.png">
+        
+      </span></p>
+<p>为了给地图添加一个标题，在顶部插入菜单中选择title，在布局视图的顶部合适位置插入，并输入“新荣县”。双击该文本可以进入属性设置，以调整字体、大小等参数。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE7.png">
+        
+      </span></p>
+<p>顶部插入菜单中还可以插入图例，选择legend设置图例各个位置文本的参数，并调整图例内容。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE8.png">
+        
+      </span></p>
+<p>这次插入比例尺(scale bar)，在比例尺的候选框中选择合适的比例尺符号，拖动比例尺到地图合适位置。随后在顶部文件菜单点击保存，将本次实验的工作空间保存在实验文件夹下。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE9.png">
+        
+      </span></p>
+<h1 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h1><p>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE10.png">
+        
+      </span></p>
 ]]></content>
       <categories>
-        <category>For OpenMMLab</category>
+        <category>GIS Experiments</category>
       </categories>
   </entry>
   <entry>
-    <title>写给 mmsegmentation 工具箱新手的避坑指南</title>
-    <url>/2023/032.html</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我在 Windows 环境使用 MMClassification、MMDetection 都还算轻轻松松，但是走完 MMSegmentation 全流程之后，真的想感叹一句“踩了不少坑啊”，所以想把自己的遇坑经验凝练总结出来，写一个专门给新手无伤通关的避坑教程。</p>
-<h2 id="Windows-配置环境的痛：mmcv-full"><a href="#Windows-配置环境的痛：mmcv-full" class="headerlink" title="Windows 配置环境的痛：mmcv-full"></a>Windows 配置环境的痛：mmcv-full</h2><p>在 v1.4.0 之前，mmcv-full 的安装没有针对 Windows 的现成预编译包，所以大部分新手会卡在 build MMCV 的过程中……这种情况下有两种解决方案。</p>
-<h3 id="方案-1：新版编译版本自动安装"><a href="#方案-1：新版编译版本自动安装" class="headerlink" title="方案 1：新版编译版本自动安装"></a>方案 1：新版编译版本自动安装</h3><p>在 1.4.0 之后，MMCV 会跟上 PyTorch 版本更新 <a href="https://zhuanlan.zhihu.com/p/441653536"> Windows 环境下的mmcv-full预编译包</a>，但是可用的版本范围比较局限，依赖 PyTorch、CUDA、mmcv-full 低版本的炼丹师自然就不适合这种安装方式了（看方案2），下面是以 PyTorch1.11.0、 CUDA11.3 为例的安装命令。</p>
-<ul>
-<li>一句命令安装 <code>mmcv-full</code>，下载速度还是不错的</li>
-</ul>
-<pre><code class="PowerShell">pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu113/torch1.11/index.html
-</code></pre>
-<h3 id="方案-2：手动操作"><a href="#方案-2：手动操作" class="headerlink" title="方案 2：手动操作"></a>方案 2：手动操作</h3><p>如果你不希望更新到新版 MMSegmentation 或者 MMCV，也可以尝试手动安装，下面以在 GPU+CPU 双环境运行的目标来安装 <code>mmcv-full</code>，参考了<a href="https://mmcv.readthedocs.io/zh_CN/latest/get_started/build.html#id1">官方文档</a>，所有命令行运行在 <code>powershell</code>，使用 <code>cmd</code> 的炼丹师需要注意两个命令行的命令差异。</p>
-<ul>
-<li>创建虚拟环境</li>
-</ul>
-<pre><code class="PowerShell">conda create --name mmcv python=3.7 # 经测试，3.6, 3.7, 3.8 也能通过
-conda activate mmcv # 确保做任何操作前先激活环境
-</code></pre>
-<ul>
-<li>进入一个临时文件路径，克隆 <code>mmcv-full</code> 源码</li>
-</ul>
-<pre><code class="PowerShell">git clone https://github.com/open-mmlab/mmcv.git
-cd mmcv # 进入项目文件夹
-</code></pre>
-<ul>
-<li>安装依赖</li>
-</ul>
-<p>所有依赖中，也安装了 <code>ninja</code> 库用于加快最后编译的速度</p>
-<pre><code class="PowerShell">pip install -r requirements.txt
-# 建议使用镜像加速 =pip install -r requirements.txt -i https://pypi.douban.com/simple
-</code></pre>
-<ul>
-<li>配置编译环境</li>
-</ul>
-<p>安装 <code>Microsoft Visual Studio Community 2017/2019/......</code> ，确保环境变量中的 <code>Path</code> 存在编译所需的值。以 VS2019 Community 为例：<code>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\bin\Hostx86\x64</code> 。</p>
-<ul>
-<li>编译安装 <code>mmcv-full</code></li>
-</ul>
-<pre><code class="PowerShell">$env:MMCV_WITH_OPS = 1
-$env:MAX_JOBS = 8 # 根据可用的CPU和内存量进行设置
-python setup.py build_ext # 如果成功, 将会自动弹出来编译 flow_warp
-python setup.py develop # 执行安装
-</code></pre>
-<ul>
-<li>检测是否安装成功</li>
-</ul>
-<pre><code class="PowerShell">pip list # 使用anaconda的话，也可以在openmmlab依赖的虚拟环境下 =conda list
-</code></pre>
-<h2 id="数据集自定义类别"><a href="#数据集自定义类别" class="headerlink" title="数据集自定义类别"></a>数据集自定义类别</h2><h3 id="更改-CLASSES-和-num-classes"><a href="#更改-CLASSES-和-num-classes" class="headerlink" title="更改 CLASSES 和 num_classes"></a>更改 CLASSES 和 num_classes</h3><p>不敢调试的新手炼丹师首次面对 <code>mmseg</code> 的项目可能无所适从，因此也很难养成自己编写数据集加载代码的习惯。其实能搜到很多水平不一的资料教你编辑现有的数据集加载方式（比如常见的 <code>ADEDataset</code>），修改 <code>CLASSES</code>，然后设置 <code>num_classes</code>，可能更改完发现编辑后的代码根本没应用上，网络 decoder 不断吐槽你 <code>num_classes</code> 不对，然后你又去检查手里的数据集……其实是因为认识较浅，下面展示更合理的走通指南：</p>
-<ul>
-<li><p>选择好模型后，先把相关联配置文件里的全部 <code>num_classes</code> 设置好值，比如经典 ADE 数据集提取并划分了 150 个实例类， <code>num_classes</code> 就是 <code>150</code>，计入 <code>num_classes</code> 的所有类的名称下一步都要写入 <code>CLASSES</code>。（背景类未算入 150，下一节会讲解为什么）</p>
-</li>
-<li><p>下面，进入 <code>mmseg</code> 项目下的 <code>mmseg``/``datasets</code>，以遥感语义分割任务为例新建 py 文件 <code>uavdataset.py</code>， 继承自 <code>custom.py</code> 中的 <code>CustomDataset</code>，然后开始实现自己的数据集……在定义 <code>CLASSES</code>的时候， tuple 初始化为自己类名的集合即可（比如关于街区 block、农田 field 和其他利用地 notused 的遥感语义分割任务），用于上色的 <code>PALETTE</code> 也可以用类似的方式配置（配置格式：[<em>R</em>, <em>G</em>, <em>B</em>]）。</p>
-</li>
-</ul>
-<pre><code class="Python"># mmseg/datasets/uavdataset.py
-
-...
-CLASSES = (&#39;block&#39;, &#39;field&#39;, &#39;notused&#39;)
-
-PALETTE = [[120, 120, 120], [180, 120, 120], [120, 180, 120]]
-...
-</code></pre>
-<ul>
-<li>然后参考 <code>configs/_base_/datasets</code> 的其他配置文件编写 <code>uavdataset.py</code> 作为 <code>UAVDataset</code> 的配置文件。最后，在选用的模型配置文件中更换数据集加载方式为 <code>UAVDataset</code>。</li>
-</ul>
-<h3 id="对源码的增改没有效果？"><a href="#对源码的增改没有效果？" class="headerlink" title="对源码的增改没有效果？"></a>对源码的增改没有效果？</h3><ol>
-<li>OpenMMLab 各种工具箱的官方文档中，都会教你用 <code>pip install -v -e .</code> 安装项目，但很多新手对 <code>pip</code> 的这种命令并不了解。其实这个命令是用来开启 <code>mmseg</code> 库编辑模式的，这样修改 <code>mmseg</code> 库内的代码片段可以自动被应用上，无需重新安装（如图截取自 MMSegmentation 官方文档的安装教程，其中注释已经解释了这种 pip 命令的含义）。</li>
-</ol>
-<p>
+    <title>地图制图「上」标准制图流程展示</title>
+    <url>/2021/0946040.html</url>
+    <content><![CDATA[<h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><h2 id="ArcMap中的添加数据"><a href="#ArcMap中的添加数据" class="headerlink" title="ArcMap中的添加数据"></a>ArcMap中的添加数据</h2><p>在ArcMap默认的软件页面中可以很容易找到「添加文件」按钮，这个是ArcGIS操作逻辑中用来添加某一个已有数据的按钮。单击，打开添加数据窗口。我是用顶部下拉菜单可以选择“catelog”中提前链接好的文件目录，这里我第一次使用，因此要单击顶部「链接文件夹」按钮以添加实验数据所在文件夹。添加完成后，将新荣县1：10000地形图矢量数据，随后可以看到图层管理器已经有了我需要的文件(在ArcMap中图层管理器称为“内容列表”)。<br>
         <span class="lazyload-img-span">
-        <img data-src="https://pic4.zhimg.com/80/v2-3c235f7971fed8a696eddc255d756bf7_720w.webp">
+        <img data-src="https://i.imgur.com/zygNDIc.jpg">
+        
+      <br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/9Tt8nW6.jpg">
+        
+      </span></span></p>
+<h1 id="编辑与设计"><a href="#编辑与设计" class="headerlink" title="编辑与设计"></a>编辑与设计</h1><h2 id="挑选符号"><a href="#挑选符号" class="headerlink" title="挑选符号"></a>挑选符号</h2><p>内容列表有非常多的点类，现在将他们直接导入进来是初始化符号的，千篇一律。双击其中的地名符号，我发现可以打开符号系统来挑选一些默认的ESRI符号，右边可以更改必要的参数值来调整颜色、大小、形状等等。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/EpsxqzU.jpg">
         
       </span></p>
-<ul>
-<li>切记！使用 <code>python ``setup.py`` install</code> 安装的 <code>mmseg</code> 每次编辑源码都需要重新安装，这也是为什么大部分新手更改 <code>CLASSES</code> 却不生效的原因，建议换用以下安装方法 ：</li>
-</ul>
-<pre><code class="Shell">cd ~/mmsegmentation-master/ # 进入你的mmseg项目路径下
-pip install -v -e . # 重新安装 英文句点表示安装当前路径下的项目
-</code></pre>
-<ul>
-<li>也有可能会有小伙伴问可不可以用 <code>python setup.py develop</code>，我没做过实验。但是 <code>setup.py</code> 也是门学问，既然官方文档教新手们用 <code>pip</code> 的方式就能成，也就没必要找太多替换方案了，新手上来没必要钻研在这上面。</li>
-</ul>
-<h2 id="独特的数据集参数：reduce-zero-label"><a href="#独特的数据集参数：reduce-zero-label" class="headerlink" title="独特的数据集参数：reduce_zero_label"></a>独特的数据集参数：reduce_zero_label</h2><h3 id="借助-reduce-zero-label-管理-0-值背景"><a href="#借助-reduce-zero-label-管理-0-值背景" class="headerlink" title="借助 reduce_zero_label 管理 0 值背景"></a>借助 reduce_zero_label 管理 0 值背景</h3><p><code>mmseg</code> 中已经为各种公共分割数据集编写了描述文件和加载代码，对于有用过 PyTorch 的小伙伴而言，学习各种数据集的描述文件还是很自如的，只有 <code>reduce_zero_label</code> 对于 <code>mmseg</code> 的新手比较陌生，所以，在搭建自己的 <code>mmseg</code> 数据集时，新手最疑惑的大概就是 <code>reduce_zero_label</code> 到底应该是 <code>True</code> 还是 <code>False</code>。</p>
-<p>它有什么用呢？从名字直译过来就是“减少 0 值标签”。在多类分割任务中，如果你的数据集中 <code>0</code> 值作为 label 文件中的背景类别，是建议忽略的。</p>
-<p>打开加载数据的源码片段可以看到一段处理 <code>reduce_zero_label</code> 的代码，意思是：若开启了 <code>reduce_zero_label</code>，原本为 <code>0</code> 的所有标注设置为 <code>255</code>，也就是损失函数中 <code>ignore_index</code> 参数的默认值，该参数默认避免值为 <code>255</code> 的标注参与损失计算。前文按下不表的 <code>150</code> 类的 ADE 数据集，它不包含背景的原因就是开了 <code>reduce zero label</code>，原本为 <code>0</code> 值的背景设置为了 <code>ignore_index</code>。</p>
-<pre><code class="Python"># mmseg/datasets/pipelines/loading.py
-
-...
-# reduce zero_label
-if self.reduce_zero_label:
-    # avoid using underflow conversion
-    gt_semantic_seg[gt_semantic_seg == 0] = 255
-    gt_semantic_seg = gt_semantic_seg - 1
-    gt_semantic_seg[gt_semantic_seg == 254] = 255
-...
-</code></pre>
-<h3 id="reduce-zero-label-导致的常见问题描述"><a href="#reduce-zero-label-导致的常见问题描述" class="headerlink" title="reduce_zero_label 导致的常见问题描述"></a>reduce_zero_label 导致的常见问题描述</h3><p>我们这里以 <code>ADE</code> 数据集源码为例，<code>reduce_zero_label</code> 默认设置为 <code>True</code>，然而，就算新手掌握了上一节的 <code>reduce_zero_label</code>，也可能对 <code>ADE</code> 了解比较肤浅，会怀疑配置文件中开启的 <code>reduce_zero_label</code> 是不是把 150 个实例类中的第一个给忽略掉了，毕竟 <code>num_classes</code> 不就是 <code>150</code> 吗，然后想当然把 <code>reduce_zero_label</code> 关掉。</p>
-<h3 id="错误原因分析"><a href="#错误原因分析" class="headerlink" title="错误原因分析"></a>错误原因分析</h3><pre><code class="R"># configs/_base_/datasets/ade20k.py
-
-train_pipeline = [
-    dict(type=&#39;LoadImageFromFile&#39;),
-    dict(type=&#39;LoadAnnotations&#39;, reduce_zero_label=True), # ADE中reduce_zero_label默认设置为True
-    dict(...),
-    ...
-]
-</code></pre>
-<p>label 中实际参加训练的确实只有 <code>150</code> 类，定义在 <code>CLASSES</code> 中，但 label 文件中实际包含了 <code>151</code> 类，而背景类（剩下仍没有标记的，或者被意外忽略的区域都归为背景，在 label 中值为 <code>0</code>）不包含在 <code>150</code> 个 <code>CLASSES</code> 中，需要在训练的时候设置成 <code>ignore_index</code>，所以我们借助上一小节的 <code>reduce_zero_label</code> 将背景从 151 个类中提出来单独设置为了 <code>ignore_index</code>，我们倘若错误地将 <code>reduce_zero_label</code> 关掉了，那 <code>num_classes</code> 就是 <code>151</code> 了。</p>
-<h3 id="如何增强对数据集更多参数的理解？"><a href="#如何增强对数据集更多参数的理解？" class="headerlink" title="如何增强对数据集更多参数的理解？"></a>如何增强对数据集更多参数的理解？</h3><p>实际工程中的数据集往往是我们自己设计预测类别和标注规则的，如果背景真的很重要，那无论是修改 ADE 的配置文件，还是硬搬 ADE 格式数据集的使用方式，都不如尊重开发者写好的数据集加载代码，改用自己编写的数据集加载方式（只需继承自 <code>CustomDataset</code> 即可）。</p>
-<p>在一行行编写的过程中，新手炼丹师可以不断参考研究现存的其他数据集的解决方案，如果遇到不懂的地方也能有查漏补缺的方向，尤其是 <code>reduce_zero_label</code> 这种参数，需要充分理解消化才能运用自如。不断尝试尝试尝试的过程中，新手炼丹师也会对各式各样的数据集加载方式产生自己的理解和看法，在迎接特殊任务的时候能够分析自己的数据集，创新设计出自己独特的数据集加载方式。</p>
-<h2 id="数据集文件后缀的坑：大小写"><a href="#数据集文件后缀的坑：大小写" class="headerlink" title="数据集文件后缀的坑：大小写"></a>数据集文件后缀的坑：大小写</h2><p>接着看 <code>mmseg``/``datasets</code> 的 <code>ade.py</code>，这里 <code>ADE20KDataset</code> 类有两个 suffix（文件后缀）相关的参数配置，<code>img_suffix</code> 负责定义图像文件的后缀名，<code>seg_map_suffix</code> 定义标签文件的后缀名。默认配置：</p>
-<pre><code class="Python"># mmseg/datasets/ade.py
-
-...
-def __init__(self, **kwargs):
-        super(ADE20KDataset, self).__init__(
-            img_suffix=&#39;.jpg&#39;, # 图像的后缀名
-            seg_map_suffix=&#39;.png&#39;, # 标签的后缀名
-            reduce_zero_label=True,
-            **kwargs)
-        ...
-</code></pre>
-<p>但是有些炼丹师拿到的图像后缀是 <code>.JPG</code>，它和 <code>.jpg</code> 的区别仅仅是大小写不同，但是数据集加载会不断报 <code>FileNotFound</code> 的错误。所以新手遇到此类报错一定要注意大小写差异，直接修改配置文件中的 suffix 相关参数即可。</p>
-<h2 id="日志可视化"><a href="#日志可视化" class="headerlink" title="日志可视化"></a>日志可视化</h2><p>经常可以看到社区的小伙伴在问训练遇到的问题，而且喜欢直接对终端的日志截图，就算是巨佬也不一定对一长串数字敏感。当我遇到这类情况一般会教他们去官方文档找可视化的章节，学习官方提供的绘制日志曲线图的脚本。但是运行脚本可视化是很麻烦的，使用的教程很少还很容易报错，而 <code>tensorboard</code> 可视化库是各工具箱都通用的，可以一句命令可视化训练过程的各种指标，并展示在统一的本地网页上，也给新手提供了更好展现自己训练问题的手段，在 <code>mmseg</code> 使用 <code>tensorboard</code> 的方法也很简单：</p>
-<ul>
-<li>在 <code>config/_base_</code> 中找到 <code>default_runtime.py</code>，第 6 行一般默认是注释起来的，将这行取消注释也就开启了 tensorboard 记录，以后启动的训练都会在 <code>work_dirs</code> 的对应文件夹中生成 <code>tf_log</code> 文件夹。</li>
-</ul>
-<pre><code class="Python"># config/_base_/default_runtime.py
-
-# yapf:disable
-log_config = dict(
-    interval=50,
-    hooks=[
-        dict(type=&#39;TextLoggerHook&#39;, by_epoch=False),
-        dict(type=&#39;TensorboardLoggerHook&#39;) # 启动tensorboard记录（该行一般默认被注释起来）
-    ])
-# yapf:enable
-dist_params = dict(backend=&#39;nccl&#39;)
-log_level = &#39;INFO&#39;
-load_from = None
-resume_from = None
-workflow = [(&#39;train&#39;, 1)]
-cudnn_benchmark = True
-</code></pre>
-<ul>
-<li>那么这个 <code>tf_log</code> 文件夹怎么使用呢？我们只需要复制绝对路径，打开终端，切换到 OpenMMLab 所依赖的环境，并安装 <code>tensorboard</code> 的 python 库。</li>
-</ul>
-<pre><code class="Shell">pip install tensorboard
-</code></pre>
-<ul>
-<li>然后将 tensorboard 日志部署到本地 IP 和端口。</li>
-</ul>
-<pre><code class="Shell">tensorboard --logdir &#123;TF_LOG_PATH&#125; # TF_LOG_PATH替换为自己的tf_log文件夹绝对路径即可
-</code></pre>
-<ul>
-<li>执行成功之后可以看到终端打印了一个本地 IP 和端口，默认是 <code>http://localhost:6006/</code>，按住 <code>ctrl</code> 键鼠标点击即可进入浏览器打开可视化页面，终端连续多次按下 <code>ctrl + c</code> 组合键可以停止 <code>tensorboard</code> 服务。</li>
-</ul>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>我使用 OpenMMLab 各种工具箱的时候编写的几个辅助脚本在<a href="https://github.com/TianWen580/myscripts-openmmlab">我的GitHub</a>，涵盖了数据集预处理、维护和质检等功能，大家可以去看看有没有能帮上自己的。 MMSegmentation 的大小坑真的让我哭笑不得哈哈哈，也辛苦 MMSegmentation 开源开发者的付出，祝自己有一天能加入 OpenMMLab 的大家庭一起维护这个开源之星，也祝各位炼丹师实验顺利。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>首先地图的符号之间是分好类别的，必要的区分度需要在符号的选择上体现出来。诚然，默认符号库中的符号可能不足以完成全部的符号更换，但是已经能体现出符号之间的差别了。</p>
+<h1 id="布局视图"><a href="#布局视图" class="headerlink" title="布局视图"></a>布局视图</h1><h2 id="打开布局视图"><a href="#打开布局视图" class="headerlink" title="打开布局视图"></a>打开布局视图</h2><p>为了输出我的地图，我需要打开布局视图窗口来编辑版式和其他显示要素。我可以在顶部视图菜单中打开，也可以单击底下非常小的「布局视图」按钮来切换。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/IiyBIMI.jpg">
+        
+      </span></p>
+<h2 id="调整布局"><a href="#调整布局" class="headerlink" title="调整布局"></a>调整布局</h2><p>实验指导书说拖动数据框角点以填充工作空间，但是其实可以右键布局区域，选择Distribute-&gt;Fit to Margins来自动完成。完成后更换比例尺为1:10000<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/C37RHvD.jpg">
+        
+      </span></p>
+<p>但是考虑到最终出图是一个类似正方形的工作空间，所以我还需要调整页面，如页面大小、页面方向等等，这个可以在顶部文件菜单中找到Page and Print setup窗口来设置。这里我设置为横向视图、宽25cm、高23cm。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/ptyljlv.jpg">
+        
+      </span></p>
+<p>为了给地图添加一个标题，在顶部插入菜单中选择title，在布局视图的顶部合适位置插入，并输入“新荣县”。双击该文本可以进入属性设置，以调整字体、大小等参数。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/j6BurjN.jpg">
+        
+      </span></p>
+<p>顶部插入菜单中还可以插入图例，选择legend设置图例各个位置文本的参数，并调整图例内容。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/4a8ZUI6.jpg">
+        
+      </span></p>
+<p>这次插入比例尺(scale bar)，在比例尺的候选框中选择合适的比例尺符号，拖动比例尺到地图合适位置。随后在顶部文件菜单点击保存，将本次实验的工作空间保存在实验文件夹下。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/PIZxBbx.jpg">
+        
+      </span></p>
+<h1 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h1><p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/2NEU7Fm.jpg">
+        
+      </span></p>
 ]]></content>
       <categories>
-        <category>For OpenMMLab</category>
+        <category>GIS Experiments</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>地图制图「下」符号设计流程展示</title>
+    <url>/2021/0914607.html</url>
+    <content><![CDATA[<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><h2 id="关于ESRI符号库"><a href="#关于ESRI符号库" class="headerlink" title="关于ESRI符号库"></a>关于ESRI符号库</h2><p>在ArcMap中打开顶部菜单中Customize-&gt;Style Manager工具,在这里面可以看见有黄色和黑色文件夹，都是ArcGIS默认的地理符号库，黄色的是空的，而黑色的包含了ESRI默认自带有的所有符号。如果需要自定义一些符号，我们可以在黄色的文件夹中添加，当然也可以使用新建文件夹的方式在新文件路径下添加自定义符号。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE1.png">
+        
+      </span></p>
+<p>点击“Style”按钮可以看见默认的自带符号库还有非常多，我们可以勾选以添加进Style Manager进行显示和查看。点击Create New Style新建一个新的目录用来创建我的自定义符号。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE2.png">
+        
+      </span></p>
+<h1 id="创建自定义符号"><a href="#创建自定义符号" class="headerlink" title="创建自定义符号"></a>创建自定义符号</h1><h2 id="建立目录"><a href="#建立目录" class="headerlink" title="建立目录"></a>建立目录</h2><p>点击Style窗口中的Create New Style，选择实验文件夹作为符号库路径，命名为“sy2”。右边双击路径Marker Symbols进入点符号路径。右键，选择new-&gt;Marker Sysbol，接下来进入点符号的自定义界面。</p>
+<h2 id="新建Simple-Marker-Symbol符号"><a href="#新建Simple-Marker-Symbol符号" class="headerlink" title="新建Simple Marker Symbol符号"></a>新建Simple Marker Symbol符号</h2><p>顶部的Type中可以选择点符号的定义方法，我们第一个实验任务是创建高程点，形状简单，参数较少，所以此处选择Type：Simple Marker Symbol。在该Type中设置点的大小单位是毫米(Millmeter)，随后设置size:0.5，style：circle保持默认，color：全黑保持默认。单击OK完成编辑，回到Style Manager后将新的符号命名为“高程点”。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE3.png">
+        
+      </span></p>
+<h2 id="以新字体的形式新建符号"><a href="#以新字体的形式新建符号" class="headerlink" title="以新字体的形式新建符号"></a>以新字体的形式新建符号</h2><p>ArcMap为了与其他软件共享符号系统，会将符号以字体的形式保存在计算机的内部，用户也可以通过绘制字体来完成复杂符号的自定义。</p>
+<h3 id="设置格式"><a href="#设置格式" class="headerlink" title="设置格式"></a>设置格式</h3><p>打开FontCreator应用，顶部文件中选择新建，命名该字体为“地形图”，字符类选择为符号。单击确定。因为字体制作软件和我们的ArcGIS并没有一个等价的单位相互联系，所以第一步我需要设置软件编辑画布的尺寸，让ArcGIS上可以间接转化尺寸。进入顶部的格式-&gt;设置，我们首先可以调整布局的单位。因为10可以与许多数相除而避免产生无穷小数的情况，所以10的倍数都可以作为沟通该软件与ArcGIS软件单位的桥梁，这里10太小，会产生小数点，故考虑使用1000作为布局单位。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE4.png">
+        
+      </span></p>
+<p>接下来设置一下度量的参数。字型上行字母、上行字母、Win上升设置为1000，右键的属性中选择预置宽度为1000。这样可以使符号的尺寸在1000且居中的时候可以局限在一个方形区域内。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE5.png">
+        
+      <br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE6.png">
+        
+      </span></span></p>
+<h3 id="绘制符号"><a href="#绘制符号" class="headerlink" title="绘制符号"></a>绘制符号</h3><p>根据实验任务的要求，首先要绘制一个圆形轮廓(直径2mm线宽为默认0.15mm，对应了该软件单位的1000、75)，再绘制一个默认尺寸点(0.3mm对应软件单位的150)。因为该软件只有实心圆，所以需要借助软件的方向功能绘制圆形边界，先绘制(500，500)中心上的尺寸1000<em>1000的大圆，再绘制(500，500)中心上的尺寸850</em>850的小圆，将小圆方向，就形成了尺寸正确的圆形边界，接下来再拖入一个实心圆，绘制于(500，500)中心上，尺寸为150*150。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE7.png">
+        
+      </span></p>
+<h3 id="绘制完成"><a href="#绘制完成" class="headerlink" title="绘制完成"></a>绘制完成</h3><p>2.3.3保存字体文件并安装入机<br>顶部文件中点击另存为，选择好保存路径方便查找即可，命名为“地形图”。这样子我可以很方便地完成符号的安装。回到ArcMap，我已经可以右键new-&gt;Marker Symbol来导入字体了。这一次选择type：Character Marker Symbol，加载一段时间后就可以选择上我刚安装的字体文件，里面有我绘制的点符号，选择上，在右上角选择尺寸单位为毫米Millmeter。设置size：2。这样点OK就完成了我电脑上的字符点符号创建。回到Style Manager后将符号命名为“导线控制点”。<br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE8.png">
+        
+      <br>
+        <span class="lazyload-img-span">
+        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE9.png">
+        
+      </span></span></p>
+]]></content>
+      <categories>
+        <category>GIS Experiments</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>地图制图「下」符号设计流程展示</title>
+    <url>/2021/0914607.html</url>
+    <content><![CDATA[<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><h2 id="关于ESRI符号库"><a href="#关于ESRI符号库" class="headerlink" title="关于ESRI符号库"></a>关于ESRI符号库</h2><p>在ArcMap中打开顶部菜单中Customize-&gt;Style Manager工具,在这里面可以看见有黄色和黑色文件夹，都是ArcGIS默认的地理符号库，黄色的是空的，而黑色的包含了ESRI默认自带有的所有符号。如果需要自定义一些符号，我们可以在黄色的文件夹中添加，当然也可以使用新建文件夹的方式在新文件路径下添加自定义符号。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/dhoLicd.jpg">
+        
+      </span></p>
+<p>点击“Style”按钮可以看见默认的自带符号库还有非常多，我们可以勾选以添加进Style Manager进行显示和查看。点击Create New Style新建一个新的目录用来创建我的自定义符号。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/me2eto4.jpg">
+        
+      </span></p>
+<h1 id="创建自定义符号"><a href="#创建自定义符号" class="headerlink" title="创建自定义符号"></a>创建自定义符号</h1><h2 id="建立目录"><a href="#建立目录" class="headerlink" title="建立目录"></a>建立目录</h2><p>点击Style窗口中的Create New Style，选择实验文件夹作为符号库路径，命名为“sy2”。右边双击路径Marker Symbols进入点符号路径。右键，选择new-&gt;Marker Sysbol，接下来进入点符号的自定义界面。</p>
+<h2 id="新建Simple-Marker-Symbol符号"><a href="#新建Simple-Marker-Symbol符号" class="headerlink" title="新建Simple Marker Symbol符号"></a>新建Simple Marker Symbol符号</h2><p>顶部的Type中可以选择点符号的定义方法，我们第一个实验任务是创建高程点，形状简单，参数较少，所以此处选择Type：Simple Marker Symbol。在该Type中设置点的大小单位是毫米(Millmeter)，随后设置size:0.5，style：circle保持默认，color：全黑保持默认。单击OK完成编辑，回到Style Manager后将新的符号命名为“高程点”。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/Rr6Namy.jpg">
+        
+      </span></p>
+<h2 id="以新字体的形式新建符号"><a href="#以新字体的形式新建符号" class="headerlink" title="以新字体的形式新建符号"></a>以新字体的形式新建符号</h2><p>ArcMap为了与其他软件共享符号系统，会将符号以字体的形式保存在计算机的内部，用户也可以通过绘制字体来完成复杂符号的自定义。</p>
+<h3 id="设置格式"><a href="#设置格式" class="headerlink" title="设置格式"></a>设置格式</h3><p>打开FontCreator应用，顶部文件中选择新建，命名该字体为“地形图”，字符类选择为符号。单击确定。因为字体制作软件和我们的ArcGIS并没有一个等价的单位相互联系，所以第一步我需要设置软件编辑画布的尺寸，让ArcGIS上可以间接转化尺寸。进入顶部的格式-&gt;设置，我们首先可以调整布局的单位。因为10可以与许多数相除而避免产生无穷小数的情况，所以10的倍数都可以作为沟通该软件与ArcGIS软件单位的桥梁，这里10太小，会产生小数点，故考虑使用1000作为布局单位。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/YLMhW7Y.jpg">
+        
+      </span></p>
+<p>接下来设置一下度量的参数。字型上行字母、上行字母、Win上升设置为1000，右键的属性中选择预置宽度为1000。这样可以使符号的尺寸在1000且居中的时候可以局限在一个方形区域内。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/f03mQ2U.jpg">
+        
+      <br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/HKg80ds.jpg">
+        
+      </span></span></p>
+<h3 id="绘制符号"><a href="#绘制符号" class="headerlink" title="绘制符号"></a>绘制符号</h3><p>根据实验任务的要求，首先要绘制一个圆形轮廓(直径2mm线宽为默认0.15mm，对应了该软件单位的1000、75)，再绘制一个默认尺寸点(0.3mm对应软件单位的150)。因为该软件只有实心圆，所以需要借助软件的方向功能绘制圆形边界，先绘制(500，500)中心上的尺寸1000<em>1000的大圆，再绘制(500，500)中心上的尺寸850</em>850的小圆，将小圆方向，就形成了尺寸正确的圆形边界，接下来再拖入一个实心圆，绘制于(500，500)中心上，尺寸为150*150。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/7fSv3re.jpg">
+        
+      </span></p>
+<h3 id="绘制完成"><a href="#绘制完成" class="headerlink" title="绘制完成"></a>绘制完成</h3><p>2.3.3保存字体文件并安装入机<br>顶部文件中点击另存为，选择好保存路径方便查找即可，命名为“地形图”。这样子我可以很方便地完成符号的安装。回到ArcMap，我已经可以右键new-&gt;Marker Symbol来导入字体了。这一次选择type：Character Marker Symbol，加载一段时间后就可以选择上我刚安装的字体文件，里面有我绘制的点符号，选择上，在右上角选择尺寸单位为毫米Millmeter。设置size：2。这样点OK就完成了我电脑上的字符点符号创建。回到Style Manager后将符号命名为“导线控制点”。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/r3McSoW.jpg">
+        
+      <br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/XeXsN0o.jpg">
+        
+      </span></span></p>
+]]></content>
+      <categories>
+        <category>GIS Experiments</category>
       </categories>
   </entry>
   <entry>
@@ -708,111 +1382,363 @@ pip install -i https://pypi.douban.com/simple # 豆瓣（推荐）
       </categories>
   </entry>
   <entry>
-    <title>地图制图「上」标准制图流程展示</title>
-    <url>/2021/0946040.html</url>
-    <content><![CDATA[<h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><h2 id="ArcMap中的添加数据"><a href="#ArcMap中的添加数据" class="headerlink" title="ArcMap中的添加数据"></a>ArcMap中的添加数据</h2><p>在ArcMap默认的软件页面中可以很容易找到「添加文件」按钮，这个是ArcGIS操作逻辑中用来添加某一个已有数据的按钮。单击，打开添加数据窗口。我是用顶部下拉菜单可以选择“catelog”中提前链接好的文件目录，这里我第一次使用，因此要单击顶部「链接文件夹」按钮以添加实验数据所在文件夹。添加完成后，将新荣县1：10000地形图矢量数据，随后可以看到图层管理器已经有了我需要的文件(在ArcMap中图层管理器称为“内容列表”)。<br>
+    <title>空间分析「一」影像配准和数字化处理</title>
+    <url>/2021/0657209.html</url>
+    <content><![CDATA[<h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><ol>
+<li>链接文件夹”~/实验4 影像配准和数字化 数据/”,添加“J48G024008”的jpg地图</li>
+</ol>
+<p>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE1.png">
-        
-      <br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE2.png">
-        
-      </span></span></p>
-<h1 id="编辑与设计"><a href="#编辑与设计" class="headerlink" title="编辑与设计"></a>编辑与设计</h1><h2 id="挑选符号"><a href="#挑选符号" class="headerlink" title="挑选符号"></a>挑选符号</h2><p>内容列表有非常多的点类，现在将他们直接导入进来是初始化符号的，千篇一律。双击其中的地名符号，我发现可以打开符号系统来挑选一些默认的ESRI符号，右边可以更改必要的参数值来调整颜色、大小、形状等等。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE3.png">
+        <img data-src="https://i.imgur.com/8sklnCS.jpg">
         
       </span></p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>首先地图的符号之间是分好类别的，必要的区分度需要在符号的选择上体现出来。诚然，默认符号库中的符号可能不足以完成全部的符号更换，但是已经能体现出符号之间的差别了。</p>
-<h1 id="布局视图"><a href="#布局视图" class="headerlink" title="布局视图"></a>布局视图</h1><h2 id="打开布局视图"><a href="#打开布局视图" class="headerlink" title="打开布局视图"></a>打开布局视图</h2><p>为了输出我的地图，我需要打开布局视图窗口来编辑版式和其他显示要素。我可以在顶部视图菜单中打开，也可以单击底下非常小的「布局视图」按钮来切换。<br>
+<ol start="2">
+<li>通过数据添加提示和地图图幅显示，原始地理坐标系是1980西安坐标系</li>
+</ol>
+<p>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE4.png">
+        <img data-src="https://i.imgur.com/X3QW1rq.jpg">
         
       </span></p>
-<h2 id="调整布局"><a href="#调整布局" class="headerlink" title="调整布局"></a>调整布局</h2><p>实验指导书说拖动数据框角点以填充工作空间，但是其实可以右键布局区域，选择Distribute-&gt;Fit to Margins来自动完成。完成后更换比例尺为1:10000<br>
+<h1 id="影像配准"><a href="#影像配准" class="headerlink" title="影像配准"></a>影像配准</h1><ol>
+<li>定义空间参考</li>
+</ol>
+<p>点击
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE5.png">
+        <img data-src="https://i.imgur.com/hI3RR6P.jpg">
+        
+      图标打开”ArcTools box”，找到“Data Management tools-&gt;Projections and Transformations”双击进入“Define Projection”工具（另外还有“Project”工具，但是这里不用，因为“Define Projection”工具不会改变地图原有的内部坐标)，input选择“J48G024008”，目标坐标系选“Xian_1980_3_Degree_GK_Zone_34”。点击OK赋予坐标系</span></p>
+<ol start="2">
+<li>地形图配准<br> 右键ArcMap顶部，勾选“Georeferencing”工具条，进入Georeferencing菜单取消自动校正，点击
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/5YSxPgX.jpg">
+        
+      图标开始添加控制点。对控制点的要求是分布要散、位置精确。最好利用好z和x的放大缩小节省操作时间</span></li>
+</ol>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/8Hc7ERy.jpg">
         
       </span></p>
-<p>但是考虑到最终出图是一个类似正方形的工作空间，所以我还需要调整页面，如页面大小、页面方向等等，这个可以在顶部文件菜单中找到Page and Print setup窗口来设置。这里我设置为横向视图、宽25cm、高23cm。<br>
+<ol start="3">
+<li>添加控制点，先单击定位，然后右键选择“Input X and Y”输入整百公里数。选择“Cancel”撤回定位</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>控制点</th>
+<th>X 坐标</th>
+<th>Y 坐标</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>X538000</td>
+<td>Y4323000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>X543000</td>
+<td>Y4323000</td>
+</tr>
+<tr>
+<td>3</td>
+<td>X543000</td>
+<td>Y4319000</td>
+</tr>
+<tr>
+<td>4</td>
+<td>X538000</td>
+<td>Y4319000</td>
+</tr>
+<tr>
+<td>5</td>
+<td>X539000</td>
+<td>Y4322000</td>
+</tr>
+<tr>
+<td>6</td>
+<td>X542000</td>
+<td>Y4322000</td>
+</tr>
+<tr>
+<td>7</td>
+<td>X542000</td>
+<td>Y4320000</td>
+</tr>
+<tr>
+<td>8</td>
+<td>X539000</td>
+<td>Y4320000</td>
+</tr>
+</tbody></table>
+<p>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE6.png">
+        <img data-src="https://i.imgur.com/IuJN49a.jpg">
         
       </span></p>
-<p>为了给地图添加一个标题，在顶部插入菜单中选择title，在布局视图的顶部合适位置插入，并输入“新荣县”。双击该文本可以进入属性设置，以调整字体、大小等参数。<br>
+<ol start="4">
+<li>然后点击
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE7.png">
+        <img data-src="https://i.imgur.com/iXI6xUB.jpg">
+        
+      图标进入“view link table”，切换“transformation”为“2nd Order Polynomial”，查看表中“Residual”（误差量值)，本次实验都控制在0.6以内，可以继续操作</span></li>
+</ol>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/2Babalh.jpg">
         
       </span></p>
-<p>顶部插入菜单中还可以插入图例，选择legend设置图例各个位置文本的参数，并调整图例内容。<br>
+<ol start="5">
+<li>最后要将配准运用在影像上，打开Georeferencing菜单，选择“Rectify”执行纠正，之后会打开另存为窗口，设置保存参数：“重采样：双线性内插法，名字：J48G024008纠正后，文件路径：不变”</li>
+</ol>
+<p>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE8.png">
+        <img data-src="https://i.imgur.com/U1Q8mK3.jpg">
         
       </span></p>
-<p>这次插入比例尺(scale bar)，在比例尺的候选框中选择合适的比例尺符号，拖动比例尺到地图合适位置。随后在顶部文件菜单点击保存，将本次实验的工作空间保存在实验文件夹下。<br>
+<h1 id="分层矢量化"><a href="#分层矢量化" class="headerlink" title="分层矢量化"></a>分层矢量化</h1><ol>
+<li>数据准备</li>
+</ol>
+<p>链接实验文件夹“J48G024008.gdb”，加载入多个图层，来自多个类别（点线面分别以水系要素P、水系要素L和水系要素A代表），点击编辑工具条菜单的“start editing”，如果文件夹来源相异，则右键要编辑的要素，进入“edit feature”选择“start editing”。编辑内容来自图示范围</p>
+<p>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE9.png">
+        <img data-src="https://i.imgur.com/rd5kRem.jpg">
         
       </span></p>
-<h1 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h1><p>
+<p>点击图标显示可编辑要素，选中水系要素P后下方选择绘制工具。对范围内的井口进行标记</p>
+<p>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8A%E3%80%8D%E6%A0%87%E5%87%86%E5%88%B6%E5%9B%BE%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE10.png">
+        <img data-src="https://i.imgur.com/8v0ttj9.jpg">
         
       </span></p>
+<p>类似的操作，编辑水系要素L，对范围内的水渠进行标记。编辑水系要素A，对范围内的湖泊进行标记。标记湖泊的时候可以使用
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/DJKuDpV.jpg">
+        
+      图标对面进行裁切，将岛屿从湖泊面删除</span></p>
+<table>
+<thead>
+<tr>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/UMAaNp0.jpg">
+        
+      </span></th>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/GO9jF95.jpg">
+        
+      </span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>最后选择edit工具菜单的stop editing保存编辑并停止</p>
 ]]></content>
       <categories>
         <category>GIS Experiments</category>
       </categories>
   </entry>
   <entry>
-    <title>地图制图「下」符号设计流程展示</title>
-    <url>/2021/0914607.html</url>
-    <content><![CDATA[<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><h2 id="关于ESRI符号库"><a href="#关于ESRI符号库" class="headerlink" title="关于ESRI符号库"></a>关于ESRI符号库</h2><p>在ArcMap中打开顶部菜单中Customize-&gt;Style Manager工具,在这里面可以看见有黄色和黑色文件夹，都是ArcGIS默认的地理符号库，黄色的是空的，而黑色的包含了ESRI默认自带有的所有符号。如果需要自定义一些符号，我们可以在黄色的文件夹中添加，当然也可以使用新建文件夹的方式在新文件路径下添加自定义符号。<br>
+    <title>空间分析「二」拓扑检查与处理</title>
+    <url>/2021/0657209.html</url>
+    <content><![CDATA[<h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><ol>
+<li>链接实验文件夹“~/montgemory.gdb”，将内部数据添加到ArcMap</li>
+</ol>
+<h1 id="新建拓扑"><a href="#新建拓扑" class="headerlink" title="新建拓扑"></a>新建拓扑</h1><ol>
+<li>回到“目录”面板，找到实验文件夹内的要素集“landbase”，右键进入“new”，选择“Topology”。然后设置拓扑参数，直接进入第二页，修改拓扑名称为“landbase”</li>
+</ol>
+<p>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE1.png">
+        <img data-src="https://i.imgur.com/GVcVBEv.jpg">
         
       </span></p>
-<p>点击“Style”按钮可以看见默认的自带符号库还有非常多，我们可以勾选以添加进Style Manager进行显示和查看。点击Create New Style新建一个新的目录用来创建我的自定义符号。<br>
+<ol start="2">
+<li>下一步，选中所有要素以全部接收拓扑检查。下一步，这个界面需要设置各要素的rank等级，值越接近1，要素被移动越少，所以此处改number of rank为1。对控制点的要求是分布要散、位置精确。最好利用好z和x的放大缩小节省操作时间</li>
+</ol>
+<p>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE2.png">
+        <img data-src="https://i.imgur.com/XnqOCvK.jpg">
         
       </span></p>
-<h1 id="创建自定义符号"><a href="#创建自定义符号" class="headerlink" title="创建自定义符号"></a>创建自定义符号</h1><h2 id="建立目录"><a href="#建立目录" class="headerlink" title="建立目录"></a>建立目录</h2><p>点击Style窗口中的Create New Style，选择实验文件夹作为符号库路径，命名为“sy2”。右边双击路径Marker Symbols进入点符号路径。右键，选择new-&gt;Marker Sysbol，接下来进入点符号的自定义界面。</p>
-<h2 id="新建Simple-Marker-Symbol符号"><a href="#新建Simple-Marker-Symbol符号" class="headerlink" title="新建Simple Marker Symbol符号"></a>新建Simple Marker Symbol符号</h2><p>顶部的Type中可以选择点符号的定义方法，我们第一个实验任务是创建高程点，形状简单，参数较少，所以此处选择Type：Simple Marker Symbol。在该Type中设置点的大小单位是毫米(Millmeter)，随后设置size:0.5，style：circle保持默认，color：全黑保持默认。单击OK完成编辑，回到Style Manager后将新的符号命名为“高程点”。<br>
+<ol start="3">
+<li>下一步，设置拓扑规则用于约束拓扑检查的敏感度，点击“add rule”建立第一项规则，规则对象为“道路中心线”，规则则是“must not have Pseudo Nodes”（用于删去道路末端连接处的冗余结点）；再次新建规则，对象不变，规则则是“must not overlap”(同一个图层的道路不能随意重叠，理论上不允许重叠)；再次新建规则，对象仍一致，规则则为“must not have dangles”（一部分道路末端可能出现不够长或超长的情况，而成为悬浮点，可以加以判断后修正）</li>
+</ol>
+<p>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE3.png">
+        <img data-src="https://i.imgur.com/4pvWQkw.jpg">
         
       </span></p>
-<h2 id="以新字体的形式新建符号"><a href="#以新字体的形式新建符号" class="headerlink" title="以新字体的形式新建符号"></a>以新字体的形式新建符号</h2><p>ArcMap为了与其他软件共享符号系统，会将符号以字体的形式保存在计算机的内部，用户也可以通过绘制字体来完成复杂符号的自定义。</p>
-<h3 id="设置格式"><a href="#设置格式" class="headerlink" title="设置格式"></a>设置格式</h3><p>打开FontCreator应用，顶部文件中选择新建，命名该字体为“地形图”，字符类选择为符号。单击确定。因为字体制作软件和我们的ArcGIS并没有一个等价的单位相互联系，所以第一步我需要设置软件编辑画布的尺寸，让ArcGIS上可以间接转化尺寸。进入顶部的格式-&gt;设置，我们首先可以调整布局的单位。因为10可以与许多数相除而避免产生无穷小数的情况，所以10的倍数都可以作为沟通该软件与ArcGIS软件单位的桥梁，这里10太小，会产生小数点，故考虑使用1000作为布局单位。<br>
+<p>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE4.png">
+        <img data-src="https://i.imgur.com/JtdTZY7.jpg">
         
       </span></p>
-<p>接下来设置一下度量的参数。字型上行字母、上行字母、Win上升设置为1000，右键的属性中选择预置宽度为1000。这样可以使符号的尺寸在1000且居中的时候可以局限在一个方形区域内。<br>
+<p>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE5.png">
-        
-      <br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE6.png">
-        
-      </span></span></p>
-<h3 id="绘制符号"><a href="#绘制符号" class="headerlink" title="绘制符号"></a>绘制符号</h3><p>根据实验任务的要求，首先要绘制一个圆形轮廓(直径2mm线宽为默认0.15mm，对应了该软件单位的1000、75)，再绘制一个默认尺寸点(0.3mm对应软件单位的150)。因为该软件只有实心圆，所以需要借助软件的方向功能绘制圆形边界，先绘制(500，500)中心上的尺寸1000<em>1000的大圆，再绘制(500，500)中心上的尺寸850</em>850的小圆，将小圆方向，就形成了尺寸正确的圆形边界，接下来再拖入一个实心圆，绘制于(500，500)中心上，尺寸为150*150。<br>
-        <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE7.png">
+        <img data-src="https://i.imgur.com/rO2gHhD.jpg">
         
       </span></p>
-<h3 id="绘制完成"><a href="#绘制完成" class="headerlink" title="绘制完成"></a>绘制完成</h3><p>2.3.3保存字体文件并安装入机<br>顶部文件中点击另存为，选择好保存路径方便查找即可，命名为“地形图”。这样子我可以很方便地完成符号的安装。回到ArcMap，我已经可以右键new-&gt;Marker Symbol来导入字体了。这一次选择type：Character Marker Symbol，加载一段时间后就可以选择上我刚安装的字体文件，里面有我绘制的点符号，选择上，在右上角选择尺寸单位为毫米Millmeter。设置size：2。这样点OK就完成了我电脑上的字符点符号创建。回到Style Manager后将符号命名为“导线控制点”。<br>
+<ol start="4">
+<li>再次新建规则，对象需改为“地块详细规划”，再次对该对象新建规则“must be covered by”，要选择覆盖其上的图层，选为“地块总体规划”。规则则为“must not overlap”（同图层的多个地块规划不允许存在重合部分）</li>
+</ol>
+<p>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE8.png">
+        <img data-src="https://i.imgur.com/WWjkIvI.jpg">
         
-      <br>
+      </span></p>
+<p>
         <span class="lazyload-img-span">
-        <img data-src="%E5%9C%B0%E5%9B%BE%E5%88%B6%E5%9B%BE%E3%80%8C%E4%B8%8B%E3%80%8D%E7%AC%A6%E5%8F%B7%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E5%B1%95%E7%A4%BA/%E5%9B%BE9.png">
+        <img data-src="https://i.imgur.com/0AMJCaE.jpg">
         
-      </span></span></p>
+      </span></p>
+<ol start="5">
+<li>下一步，检查整体参数，没有问题就可以点击OK完成拓扑新建</li>
+</ol>
+<h1 id="拓扑检查"><a href="#拓扑检查" class="headerlink" title="拓扑检查"></a>拓扑检查</h1><ol>
+<li>使用拓扑工具</li>
+</ol>
+<p>右键顶栏空白处，勾选“Topology”工具条。然后开启编辑。点击拓扑工具条最右侧的图标打开搜索窗口，以便后续纠正错误。暂时关闭“Visible Extent only”以便全局搜索</p>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/Ey74OII.jpg">
+        
+      </span></p>
+<ol start="2">
+<li>处理道路中心线冗余点的错误</li>
+</ol>
+<p>搜索窗口中，选择show：“道路中心线——Must Not Have Pseudo Nodes”，开始搜索，共四条结果。右键第一个定位到位置，通过选中操作和编辑操作可以观察到交点出现冗余</p>
+<table>
+<thead>
+<tr>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/VUc0YTP.jpg">
+        
+      </span></th>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/F8WEAqN.jpg">
+        
+      </span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>处理：选中两条线要素，在编辑工具条中使用“Merge”合并两线，再次搜索错误发现已经解决一条错误。后续三条错误都属于同样的重复错误，一一解决即可</p>
+<ol start="3">
+<li>处理道路中心线重复交叠的错误</li>
+</ol>
+<p>搜索窗口搜索“道路中心线——Must Not Overlap”，出现三条错误。定位到第一条错误，通过移动线要素可以观察到重叠</p>
+<table>
+<thead>
+<tr>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/SKh1lXQ.jpg">
+        
+      </span></th>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/MV3lLhj.jpg">
+        
+      </span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>处理：此处两要素局部完全重叠，将最完整的要素复制并删除，然后删除重复要素，再粘贴回来即可。或者调整最完整的线要素以露出重叠要素，将两线合并即可</p>
+<ol start="4">
+<li>处理道路中心线过长或过短的可能悬浮错误</li>
+</ol>
+<p>此类错误通常处理量大，而且耗时长，还可能出现正确的悬浮，严格来讲需要实地调查一一排查。但本实验中数据为教学数据，简单以设定过长过短约束，以规避实地调查的麻烦</p>
+<p>定位第一条错误，可见无法确定就是错误，当作正确，并使用测量工具
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/ofzmOrp.jpg">
+        
+      量取长度作为参考。得值约为30.53feet。定位到第二条错误等发现类似，印证了该错误标记实际正确的可能性，直接到中间寻找其他错误标记</span></p>
+<table>
+<thead>
+<tr>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/M2BU6q8.jpg">
+        
+      </span></th>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/hDd6MdD.jpg">
+        
+      </span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>寻找多次之后，发现一条明显错误，两条路断开未连，但可以延长。类似的，可能存在过长线需要裁短</p>
+<p>处理：测量断开的距离约为5.81feet。故对错误在2-25feet大小的进行延长和裁短处理。右键搜索窗口中的错误记录，选择“extend”，设置最大值25。然后，右键选择“trim”（缩短）出现报错，说明没有过长线要素</p>
+<ol start="5">
+<li>处理地块详细规划种相互重叠的错误</li>
+</ol>
+<p>搜索“地块详细规划——Must Not Overlap”共五项结果。定位到第一条错误。发现两个面要素重叠</p>
+<table>
+<thead>
+<tr>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/cP54LJV.jpg">
+        
+      </span></th>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/x8Vxn0P.jpg">
+        
+      </span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>处理：关闭拓扑图层显示，选中并双击面积过大的面要素，删减或移动结点即可</p>
+<ol start="6">
+<li>处理地块详细规划与地块总体规划不重叠的错误</li>
+</ol>
+<p>总体规划一定和详细规划重叠，搜索“地块详细规划——Must Covered by —— 地块总体规划”，发现全部错误是由与详细规划比总体规划多了道路面导致的</p>
+<table>
+<thead>
+<tr>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/SD2wReT.jpg">
+        
+      </span></th>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/iQenNCQ.jpg">
+        
+      </span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>处理：将地块详细规划中的所有道路面复制到地块总体规划中即可。打开地块详细规划的属性表，使用“按属性选择”工具选中所有“LANDUSE_CO”字段为0的要素，复制并粘贴入地块总体规划图层</p>
 ]]></content>
       <categories>
         <category>GIS Experiments</category>
@@ -847,6 +1773,191 @@ pip install -i https://pypi.douban.com/simple # 豆瓣（推荐）
 ]]></content>
       <categories>
         <category>生活随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>阅读文献的十问</title>
+    <url>/2023/0611376.html</url>
+    <content><![CDATA[<h1 id="OVERVIEW"><a href="#OVERVIEW" class="headerlink" title="OVERVIEW"></a>OVERVIEW</h1><ul>
+<li>Q1论文试图解决什么问题？</li>
+<li>Q2这是否是一个新的问题？</li>
+<li>Q3这篇文章要验证一个什么科学假设？</li>
+<li>Q4有哪些相关研究？如何归类？谁是这一课题在领域内值得关注的研究员？</li>
+<li>Q5论文中提到的解决方案之关键是什么？</li>
+<li>Q6论文中的实验是如何设计的？</li>
+<li>Q7用于定量评估的数据集是什么？代码有没有开源？</li>
+<li>Q8论文中的实验及结果有没有很好地支持需要验证的科学假设？</li>
+<li>Q9这篇论文到底有什么贡献？</li>
+<li>Q10下一步呢？有什么工作可以继续深入？</li>
+</ul>
+<h1 id="十问的意义"><a href="#十问的意义" class="headerlink" title="十问的意义"></a>十问的意义</h1><p>这些问题是为了帮助你理解论文的背景、目的、方法、结果和意义：</p>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Q1</td>
+<td>论文试图解决什么问题？这个问题是为了明确论文的研究主题和动机，也就是说，论文想要回答或解决的具体科学或工程问题是什么，<strong>为什么这个问题值得研究</strong>。</td>
+</tr>
+<tr>
+<td>Q2</td>
+<td>这是否是一个新的问题？这个问题是为了判断论文的创新性和重要性，也就是说，论文提出的问题<strong>是否是之前没有被充分探讨或解决的</strong>，或者是否有<strong>新的角度或方法来看待</strong>这个问题。</td>
+</tr>
+<tr>
+<td>Q3</td>
+<td>这篇文章要验证一个什么科学假设？这个问题是为了理解论文的研究目标和预期结果，也就是说，论文<strong>基于什么理论或假设</strong>来设计实验或提出解决方案，以及期望通过实验或解决方案来证明或支持什么结论。</td>
+</tr>
+<tr>
+<td>Q4</td>
+<td>有哪些相关研究？如何归类？谁是这一课题在<strong>领域内值得关注的研究员</strong>？这些问题是为了了解论文的研究背景和现状，也就是说，论文所涉及的问题和方法在相关领域中有哪些先前的研究，这些研究之间有什么异同或优劣，以及哪些研究员在这个领域有较高的影响力或贡献。</td>
+</tr>
+<tr>
+<td>Q5</td>
+<td>论文中提到的解决方案之关键是什么？这个问题是为了<strong>抓住论文的核心思想和方法</strong>，也就是说，论文提出的解决方案或实验设计有什么特点或优势，能够有效地应对或解决所提出的问题。</td>
+</tr>
+<tr>
+<td>Q6</td>
+<td>论文中的实验是如何设计的？这个问题是为了评估论文的实验方法和过程，也就是说，论文如何<strong>选择或构建实验数据、指标、模型、参数等，以及如何进行实验操作和分析</strong>。</td>
+</tr>
+<tr>
+<td>Q7</td>
+<td>用于定量评估的数据集是什么？代码有没有开源？这些问题是为了检查论文的实验数据和代码的可用性和可复现性，也就是说，论文使用的数据集是否公开可获取，<strong>是否具有代表性和可信度</strong>，以及论文提供的代码是否可以运行和验证。</td>
+</tr>
+<tr>
+<td>Q8</td>
+<td>论文中的实验及结果有没有很好地支持需要验证的科学假设？这个问题是为了验证论文的实验结果和结论，也就是说，论文得到的实验数据和分析<strong>是否符合预期</strong>，是否能够证明或支持论文提出的假设或目标。</td>
+</tr>
+<tr>
+<td>Q9</td>
+<td>这篇论文到底有什么贡献？这个问题是为了总结论文的<strong>价值和意义</strong>，也就是说，论文相对于现有的研究有什么新颖或优越之处，能够推动该领域的发展或应用。</td>
+</tr>
+<tr>
+<td>Q10</td>
+<td>下一步呢？有什么工作可以继续深入？这个问题是为了<strong>展望论文的未来方向和挑战</strong>，也就是说，论文还有哪些不足或局限，需要进一步改进。｜</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Computer Vision 计算机视觉</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>SAM，监督学习已跳出过拟合泥潭？</title>
+    <url>/2023/0661594.html</url>
+    <content><![CDATA[<ul>
+<li><h1 id="📕总览-SAM-的成就"><a href="#📕总览-SAM-的成就" class="headerlink" title="📕总览 SAM 的成就"></a><strong>📕总览 SAM 的成就</strong></h1><blockquote>
+<p>Demo：<a href="https://segment-anything.com/demo">https://segment-anything.com/demo</a> </p>
+<p>Paper：<a href="https://arxiv.org/abs/2304.02643">https://arxiv.org/abs/2304.02643</a></p>
+</blockquote>
+<ul>
+<li>提出了新任务：基于提示的分割</li>
+<li>提出了新模型：Segment Anything Moduel（SAM）</li>
+<li>提出了新数据集：SA-1B</li>
+<li>总之，最让人激动的是以上三个成果都是 SAM 在监督任务上挑战 <em><strong>Zero-shot</strong></em> 带来的</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://aicarrier.feishu.cn/space/api/box/stream/download/asynccode/?code=NDRhZDNiOTk3ZmY0YjdiMWE3ZjczODc5NDA5YjAwODNfM0dKaEI1dXpRYmhWMXkxUkdWNDZmT2g0ZkpqYkhQZW5fVG9rZW46UDZ0aWI3TVNRb0pqczF4UnhTZWNwd1FjbnBnXzE2OTI3OTIzNTI6MTY5Mjc5NTk1Ml9WNA">
+        
+      </span></p>
+<h1 id="📃ZERO-SHOT-的基本概念"><a href="#📃ZERO-SHOT-的基本概念" class="headerlink" title="📃ZERO-SHOT 的基本概念"></a><strong>📃ZERO-SHOT 的基本概念</strong></h1><ul>
+<li>😉我们先从生活中的视角去理解 Zero-shot。</li>
+<li>假设小明和爸爸去参观动物园。看到了一只<strong>黑白相间</strong>的「斑马」、一只<strong>喙很大</strong>的「鹦鹉」和一只<strong>圆滚滚</strong>的幼年「海豹」。爸爸给小明提示，让他在动物园找到一只像斑马一样黑白相间、像鹦鹉一样有大喙、像幼年海豹一样圆滚滚的动物。</li>
+<li>假设小明从未见过其他的动物，他也可以通过总结现有动物共有的特征来推断出其他动物的外貌。例如，小明知道斑马、鹦鹉、海豹。当小明看到一只企鹅时，便可以根据已知的属性信息推测出它可能就是爸爸要他找的黑白相间的、有大喙、圆滚滚的动物，因此他能够很自然地把这只企鹅归类为「新知」。这就是 Zero-shot 的基本概念，即通过已知的类别和属性信息对新的未见过的类别进行分类。</li>
+<li>在实际应用中，ZSL（Zero-shot Learning）可以帮助我们解决各种问题，例如图像识别、自然语言处理等领域中的数据不足或无法获得实际标签的问题。通过零样本学习，我们可以先积累先验知识，再推断和预测新的未知类别，从而实现更加灵活和高效的智能化应用。</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://aicarrier.feishu.cn/space/api/box/stream/download/asynccode/?code=YTc3NjA0MDY4YmVmNTU5MWZkM2I5ZmFmMGZiMzI2NDhfYVRUa3dNRTZ5ZTg4ZnlvdnJ3NWI5NnRMRDFrRmE3ZG5fVG9rZW46WXdtUGJsZGRKb2t5Nmt4TVlQYmNSdDMwbnNnXzE2OTI3OTIzNTI6MTY5Mjc5NTk1Ml9WNA">
+        
+      </span></p>
+<h1 id="🤔-什么驱使了-Segment-Anything-可以-ZERO-SHOT"><a href="#🤔-什么驱使了-Segment-Anything-可以-ZERO-SHOT" class="headerlink" title="🤔****什么驱使了 Segment Anything 可以 ZERO-SHOT"></a><strong>🤔****什么驱使了</strong> <strong>Segment Anything</strong> <strong>可以 ZERO-SHOT</strong></h1><blockquote>
+<p>Segment Anything 这篇工作的主要特点有两个：一是在分割算法中搭建提示工程，创造了 3 种以分级抽象为特点的空间模态，并引入了文本模态；二是构建了一个巨大的、多元的分割数据集，比当下最大的分割数据集OpenImage V5大 6 倍，分割量大 400 倍。</p>
+</blockquote>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://aicarrier.feishu.cn/space/api/box/stream/download/asynccode/?code=NWZkNDAwOWRlNmFiOGE5N2IxMTNmZmJlY2Y4MDZjOWJfN2tzME9iMDN3MlZnZzl3cG9zeHdCZFZ6OHpsZXdidkRfVG9rZW46TmhoSmIwT3ZJbzFTRkZ4TVVhQ2NLckNibnZjXzE2OTI3OTIzNTI6MTY5Mjc5NTk1Ml9WNA">
+        
+      </span></p>
+<ul>
+<li><p>在图文模态算法的近期发展进程中，一直围绕着一个关键词，即「n to n」，也就是我们常说的「模态对齐」。让属于特定 1 个词组的 n 种图像对齐到该单词，同时，让属于特定 1 个图像的 n 种词组对齐到该图片，是 <a href="https://arxiv.org/pdf/2103.00020.pdf">Clip</a> 十分擅长举一反三的关键。后续的 ALBEF 工作进一步优化了模态对齐的解决方案。另外，自从 CNN➕Pooling 的架构带飞了基于空间信息的 CNN 算法以来，我们都意识到不同抽象尺度对于学习算法的重要性，只有不断下采样池化，才能强迫模型站在多种尺度上观察空间信息特征，增广空间数据学习的视角。<em><strong>Segment Anything 正是 n to n 与多尺度抽象的实践者，以 n to n 为本，以多尺度抽象为基。</strong></em></p>
+</li>
+<li><p>SAM 利用 <a href="https://arxiv.org/pdf/1706.03762.pdf">Transformer</a> 的 Cross attention 机制，促使图像的特征图创新性地与点模态、定位框模态、掩码模态（不是最终预测的掩码哦）和文本模态相互作用。值得注意的是，这 4 种模态的实例对于它所属的目标图像块并不是唯一确定的，本质上是在鼓励模型关注 n to n 的关系。尤其是点、定位框、掩码这 3 种模态，它们随机采样于最终要预测的掩码中，刻意打乱了清晰确切的空间信息。它们在像素级和对象级两种尺度上分级抽象，原本模型只学习从 1 个目标到 1 个掩码块的映射，现在模型学习 1 个掩码块的同时要关注特征图与 3 个自由度极高的模态，它们的组合以及不同组合之间的联系迫使模型抽象图像的高级语义。曾经我们的 1 to 1 算法相比之下已然成为了模型“偷懒”的捷径。</p>
+</li>
+<li><p>在 SAM 中除了文本模态，其他 3 个模态的<strong>自由度都很高</strong>（注：文本模态受限于数据集，每个图片只能对应一段描述文本，自由度稍逊）。这 3 个模态作为某个图像之外的额外提示（prompt），几乎是无穷无尽的。理论上你可以从一个掩码块中随机取出无穷个点，也可以随机取出无穷个内部定位框和无穷个像素块。<em><strong>这种灵活的抽象关系让模型具有极其复杂的学习视角，这种学习视角在理论上是无穷的。也因此，引入了提示工程（prompt engineering，基于需求对提示做灵活变换）的 SAM 几乎可以做所有分割领域的细分任务，甚至包括了还未曾存在的新任务。</strong></em></p>
+</li>
+<li><p>极其庞大且多元的互联网数据源是 Zero-Shot 能力的另一大核心。SA-1B 涵盖了各种类型、风格、场景和视角的图像。这有利于模型学习更通用和鲁棒的特征表示，从而提高分割算法举一反三的水平。</p>
+</li>
+<li><p>上面已经分析了 SAM 具有 Zero-Shot 性能的几个核心原因，而下面分析的是一些次要的因素。SA-1B 的虽然没有类别标注的概念，但实际上覆盖的分割对象种类特别全面，包含了大量的常见和罕见类别，它们覆盖了自然界和人造界的各个领域。这有利于模型学习更广泛和细致的语义信息，从而提高 Zero-shot 的性能。</p>
+</li>
+<li><p>SA-1B 的<em><strong>标注十分精确</strong></em>，大量噪声被有意修复，有利于模型学习更准确和清晰的边界信息，从而提高 Zero-shot分割的性能。</p>
+<h1 id="💛-监督学习将跳出过拟合泥潭"><a href="#💛-监督学习将跳出过拟合泥潭" class="headerlink" title="💛****监督学习将跳出过拟合泥潭"></a><strong>💛****监督学习将跳出过拟合泥潭</strong></h1><p>
+        <span class="lazyload-img-span">
+        <img data-src="https://aicarrier.feishu.cn/space/api/box/stream/download/asynccode/?code=ZjEzM2NhYmVhNGY3N2NhYjRlMGE1YTYxNDRjMWRhNWZfdkZYT1ptZDlPWUo2WTl6bUo4RGxlZGdqSXRHcUZScUpfVG9rZW46R0duZGJFTHR3b1pxUnR4aUN6cGNtbzdDbm5kXzE2OTI3OTIzNTI6MTY5Mjc5NTk1Ml9WNA">
+        
+      </span></p>
+</li>
+<li><p>SAM 很快就能掌握自动标注能力，在 SA-1B 中，仅仅进行了 **0.012%**（120, 000 张） 的专家标注，就已经具备优秀的全自动分割水平（99.1% 的标注由 SAM 自动生成），其他模型需要 10% 甚至更多的标注量才能达到类似的水平，印证了 SAM 充分挖掘了数量有限的监督数据集，大大降低了监督算法对数据量的依赖，从而大大降低了监督算法过拟合的可能</p>
+</li>
+<li><p>SAM 在监督学习的框架内实现了极其优异的 Zero-shot 性能，这带给我们一个思考——到底是数据集还是多模态带来了这种能力？互联网数据源或许能给出答案。当你提示“猫”，在图像数据集无穷大的时候，理论上“猫”的文本语义对应到了无数张不同的猫的图像，这样只要你给定文本语义，模型总是能准确地提取对应掩模。</p>
+</li>
+<li><p>所以我们首先可以确定，数据量足够庞大足够多元才能充分激发这种 Zero-shot 性能。那就是数据集才是根本吗？并不是。前面我们提到，无论是站在 3 个空间模态的角度来看，还是站在图像模态的角度来看，它们的学习视角十分自由，都近乎是无穷的。也就是说，当你图像模态有效增长了 1 个数据，SAM 的 3 种空间模态就能从分割面中自由提取几乎无数种可以配对的点、框、掩码（标签文本例外）。所以可以这么建模：<em><strong>自由度高的模态选择 x 数据集多元 = 优秀的 Zero-Shot 性能</strong></em>。两个因素理论上是平等的，但实际上，你无法获取无穷的数据，所以自由度高的模态设计更加重要，性价比也更高，这也启发了我们一种降低人工标注成本的预训练模型获取方式</p>
+</li>
+<li><p>而在无监督任务中，我们常定义一对正负样本规则做对比学习。这种模式本身对正负样本的定义有较高的要求。比如 1 张图像与 n-1 个不匹配文本做对比，就能将图像模态与近乎无穷的文本模态建立负相关，反之 1 个文本如果与 n-1 张不匹配图像做对比，就能将文本模态与近乎无穷的图像模态建立负相关。这或许就是无监督目前 Zero-shot 性能的根源，但由于互联网图文对获取困难，质量不一，此处提到的这种正负样本规则还不足以充分激发 Zero-shot 性能，故无监督领域的大部分多模态工作（比如 Clip）只能靠砸钱堆数据来取得成效。它们应当学习 SAM 对模态自由度的精心设计。</p>
+</li>
+</ul>
+<h1 id="🤔-仍有不足"><a href="#🤔-仍有不足" class="headerlink" title="🤔****仍有不足"></a><strong>🤔****仍有不足</strong></h1><h2 id="我的观点"><a href="#我的观点" class="headerlink" title="我的观点"></a><strong>我的观点</strong></h2><ul>
+<li>当前的文本模态在等待变革<ul>
+<li>与 SAM 提出的点模态、检测框模态、掩码模态相反，互联网数据集图片所对应文本难于规范且较为死板，一旦文本过短，就会进一步约束文本模态的自由度，无法充分与图像模态建立 n to n 的对齐。人类在认识未知事物的时候，采用的是<em><strong>具体属性描述</strong></em>的方式，并擅于进一步结合细节抽象和归纳出对未知事物的称呼。从具体的描述开始学习一个新事物名字的好处，就在于较好的规范性、较全面的认知和主动的学习归纳。虽然在人类学生的学习中会更多地关注新事物的名字，但我们都不希望老师让我们对着「斑马」的示意图背诵其名，而是采用描述的方式，比如马的形状，黑白相间的颜色（先验知识），再一步步对「斑马」这个新名词产生具体印象。简单采用互联网的文本模态很难把这种多尺度的语义补充完善，显然并不是完备解。</li>
+<li>在无监督的多模态工作中，Clip 的文本模态来自于社交网络，确实较 SA 所用的文本模态更加多样、更具宽容性，但依然不乏噪声和信息缺失。后续工作大多选择容忍噪声存在，继续拥抱庞大的互联网数据集，比如 ALBEF 从互信息最大化和动量对比学习的角度创新了新的损失函数来抗干扰。在多模态任务中，已经有工作能<a href="https://arxiv.org/pdf/1711.11118.pdf">进行图像描述属性的提取</a>，也有工作通过<a href="https://arxiv.org/pdf/2306.14824.pdf">生成文本片段做多模态工作</a>，不过主流的工作还拥抱着庞大的互联网数据集，还在抗干扰上做文章。<em><strong>如何进一步提升属性文本的生成能力？如何要将提取出来的描述属性引入？如何处理好不同尺度语义信息的关系……这些问题还值得进一步思考</strong></em>。</li>
+<li>从生成式的视角，可能会引入能从图片的文本中挖掘关键词的模型。从优化的视角，或许可以引入专门为形状、颜色等属性提供量化能力的数学建模，并融入到模型整体的损失计算中。从提取式的视角，可能会能从图中推测属性的属性分类器。</li>
+</ul>
+</li>
+<li>进击的提示工程<ul>
+<li>SAM 在考虑引入提示工程到分割任务后，分割算法的或多或少得保留至少 1 个提示模态的输入，不提示单纯输入待预测图的行为相当于司机瞎了、演说家哑了，是对感官的阉割，固然效果不会很好。因此<em><strong>未来带有高自由度模态的算法不得不优化自己的提示词工程</strong></em>。</li>
+<li>第一步，除了需要设计好高自由度的提示模态，还要设计这种模态对于人类交互有什么意义。下一步，便是设计怎样的应用场景让用户与模型充分地舒适地交互。最后，是要复盘，我设计的提示模态效果怎么样，有什么缺陷难以解决，下一步应该更换怎样的模态设计……</li>
+<li>比如当前 SAM 实现实例分割的交互是通过密集规则打点做到的，这种方式最大的问题就在于人类设计的规则点位无法精确命中所有实例，尤其是细小实例。当我们发现人类定义的规则不足以灵活应变的时候，一般会交给模型自己学习。或许我们可以让点模态从分割掩码随机采样的形式转变为模型自己感知定位点的形式，但也必须考虑到这个点模态最终会成为人类视线的定位点，不适合被模型定位器干扰。那么何不进一步把随机采样的点模态与模型定位的点模态结合起来呢，一个既可以跟踪用户视线，又可以在实例分割场景下灵活感知实例的 SAM 不香吗嘿嘿……</li>
+</ul>
+</li>
+</ul>
+<h2 id="作者的观点"><a href="#作者的观点" class="headerlink" title="作者的观点"></a><strong>作者的观点</strong></h2><ul>
+<li>SAM 不适合高精度要求的分割任务</li>
+<li>SAM 的图像编码器太大，拖慢了整体效率。但可以提前完成图像编码，再根据用户需要制作 Prompt 并推理</li>
+<li>文本模态仍不能很好地对应到图像语义，作者还没想明白怎么基于提示实现语义和全景分割任务</li>
+<li>在少数几个任务，比如绘画数据集、X光数据集、模糊场景数据集、细节信息密集的数据集上泛化性能不足</li>
+</ul>
+<h1 id="🕹️总结"><a href="#🕹️总结" class="headerlink" title="🕹️总结"></a><strong>🕹️</strong>总结</h1><ul>
+<li>作为元宇宙概念的拥护者，Meta 公司推出可提示分割器大概率还是一种占领 MR 市场的商业策略，它搭建了一套成熟的<a href="https://segment-anything.com/demo">官网</a>演示 VR 设备如何跟踪用户视线（点模态）并提取任何被关注的对象。SAM 的商业意义是毋庸置疑的，但正是对 VR 产品交互的设想在学术上启发了我们关于 Zero-shot 更深入的认识并展现了一种可行的实践。</li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://aicarrier.feishu.cn/space/api/box/stream/download/asynccode/?code=YmQ3YzI3NGNiZjdmODU1MzRjMTkzNjcxZTcwZDhiMzBfaVd0dHZyOGkwaHZiSEdldlF2NVVnYW1DbndFcnQ0aTZfVG9rZW46RDJTemJKNGtGb0IxS3R4ZmY0RWNOU3o3blNlXzE2OTI3OTIzNTI6MTY5Mjc5NTk1Ml9WNA">
+        
+      </span></p>
+<ul>
+<li>在 SAM 火热的这段时间，OpenMMLab 的开发者们维护了 Playground 项目（<a href="https://github.com/open-mmlab/playground">跳转到项目地址</a>）。该项目仅在三天的时间内就将 SAM 的 Zero-shot 实例分割应用在的 OpenMMLab 的各项 Demo 上。足以看到 SAM 广泛的应用价值</li>
+<li>由于分割任务涵盖了分类、定位、检测等基本任务于一身，所以 MMDetection、MMOCR、MMEditing 等工具箱就像开胃小菜一样一口一个 SAM。而基于分割掩码的引导，姿态检测、旋转框检测也融合了 SAM 到 SOTA 算法中。随后，Lable Studio 等标注工具也引入了 SAM 做可以提示的辅助标注</li>
+<li>过去我很喜欢打听大公司背后玩的统一模态大模型，而现在我们已经能在 GPT4 的宣传片中感受到一个多模态 AI 带来的冲击力，其本质上就是 Zero-shot 的魅力，并进一步转化为生成式模型的魅力。当我再次回到 SAM 诞生的当天，我会更期待那天看到的不只是一个靠打点画框分割一切的 SAM，而是一个感官更「健全」的 SAM，会期待那天诞生一个可以用语音教导的 SAM，会期待那天遇到一个会开口与我交谈的 SAM……有媒体说 SAM 标志着 CV 终结了，但是我们亦看到了有意思的新可能。<strong>CV 不断发展启发后人，远没有终结，希望越来越多的 AI 贡献者和创业者开拓疆界，打开更多新世界的大门～</strong></li>
+</ul>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://aicarrier.feishu.cn/space/api/box/stream/download/asynccode/?code=OTY4M2I3ZGQ2NzFiZmQ5MzEwMmI2Nzk5MTY4MWE2OGJfbjNzSjNNR3oxbEdjTHN1NDdtdUdxNnFHeDBTOE9QOUtfVG9rZW46V2lnWGJuZW1wb0hkTmt4czRWRWNRb3NvbjdmXzE2OTI3OTIzNTI6MTY5Mjc5NTk1Ml9WNA">
+        
+      </span></p>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://aicarrier.feishu.cn/space/api/box/stream/download/asynccode/?code=NWYzYTJkNmQ5ODUwMTBlZTY1MjM2YWFhNTU1YzE2ZGJfR0hyOVZiZnBUanJNeGk5U01KVUxqeVhnQlRiaWVQQjNfVG9rZW46UDVGR2I4cXhVb0lTSjB4VHZYOGM0TG9EbkpkXzE2OTI3OTIzNTI6MTY5Mjc5NTk1Ml9WNA">
+        
+      </span></p>
+<p>本文参与了<a href="https://segmentfault.com/a/1190000043648149">SegmentFault 思否写作挑战赛</a>，欢迎正在阅读的你也加入。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Computer Vision 计算机视觉</category>
       </categories>
   </entry>
   <entry>

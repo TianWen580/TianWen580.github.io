@@ -161,7 +161,7 @@
   <div class="post-content-outer">
     <div class="post-intro">
       <div class="post-title animate__animated  animate__fadeInUp">AI 入门知识</div>
-      <div class="meta-intro animate__animated  animate__fadeInUp">3月 21 2023</div>
+      <div class="meta-intro animate__animated  animate__fadeInUp">3月 22 2023</div>
       
         <div class="post-cover"><span class="lazyload-img-span"><img data-src="https://user-images.githubusercontent.com/62822224/226589599-d1ba5c46-1f1e-4e0b-9dd6-4f77522b4c0f.png" class="post-cover-img"><div class="post-cover-img-hover">asas</div><div class="post-cover-img-insert">asas</div></span></div>
       
@@ -173,41 +173,86 @@
       <div class="post-content-main animate__animated  animate__fadeInUp">
         <!-- top型目录 -->
         
-          <ol class="toc-top"><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-top-text">机器学习的本质</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E7%AE%80%E5%8D%95%E9%97%AE%E9%A2%98%E7%9A%84%E5%AD%A6%E4%B9%A0"><span class="toc-top-text">简单问题的学习</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E9%9D%9E%E7%BB%93%E6%9E%84%E5%8C%96%E9%97%AE%E9%A2%98%E7%9A%84%E5%AD%A6%E4%B9%A0"><span class="toc-top-text">非结构化问题的学习</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#HIDEN-LAYER%E7%9A%84CELL"><span class="toc-top-text">HIDEN LAYER的CELL</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#CV%E7%9A%84%E5%9F%BA%E7%A1%80%E4%BB%BB%E5%8A%A1"><span class="toc-top-text">CV的基础任务</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E9%9D%9E%E5%83%8F%E7%B4%A0%E7%BA%A7"><span class="toc-top-text">非像素级</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E5%83%8F%E7%B4%A0%E7%BA%A7-%E7%BB%86%E7%B2%92%E5%BA%A6%E7%BA%A7"><span class="toc-top-text">像素级&#x2F;细粒度级</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E4%B8%BA%E4%BD%95%E5%88%86%E7%B1%BB%E6%98%AF%E6%9C%80%E5%9F%BA%E7%A1%80%E7%9A%84%E4%BB%BB%E5%8A%A1%EF%BC%9F"><span class="toc-top-text">为何分类是最基础的任务？</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#DEEPLEARNING%E7%AE%97%E6%B3%95%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-top-text">DEEPLEARNING算法的设计</span></a></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E5%AD%90%E8%B1%AA%E5%85%84%E6%80%BB%E7%BB%93%E7%9A%84%E6%96%B0%E9%A2%96%E4%B8%94%E6%9C%89%E5%89%8D%E6%99%AF%E7%9A%84%E7%A0%94%E7%A9%B6%E9%A2%86%E5%9F%9F"><span class="toc-top-text">子豪兄总结的新颖且有前景的研究领域</span></a></li></ol>
+          <ol class="toc-top"><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E2%9D%A4%EF%B8%8F%E2%80%9C%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E2%80%9D%E7%9A%84%E5%88%9D%E7%94%9F"><span class="toc-top-text">❤️“人工智能”的初生</span></a></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%F0%9F%A4%B7%E2%80%8D%E2%99%82%EF%B8%8F%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89-AI"><span class="toc-top-text">🤷‍♂️如何定义 AI</span></a></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%F0%9F%95%B9%EF%B8%8F%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-top-text">🕹️优化算法的本质</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E7%AE%80%E5%8D%95%E9%97%AE%E9%A2%98"><span class="toc-top-text">简单问题</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E9%9D%9E%E7%BB%93%E6%9E%84%E5%8C%96%E9%97%AE%E9%A2%98"><span class="toc-top-text">非结构化问题</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E4%BB%8E-HIDEN-LAYER-%E7%9A%84-CELL-%E4%B8%AD%E7%90%86%E8%A7%A3%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95"><span class="toc-top-text">从 HIDEN LAYER 的 CELL 中理解优化算法</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%F0%9F%A4%94%E7%8E%B0%E5%9C%A8%E6%88%91%E4%BB%AC%E5%BC%80%E5%A7%8B%E7%90%86%E8%A7%A3%E4%BB%80%E4%B9%88%E6%98%AF%E5%AD%A6%E4%B9%A0"><span class="toc-top-text">🤔现在我们开始理解什么是学习</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%F0%9F%91%80CV-%E7%9A%84%E5%9F%BA%E7%A1%80%E4%BB%BB%E5%8A%A1"><span class="toc-top-text">👀CV 的基础任务</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E9%9D%9E%E5%83%8F%E7%B4%A0%E7%BA%A7"><span class="toc-top-text">非像素级</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E5%83%8F%E7%B4%A0%E7%BA%A7-%E7%BB%86%E7%B2%92%E5%BA%A6%E7%BA%A7"><span class="toc-top-text">像素级&#x2F;细粒度级</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%F0%9F%94%8D%E4%B8%BA%E4%BD%95%E5%88%86%E7%B1%BB%E6%98%AF%E6%9C%80%E5%9F%BA%E7%A1%80%E7%9A%84%E4%BB%BB%E5%8A%A1%EF%BC%9F"><span class="toc-top-text">🔍为何分类是最基础的任务？</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%F0%9F%93%90DEEPLEARNING-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-top-text">📐DEEPLEARNING 神经网络架构的设计</span></a></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E5%AD%90%E8%B1%AA%E5%85%84%E6%80%BB%E7%BB%93%E7%9A%84%E6%96%B0%E9%A2%96%E4%B8%94%E6%9C%89%E5%89%8D%E6%99%AF%E7%9A%84%E7%A0%94%E7%A9%B6%E9%A2%86%E5%9F%9F"><span class="toc-top-text">子豪兄总结的新颖且有前景的研究领域</span></a></li></ol>
         
-        <blockquote>
-<p>学习心得：计算机视觉之算法基础与 OpenMMLab 入门<br>注：基于子豪兄的讲解，我重点发散了计算机视觉之算法基础的相关部分，主要参考的是我现有的笔记</p>
-</blockquote>
-<h2 id="机器学习的本质"><a href="#机器学习的本质" class="headerlink" title="机器学习的本质"></a>机器学习的本质</h2><h3 id="简单问题的学习"><a href="#简单问题的学习" class="headerlink" title="简单问题的学习"></a>简单问题的学习</h3><p>简单问题的学习过程是寻求最拟合方程的过程（以不同面积房价预测为例）</p>
+        <h2 id="❤️“人工智能”的初生"><a href="#❤️“人工智能”的初生" class="headerlink" title="❤️“人工智能”的初生"></a>❤️“人工智能”的初生</h2><ul>
+<li>人工智能（Artificial Intelligence，简称AI）是指计算机系统通过仿效人的思维和行为方式，实现类似于人类智能的一种技术。20世纪初期，“<em>人工智能</em>”就作为一个概念被提出。当时，科学家们开始思考如何使机器能够模拟人类的思维过程，以便更好地解决复杂的决策问题。20世纪50年代，AI 的概念逐渐具体化，并在达特茅斯会议上被正式提出</li>
+</ul>
+<h2 id="🤷‍♂️如何定义-AI"><a href="#🤷‍♂️如何定义-AI" class="headerlink" title="🤷‍♂️如何定义 AI"></a>🤷‍♂️如何定义 AI</h2><ul>
+<li>现在我们希望 AI 的存在能允许计算机系统具备类似于人类智能的某些能力。这些能力包括：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>能力类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>👀感知能力</td>
+<td>让计算机能够<strong>感知</strong>周围环境，包括听觉、视觉、触觉等多个方面。</td>
+</tr>
+<tr>
+<td>🙋语言能力</td>
+<td>让计算机能够理解并处理人类<strong>语言</strong>，包括自然语言处理、语音识别等技术。</td>
+</tr>
+<tr>
+<td>🕹️推理能力</td>
+<td>让计算机能够根据已有的信息进行<strong>推理</strong>，并做出正确的<strong>决策</strong>。</td>
+</tr>
+<tr>
+<td>🤔学习能力</td>
+<td>让计算机能够<strong>不断从经验中学习</strong>，并提升自身的智能水平。</td>
+</tr>
+<tr>
+<td>🎶创造能力</td>
+<td>让计算机能够<strong>创造</strong>新的知识和思想。</td>
+</tr>
+</tbody></table>
+<ul>
+<li>机器学习时代，计算机算力资源很缺乏，大部分研究着重于如何让计算机从传感器数据中感知世界，而关于推理能力能有多强，大家并没有太高的期望。因此涌现出了很多机器学习方法，大多数工作集中在人工的特征工程上，利用各种独特的技术抽取数据的特征来做决策。机器学习也就成为了 AI 实践的重要<strong>方法论</strong></li>
+<li>2012 年，AlexNet 凭借 CNN（卷积神经网络）突破了机器学习最极限的图像分类性能，自此点燃了神经网络技术的发展星火。同时随着并行计算的快速发展，各种基于 CNN 优化的神经网络算法登上历史舞台，比如耳熟能详的 ResNet，彻底奠定了<strong>神经网络端到端算法</strong>的地位</li>
+<li>其实到 ChatGPT 的诞生，已经标志着 AI 开始全面拥有了以上定义的 5 种能力。AI 能够关注事物的特点，能够从语言联系到现实，能够根据提示工程做出最终的判断，能够自我评价总结反思，能够根据知识生成不存在的事物。<strong>统一大模型</strong>成为了极具诱惑力的香饽饽，为 AI 技术创造出极强的影响力</li>
+</ul>
+<h2 id="🕹️优化算法的本质"><a href="#🕹️优化算法的本质" class="headerlink" title="🕹️优化算法的本质"></a>🕹️优化算法的本质</h2><h3 id="简单问题"><a href="#简单问题" class="headerlink" title="简单问题"></a>简单问题</h3><p>一个线性关系的学习过程是寻求最拟合一元一次方程的过程（以不同面积房价预测为例）</p>
 <p>
         <span class="lazyload-img-span">
         <img data-src="https://img-blog.csdnimg.cn/img_convert/c4ceecf25a107672517273f0a0dcd821.jpeg">
         
       </span></p>
-<p>其中 $w$、$b$ 是 Learnable，代表了其对于预测精度的决定性，也代表了它是后期得到的，经优化确定之后模型就有了最好的预测能力</p>
-<h3 id="非结构化问题的学习"><a href="#非结构化问题的学习" class="headerlink" title="非结构化问题的学习"></a>非结构化问题的学习</h3><ul>
-<li>所习得的转换为多层非线性变换，实现对 DATA 的高层抽象</li>
-<li>DATA 输入也会更复杂，需要更多数据预处理操作</li>
+<p>其中 \( w \)、\( b \) 是 Learnable，代表了其对于预测精度的决定性影像，也代表了它需要一个优化过程，经优化确定之后模型会有越来越好的预测能力</p>
+<h3 id="非结构化问题"><a href="#非结构化问题" class="headerlink" title="非结构化问题"></a>非结构化问题</h3><ul>
+<li>一个非线性关系的学习需要多层非线性变换，实现对 DATA 的高层抽象</li>
+<li>DATA 输入会更复杂，需要更复杂的数据操作</li>
 </ul>
 <p>
         <span class="lazyload-img-span">
         <img data-src="https://i.imgur.com/PqCAyzV.jpg">
         
       </span></p>
-<h3 id="HIDEN-LAYER的CELL"><a href="#HIDEN-LAYER的CELL" class="headerlink" title="HIDEN LAYER的CELL"></a>HIDEN LAYER的CELL</h3><ul>
-<li>在多层感知机中，隐层由图示的CELL组建而成，每一个 CELL 接受上一层的多个 CELL 输入（$S_n$），经过 Activation（激活函数，此处以 ReLU 为例），得到该 CELL 对下一层的输出（$S^{\prime}$）</li>
+<h3 id="从-HIDEN-LAYER-的-CELL-中理解优化算法"><a href="#从-HIDEN-LAYER-的-CELL-中理解优化算法" class="headerlink" title="从 HIDEN LAYER 的 CELL 中理解优化算法"></a>从 HIDEN LAYER 的 CELL 中理解优化算法</h3><ul>
+<li>在多层感知机中，隐层由图示的 CELL 组建而成，每一个 CELL 接受上一层的多个 CELL 输入（\( S_n \)），经过 Activation（激活函数，此处以 ReLU 为例），得到该 CELL 对下一层的输出（\( S^{\prime} \)）</li>
 </ul>
 <p>
         <span class="lazyload-img-span">
         <img data-src="https://i.imgur.com/jxVB8Ba.jpg">
         
       </span></p>
-<ul>
-<li>Learnable：$w1$、$w2$… $wn$；$bias$（可去掉）</li>
-<li>$o=\sum(ws)+bias$</li>
-<li>$S^{\prime}=Activation(o)$</li>
+<p>$$<br>Learnable：w1、w2… wn；bias<br>$$<br>$$<br>o=\sum(ws)+bias<br>$$<br>$$<br>S^{\prime}=Activation(o)<br>$$</p>
+<h3 id="🤔现在我们开始理解什么是学习"><a href="#🤔现在我们开始理解什么是学习" class="headerlink" title="🤔现在我们开始理解什么是学习"></a>🤔现在我们开始理解什么是学习</h3><ul>
+<li>首先，我们总结一下简单问题和非结构化问题的学习目标：<ul>
+<li>在简单线性关系的学习中，我们的拟合函数在学习一套权重（\( w \) 和 \( b \)），每设置一套权重，我们都能评估直线方程与所有数据点的总距离</li>
+<li>在非结构化问题的学习中，我们使用了好复杂的神经网络，权重多了很多。但同样，每当我设置一套神经网络的权重，我就可以根据最后一层的两个神经元的值评估分类的正确性</li>
 </ul>
-<h2 id="CV的基础任务"><a href="#CV的基础任务" class="headerlink" title="CV的基础任务"></a>CV的基础任务</h2><h3 id="非像素级"><a href="#非像素级" class="headerlink" title="非像素级"></a>非像素级</h3><h4 id="IMAGE-CLASSIFICTIOIN（分类）"><a href="#IMAGE-CLASSIFICTIOIN（分类）" class="headerlink" title="IMAGE CLASSIFICTIOIN（分类）"></a>IMAGE CLASSIFICTIOIN（分类）</h4><ul>
+</li>
+<li>两种问题的学习都有一些共同点：1. 都需要学习一个或一组权重来计算结果 2. 计算结果都能利用一个精度指标评估</li>
+<li>现在就好办了，我们只需要找到一个方法，让我们根据精度来调整我们的权重。不断反复这个过程就是不断学习，而调整权重的方法就是优化算法</li>
+<li>这些优化算法的本质，都是根据预测结果与正确结果之间的误差来构建损失函数，并根据损失函数的图像来计算参数更新是正是负、具体更新多少</li>
+</ul>
+<h2 id="👀CV-的基础任务"><a href="#👀CV-的基础任务" class="headerlink" title="👀CV 的基础任务"></a>👀CV 的基础任务</h2><blockquote>
+<p>优化算法的突破需要非常深厚的学科积累，而且现有工作远不如权重结构设计多。因此，在了解了学习的过程后，我们就可以直接开始认识一些主流的神经网络架构啦。这里以最经典的视觉问题为例</p>
+</blockquote>
+<h3 id="非像素级"><a href="#非像素级" class="headerlink" title="非像素级"></a>非像素级</h3><h4 id="IMAGE-CLASSIFICTIOIN（分类）"><a href="#IMAGE-CLASSIFICTIOIN（分类）" class="headerlink" title="IMAGE CLASSIFICTIOIN（分类）"></a>IMAGE CLASSIFICTIOIN（分类）</h4><ul>
 <li>一张图像中是否包含某种物体，<strong>对图像进行类别描述</strong>是 Image Classification 的主要研究内容</li>
 </ul>
 <p>
@@ -279,13 +324,13 @@
 <h4 id="关键点检测"><a href="#关键点检测" class="headerlink" title="关键点检测"></a>关键点检测</h4><ul>
 <li>提取分析对象的关键点，例如人脸的关键点有眼珠、眼角、鼻尖、嘴尖、下颚转折点等等，通过提取这些点的二维坐标就可以得到大概的线状、面状分布特征，如果能够提取三位点坐标，则可以引入深度特征，实现更加复杂的应用</li>
 </ul>
-<h3 id="为何分类是最基础的任务？"><a href="#为何分类是最基础的任务？" class="headerlink" title="为何分类是最基础的任务？"></a>为何分类是最基础的任务？</h3><ul>
+<h3 id="🔍为何分类是最基础的任务？"><a href="#🔍为何分类是最基础的任务？" class="headerlink" title="🔍为何分类是最基础的任务？"></a>🔍为何分类是最基础的任务？</h3><ul>
 <li>基于分类算法，可以在后面连接到各种其他任务的算法（例如检测、分割等），或者与其他算法头并行。总之，如果没有了分类，检测器的包围框将没有实际的参考价值，分割器的像素之间划分开的差异也没有实际意义，所以分类算法是一切人工智能算法的基础，分类领域的突破是下游任务发展的重要推动力</li>
 </ul>
-<h2 id="DEEPLEARNING算法的设计"><a href="#DEEPLEARNING算法的设计" class="headerlink" title="DEEPLEARNING算法的设计"></a>DEEPLEARNING算法的设计</h2><ul>
-<li>朴素点说，深度学习模型的隐层可以专心负责特征提取，输入层可以任意输入各种模态的数据。声音数据可以经过滤波算法以及可视化算法转化成彩图和视觉算法共用输入层、语言数据可以切分为 Seg 序列，映射为一维 feature vector 作为 Token 输入 Transformer 算法……所以，DL 算法本质上是支持多模态的</li>
+<h2 id="📐DEEPLEARNING-神经网络架构的设计"><a href="#📐DEEPLEARNING-神经网络架构的设计" class="headerlink" title="📐DEEPLEARNING 神经网络架构的设计"></a>📐DEEPLEARNING 神经网络架构的设计</h2><ul>
+<li>从朴素的观点来说，深度学习模型的隐层只需专心负责特征提取，输入层可以任意输入各种模态的数据。比如，声音数据可以经过滤波算法以及可视化算法转化成彩图和视觉算法共用输入层;图像数据可以切分为有序的块，然后把每个块映射为高维向量，作为 Token 输入自然语言的 Transformer 算法。所以，DL 算法本质上只要数据兼容做的好，就可以套用到不同模态的学习过程中</li>
 <li>但单纯将各种模态数据映射为统一的输入结构，容易损失数据特征，因此需要针对分析对象的性质和关键特征来设计模型的输入层，以及隐层中的特征提取方式</li>
-<li>而视频和音频数据相比于单帧数据，带有时序特征，在设计上如何考虑多帧之间的时序关系是非常重要的，因此难度也要更高。常见的应用有：<ul>
+<li>例如，而视频和音频数据相比于单帧数据，带有时序特征，在设计上如何考虑多帧之间的时序关系是非常重要的，因此难度也要更高。常见的应用有：<ul>
 <li><strong>片段引导</strong>：划分视频片段，并对应某类片段的受众，引导受众跳转到感兴趣片段</li>
 <li><strong>片段查询</strong>：根据用户的自然语言描述，截取出符合描述条件的片段</li>
 </ul>
@@ -328,12 +373,29 @@
             
             
               
-                <li class="me base">
-                  <a  href="/2023/035.html" class="post-categoris-bottom-link">
-                  AI 入门知识
-                </a>
-                </li>
+            
+            
+            
               
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
               
             
             
@@ -350,9 +412,12 @@
             
             
               
-            
-            
-            
+                <li class="me base">
+                  <a  href="/2023/035.html" class="post-categoris-bottom-link">
+                  AI 入门知识
+                </a>
+                </li>
+              
               
             
             
@@ -367,6 +432,54 @@
               
             
             
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/0661594.html" class="post-categoris-bottom-link">
+                  SAM，监督学习已跳出过拟合泥潭？
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/0661594.html" class="post-categoris-bottom-link">
+                  SAM，监督学习已跳出过拟合泥潭？
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/0611376.html" class="post-categoris-bottom-link">
+                  阅读文献的十问
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/066282.html" class="post-categoris-bottom-link">
+                  AI 术语备注
+                </a>
+                </li>
+              
+              
             
             
             </ul>
