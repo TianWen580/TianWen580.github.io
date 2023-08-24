@@ -766,7 +766,6 @@ li p {
 img {
   width: auto;
   max-width: 100%;
-  margin: 10px auto;
   display: block;
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
 }
