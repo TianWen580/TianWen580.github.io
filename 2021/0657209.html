@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>  空间分析「一」影像配准和数字化处理 |    林天文 Tianwen Lin | Buluwasior</title>
+  <title>  空间分析「二」拓扑检查与处理 |    林天文 Tianwen Lin | Buluwasior</title>
   <meta name="description" content="HELLO">
   <!-- 标签页图标 -->
   
@@ -160,7 +160,7 @@
 <article class="post-inner">
   <div class="post-content-outer">
     <div class="post-intro">
-      <div class="post-title animate__animated  animate__fadeInUp">空间分析「一」影像配准和数字化处理</div>
+      <div class="post-title animate__animated  animate__fadeInUp">空间分析「二」拓扑检查与处理</div>
       <div class="meta-intro animate__animated  animate__fadeInUp">6月 25 2021</div>
       
         <div class="post-cover"><span class="lazyload-img-span"><img data-src="https://user-images.githubusercontent.com/62822224/226606489-454a523d-717c-4527-9c54-26df652bb4a3.png" class="post-cover-img"><div class="post-cover-img-hover">asas</div><div class="post-cover-img-insert">asas</div></span></div>
@@ -176,149 +176,82 @@
           
         
         <h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><ol>
-<li>链接文件夹”~/实验4 影像配准和数字化 数据/”,添加“J48G024008”的jpg地图</li>
+<li>链接实验文件夹“~/montgemory.gdb”，将内部数据添加到ArcMap</li>
+</ol>
+<h1 id="新建拓扑"><a href="#新建拓扑" class="headerlink" title="新建拓扑"></a>新建拓扑</h1><ol>
+<li>回到“目录”面板，找到实验文件夹内的要素集“landbase”，右键进入“new”，选择“Topology”。然后设置拓扑参数，直接进入第二页，修改拓扑名称为“landbase”</li>
 </ol>
 <p>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/8sklnCS.jpg">
+        <img data-src="https://i.imgur.com/GVcVBEv.jpg">
         
       </span></p>
 <ol start="2">
-<li>通过数据添加提示和地图图幅显示，原始地理坐标系是1980西安坐标系</li>
+<li>下一步，选中所有要素以全部接收拓扑检查。下一步，这个界面需要设置各要素的rank等级，值越接近1，要素被移动越少，所以此处改number of rank为1。对控制点的要求是分布要散、位置精确。最好利用好z和x的放大缩小节省操作时间</li>
 </ol>
 <p>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/X3QW1rq.jpg">
-        
-      </span></p>
-<h1 id="影像配准"><a href="#影像配准" class="headerlink" title="影像配准"></a>影像配准</h1><ol>
-<li>定义空间参考</li>
-</ol>
-<p>点击
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/hI3RR6P.jpg">
-        
-      图标打开”ArcTools box”，找到“Data Management tools-&gt;Projections and Transformations”双击进入“Define Projection”工具（另外还有“Project”工具，但是这里不用，因为“Define Projection”工具不会改变地图原有的内部坐标)，input选择“J48G024008”，目标坐标系选“Xian_1980_3_Degree_GK_Zone_34”。点击OK赋予坐标系</span></p>
-<ol start="2">
-<li>地形图配准<br> 右键ArcMap顶部，勾选“Georeferencing”工具条，进入Georeferencing菜单取消自动校正，点击
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/5YSxPgX.jpg">
-        
-      图标开始添加控制点。对控制点的要求是分布要散、位置精确。最好利用好z和x的放大缩小节省操作时间</span></li>
-</ol>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/8Hc7ERy.jpg">
+        <img data-src="https://i.imgur.com/XnqOCvK.jpg">
         
       </span></p>
 <ol start="3">
-<li>添加控制点，先单击定位，然后右键选择“Input X and Y”输入整百公里数。选择“Cancel”撤回定位</li>
+<li>下一步，设置拓扑规则用于约束拓扑检查的敏感度，点击“add rule”建立第一项规则，规则对象为“道路中心线”，规则则是“must not have Pseudo Nodes”（用于删去道路末端连接处的冗余结点）；再次新建规则，对象不变，规则则是“must not overlap”(同一个图层的道路不能随意重叠，理论上不允许重叠)；再次新建规则，对象仍一致，规则则为“must not have dangles”（一部分道路末端可能出现不够长或超长的情况，而成为悬浮点，可以加以判断后修正）</li>
 </ol>
-<table>
-<thead>
-<tr>
-<th>控制点</th>
-<th>X 坐标</th>
-<th>Y 坐标</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>X538000</td>
-<td>Y4323000</td>
-</tr>
-<tr>
-<td>2</td>
-<td>X543000</td>
-<td>Y4323000</td>
-</tr>
-<tr>
-<td>3</td>
-<td>X543000</td>
-<td>Y4319000</td>
-</tr>
-<tr>
-<td>4</td>
-<td>X538000</td>
-<td>Y4319000</td>
-</tr>
-<tr>
-<td>5</td>
-<td>X539000</td>
-<td>Y4322000</td>
-</tr>
-<tr>
-<td>6</td>
-<td>X542000</td>
-<td>Y4322000</td>
-</tr>
-<tr>
-<td>7</td>
-<td>X542000</td>
-<td>Y4320000</td>
-</tr>
-<tr>
-<td>8</td>
-<td>X539000</td>
-<td>Y4320000</td>
-</tr>
-</tbody></table>
 <p>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/IuJN49a.jpg">
+        <img data-src="https://i.imgur.com/4pvWQkw.jpg">
+        
+      </span></p>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/JtdTZY7.jpg">
+        
+      </span></p>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/rO2gHhD.jpg">
         
       </span></p>
 <ol start="4">
-<li>然后点击
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/iXI6xUB.jpg">
-        
-      图标进入“view link table”，切换“transformation”为“2nd Order Polynomial”，查看表中“Residual”（误差量值)，本次实验都控制在0.6以内，可以继续操作</span></li>
+<li>再次新建规则，对象需改为“地块详细规划”，再次对该对象新建规则“must be covered by”，要选择覆盖其上的图层，选为“地块总体规划”。规则则为“must not overlap”（同图层的多个地块规划不允许存在重合部分）</li>
 </ol>
 <p>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/2Babalh.jpg">
+        <img data-src="https://i.imgur.com/WWjkIvI.jpg">
+        
+      </span></p>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/0AMJCaE.jpg">
         
       </span></p>
 <ol start="5">
-<li>最后要将配准运用在影像上，打开Georeferencing菜单，选择“Rectify”执行纠正，之后会打开另存为窗口，设置保存参数：“重采样：双线性内插法，名字：J48G024008纠正后，文件路径：不变”</li>
+<li>下一步，检查整体参数，没有问题就可以点击OK完成拓扑新建</li>
 </ol>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/U1Q8mK3.jpg">
-        
-      </span></p>
-<h1 id="分层矢量化"><a href="#分层矢量化" class="headerlink" title="分层矢量化"></a>分层矢量化</h1><ol>
-<li>数据准备</li>
+<h1 id="拓扑检查"><a href="#拓扑检查" class="headerlink" title="拓扑检查"></a>拓扑检查</h1><ol>
+<li>使用拓扑工具</li>
 </ol>
-<p>链接实验文件夹“J48G024008.gdb”，加载入多个图层，来自多个类别（点线面分别以水系要素P、水系要素L和水系要素A代表），点击编辑工具条菜单的“start editing”，如果文件夹来源相异，则右键要编辑的要素，进入“edit feature”选择“start editing”。编辑内容来自图示范围</p>
+<p>右键顶栏空白处，勾选“Topology”工具条。然后开启编辑。点击拓扑工具条最右侧的图标打开搜索窗口，以便后续纠正错误。暂时关闭“Visible Extent only”以便全局搜索</p>
 <p>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/rd5kRem.jpg">
+        <img data-src="https://i.imgur.com/Ey74OII.jpg">
         
       </span></p>
-<p>点击图标显示可编辑要素，选中水系要素P后下方选择绘制工具。对范围内的井口进行标记</p>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/8v0ttj9.jpg">
-        
-      </span></p>
-<p>类似的操作，编辑水系要素L，对范围内的水渠进行标记。编辑水系要素A，对范围内的湖泊进行标记。标记湖泊的时候可以使用
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/DJKuDpV.jpg">
-        
-      图标对面进行裁切，将岛屿从湖泊面删除</span></p>
+<ol start="2">
+<li>处理道路中心线冗余点的错误</li>
+</ol>
+<p>搜索窗口中，选择show：“道路中心线——Must Not Have Pseudo Nodes”，开始搜索，共四条结果。右键第一个定位到位置，通过选中操作和编辑操作可以观察到交点出现冗余</p>
 <table>
 <thead>
 <tr>
 <th>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/UMAaNp0.jpg">
+        <img data-src="https://i.imgur.com/VUc0YTP.jpg">
         
       </span></th>
 <th>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/GO9jF95.jpg">
+        <img data-src="https://i.imgur.com/F8WEAqN.jpg">
         
       </span></th>
 </tr>
@@ -328,7 +261,113 @@
 <td></td>
 </tr>
 </tbody></table>
-<p>最后选择edit工具菜单的stop editing保存编辑并停止</p>
+<p>处理：选中两条线要素，在编辑工具条中使用“Merge”合并两线，再次搜索错误发现已经解决一条错误。后续三条错误都属于同样的重复错误，一一解决即可</p>
+<ol start="3">
+<li>处理道路中心线重复交叠的错误</li>
+</ol>
+<p>搜索窗口搜索“道路中心线——Must Not Overlap”，出现三条错误。定位到第一条错误，通过移动线要素可以观察到重叠</p>
+<table>
+<thead>
+<tr>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/SKh1lXQ.jpg">
+        
+      </span></th>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/MV3lLhj.jpg">
+        
+      </span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>处理：此处两要素局部完全重叠，将最完整的要素复制并删除，然后删除重复要素，再粘贴回来即可。或者调整最完整的线要素以露出重叠要素，将两线合并即可</p>
+<ol start="4">
+<li>处理道路中心线过长或过短的可能悬浮错误</li>
+</ol>
+<p>此类错误通常处理量大，而且耗时长，还可能出现正确的悬浮，严格来讲需要实地调查一一排查。但本实验中数据为教学数据，简单以设定过长过短约束，以规避实地调查的麻烦</p>
+<p>定位第一条错误，可见无法确定就是错误，当作正确，并使用测量工具
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/ofzmOrp.jpg">
+        
+      量取长度作为参考。得值约为30.53feet。定位到第二条错误等发现类似，印证了该错误标记实际正确的可能性，直接到中间寻找其他错误标记</span></p>
+<table>
+<thead>
+<tr>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/M2BU6q8.jpg">
+        
+      </span></th>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/hDd6MdD.jpg">
+        
+      </span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>寻找多次之后，发现一条明显错误，两条路断开未连，但可以延长。类似的，可能存在过长线需要裁短</p>
+<p>处理：测量断开的距离约为5.81feet。故对错误在2-25feet大小的进行延长和裁短处理。右键搜索窗口中的错误记录，选择“extend”，设置最大值25。然后，右键选择“trim”（缩短）出现报错，说明没有过长线要素</p>
+<ol start="5">
+<li>处理地块详细规划种相互重叠的错误</li>
+</ol>
+<p>搜索“地块详细规划——Must Not Overlap”共五项结果。定位到第一条错误。发现两个面要素重叠</p>
+<table>
+<thead>
+<tr>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/cP54LJV.jpg">
+        
+      </span></th>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/x8Vxn0P.jpg">
+        
+      </span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>处理：关闭拓扑图层显示，选中并双击面积过大的面要素，删减或移动结点即可</p>
+<ol start="6">
+<li>处理地块详细规划与地块总体规划不重叠的错误</li>
+</ol>
+<p>总体规划一定和详细规划重叠，搜索“地块详细规划——Must Covered by —— 地块总体规划”，发现全部错误是由与详细规划比总体规划多了道路面导致的</p>
+<table>
+<thead>
+<tr>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/SD2wReT.jpg">
+        
+      </span></th>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/iQenNCQ.jpg">
+        
+      </span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>处理：将地块详细规划中的所有道路面复制到地块总体规划中即可。打开地块详细规划的属性表，使用“按属性选择”工具选中所有“LANDUSE_CO”字段为0的要素，复制并粘贴入地块总体规划图层</p>
 
         <!-- 分类文章 -->
         
@@ -340,7 +379,7 @@
               
                 <li class="base">
                   <a  href="/2021/0657209.html" class="post-categoris-bottom-link">
-                  空间分析「二」拓扑检查与处理
+                  空间分析「一」影像配准和数字化处理
                 </a>
                 </li>
               
@@ -351,7 +390,7 @@
               
                 <li class="me base">
                   <a  href="/2021/0657209.html" class="post-categoris-bottom-link">
-                  空间分析「一」影像配准和数字化处理
+                  空间分析「二」拓扑检查与处理
                 </a>
                 </li>
               

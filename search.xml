@@ -1006,6 +1006,64 @@ cudnn_benchmark = True
       </categories>
   </entry>
   <entry>
+    <title>地图制图「上」标准制图流程展示</title>
+    <url>/2021/0946040.html</url>
+    <content><![CDATA[<h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><h2 id="ArcMap中的添加数据"><a href="#ArcMap中的添加数据" class="headerlink" title="ArcMap中的添加数据"></a>ArcMap中的添加数据</h2><p>在ArcMap默认的软件页面中可以很容易找到「添加文件」按钮，这个是ArcGIS操作逻辑中用来添加某一个已有数据的按钮。单击，打开添加数据窗口。我是用顶部下拉菜单可以选择“catelog”中提前链接好的文件目录，这里我第一次使用，因此要单击顶部「链接文件夹」按钮以添加实验数据所在文件夹。添加完成后，将新荣县1：10000地形图矢量数据，随后可以看到图层管理器已经有了我需要的文件(在ArcMap中图层管理器称为“内容列表”)。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/zygNDIc.jpg">
+        
+      <br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/9Tt8nW6.jpg">
+        
+      </span></span></p>
+<h1 id="编辑与设计"><a href="#编辑与设计" class="headerlink" title="编辑与设计"></a>编辑与设计</h1><h2 id="挑选符号"><a href="#挑选符号" class="headerlink" title="挑选符号"></a>挑选符号</h2><p>内容列表有非常多的点类，现在将他们直接导入进来是初始化符号的，千篇一律。双击其中的地名符号，我发现可以打开符号系统来挑选一些默认的ESRI符号，右边可以更改必要的参数值来调整颜色、大小、形状等等。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/EpsxqzU.jpg">
+        
+      </span></p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>首先地图的符号之间是分好类别的，必要的区分度需要在符号的选择上体现出来。诚然，默认符号库中的符号可能不足以完成全部的符号更换，但是已经能体现出符号之间的差别了。</p>
+<h1 id="布局视图"><a href="#布局视图" class="headerlink" title="布局视图"></a>布局视图</h1><h2 id="打开布局视图"><a href="#打开布局视图" class="headerlink" title="打开布局视图"></a>打开布局视图</h2><p>为了输出我的地图，我需要打开布局视图窗口来编辑版式和其他显示要素。我可以在顶部视图菜单中打开，也可以单击底下非常小的「布局视图」按钮来切换。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/IiyBIMI.jpg">
+        
+      </span></p>
+<h2 id="调整布局"><a href="#调整布局" class="headerlink" title="调整布局"></a>调整布局</h2><p>实验指导书说拖动数据框角点以填充工作空间，但是其实可以右键布局区域，选择Distribute-&gt;Fit to Margins来自动完成。完成后更换比例尺为1:10000<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/C37RHvD.jpg">
+        
+      </span></p>
+<p>但是考虑到最终出图是一个类似正方形的工作空间，所以我还需要调整页面，如页面大小、页面方向等等，这个可以在顶部文件菜单中找到Page and Print setup窗口来设置。这里我设置为横向视图、宽25cm、高23cm。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/ptyljlv.jpg">
+        
+      </span></p>
+<p>为了给地图添加一个标题，在顶部插入菜单中选择title，在布局视图的顶部合适位置插入，并输入“新荣县”。双击该文本可以进入属性设置，以调整字体、大小等参数。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/j6BurjN.jpg">
+        
+      </span></p>
+<p>顶部插入菜单中还可以插入图例，选择legend设置图例各个位置文本的参数，并调整图例内容。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/4a8ZUI6.jpg">
+        
+      </span></p>
+<p>这次插入比例尺(scale bar)，在比例尺的候选框中选择合适的比例尺符号，拖动比例尺到地图合适位置。随后在顶部文件菜单点击保存，将本次实验的工作空间保存在实验文件夹下。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/PIZxBbx.jpg">
+        
+      </span></p>
+<h1 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h1><p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/2NEU7Fm.jpg">
+        
+      </span></p>
+]]></content>
+      <categories>
+        <category>GIS Experiments</category>
+      </categories>
+  </entry>
+  <entry>
     <title>地图制图「下」符号设计流程展示</title>
     <url>/2021/0914607.html</url>
     <content><![CDATA[<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><h2 id="关于ESRI符号库"><a href="#关于ESRI符号库" class="headerlink" title="关于ESRI符号库"></a>关于ESRI符号库</h2><p>在ArcMap中打开顶部菜单中Customize-&gt;Style Manager工具,在这里面可以看见有黄色和黑色文件夹，都是ArcGIS默认的地理符号库，黄色的是空的，而黑色的包含了ESRI默认自带有的所有符号。如果需要自定义一些符号，我们可以在黄色的文件夹中添加，当然也可以使用新建文件夹的方式在新文件路径下添加自定义符号。<br>
@@ -1059,58 +1117,53 @@ cudnn_benchmark = True
       </categories>
   </entry>
   <entry>
-    <title>地图制图「上」标准制图流程展示</title>
-    <url>/2021/0946040.html</url>
-    <content><![CDATA[<h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><h2 id="ArcMap中的添加数据"><a href="#ArcMap中的添加数据" class="headerlink" title="ArcMap中的添加数据"></a>ArcMap中的添加数据</h2><p>在ArcMap默认的软件页面中可以很容易找到「添加文件」按钮，这个是ArcGIS操作逻辑中用来添加某一个已有数据的按钮。单击，打开添加数据窗口。我是用顶部下拉菜单可以选择“catelog”中提前链接好的文件目录，这里我第一次使用，因此要单击顶部「链接文件夹」按钮以添加实验数据所在文件夹。添加完成后，将新荣县1：10000地形图矢量数据，随后可以看到图层管理器已经有了我需要的文件(在ArcMap中图层管理器称为“内容列表”)。<br>
+    <title>地图制图「下」符号设计流程展示</title>
+    <url>/2021/0914607.html</url>
+    <content><![CDATA[<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><h2 id="关于ESRI符号库"><a href="#关于ESRI符号库" class="headerlink" title="关于ESRI符号库"></a>关于ESRI符号库</h2><p>在ArcMap中打开顶部菜单中Customize-&gt;Style Manager工具,在这里面可以看见有黄色和黑色文件夹，都是ArcGIS默认的地理符号库，黄色的是空的，而黑色的包含了ESRI默认自带有的所有符号。如果需要自定义一些符号，我们可以在黄色的文件夹中添加，当然也可以使用新建文件夹的方式在新文件路径下添加自定义符号。<br>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/zygNDIc.jpg">
+        <img data-src="https://i.imgur.com/dhoLicd.jpg">
+        
+      </span></p>
+<p>点击“Style”按钮可以看见默认的自带符号库还有非常多，我们可以勾选以添加进Style Manager进行显示和查看。点击Create New Style新建一个新的目录用来创建我的自定义符号。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/me2eto4.jpg">
+        
+      </span></p>
+<h1 id="创建自定义符号"><a href="#创建自定义符号" class="headerlink" title="创建自定义符号"></a>创建自定义符号</h1><h2 id="建立目录"><a href="#建立目录" class="headerlink" title="建立目录"></a>建立目录</h2><p>点击Style窗口中的Create New Style，选择实验文件夹作为符号库路径，命名为“sy2”。右边双击路径Marker Symbols进入点符号路径。右键，选择new-&gt;Marker Sysbol，接下来进入点符号的自定义界面。</p>
+<h2 id="新建Simple-Marker-Symbol符号"><a href="#新建Simple-Marker-Symbol符号" class="headerlink" title="新建Simple Marker Symbol符号"></a>新建Simple Marker Symbol符号</h2><p>顶部的Type中可以选择点符号的定义方法，我们第一个实验任务是创建高程点，形状简单，参数较少，所以此处选择Type：Simple Marker Symbol。在该Type中设置点的大小单位是毫米(Millmeter)，随后设置size:0.5，style：circle保持默认，color：全黑保持默认。单击OK完成编辑，回到Style Manager后将新的符号命名为“高程点”。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/Rr6Namy.jpg">
+        
+      </span></p>
+<h2 id="以新字体的形式新建符号"><a href="#以新字体的形式新建符号" class="headerlink" title="以新字体的形式新建符号"></a>以新字体的形式新建符号</h2><p>ArcMap为了与其他软件共享符号系统，会将符号以字体的形式保存在计算机的内部，用户也可以通过绘制字体来完成复杂符号的自定义。</p>
+<h3 id="设置格式"><a href="#设置格式" class="headerlink" title="设置格式"></a>设置格式</h3><p>打开FontCreator应用，顶部文件中选择新建，命名该字体为“地形图”，字符类选择为符号。单击确定。因为字体制作软件和我们的ArcGIS并没有一个等价的单位相互联系，所以第一步我需要设置软件编辑画布的尺寸，让ArcGIS上可以间接转化尺寸。进入顶部的格式-&gt;设置，我们首先可以调整布局的单位。因为10可以与许多数相除而避免产生无穷小数的情况，所以10的倍数都可以作为沟通该软件与ArcGIS软件单位的桥梁，这里10太小，会产生小数点，故考虑使用1000作为布局单位。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/YLMhW7Y.jpg">
+        
+      </span></p>
+<p>接下来设置一下度量的参数。字型上行字母、上行字母、Win上升设置为1000，右键的属性中选择预置宽度为1000。这样可以使符号的尺寸在1000且居中的时候可以局限在一个方形区域内。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/f03mQ2U.jpg">
         
       <br>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/9Tt8nW6.jpg">
+        <img data-src="https://i.imgur.com/HKg80ds.jpg">
         
       </span></span></p>
-<h1 id="编辑与设计"><a href="#编辑与设计" class="headerlink" title="编辑与设计"></a>编辑与设计</h1><h2 id="挑选符号"><a href="#挑选符号" class="headerlink" title="挑选符号"></a>挑选符号</h2><p>内容列表有非常多的点类，现在将他们直接导入进来是初始化符号的，千篇一律。双击其中的地名符号，我发现可以打开符号系统来挑选一些默认的ESRI符号，右边可以更改必要的参数值来调整颜色、大小、形状等等。<br>
+<h3 id="绘制符号"><a href="#绘制符号" class="headerlink" title="绘制符号"></a>绘制符号</h3><p>根据实验任务的要求，首先要绘制一个圆形轮廓(直径2mm线宽为默认0.15mm，对应了该软件单位的1000、75)，再绘制一个默认尺寸点(0.3mm对应软件单位的150)。因为该软件只有实心圆，所以需要借助软件的方向功能绘制圆形边界，先绘制(500，500)中心上的尺寸1000<em>1000的大圆，再绘制(500，500)中心上的尺寸850</em>850的小圆，将小圆方向，就形成了尺寸正确的圆形边界，接下来再拖入一个实心圆，绘制于(500，500)中心上，尺寸为150*150。<br>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/EpsxqzU.jpg">
+        <img data-src="https://i.imgur.com/7fSv3re.jpg">
         
       </span></p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>首先地图的符号之间是分好类别的，必要的区分度需要在符号的选择上体现出来。诚然，默认符号库中的符号可能不足以完成全部的符号更换，但是已经能体现出符号之间的差别了。</p>
-<h1 id="布局视图"><a href="#布局视图" class="headerlink" title="布局视图"></a>布局视图</h1><h2 id="打开布局视图"><a href="#打开布局视图" class="headerlink" title="打开布局视图"></a>打开布局视图</h2><p>为了输出我的地图，我需要打开布局视图窗口来编辑版式和其他显示要素。我可以在顶部视图菜单中打开，也可以单击底下非常小的「布局视图」按钮来切换。<br>
+<h3 id="绘制完成"><a href="#绘制完成" class="headerlink" title="绘制完成"></a>绘制完成</h3><p>2.3.3保存字体文件并安装入机<br>顶部文件中点击另存为，选择好保存路径方便查找即可，命名为“地形图”。这样子我可以很方便地完成符号的安装。回到ArcMap，我已经可以右键new-&gt;Marker Symbol来导入字体了。这一次选择type：Character Marker Symbol，加载一段时间后就可以选择上我刚安装的字体文件，里面有我绘制的点符号，选择上，在右上角选择尺寸单位为毫米Millmeter。设置size：2。这样点OK就完成了我电脑上的字符点符号创建。回到Style Manager后将符号命名为“导线控制点”。<br>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/IiyBIMI.jpg">
+        <img data-src="https://i.imgur.com/r3McSoW.jpg">
         
-      </span></p>
-<h2 id="调整布局"><a href="#调整布局" class="headerlink" title="调整布局"></a>调整布局</h2><p>实验指导书说拖动数据框角点以填充工作空间，但是其实可以右键布局区域，选择Distribute-&gt;Fit to Margins来自动完成。完成后更换比例尺为1:10000<br>
+      <br>
         <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/C37RHvD.jpg">
+        <img data-src="https://i.imgur.com/XeXsN0o.jpg">
         
-      </span></p>
-<p>但是考虑到最终出图是一个类似正方形的工作空间，所以我还需要调整页面，如页面大小、页面方向等等，这个可以在顶部文件菜单中找到Page and Print setup窗口来设置。这里我设置为横向视图、宽25cm、高23cm。<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/ptyljlv.jpg">
-        
-      </span></p>
-<p>为了给地图添加一个标题，在顶部插入菜单中选择title，在布局视图的顶部合适位置插入，并输入“新荣县”。双击该文本可以进入属性设置，以调整字体、大小等参数。<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/j6BurjN.jpg">
-        
-      </span></p>
-<p>顶部插入菜单中还可以插入图例，选择legend设置图例各个位置文本的参数，并调整图例内容。<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/4a8ZUI6.jpg">
-        
-      </span></p>
-<p>这次插入比例尺(scale bar)，在比例尺的候选框中选择合适的比例尺符号，拖动比例尺到地图合适位置。随后在顶部文件菜单点击保存，将本次实验的工作空间保存在实验文件夹下。<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/PIZxBbx.jpg">
-        
-      </span></p>
-<h1 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h1><p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/2NEU7Fm.jpg">
-        
-      </span></p>
+      </span></span></p>
 ]]></content>
       <categories>
         <category>GIS Experiments</category>
@@ -1210,6 +1263,168 @@ pip install -i https://pypi.douban.com/simple # 豆瓣（推荐）
 ]]></content>
       <categories>
         <category>Computer Vision 计算机视觉</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>空间分析「一」影像配准和数字化处理</title>
+    <url>/2021/0657209.html</url>
+    <content><![CDATA[<h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><ol>
+<li>链接文件夹”~/实验4 影像配准和数字化 数据/”,添加“J48G024008”的jpg地图</li>
+</ol>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/8sklnCS.jpg">
+        
+      </span></p>
+<ol start="2">
+<li>通过数据添加提示和地图图幅显示，原始地理坐标系是1980西安坐标系</li>
+</ol>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/X3QW1rq.jpg">
+        
+      </span></p>
+<h1 id="影像配准"><a href="#影像配准" class="headerlink" title="影像配准"></a>影像配准</h1><ol>
+<li>定义空间参考</li>
+</ol>
+<p>点击
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/hI3RR6P.jpg">
+        
+      图标打开”ArcTools box”，找到“Data Management tools-&gt;Projections and Transformations”双击进入“Define Projection”工具（另外还有“Project”工具，但是这里不用，因为“Define Projection”工具不会改变地图原有的内部坐标)，input选择“J48G024008”，目标坐标系选“Xian_1980_3_Degree_GK_Zone_34”。点击OK赋予坐标系</span></p>
+<ol start="2">
+<li>地形图配准<br> 右键ArcMap顶部，勾选“Georeferencing”工具条，进入Georeferencing菜单取消自动校正，点击
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/5YSxPgX.jpg">
+        
+      图标开始添加控制点。对控制点的要求是分布要散、位置精确。最好利用好z和x的放大缩小节省操作时间</span></li>
+</ol>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/8Hc7ERy.jpg">
+        
+      </span></p>
+<ol start="3">
+<li>添加控制点，先单击定位，然后右键选择“Input X and Y”输入整百公里数。选择“Cancel”撤回定位</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>控制点</th>
+<th>X 坐标</th>
+<th>Y 坐标</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>X538000</td>
+<td>Y4323000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>X543000</td>
+<td>Y4323000</td>
+</tr>
+<tr>
+<td>3</td>
+<td>X543000</td>
+<td>Y4319000</td>
+</tr>
+<tr>
+<td>4</td>
+<td>X538000</td>
+<td>Y4319000</td>
+</tr>
+<tr>
+<td>5</td>
+<td>X539000</td>
+<td>Y4322000</td>
+</tr>
+<tr>
+<td>6</td>
+<td>X542000</td>
+<td>Y4322000</td>
+</tr>
+<tr>
+<td>7</td>
+<td>X542000</td>
+<td>Y4320000</td>
+</tr>
+<tr>
+<td>8</td>
+<td>X539000</td>
+<td>Y4320000</td>
+</tr>
+</tbody></table>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/IuJN49a.jpg">
+        
+      </span></p>
+<ol start="4">
+<li>然后点击
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/iXI6xUB.jpg">
+        
+      图标进入“view link table”，切换“transformation”为“2nd Order Polynomial”，查看表中“Residual”（误差量值)，本次实验都控制在0.6以内，可以继续操作</span></li>
+</ol>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/2Babalh.jpg">
+        
+      </span></p>
+<ol start="5">
+<li>最后要将配准运用在影像上，打开Georeferencing菜单，选择“Rectify”执行纠正，之后会打开另存为窗口，设置保存参数：“重采样：双线性内插法，名字：J48G024008纠正后，文件路径：不变”</li>
+</ol>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/U1Q8mK3.jpg">
+        
+      </span></p>
+<h1 id="分层矢量化"><a href="#分层矢量化" class="headerlink" title="分层矢量化"></a>分层矢量化</h1><ol>
+<li>数据准备</li>
+</ol>
+<p>链接实验文件夹“J48G024008.gdb”，加载入多个图层，来自多个类别（点线面分别以水系要素P、水系要素L和水系要素A代表），点击编辑工具条菜单的“start editing”，如果文件夹来源相异，则右键要编辑的要素，进入“edit feature”选择“start editing”。编辑内容来自图示范围</p>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/rd5kRem.jpg">
+        
+      </span></p>
+<p>点击图标显示可编辑要素，选中水系要素P后下方选择绘制工具。对范围内的井口进行标记</p>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/8v0ttj9.jpg">
+        
+      </span></p>
+<p>类似的操作，编辑水系要素L，对范围内的水渠进行标记。编辑水系要素A，对范围内的湖泊进行标记。标记湖泊的时候可以使用
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/DJKuDpV.jpg">
+        
+      图标对面进行裁切，将岛屿从湖泊面删除</span></p>
+<table>
+<thead>
+<tr>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/UMAaNp0.jpg">
+        
+      </span></th>
+<th>
+        <span class="lazyload-img-span">
+        <img data-src="https://i.imgur.com/GO9jF95.jpg">
+        
+      </span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>最后选择edit工具菜单的stop editing保存编辑并停止</p>
+]]></content>
+      <categories>
+        <category>GIS Experiments</category>
       </categories>
   </entry>
   <entry>
@@ -1408,221 +1623,6 @@ pip install -i https://pypi.douban.com/simple # 豆瓣（推荐）
 </tr>
 </tbody></table>
 <p>处理：将地块详细规划中的所有道路面复制到地块总体规划中即可。打开地块详细规划的属性表，使用“按属性选择”工具选中所有“LANDUSE_CO”字段为0的要素，复制并粘贴入地块总体规划图层</p>
-]]></content>
-      <categories>
-        <category>GIS Experiments</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>空间分析「一」影像配准和数字化处理</title>
-    <url>/2021/0657209.html</url>
-    <content><![CDATA[<h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><ol>
-<li>链接文件夹”~/实验4 影像配准和数字化 数据/”,添加“J48G024008”的jpg地图</li>
-</ol>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/8sklnCS.jpg">
-        
-      </span></p>
-<ol start="2">
-<li>通过数据添加提示和地图图幅显示，原始地理坐标系是1980西安坐标系</li>
-</ol>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/X3QW1rq.jpg">
-        
-      </span></p>
-<h1 id="影像配准"><a href="#影像配准" class="headerlink" title="影像配准"></a>影像配准</h1><ol>
-<li>定义空间参考</li>
-</ol>
-<p>点击
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/hI3RR6P.jpg">
-        
-      图标打开”ArcTools box”，找到“Data Management tools-&gt;Projections and Transformations”双击进入“Define Projection”工具（另外还有“Project”工具，但是这里不用，因为“Define Projection”工具不会改变地图原有的内部坐标)，input选择“J48G024008”，目标坐标系选“Xian_1980_3_Degree_GK_Zone_34”。点击OK赋予坐标系</span></p>
-<ol start="2">
-<li>地形图配准<br> 右键ArcMap顶部，勾选“Georeferencing”工具条，进入Georeferencing菜单取消自动校正，点击
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/5YSxPgX.jpg">
-        
-      图标开始添加控制点。对控制点的要求是分布要散、位置精确。最好利用好z和x的放大缩小节省操作时间</span></li>
-</ol>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/8Hc7ERy.jpg">
-        
-      </span></p>
-<ol start="3">
-<li>添加控制点，先单击定位，然后右键选择“Input X and Y”输入整百公里数。选择“Cancel”撤回定位</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>控制点</th>
-<th>X 坐标</th>
-<th>Y 坐标</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>X538000</td>
-<td>Y4323000</td>
-</tr>
-<tr>
-<td>2</td>
-<td>X543000</td>
-<td>Y4323000</td>
-</tr>
-<tr>
-<td>3</td>
-<td>X543000</td>
-<td>Y4319000</td>
-</tr>
-<tr>
-<td>4</td>
-<td>X538000</td>
-<td>Y4319000</td>
-</tr>
-<tr>
-<td>5</td>
-<td>X539000</td>
-<td>Y4322000</td>
-</tr>
-<tr>
-<td>6</td>
-<td>X542000</td>
-<td>Y4322000</td>
-</tr>
-<tr>
-<td>7</td>
-<td>X542000</td>
-<td>Y4320000</td>
-</tr>
-<tr>
-<td>8</td>
-<td>X539000</td>
-<td>Y4320000</td>
-</tr>
-</tbody></table>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/IuJN49a.jpg">
-        
-      </span></p>
-<ol start="4">
-<li>然后点击
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/iXI6xUB.jpg">
-        
-      图标进入“view link table”，切换“transformation”为“2nd Order Polynomial”，查看表中“Residual”（误差量值)，本次实验都控制在0.6以内，可以继续操作</span></li>
-</ol>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/2Babalh.jpg">
-        
-      </span></p>
-<ol start="5">
-<li>最后要将配准运用在影像上，打开Georeferencing菜单，选择“Rectify”执行纠正，之后会打开另存为窗口，设置保存参数：“重采样：双线性内插法，名字：J48G024008纠正后，文件路径：不变”</li>
-</ol>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/U1Q8mK3.jpg">
-        
-      </span></p>
-<h1 id="分层矢量化"><a href="#分层矢量化" class="headerlink" title="分层矢量化"></a>分层矢量化</h1><ol>
-<li>数据准备</li>
-</ol>
-<p>链接实验文件夹“J48G024008.gdb”，加载入多个图层，来自多个类别（点线面分别以水系要素P、水系要素L和水系要素A代表），点击编辑工具条菜单的“start editing”，如果文件夹来源相异，则右键要编辑的要素，进入“edit feature”选择“start editing”。编辑内容来自图示范围</p>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/rd5kRem.jpg">
-        
-      </span></p>
-<p>点击图标显示可编辑要素，选中水系要素P后下方选择绘制工具。对范围内的井口进行标记</p>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/8v0ttj9.jpg">
-        
-      </span></p>
-<p>类似的操作，编辑水系要素L，对范围内的水渠进行标记。编辑水系要素A，对范围内的湖泊进行标记。标记湖泊的时候可以使用
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/DJKuDpV.jpg">
-        
-      图标对面进行裁切，将岛屿从湖泊面删除</span></p>
-<table>
-<thead>
-<tr>
-<th>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/UMAaNp0.jpg">
-        
-      </span></th>
-<th>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/GO9jF95.jpg">
-        
-      </span></th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p>最后选择edit工具菜单的stop editing保存编辑并停止</p>
-]]></content>
-      <categories>
-        <category>GIS Experiments</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>地图制图「下」符号设计流程展示</title>
-    <url>/2021/0914607.html</url>
-    <content><![CDATA[<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><h2 id="关于ESRI符号库"><a href="#关于ESRI符号库" class="headerlink" title="关于ESRI符号库"></a>关于ESRI符号库</h2><p>在ArcMap中打开顶部菜单中Customize-&gt;Style Manager工具,在这里面可以看见有黄色和黑色文件夹，都是ArcGIS默认的地理符号库，黄色的是空的，而黑色的包含了ESRI默认自带有的所有符号。如果需要自定义一些符号，我们可以在黄色的文件夹中添加，当然也可以使用新建文件夹的方式在新文件路径下添加自定义符号。<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/dhoLicd.jpg">
-        
-      </span></p>
-<p>点击“Style”按钮可以看见默认的自带符号库还有非常多，我们可以勾选以添加进Style Manager进行显示和查看。点击Create New Style新建一个新的目录用来创建我的自定义符号。<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/me2eto4.jpg">
-        
-      </span></p>
-<h1 id="创建自定义符号"><a href="#创建自定义符号" class="headerlink" title="创建自定义符号"></a>创建自定义符号</h1><h2 id="建立目录"><a href="#建立目录" class="headerlink" title="建立目录"></a>建立目录</h2><p>点击Style窗口中的Create New Style，选择实验文件夹作为符号库路径，命名为“sy2”。右边双击路径Marker Symbols进入点符号路径。右键，选择new-&gt;Marker Sysbol，接下来进入点符号的自定义界面。</p>
-<h2 id="新建Simple-Marker-Symbol符号"><a href="#新建Simple-Marker-Symbol符号" class="headerlink" title="新建Simple Marker Symbol符号"></a>新建Simple Marker Symbol符号</h2><p>顶部的Type中可以选择点符号的定义方法，我们第一个实验任务是创建高程点，形状简单，参数较少，所以此处选择Type：Simple Marker Symbol。在该Type中设置点的大小单位是毫米(Millmeter)，随后设置size:0.5，style：circle保持默认，color：全黑保持默认。单击OK完成编辑，回到Style Manager后将新的符号命名为“高程点”。<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/Rr6Namy.jpg">
-        
-      </span></p>
-<h2 id="以新字体的形式新建符号"><a href="#以新字体的形式新建符号" class="headerlink" title="以新字体的形式新建符号"></a>以新字体的形式新建符号</h2><p>ArcMap为了与其他软件共享符号系统，会将符号以字体的形式保存在计算机的内部，用户也可以通过绘制字体来完成复杂符号的自定义。</p>
-<h3 id="设置格式"><a href="#设置格式" class="headerlink" title="设置格式"></a>设置格式</h3><p>打开FontCreator应用，顶部文件中选择新建，命名该字体为“地形图”，字符类选择为符号。单击确定。因为字体制作软件和我们的ArcGIS并没有一个等价的单位相互联系，所以第一步我需要设置软件编辑画布的尺寸，让ArcGIS上可以间接转化尺寸。进入顶部的格式-&gt;设置，我们首先可以调整布局的单位。因为10可以与许多数相除而避免产生无穷小数的情况，所以10的倍数都可以作为沟通该软件与ArcGIS软件单位的桥梁，这里10太小，会产生小数点，故考虑使用1000作为布局单位。<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/YLMhW7Y.jpg">
-        
-      </span></p>
-<p>接下来设置一下度量的参数。字型上行字母、上行字母、Win上升设置为1000，右键的属性中选择预置宽度为1000。这样可以使符号的尺寸在1000且居中的时候可以局限在一个方形区域内。<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/f03mQ2U.jpg">
-        
-      <br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/HKg80ds.jpg">
-        
-      </span></span></p>
-<h3 id="绘制符号"><a href="#绘制符号" class="headerlink" title="绘制符号"></a>绘制符号</h3><p>根据实验任务的要求，首先要绘制一个圆形轮廓(直径2mm线宽为默认0.15mm，对应了该软件单位的1000、75)，再绘制一个默认尺寸点(0.3mm对应软件单位的150)。因为该软件只有实心圆，所以需要借助软件的方向功能绘制圆形边界，先绘制(500，500)中心上的尺寸1000<em>1000的大圆，再绘制(500，500)中心上的尺寸850</em>850的小圆，将小圆方向，就形成了尺寸正确的圆形边界，接下来再拖入一个实心圆，绘制于(500，500)中心上，尺寸为150*150。<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/7fSv3re.jpg">
-        
-      </span></p>
-<h3 id="绘制完成"><a href="#绘制完成" class="headerlink" title="绘制完成"></a>绘制完成</h3><p>2.3.3保存字体文件并安装入机<br>顶部文件中点击另存为，选择好保存路径方便查找即可，命名为“地形图”。这样子我可以很方便地完成符号的安装。回到ArcMap，我已经可以右键new-&gt;Marker Symbol来导入字体了。这一次选择type：Character Marker Symbol，加载一段时间后就可以选择上我刚安装的字体文件，里面有我绘制的点符号，选择上，在右上角选择尺寸单位为毫米Millmeter。设置size：2。这样点OK就完成了我电脑上的字符点符号创建。回到Style Manager后将符号命名为“导线控制点”。<br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/r3McSoW.jpg">
-        
-      <br>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/XeXsN0o.jpg">
-        
-      </span></span></p>
 ]]></content>
       <categories>
         <category>GIS Experiments</category>
