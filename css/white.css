@@ -56,10 +56,15 @@ span {
   font-family: Gothic;
   width: 96%;
   margin: 2%;
+  background: linear-gradient(90deg, #ecfff3, #fffdeb 50%);
   display: flex;
   justify-content: center;
   border: 0px;
   border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
+}
+.menu-outer:hover {
+  box-shadow: 0px 0px 1px 2px #7d31ff;
 }
 .menu-inner {
   width: 1130px;
@@ -68,9 +73,10 @@ span {
   align-items: center;
   padding-top: 40px;
   padding-bottom: 30px;
-  transition: all 0.3s;
+  transition: all 0.3s 0.1s;
 }
 .menu-site-name {
+  color: #000;
   font-family: Gothic;
   font-size: 1.6em;
   margin-left: 30px;
@@ -84,7 +90,7 @@ span {
   font-size: 0.9em;
   color: #898FA0;
   position: relative;
-  transition: all 0.3s;
+  transition: all 0.3s 0.1s;
 }
 .menu-li:hover {
   color: #11043c;
@@ -100,7 +106,7 @@ span {
   left: 0;
   right: 0;
   bottom: -0.2em;
-  transition: all 0.3s;
+  transition: all 0.3s 0.1s;
   background-color: #11043c;
 }
 .active-link li:hover:after {
@@ -116,10 +122,14 @@ span {
   background: #fff;
   border-radius: 8px;
   min-width: 260px;
-  border: 3px solid #11043c;
+  border: 3px solid #e3e3e3;
   position: absolute;
   left: -140px;
   top: 30px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
+}
+#sort .categories-outer:hover {
+  box-shadow: 0px 0px 1px 2px #7d31ff;
 }
 #sort .categories-outer ul {
   list-style: none;
@@ -167,7 +177,13 @@ span {
   font-size: 1.2em;
   line-height: 1.8em;
   margin-left: 5px;
+  padding: 6px;
+  border-radius: 5px;
   color: #deb887;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
+}
+.intro-sub:hover {
+  box-shadow: 0px 0px 1px 2px #7d31ff;
 }
 .intro-sub a {
   display: inline-block;
@@ -181,7 +197,7 @@ span {
   left: 0;
   right: 0;
   bottom: -0.04em;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
   background-color: #11043c;
 }
 .intro-sub a:hover:after {
@@ -219,7 +235,7 @@ a {
   font-size: 1em;
   background-color: #fff;
   border-radius: 3px;
-  transition: 0.4s;
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
   display: flex;
   margin: 7px 0px;
 }
@@ -228,7 +244,7 @@ a {
 }
 .archive-post-title {
   font-size: 1.1em;
-  transition: 0.4s;
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
   font-family: Gothic;
   margin-right: auto;
 }
@@ -240,7 +256,7 @@ a {
   font-size: 0.8em;
   border-radius: 5px;
   padding: 0px 10px;
-  transition: all 0.4s;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
 }
 .paginator {
   margin: 50px 0px;
@@ -260,7 +276,7 @@ a {
   border-radius: 5px;
   font-size: 0.9em;
   font-weight: 1000;
-  transition: all 0.4s;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
 }
 .paginator .extend:hover {
   color: #fff;
@@ -284,7 +300,7 @@ a {
 .footer-text a {
   color: #898FA0;
   font-size: 1em;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
 }
 .footer-text a:hover {
   color: #11043c;
@@ -298,12 +314,12 @@ a {
 .footer-li {
   float: left;
   margin-right: 10px;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
 }
 .footer-li i {
   color: #898FA0;
   font-size: 1.2em;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
   padding: 5px;
   border-radius: 100%;
 }
@@ -333,6 +349,13 @@ a {
 }
 .img-show-post {
   flex-basis: 31%;
+  padding: 6px;
+  margin: 0 0 50px 0;
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
+}
+.img-show-post:hover {
+  box-shadow: 0px 0px 1px 2px #7d31ff;
 }
 .img-show-post .img-show-post-cover-class {
   width: 100%;
@@ -364,7 +387,7 @@ a {
   left: 45%;
   right: 45%;
   bottom: 98%;
-  transition: all 0.3s;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
   background-color: #11043c;
 }
 .img-show-post {
@@ -384,12 +407,12 @@ a {
   margin: auto;
 }
 .img-show-post-cover img {
-  transition: all 0.4s;
-  border: 0px solid #faf0e6;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
+  border: 0px solid #6a6a6a;
   border-radius: 10px;
 }
 .img-show-post-cover img:hover {
-  transform: scale(1.05);
+  transform: scale(1.07);
 }
 .post-intro {
   margin-bottom: 30px;
@@ -406,6 +429,12 @@ a {
 }
 .post-cover {
   margin-top: 80px;
+  padding: 6px;
+  border-radius: 20px 20px 10px 10px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
+}
+.post-cover:hover {
+  box-shadow: 0px 0px 1px 2px #7d31ff;
 }
 .post-cover-img {
   min-width: 100%;
@@ -413,7 +442,7 @@ a {
   height: 350px;
   object-fit: cover;
   border: 0px solid #000;
-  border-radius: 20px;
+  border-radius: 20px 20px 10px 10px;
   position: absolute;
   z-index: 1;
 }
@@ -422,6 +451,7 @@ a {
   max-width: 100%;
   height: 350px;
   background: linear-gradient(rgba(255,255,255,0), #fff);
+  border-radius: 20px 20px 10px 10px;
   position: absolute;
   z-index: 2;
 }
@@ -461,7 +491,7 @@ a {
   left: 48%;
   right: 48%;
   bottom: 98%;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
   background-color: #11043c;
 }
 .post-content-outer {
@@ -667,6 +697,10 @@ code {
   list-style: none;
   counter-reset: li;
   margin-bottom: 20px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
+}
+.toc-top:hover {
+  box-shadow: 0px 0px 1px 2px #7d31ff;
 }
 .toc-top li {
   line-height: 1.2;
@@ -684,9 +718,10 @@ code {
   color: #898FA0;
   margin-right: 0.5em;
   text-align: right;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
 }
 .toc-top li:hover a {
+  color: #deb887;
   text-decoration: none;
 }
 .post-content-inner ul,
@@ -700,8 +735,13 @@ li p {
   border: 3px solid #e3e3e3;
   border-radius: 5px;
   padding: 20px 20px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
+}
+.post-categoris-bottom:hover {
+  box-shadow: 0px 0px 1px 2px #7d31ff;
 }
 .post-categoris-bottom .post-categoris-bottom-link:hover {
+  color: #f0d3ae;
   text-decoration: none;
 }
 .post-categoris-name {
@@ -724,7 +764,7 @@ li p {
 #gitalk-container .gt-btn-preview {
   border: 1px solid #11043c;
   border-radius: 20px;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
 }
 #gitalk-container .gt-btn-preview:hover {
   background-color: #11043c;
@@ -734,7 +774,7 @@ li p {
   border: 1px solid #11043c;
   background-color: #11043c;
   border-radius: 20px;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
 }
 #gitalk-container .gt-btn-login:hover {
   background-color: #fff;
@@ -744,7 +784,7 @@ li p {
   border: 1px solid #11043c;
   background-color: #11043c;
   border-radius: 20px;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
 }
 #gitalk-container .gt-btn-public:hover {
   background-color: #fff;
@@ -772,7 +812,7 @@ li p {
 }
 .post-content-inner .post-content-inner-space .space-toc-main a {
   color: #898FA0;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
   font-size: 0.8em;
 }
 .post-content-inner .post-content-inner-space .space-toc-main ol {
@@ -791,7 +831,7 @@ li p {
   color: #898FA0;
   margin-right: 0.5em;
   text-align: right;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
 }
 .post-content-inner .post-content-inner-space .space-toc-main li:hover a {
   text-decoration: none;
@@ -838,7 +878,7 @@ li p {
   z-index: 1;
   width: 100%;
   height: 100%;
-  transition: all 0.6s;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 .img-masks::before {
   width: 0%;
@@ -889,7 +929,7 @@ li p {
   color: #deb887;
   font-size: 1.3em;
   font-weight: 700;
-  transition: all 0.2s;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
 }
 #local-search-result .search-result-title:hover {
   text-decoration: none;
@@ -905,7 +945,7 @@ li p {
   height: 100%;
   position: fixed;
   z-index: 9999;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
   top: 0;
   left: 0;
   display: none;

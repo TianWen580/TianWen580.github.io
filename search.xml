@@ -266,53 +266,6 @@
       </categories>
   </entry>
   <entry>
-    <title>GIS的应用</title>
-    <url>/2021/0740930.html</url>
-    <content><![CDATA[<h1 id="输入（蓝）、处理（橙）、输出（绿）："><a href="#输入（蓝）、处理（橙）、输出（绿）：" class="headerlink" title="输入（蓝）、处理（橙）、输出（绿）："></a>输入（蓝）、处理（橙）、输出（绿）：</h1><p>输入处理输出是最基本最简化的应用逻辑</p>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/0SlBhTn.jpg">
-        
-      </span></p>
-<h1 id="GIS模型-具体行业模型（集成）"><a href="#GIS模型-具体行业模型（集成）" class="headerlink" title="GIS模型+具体行业模型（集成）"></a>GIS模型+具体行业模型（集成）</h1><ul>
-<li>举例复杂应用：水务行业的排水管网 SWMM 模型（排水管网属于 GIS 模型，SWMM 属于税务行业模型）<ul>
-<li>对应 GISer 的思想：<ul>
-<li>给排水管建模</li>
-<li>分层：根据用户需求分析得到的设备类型抽象图层：检查井、管线、汇水区……</li>
-<li>抽象：<ul>
-<li>检查井，点类型：坐标、高程……</li>
-<li>管线，线类型：上下游井、埋深、管长、管径……<br>  □ 汇水区，面类型：面积……</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>针对思想的复杂应用构建：<ul>
-<li>输入：<ul>
-<li>检查井：坐标、高程……&lt;&lt;DEM 高程提取</li>
-<li>管线：上下游井、埋深、管长、管径……&lt;&lt;上下游网络拓扑</li>
-<li>汇水区：面积……&lt;&lt;小流域 Basin 划分工具</li>
-</ul>
-</li>
-<li>处理：<ul>
-<li>SWMM 模型引擎（和 GIS 关系不大，主要来源于行业模型）</li>
-</ul>
-</li>
-<li>输出（行业用户对应需求）：<ul>
-<li>检查井的水位变化序列的动态专题渲染</li>
-<li>管线流量、充满度变化序列的动态专题渲染</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>GIS Experiments</category>
-      </categories>
-  </entry>
-  <entry>
     <title>MMLAB PR 指南</title>
     <url>/2023/034.html</url>
     <content><![CDATA[<blockquote>
@@ -626,238 +579,6 @@ pip install -i https://pypi.douban.com/simple # 豆瓣（推荐）
       </categories>
   </entry>
   <entry>
-    <title>SAM，监督学习已跳出过拟合泥潭？</title>
-    <url>/2023/0661594.html</url>
-    <content><![CDATA[<h1 id="📕总览-SAM-的成就"><a href="#📕总览-SAM-的成就" class="headerlink" title="📕总览 SAM 的成就"></a>📕总览 SAM 的成就</h1><blockquote>
-<p>Demo：<a href="https://segment-anything.com/demo">Segment Anything | Meta AI (segment-anything.com)</a><br>Paper：<a href="https://arxiv.org/abs/2304.02643">arxiv</a></p>
-</blockquote>
-<ul>
-<li>提出了新任务：基于提示的分割</li>
-<li>提出了新模型：SAM（Segment Anything Moduel）</li>
-<li>提出了新数据集：SA-1B</li>
-<li>总之，最让人激动的是以上三个成果都是 SAM 在监督任务上挑战 <strong>Zero-Shot</strong> 带来的</li>
-</ul>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/g2p2oBR.jpg">
-        
-      </span></p>
-<h1 id="📃ZERO-SHOT-的基本概念"><a href="#📃ZERO-SHOT-的基本概念" class="headerlink" title="📃ZERO-SHOT 的基本概念"></a>📃ZERO-SHOT 的基本概念</h1><ul>
-<li>😉我们先从生活中的视角去理解 Zero-Shot</li>
-<li>假设小明和爸爸去参观动物园。开到了一只<strong>黑白相间</strong>的斑马、一只<strong>喙很大</strong>的鹦鹉和一只<strong>圆滚滚</strong>的幼年海豹。爸爸给小明提示，让他在动物园找到一只像斑马一样黑白相间、像鹦鹉一样有大喙、像幼年海报一样圆滚滚的动物</li>
-<li>假设小明从未见过其他的动物，但他可以通过总结现有动物共有的特征来推断出其他动物的外貌。例如，小明知道斑马、鹦鹉、海豹。当小明看到一只企鹅时，他可以根据已知的属性信息推测出它可能就是爸爸要他找的黑白相间的、有大喙、圆滚滚的动物，因此他能够很自然地把这只企鹅归类为“未知”。这就是 Zero-Shot 的基本概念，即通过已知的类别和属性信息对新的未见过的类别进行分类</li>
-<li>在实际应用中，ZSL可以帮助我们解决各种问题，例如图像识别、自然语言处理等领域中的数据不足或无法获得实际标签的问题。通过零样本学习，我们可以先积累先验知识，再推断和预测新的未知类别，从而实现更加灵活和高效的智能化应用</li>
-</ul>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="https://i.imgur.com/bM3b2AB.jpg">
-        
-      </span></p>
-<h1 id="🤔什么驱使了模型可以-ZERO-SHOT"><a href="#🤔什么驱使了模型可以-ZERO-SHOT" class="headerlink" title="🤔什么驱使了模型可以 ZERO-SHOT"></a>🤔什么驱使了模型可以 ZERO-SHOT</h1><blockquote>
-<p>Segment Anything 这篇工作的主要特点有两个：一是在分割算法中引入了 3 种宽容度高的模态，二是构建了一个巨大的、多元的分割数据集，比最大的分割数据集大 6 倍，分割量大 400 倍。</p>
-</blockquote>
-<ul>
-<li>利用 Transformer 的注意力架构，促使图像的特征同时与文本模态、点模态、定位框模态相互作用。原本模型只学得到从 1 个图像到 1 个标签的映射，现在模型学习 1 个标签的同时要关注图像模态与 3 个模态的组合以及不同组合之间的联系。<strong>曾经我们认为完整的 1 to 1 算法已然成为了模型“偷懒”的捷径</strong>。</li>
-<li>另外，这<strong>三种辅助模态的宽容度好（注：标签文本模态略逊）</strong>。作为图像输入之外的额外提示（prompt），只要是属于分割对象的所有点、框或者同义文本都能作为辅助模态的输入。反之，每一个点、框或者文本都对应了各式各样的图像对象，这让模型在某个模态和某种图像对象中同时具有多个学习视角，无论是对于 3 个额外模态还是图像模态，这种学习视角都近乎是无穷的。也因此，基于提示工程（prompt engineering，基于需求对提示做灵活变换）的 SA 几乎可以做所有分割领域的细分任务，甚至还未曾存在的新任务。</li>
-<li>极其庞大且多元的互联网数据源是 Zero-Shot 能力的另一大核心。SA-1B 涵盖了各种类型、风格、场景和视角的图像。这有利于模型学习<strong>更通用和鲁棒的特征表示</strong>，从而提高 Zero-Shot 分割的性能。</li>
-<li>上面已经分析的 SA（Segment Anything） 具有 Zero-Shot 性能的几个核心原因，而下面分析的是一些次要的因素。SA-1B 的<strong>类别虽然不细但是特别全</strong>，包含了大量的常见和罕见类别，它们覆盖了自然界和人造界的各个领域。这有利于模型学习更广泛和细致的语义信息，从而提高零样本分割的性能。</li>
-<li>SA-1B 的<strong>标注十分精确</strong>，大量噪声被有意修复，有利于模型学习更准确和清晰的边界信息，从而提高零样本分割的性能。</li>
-</ul>
-<h1 id="📊零训练与完全监督的算法-PK"><a href="#📊零训练与完全监督的算法-PK" class="headerlink" title="📊零训练与完全监督的算法 PK"></a>📊零训练与完全监督的算法 PK</h1><ul>
-<li>在从未训练过的 COCO-Stuff 数据集上，以 <strong>35.9%</strong> 的 mIoU 超越了完全监督学习的 SOTA——**34.1%**。</li>
-</ul>
-<h1 id="💖监督学习将跳出过拟合泥潭"><a href="#💖监督学习将跳出过拟合泥潭" class="headerlink" title="💖监督学习将跳出过拟合泥潭"></a>💖监督学习将跳出过拟合泥潭</h1><ul>
-<li>SAM 很快就能掌握自动标注能力，在 SA-1B 中，仅仅进行了 **0.012%**（120, 000张） 的专家标注，就已经具备优秀的全自动分割水平（99.1%的标注由 SAM 自动生成），其他模型需要 10% 甚至更多的标注量才能达到类似的水平，印证了 SAM 大大降低了监督算法对数据量的依赖，从而大大降低了监督算法过拟合的可能。</li>
-<li>SA 在监督学习的框架内实现了极其优异的 Zero-Shot 性能，这带给我们一个思考——<strong>到底是数据集还是多模态带来了这种能力？</strong>互联网数据源或许能给出答案。当你提示“猫”，在图像数据集无穷大的时候，理论上“猫”的文本语义对应到了无数张不同的猫的图像，这样只要你给定文本语义，模型总是能准确地提取对应掩模。</li>
-<li>所以我们首先可以确定，数据量足够庞大足够多元才能充分激发这种 Zero-Shot 性能。那然道就是数据集才是根本吗？并不是。前面我们提到，无论是站在 3 个额外模态的角度来看，还是站在图像模态的角度来看，它们的学习视角都近乎是无穷的。也就是说，当你图像模态有效增长了 1 个数据，SA 的 3 种额外模态就能从分割面中提取几乎无数的点、框（标签文本例外）。所以，<em><strong>宽容度高的模态选择* x <em>数据集多元</em> = *优秀的 Zero-Shot 性能</strong></em>。两个因素理论上是平等的，但实际上，你无法获取无穷的数据，所以宽容度高的模态设计更加重要，性价比也更高，<strong>这也启发了我们一种降低人工标注成本的预训练模型的获取方式</strong>。</li>
-<li>而在无监督任务中，我们常定义一对正负样本规则做对比学习。这种模式本身对正负样本的定义有较高的要求。比如 1 张图像与 n-1 个不匹配文本做对比，就能将图像模态与近乎无穷的文本模态建立负相关，反之 1 个文本如果与 n-1 张不匹配图像做对比，就能将文本模态与近乎无穷的图像模态建立负相关。这也是无监督目前 Zero-Shot 性能的根源，但由于高质量的图与配文的获取困难，此处提到的这种正负样本规则不足以充分激发 Zero-Shot 性能，故<strong>无监督领域的大部分多模态工作（比如 Clip）只能靠砸钱堆数据来取得成效</strong>。它们应当学习 SA 对各模态的精心设计。</li>
-</ul>
-<h1 id="🕹️未来可能基于-SA-的工作"><a href="#🕹️未来可能基于-SA-的工作" class="headerlink" title="🕹️未来可能基于 SA 的工作"></a>🕹️未来可能基于 SA 的工作</h1><ul>
-<li>在 SAM 火热的这段时间，OpenMMLab 的开发者们维护了 Playground 项目（<a href="https://github.com/open-mmlab/playground">项目地址</a>）。该项目仅在三天的时间内就将 SAM 的 Zero-Shot 实力分割能力应用在的 MMLab 的各项 Demo 上</li>
-<li>由于分割任务涵盖了分类、定位、检测等基本任务于一身，所以 MMDet、MMOCR、MMEditing 等工具箱就像开胃小菜一样一口一个 SAM。而基于分割掩码的引导，姿态检测、旋转框检测也融合了 SAM 到 SOTA 算法中。随后，Lable Studio 等标注工具也引入了 SAM 做可以提示的辅助标注。</li>
-</ul>
-<h1 id="🤔仍有不足"><a href="#🤔仍有不足" class="headerlink" title="🤔仍有不足"></a>🤔仍有不足</h1><h2 id="我的观点"><a href="#我的观点" class="headerlink" title="我的观点"></a>我的观点</h2><ul>
-<li>当前的标签文本模态羸弱<ul>
-<li>与点模态、检测框模态相反，标签文本的多样性和宽容性不足。人类在认识未知事物的时候，采用的是<strong>具体属性描述</strong>的方式，并擅于进一步结合描述细节赋予其恰当的命名。虽然直接授予名字的方式常出现在人类教师的教学中，但我们都不希望老师让我们对着斑马的示意图背诵其名字，而是采用描述的方式，比如$$马^+$$的形状，$$黑白相间^+$$的颜色，其中$$^+$$标注的是人类的先验知识</li>
-<li>在无监督的多模态工作中，Clip 的文本模态来自于社交网络的自然语句，较 SA 所用的标签文本模态更加多样、更具宽容性，但不乏噪声和信息缺失，后续工作都选择压制而不是革新，比如 ALBEF 从生成式和优化的角度引入了动量编码器+专门的损失函数来去噪。在监督的多模态任务中，<strong>还没有工作能提出一种模块进行图像描述属性的提取，更没有基于描述属性的文本做多模态工作的</strong>。反观点模态、检测框模态，都来源于分割面，具有很好的概括性、客观性和天生的宽容性。为此，采用了标签命名或互联网的文本模态或许并不是完备解。不过，现有标签命名是人类基于具体描述高度抽象的结果，并不是完全没有作用，且其属于人类生活中真正高频使用的文本，应当与文本新模态平等对待</li>
-<li>如何建立和融合基于具体描述属性的文本新模态，甚至进一步赋予命名生成能力，成为了 SA 可能的优化方向。从生成式的视角，可能会引入能从图中生成描述属性关键词的模型，或能从图片的文本中挖掘关键词的模型，作为先验模型生成所有图片的文本新模态。从优化的视角，或许可以引入有形状、颜色等描述属性量化能力的数学建模，并融入到模型整体的损失计算中。从提取式的视角，可能会引入通道注意力（关注色彩）、多尺度模块（抽象形态与细节纹理）等来弥补文本新模态的缺失。但缺少了文本新模态后，提取式的优化空间十分有限</li>
-<li>还有很多因素需要我们去思考~<h2 id="作者的观点"><a href="#作者的观点" class="headerlink" title="作者的观点"></a>作者的观点</h2></li>
-</ul>
-</li>
-<li>SA 不适合高精度要求的分割任务</li>
-<li>SA 的图像编码器太大，拖慢了整体效率。但可以提前完成图像编码，再根据用户需要制作 Prompt 并推理</li>
-<li>文本模态仍不能很好地对应到图像语义，作者还没想明白怎么基于提示实现语义和全景分割任务。</li>
-<li>在少数几个任务，比如绘画数据集、X光数据集、模糊场景数据集、细节信息密集的数据集上泛化性能不足。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Computer Vision 计算机视觉</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>写给 mmsegmentation 工具箱新手的避坑指南</title>
-    <url>/2023/032.html</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我在 Windows 环境使用 MMClassification、MMDetection 都还算轻轻松松，但是走完 MMSegmentation 全流程之后，真的想感叹一句“踩了不少坑啊”，所以想把自己的遇坑经验凝练总结出来，写一个专门给新手无伤通关的避坑教程。</p>
-<h2 id="Windows-配置环境的痛：mmcv-full"><a href="#Windows-配置环境的痛：mmcv-full" class="headerlink" title="Windows 配置环境的痛：mmcv-full"></a>Windows 配置环境的痛：mmcv-full</h2><p>在 v1.4.0 之前，mmcv-full 的安装没有针对 Windows 的现成预编译包，所以大部分新手会卡在 build MMCV 的过程中……这种情况下有两种解决方案。</p>
-<h3 id="方案-1：新版编译版本自动安装"><a href="#方案-1：新版编译版本自动安装" class="headerlink" title="方案 1：新版编译版本自动安装"></a>方案 1：新版编译版本自动安装</h3><p>在 1.4.0 之后，MMCV 会跟上 PyTorch 版本更新 <a href="https://zhuanlan.zhihu.com/p/441653536"> Windows 环境下的mmcv-full预编译包</a>，但是可用的版本范围比较局限，依赖 PyTorch、CUDA、mmcv-full 低版本的炼丹师自然就不适合这种安装方式了（看方案2），下面是以 PyTorch1.11.0、 CUDA11.3 为例的安装命令。</p>
-<ul>
-<li>一句命令安装 <code>mmcv-full</code>，下载速度还是不错的</li>
-</ul>
-<pre><code class="PowerShell">pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu113/torch1.11/index.html
-</code></pre>
-<h3 id="方案-2：手动操作"><a href="#方案-2：手动操作" class="headerlink" title="方案 2：手动操作"></a>方案 2：手动操作</h3><p>如果你不希望更新到新版 MMSegmentation 或者 MMCV，也可以尝试手动安装，下面以在 GPU+CPU 双环境运行的目标来安装 <code>mmcv-full</code>，参考了<a href="https://mmcv.readthedocs.io/zh_CN/latest/get_started/build.html#id1">官方文档</a>，所有命令行运行在 <code>powershell</code>，使用 <code>cmd</code> 的炼丹师需要注意两个命令行的命令差异。</p>
-<ul>
-<li>创建虚拟环境</li>
-</ul>
-<pre><code class="PowerShell">conda create --name mmcv python=3.7 # 经测试，3.6, 3.7, 3.8 也能通过
-conda activate mmcv # 确保做任何操作前先激活环境
-</code></pre>
-<ul>
-<li>进入一个临时文件路径，克隆 <code>mmcv-full</code> 源码</li>
-</ul>
-<pre><code class="PowerShell">git clone https://github.com/open-mmlab/mmcv.git
-cd mmcv # 进入项目文件夹
-</code></pre>
-<ul>
-<li>安装依赖</li>
-</ul>
-<p>所有依赖中，也安装了 <code>ninja</code> 库用于加快最后编译的速度</p>
-<pre><code class="PowerShell">pip install -r requirements.txt
-# 建议使用镜像加速 =pip install -r requirements.txt -i https://pypi.douban.com/simple
-</code></pre>
-<ul>
-<li>配置编译环境</li>
-</ul>
-<p>安装 <code>Microsoft Visual Studio Community 2017/2019/......</code> ，确保环境变量中的 <code>Path</code> 存在编译所需的值。以 VS2019 Community 为例：<code>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\bin\Hostx86\x64</code> 。</p>
-<ul>
-<li>编译安装 <code>mmcv-full</code></li>
-</ul>
-<pre><code class="PowerShell">$env:MMCV_WITH_OPS = 1
-$env:MAX_JOBS = 8 # 根据可用的CPU和内存量进行设置
-python setup.py build_ext # 如果成功, 将会自动弹出来编译 flow_warp
-python setup.py develop # 执行安装
-</code></pre>
-<ul>
-<li>检测是否安装成功</li>
-</ul>
-<pre><code class="PowerShell">pip list # 使用anaconda的话，也可以在openmmlab依赖的虚拟环境下 =conda list
-</code></pre>
-<h2 id="数据集自定义类别"><a href="#数据集自定义类别" class="headerlink" title="数据集自定义类别"></a>数据集自定义类别</h2><h3 id="更改-CLASSES-和-num-classes"><a href="#更改-CLASSES-和-num-classes" class="headerlink" title="更改 CLASSES 和 num_classes"></a>更改 CLASSES 和 num_classes</h3><p>不敢调试的新手炼丹师首次面对 <code>mmseg</code> 的项目可能无所适从，因此也很难养成自己编写数据集加载代码的习惯。其实能搜到很多水平不一的资料教你编辑现有的数据集加载方式（比如常见的 <code>ADEDataset</code>），修改 <code>CLASSES</code>，然后设置 <code>num_classes</code>，可能更改完发现编辑后的代码根本没应用上，网络 decoder 不断吐槽你 <code>num_classes</code> 不对，然后你又去检查手里的数据集……其实是因为认识较浅，下面展示更合理的走通指南：</p>
-<ul>
-<li><p>选择好模型后，先把相关联配置文件里的全部 <code>num_classes</code> 设置好值，比如经典 ADE 数据集提取并划分了 150 个实例类， <code>num_classes</code> 就是 <code>150</code>，计入 <code>num_classes</code> 的所有类的名称下一步都要写入 <code>CLASSES</code>。（背景类未算入 150，下一节会讲解为什么）</p>
-</li>
-<li><p>下面，进入 <code>mmseg</code> 项目下的 <code>mmseg``/``datasets</code>，以遥感语义分割任务为例新建 py 文件 <code>uavdataset.py</code>， 继承自 <code>custom.py</code> 中的 <code>CustomDataset</code>，然后开始实现自己的数据集……在定义 <code>CLASSES</code>的时候， tuple 初始化为自己类名的集合即可（比如关于街区 block、农田 field 和其他利用地 notused 的遥感语义分割任务），用于上色的 <code>PALETTE</code> 也可以用类似的方式配置（配置格式：[<em>R</em>, <em>G</em>, <em>B</em>]）。</p>
-</li>
-</ul>
-<pre><code class="Python"># mmseg/datasets/uavdataset.py
-
-...
-CLASSES = (&#39;block&#39;, &#39;field&#39;, &#39;notused&#39;)
-
-PALETTE = [[120, 120, 120], [180, 120, 120], [120, 180, 120]]
-...
-</code></pre>
-<ul>
-<li>然后参考 <code>configs/_base_/datasets</code> 的其他配置文件编写 <code>uavdataset.py</code> 作为 <code>UAVDataset</code> 的配置文件。最后，在选用的模型配置文件中更换数据集加载方式为 <code>UAVDataset</code>。</li>
-</ul>
-<h3 id="对源码的增改没有效果？"><a href="#对源码的增改没有效果？" class="headerlink" title="对源码的增改没有效果？"></a>对源码的增改没有效果？</h3><ol>
-<li>OpenMMLab 各种工具箱的官方文档中，都会教你用 <code>pip install -v -e .</code> 安装项目，但很多新手对 <code>pip</code> 的这种命令并不了解。其实这个命令是用来开启 <code>mmseg</code> 库编辑模式的，这样修改 <code>mmseg</code> 库内的代码片段可以自动被应用上，无需重新安装（如图截取自 MMSegmentation 官方文档的安装教程，其中注释已经解释了这种 pip 命令的含义）。</li>
-</ol>
-<p>
-        <span class="lazyload-img-span">
-        <img data-src="https://pic4.zhimg.com/80/v2-3c235f7971fed8a696eddc255d756bf7_720w.webp">
-        
-      </span></p>
-<ul>
-<li>切记！使用 <code>python ``setup.py`` install</code> 安装的 <code>mmseg</code> 每次编辑源码都需要重新安装，这也是为什么大部分新手更改 <code>CLASSES</code> 却不生效的原因，建议换用以下安装方法 ：</li>
-</ul>
-<pre><code class="Shell">cd ~/mmsegmentation-master/ # 进入你的mmseg项目路径下
-pip install -v -e . # 重新安装 英文句点表示安装当前路径下的项目
-</code></pre>
-<ul>
-<li>也有可能会有小伙伴问可不可以用 <code>python setup.py develop</code>，我没做过实验。但是 <code>setup.py</code> 也是门学问，既然官方文档教新手们用 <code>pip</code> 的方式就能成，也就没必要找太多替换方案了，新手上来没必要钻研在这上面。</li>
-</ul>
-<h2 id="独特的数据集参数：reduce-zero-label"><a href="#独特的数据集参数：reduce-zero-label" class="headerlink" title="独特的数据集参数：reduce_zero_label"></a>独特的数据集参数：reduce_zero_label</h2><h3 id="借助-reduce-zero-label-管理-0-值背景"><a href="#借助-reduce-zero-label-管理-0-值背景" class="headerlink" title="借助 reduce_zero_label 管理 0 值背景"></a>借助 reduce_zero_label 管理 0 值背景</h3><p><code>mmseg</code> 中已经为各种公共分割数据集编写了描述文件和加载代码，对于有用过 PyTorch 的小伙伴而言，学习各种数据集的描述文件还是很自如的，只有 <code>reduce_zero_label</code> 对于 <code>mmseg</code> 的新手比较陌生，所以，在搭建自己的 <code>mmseg</code> 数据集时，新手最疑惑的大概就是 <code>reduce_zero_label</code> 到底应该是 <code>True</code> 还是 <code>False</code>。</p>
-<p>它有什么用呢？从名字直译过来就是“减少 0 值标签”。在多类分割任务中，如果你的数据集中 <code>0</code> 值作为 label 文件中的背景类别，是建议忽略的。</p>
-<p>打开加载数据的源码片段可以看到一段处理 <code>reduce_zero_label</code> 的代码，意思是：若开启了 <code>reduce_zero_label</code>，原本为 <code>0</code> 的所有标注设置为 <code>255</code>，也就是损失函数中 <code>ignore_index</code> 参数的默认值，该参数默认避免值为 <code>255</code> 的标注参与损失计算。前文按下不表的 <code>150</code> 类的 ADE 数据集，它不包含背景的原因就是开了 <code>reduce zero label</code>，原本为 <code>0</code> 值的背景设置为了 <code>ignore_index</code>。</p>
-<pre><code class="Python"># mmseg/datasets/pipelines/loading.py
-
-...
-# reduce zero_label
-if self.reduce_zero_label:
-    # avoid using underflow conversion
-    gt_semantic_seg[gt_semantic_seg == 0] = 255
-    gt_semantic_seg = gt_semantic_seg - 1
-    gt_semantic_seg[gt_semantic_seg == 254] = 255
-...
-</code></pre>
-<h3 id="reduce-zero-label-导致的常见问题描述"><a href="#reduce-zero-label-导致的常见问题描述" class="headerlink" title="reduce_zero_label 导致的常见问题描述"></a>reduce_zero_label 导致的常见问题描述</h3><p>我们这里以 <code>ADE</code> 数据集源码为例，<code>reduce_zero_label</code> 默认设置为 <code>True</code>，然而，就算新手掌握了上一节的 <code>reduce_zero_label</code>，也可能对 <code>ADE</code> 了解比较肤浅，会怀疑配置文件中开启的 <code>reduce_zero_label</code> 是不是把 150 个实例类中的第一个给忽略掉了，毕竟 <code>num_classes</code> 不就是 <code>150</code> 吗，然后想当然把 <code>reduce_zero_label</code> 关掉。</p>
-<h3 id="错误原因分析"><a href="#错误原因分析" class="headerlink" title="错误原因分析"></a>错误原因分析</h3><pre><code class="R"># configs/_base_/datasets/ade20k.py
-
-train_pipeline = [
-    dict(type=&#39;LoadImageFromFile&#39;),
-    dict(type=&#39;LoadAnnotations&#39;, reduce_zero_label=True), # ADE中reduce_zero_label默认设置为True
-    dict(...),
-    ...
-]
-</code></pre>
-<p>label 中实际参加训练的确实只有 <code>150</code> 类，定义在 <code>CLASSES</code> 中，但 label 文件中实际包含了 <code>151</code> 类，而背景类（剩下仍没有标记的，或者被意外忽略的区域都归为背景，在 label 中值为 <code>0</code>）不包含在 <code>150</code> 个 <code>CLASSES</code> 中，需要在训练的时候设置成 <code>ignore_index</code>，所以我们借助上一小节的 <code>reduce_zero_label</code> 将背景从 151 个类中提出来单独设置为了 <code>ignore_index</code>，我们倘若错误地将 <code>reduce_zero_label</code> 关掉了，那 <code>num_classes</code> 就是 <code>151</code> 了。</p>
-<h3 id="如何增强对数据集更多参数的理解？"><a href="#如何增强对数据集更多参数的理解？" class="headerlink" title="如何增强对数据集更多参数的理解？"></a>如何增强对数据集更多参数的理解？</h3><p>实际工程中的数据集往往是我们自己设计预测类别和标注规则的，如果背景真的很重要，那无论是修改 ADE 的配置文件，还是硬搬 ADE 格式数据集的使用方式，都不如尊重开发者写好的数据集加载代码，改用自己编写的数据集加载方式（只需继承自 <code>CustomDataset</code> 即可）。</p>
-<p>在一行行编写的过程中，新手炼丹师可以不断参考研究现存的其他数据集的解决方案，如果遇到不懂的地方也能有查漏补缺的方向，尤其是 <code>reduce_zero_label</code> 这种参数，需要充分理解消化才能运用自如。不断尝试尝试尝试的过程中，新手炼丹师也会对各式各样的数据集加载方式产生自己的理解和看法，在迎接特殊任务的时候能够分析自己的数据集，创新设计出自己独特的数据集加载方式。</p>
-<h2 id="数据集文件后缀的坑：大小写"><a href="#数据集文件后缀的坑：大小写" class="headerlink" title="数据集文件后缀的坑：大小写"></a>数据集文件后缀的坑：大小写</h2><p>接着看 <code>mmseg``/``datasets</code> 的 <code>ade.py</code>，这里 <code>ADE20KDataset</code> 类有两个 suffix（文件后缀）相关的参数配置，<code>img_suffix</code> 负责定义图像文件的后缀名，<code>seg_map_suffix</code> 定义标签文件的后缀名。默认配置：</p>
-<pre><code class="Python"># mmseg/datasets/ade.py
-
-...
-def __init__(self, **kwargs):
-        super(ADE20KDataset, self).__init__(
-            img_suffix=&#39;.jpg&#39;, # 图像的后缀名
-            seg_map_suffix=&#39;.png&#39;, # 标签的后缀名
-            reduce_zero_label=True,
-            **kwargs)
-        ...
-</code></pre>
-<p>但是有些炼丹师拿到的图像后缀是 <code>.JPG</code>，它和 <code>.jpg</code> 的区别仅仅是大小写不同，但是数据集加载会不断报 <code>FileNotFound</code> 的错误。所以新手遇到此类报错一定要注意大小写差异，直接修改配置文件中的 suffix 相关参数即可。</p>
-<h2 id="日志可视化"><a href="#日志可视化" class="headerlink" title="日志可视化"></a>日志可视化</h2><p>经常可以看到社区的小伙伴在问训练遇到的问题，而且喜欢直接对终端的日志截图，就算是巨佬也不一定对一长串数字敏感。当我遇到这类情况一般会教他们去官方文档找可视化的章节，学习官方提供的绘制日志曲线图的脚本。但是运行脚本可视化是很麻烦的，使用的教程很少还很容易报错，而 <code>tensorboard</code> 可视化库是各工具箱都通用的，可以一句命令可视化训练过程的各种指标，并展示在统一的本地网页上，也给新手提供了更好展现自己训练问题的手段，在 <code>mmseg</code> 使用 <code>tensorboard</code> 的方法也很简单：</p>
-<ul>
-<li>在 <code>config/_base_</code> 中找到 <code>default_runtime.py</code>，第 6 行一般默认是注释起来的，将这行取消注释也就开启了 tensorboard 记录，以后启动的训练都会在 <code>work_dirs</code> 的对应文件夹中生成 <code>tf_log</code> 文件夹。</li>
-</ul>
-<pre><code class="Python"># config/_base_/default_runtime.py
-
-# yapf:disable
-log_config = dict(
-    interval=50,
-    hooks=[
-        dict(type=&#39;TextLoggerHook&#39;, by_epoch=False),
-        dict(type=&#39;TensorboardLoggerHook&#39;) # 启动tensorboard记录（该行一般默认被注释起来）
-    ])
-# yapf:enable
-dist_params = dict(backend=&#39;nccl&#39;)
-log_level = &#39;INFO&#39;
-load_from = None
-resume_from = None
-workflow = [(&#39;train&#39;, 1)]
-cudnn_benchmark = True
-</code></pre>
-<ul>
-<li>那么这个 <code>tf_log</code> 文件夹怎么使用呢？我们只需要复制绝对路径，打开终端，切换到 OpenMMLab 所依赖的环境，并安装 <code>tensorboard</code> 的 python 库。</li>
-</ul>
-<pre><code class="Shell">pip install tensorboard
-</code></pre>
-<ul>
-<li>然后将 tensorboard 日志部署到本地 IP 和端口。</li>
-</ul>
-<pre><code class="Shell">tensorboard --logdir &#123;TF_LOG_PATH&#125; # TF_LOG_PATH替换为自己的tf_log文件夹绝对路径即可
-</code></pre>
-<ul>
-<li>执行成功之后可以看到终端打印了一个本地 IP 和端口，默认是 <code>http://localhost:6006/</code>，按住 <code>ctrl</code> 键鼠标点击即可进入浏览器打开可视化页面，终端连续多次按下 <code>ctrl + c</code> 组合键可以停止 <code>tensorboard</code> 服务。</li>
-</ul>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>我使用 OpenMMLab 各种工具箱的时候编写的几个辅助脚本在<a href="https://github.com/TianWen580/myscripts-openmmlab">我的GitHub</a>，涵盖了数据集预处理、维护和质检等功能，大家可以去看看有没有能帮上自己的。 MMSegmentation 的大小坑真的让我哭笑不得哈哈哈，也辛苦 MMSegmentation 开源开发者的付出，祝自己有一天能加入 OpenMMLab 的大家庭一起维护这个开源之星，也祝各位炼丹师实验顺利。</p>
-]]></content>
-      <categories>
-        <category>For OpenMMLab</category>
-      </categories>
-  </entry>
-  <entry>
     <title>一键锁定目标的检测算法</title>
     <url>/2023/031.html</url>
     <content><![CDATA[<blockquote>
@@ -1061,6 +782,169 @@ cudnn_benchmark = True
 ]]></content>
       <categories>
         <category>Computer Vision 计算机视觉</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>写给 mmsegmentation 工具箱新手的避坑指南</title>
+    <url>/2023/032.html</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我在 Windows 环境使用 MMClassification、MMDetection 都还算轻轻松松，但是走完 MMSegmentation 全流程之后，真的想感叹一句“踩了不少坑啊”，所以想把自己的遇坑经验凝练总结出来，写一个专门给新手无伤通关的避坑教程。</p>
+<h2 id="Windows-配置环境的痛：mmcv-full"><a href="#Windows-配置环境的痛：mmcv-full" class="headerlink" title="Windows 配置环境的痛：mmcv-full"></a>Windows 配置环境的痛：mmcv-full</h2><p>在 v1.4.0 之前，mmcv-full 的安装没有针对 Windows 的现成预编译包，所以大部分新手会卡在 build MMCV 的过程中……这种情况下有两种解决方案。</p>
+<h3 id="方案-1：新版编译版本自动安装"><a href="#方案-1：新版编译版本自动安装" class="headerlink" title="方案 1：新版编译版本自动安装"></a>方案 1：新版编译版本自动安装</h3><p>在 1.4.0 之后，MMCV 会跟上 PyTorch 版本更新 <a href="https://zhuanlan.zhihu.com/p/441653536"> Windows 环境下的mmcv-full预编译包</a>，但是可用的版本范围比较局限，依赖 PyTorch、CUDA、mmcv-full 低版本的炼丹师自然就不适合这种安装方式了（看方案2），下面是以 PyTorch1.11.0、 CUDA11.3 为例的安装命令。</p>
+<ul>
+<li>一句命令安装 <code>mmcv-full</code>，下载速度还是不错的</li>
+</ul>
+<pre><code class="PowerShell">pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu113/torch1.11/index.html
+</code></pre>
+<h3 id="方案-2：手动操作"><a href="#方案-2：手动操作" class="headerlink" title="方案 2：手动操作"></a>方案 2：手动操作</h3><p>如果你不希望更新到新版 MMSegmentation 或者 MMCV，也可以尝试手动安装，下面以在 GPU+CPU 双环境运行的目标来安装 <code>mmcv-full</code>，参考了<a href="https://mmcv.readthedocs.io/zh_CN/latest/get_started/build.html#id1">官方文档</a>，所有命令行运行在 <code>powershell</code>，使用 <code>cmd</code> 的炼丹师需要注意两个命令行的命令差异。</p>
+<ul>
+<li>创建虚拟环境</li>
+</ul>
+<pre><code class="PowerShell">conda create --name mmcv python=3.7 # 经测试，3.6, 3.7, 3.8 也能通过
+conda activate mmcv # 确保做任何操作前先激活环境
+</code></pre>
+<ul>
+<li>进入一个临时文件路径，克隆 <code>mmcv-full</code> 源码</li>
+</ul>
+<pre><code class="PowerShell">git clone https://github.com/open-mmlab/mmcv.git
+cd mmcv # 进入项目文件夹
+</code></pre>
+<ul>
+<li>安装依赖</li>
+</ul>
+<p>所有依赖中，也安装了 <code>ninja</code> 库用于加快最后编译的速度</p>
+<pre><code class="PowerShell">pip install -r requirements.txt
+# 建议使用镜像加速 =pip install -r requirements.txt -i https://pypi.douban.com/simple
+</code></pre>
+<ul>
+<li>配置编译环境</li>
+</ul>
+<p>安装 <code>Microsoft Visual Studio Community 2017/2019/......</code> ，确保环境变量中的 <code>Path</code> 存在编译所需的值。以 VS2019 Community 为例：<code>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\bin\Hostx86\x64</code> 。</p>
+<ul>
+<li>编译安装 <code>mmcv-full</code></li>
+</ul>
+<pre><code class="PowerShell">$env:MMCV_WITH_OPS = 1
+$env:MAX_JOBS = 8 # 根据可用的CPU和内存量进行设置
+python setup.py build_ext # 如果成功, 将会自动弹出来编译 flow_warp
+python setup.py develop # 执行安装
+</code></pre>
+<ul>
+<li>检测是否安装成功</li>
+</ul>
+<pre><code class="PowerShell">pip list # 使用anaconda的话，也可以在openmmlab依赖的虚拟环境下 =conda list
+</code></pre>
+<h2 id="数据集自定义类别"><a href="#数据集自定义类别" class="headerlink" title="数据集自定义类别"></a>数据集自定义类别</h2><h3 id="更改-CLASSES-和-num-classes"><a href="#更改-CLASSES-和-num-classes" class="headerlink" title="更改 CLASSES 和 num_classes"></a>更改 CLASSES 和 num_classes</h3><p>不敢调试的新手炼丹师首次面对 <code>mmseg</code> 的项目可能无所适从，因此也很难养成自己编写数据集加载代码的习惯。其实能搜到很多水平不一的资料教你编辑现有的数据集加载方式（比如常见的 <code>ADEDataset</code>），修改 <code>CLASSES</code>，然后设置 <code>num_classes</code>，可能更改完发现编辑后的代码根本没应用上，网络 decoder 不断吐槽你 <code>num_classes</code> 不对，然后你又去检查手里的数据集……其实是因为认识较浅，下面展示更合理的走通指南：</p>
+<ul>
+<li><p>选择好模型后，先把相关联配置文件里的全部 <code>num_classes</code> 设置好值，比如经典 ADE 数据集提取并划分了 150 个实例类， <code>num_classes</code> 就是 <code>150</code>，计入 <code>num_classes</code> 的所有类的名称下一步都要写入 <code>CLASSES</code>。（背景类未算入 150，下一节会讲解为什么）</p>
+</li>
+<li><p>下面，进入 <code>mmseg</code> 项目下的 <code>mmseg``/``datasets</code>，以遥感语义分割任务为例新建 py 文件 <code>uavdataset.py</code>， 继承自 <code>custom.py</code> 中的 <code>CustomDataset</code>，然后开始实现自己的数据集……在定义 <code>CLASSES</code>的时候， tuple 初始化为自己类名的集合即可（比如关于街区 block、农田 field 和其他利用地 notused 的遥感语义分割任务），用于上色的 <code>PALETTE</code> 也可以用类似的方式配置（配置格式：[<em>R</em>, <em>G</em>, <em>B</em>]）。</p>
+</li>
+</ul>
+<pre><code class="Python"># mmseg/datasets/uavdataset.py
+
+...
+CLASSES = (&#39;block&#39;, &#39;field&#39;, &#39;notused&#39;)
+
+PALETTE = [[120, 120, 120], [180, 120, 120], [120, 180, 120]]
+...
+</code></pre>
+<ul>
+<li>然后参考 <code>configs/_base_/datasets</code> 的其他配置文件编写 <code>uavdataset.py</code> 作为 <code>UAVDataset</code> 的配置文件。最后，在选用的模型配置文件中更换数据集加载方式为 <code>UAVDataset</code>。</li>
+</ul>
+<h3 id="对源码的增改没有效果？"><a href="#对源码的增改没有效果？" class="headerlink" title="对源码的增改没有效果？"></a>对源码的增改没有效果？</h3><ol>
+<li>OpenMMLab 各种工具箱的官方文档中，都会教你用 <code>pip install -v -e .</code> 安装项目，但很多新手对 <code>pip</code> 的这种命令并不了解。其实这个命令是用来开启 <code>mmseg</code> 库编辑模式的，这样修改 <code>mmseg</code> 库内的代码片段可以自动被应用上，无需重新安装（如图截取自 MMSegmentation 官方文档的安装教程，其中注释已经解释了这种 pip 命令的含义）。</li>
+</ol>
+<p>
+        <span class="lazyload-img-span">
+        <img data-src="https://pic4.zhimg.com/80/v2-3c235f7971fed8a696eddc255d756bf7_720w.webp">
+        
+      </span></p>
+<ul>
+<li>切记！使用 <code>python ``setup.py`` install</code> 安装的 <code>mmseg</code> 每次编辑源码都需要重新安装，这也是为什么大部分新手更改 <code>CLASSES</code> 却不生效的原因，建议换用以下安装方法 ：</li>
+</ul>
+<pre><code class="Shell">cd ~/mmsegmentation-master/ # 进入你的mmseg项目路径下
+pip install -v -e . # 重新安装 英文句点表示安装当前路径下的项目
+</code></pre>
+<ul>
+<li>也有可能会有小伙伴问可不可以用 <code>python setup.py develop</code>，我没做过实验。但是 <code>setup.py</code> 也是门学问，既然官方文档教新手们用 <code>pip</code> 的方式就能成，也就没必要找太多替换方案了，新手上来没必要钻研在这上面。</li>
+</ul>
+<h2 id="独特的数据集参数：reduce-zero-label"><a href="#独特的数据集参数：reduce-zero-label" class="headerlink" title="独特的数据集参数：reduce_zero_label"></a>独特的数据集参数：reduce_zero_label</h2><h3 id="借助-reduce-zero-label-管理-0-值背景"><a href="#借助-reduce-zero-label-管理-0-值背景" class="headerlink" title="借助 reduce_zero_label 管理 0 值背景"></a>借助 reduce_zero_label 管理 0 值背景</h3><p><code>mmseg</code> 中已经为各种公共分割数据集编写了描述文件和加载代码，对于有用过 PyTorch 的小伙伴而言，学习各种数据集的描述文件还是很自如的，只有 <code>reduce_zero_label</code> 对于 <code>mmseg</code> 的新手比较陌生，所以，在搭建自己的 <code>mmseg</code> 数据集时，新手最疑惑的大概就是 <code>reduce_zero_label</code> 到底应该是 <code>True</code> 还是 <code>False</code>。</p>
+<p>它有什么用呢？从名字直译过来就是“减少 0 值标签”。在多类分割任务中，如果你的数据集中 <code>0</code> 值作为 label 文件中的背景类别，是建议忽略的。</p>
+<p>打开加载数据的源码片段可以看到一段处理 <code>reduce_zero_label</code> 的代码，意思是：若开启了 <code>reduce_zero_label</code>，原本为 <code>0</code> 的所有标注设置为 <code>255</code>，也就是损失函数中 <code>ignore_index</code> 参数的默认值，该参数默认避免值为 <code>255</code> 的标注参与损失计算。前文按下不表的 <code>150</code> 类的 ADE 数据集，它不包含背景的原因就是开了 <code>reduce zero label</code>，原本为 <code>0</code> 值的背景设置为了 <code>ignore_index</code>。</p>
+<pre><code class="Python"># mmseg/datasets/pipelines/loading.py
+
+...
+# reduce zero_label
+if self.reduce_zero_label:
+    # avoid using underflow conversion
+    gt_semantic_seg[gt_semantic_seg == 0] = 255
+    gt_semantic_seg = gt_semantic_seg - 1
+    gt_semantic_seg[gt_semantic_seg == 254] = 255
+...
+</code></pre>
+<h3 id="reduce-zero-label-导致的常见问题描述"><a href="#reduce-zero-label-导致的常见问题描述" class="headerlink" title="reduce_zero_label 导致的常见问题描述"></a>reduce_zero_label 导致的常见问题描述</h3><p>我们这里以 <code>ADE</code> 数据集源码为例，<code>reduce_zero_label</code> 默认设置为 <code>True</code>，然而，就算新手掌握了上一节的 <code>reduce_zero_label</code>，也可能对 <code>ADE</code> 了解比较肤浅，会怀疑配置文件中开启的 <code>reduce_zero_label</code> 是不是把 150 个实例类中的第一个给忽略掉了，毕竟 <code>num_classes</code> 不就是 <code>150</code> 吗，然后想当然把 <code>reduce_zero_label</code> 关掉。</p>
+<h3 id="错误原因分析"><a href="#错误原因分析" class="headerlink" title="错误原因分析"></a>错误原因分析</h3><pre><code class="R"># configs/_base_/datasets/ade20k.py
+
+train_pipeline = [
+    dict(type=&#39;LoadImageFromFile&#39;),
+    dict(type=&#39;LoadAnnotations&#39;, reduce_zero_label=True), # ADE中reduce_zero_label默认设置为True
+    dict(...),
+    ...
+]
+</code></pre>
+<p>label 中实际参加训练的确实只有 <code>150</code> 类，定义在 <code>CLASSES</code> 中，但 label 文件中实际包含了 <code>151</code> 类，而背景类（剩下仍没有标记的，或者被意外忽略的区域都归为背景，在 label 中值为 <code>0</code>）不包含在 <code>150</code> 个 <code>CLASSES</code> 中，需要在训练的时候设置成 <code>ignore_index</code>，所以我们借助上一小节的 <code>reduce_zero_label</code> 将背景从 151 个类中提出来单独设置为了 <code>ignore_index</code>，我们倘若错误地将 <code>reduce_zero_label</code> 关掉了，那 <code>num_classes</code> 就是 <code>151</code> 了。</p>
+<h3 id="如何增强对数据集更多参数的理解？"><a href="#如何增强对数据集更多参数的理解？" class="headerlink" title="如何增强对数据集更多参数的理解？"></a>如何增强对数据集更多参数的理解？</h3><p>实际工程中的数据集往往是我们自己设计预测类别和标注规则的，如果背景真的很重要，那无论是修改 ADE 的配置文件，还是硬搬 ADE 格式数据集的使用方式，都不如尊重开发者写好的数据集加载代码，改用自己编写的数据集加载方式（只需继承自 <code>CustomDataset</code> 即可）。</p>
+<p>在一行行编写的过程中，新手炼丹师可以不断参考研究现存的其他数据集的解决方案，如果遇到不懂的地方也能有查漏补缺的方向，尤其是 <code>reduce_zero_label</code> 这种参数，需要充分理解消化才能运用自如。不断尝试尝试尝试的过程中，新手炼丹师也会对各式各样的数据集加载方式产生自己的理解和看法，在迎接特殊任务的时候能够分析自己的数据集，创新设计出自己独特的数据集加载方式。</p>
+<h2 id="数据集文件后缀的坑：大小写"><a href="#数据集文件后缀的坑：大小写" class="headerlink" title="数据集文件后缀的坑：大小写"></a>数据集文件后缀的坑：大小写</h2><p>接着看 <code>mmseg``/``datasets</code> 的 <code>ade.py</code>，这里 <code>ADE20KDataset</code> 类有两个 suffix（文件后缀）相关的参数配置，<code>img_suffix</code> 负责定义图像文件的后缀名，<code>seg_map_suffix</code> 定义标签文件的后缀名。默认配置：</p>
+<pre><code class="Python"># mmseg/datasets/ade.py
+
+...
+def __init__(self, **kwargs):
+        super(ADE20KDataset, self).__init__(
+            img_suffix=&#39;.jpg&#39;, # 图像的后缀名
+            seg_map_suffix=&#39;.png&#39;, # 标签的后缀名
+            reduce_zero_label=True,
+            **kwargs)
+        ...
+</code></pre>
+<p>但是有些炼丹师拿到的图像后缀是 <code>.JPG</code>，它和 <code>.jpg</code> 的区别仅仅是大小写不同，但是数据集加载会不断报 <code>FileNotFound</code> 的错误。所以新手遇到此类报错一定要注意大小写差异，直接修改配置文件中的 suffix 相关参数即可。</p>
+<h2 id="日志可视化"><a href="#日志可视化" class="headerlink" title="日志可视化"></a>日志可视化</h2><p>经常可以看到社区的小伙伴在问训练遇到的问题，而且喜欢直接对终端的日志截图，就算是巨佬也不一定对一长串数字敏感。当我遇到这类情况一般会教他们去官方文档找可视化的章节，学习官方提供的绘制日志曲线图的脚本。但是运行脚本可视化是很麻烦的，使用的教程很少还很容易报错，而 <code>tensorboard</code> 可视化库是各工具箱都通用的，可以一句命令可视化训练过程的各种指标，并展示在统一的本地网页上，也给新手提供了更好展现自己训练问题的手段，在 <code>mmseg</code> 使用 <code>tensorboard</code> 的方法也很简单：</p>
+<ul>
+<li>在 <code>config/_base_</code> 中找到 <code>default_runtime.py</code>，第 6 行一般默认是注释起来的，将这行取消注释也就开启了 tensorboard 记录，以后启动的训练都会在 <code>work_dirs</code> 的对应文件夹中生成 <code>tf_log</code> 文件夹。</li>
+</ul>
+<pre><code class="Python"># config/_base_/default_runtime.py
+
+# yapf:disable
+log_config = dict(
+    interval=50,
+    hooks=[
+        dict(type=&#39;TextLoggerHook&#39;, by_epoch=False),
+        dict(type=&#39;TensorboardLoggerHook&#39;) # 启动tensorboard记录（该行一般默认被注释起来）
+    ])
+# yapf:enable
+dist_params = dict(backend=&#39;nccl&#39;)
+log_level = &#39;INFO&#39;
+load_from = None
+resume_from = None
+workflow = [(&#39;train&#39;, 1)]
+cudnn_benchmark = True
+</code></pre>
+<ul>
+<li>那么这个 <code>tf_log</code> 文件夹怎么使用呢？我们只需要复制绝对路径，打开终端，切换到 OpenMMLab 所依赖的环境，并安装 <code>tensorboard</code> 的 python 库。</li>
+</ul>
+<pre><code class="Shell">pip install tensorboard
+</code></pre>
+<ul>
+<li>然后将 tensorboard 日志部署到本地 IP 和端口。</li>
+</ul>
+<pre><code class="Shell">tensorboard --logdir &#123;TF_LOG_PATH&#125; # TF_LOG_PATH替换为自己的tf_log文件夹绝对路径即可
+</code></pre>
+<ul>
+<li>执行成功之后可以看到终端打印了一个本地 IP 和端口，默认是 <code>http://localhost:6006/</code>，按住 <code>ctrl</code> 键鼠标点击即可进入浏览器打开可视化页面，终端连续多次按下 <code>ctrl + c</code> 组合键可以停止 <code>tensorboard</code> 服务。</li>
+</ul>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>我使用 OpenMMLab 各种工具箱的时候编写的几个辅助脚本在<a href="https://github.com/TianWen580/myscripts-openmmlab">我的GitHub</a>，涵盖了数据集预处理、维护和质检等功能，大家可以去看看有没有能帮上自己的。 MMSegmentation 的大小坑真的让我哭笑不得哈哈哈，也辛苦 MMSegmentation 开源开发者的付出，祝自己有一天能加入 OpenMMLab 的大家庭一起维护这个开源之星，也祝各位炼丹师实验顺利。</p>
+]]></content>
+      <categories>
+        <category>For OpenMMLab</category>
       </categories>
   </entry>
   <entry>
