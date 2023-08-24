@@ -64,7 +64,7 @@ span {
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
 }
 .menu-outer:hover {
-  box-shadow: 0px 0px 1px 2px #7d31ff;
+  transform: scale(1.01);
 }
 .menu-inner {
   width: 1130px;
@@ -180,10 +180,9 @@ span {
   padding: 6px;
   border-radius: 5px;
   color: #deb887;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
 }
 .intro-sub:hover {
-  box-shadow: 0px 0px 1px 2px #7d31ff;
+  background: linear-gradient(90deg, #ecfff3, #fffdeb 50%);
 }
 .intro-sub a {
   display: inline-block;
@@ -430,11 +429,11 @@ a {
 .post-cover {
   margin-top: 80px;
   padding: 6px;
-  border-radius: 20px 20px 10px 10px;
+  border-radius: 26px 26px 16px 16px;
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
 }
 .post-cover:hover {
-  box-shadow: 0px 0px 1px 2px #7d31ff;
+  transform: scale(1.02);
 }
 .post-cover-img {
   min-width: 100%;
@@ -548,6 +547,10 @@ a {
   padding-left: 17px;
   color: #898FA0;
   font-size: 0.9em;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
+}
+.post-content-inner blockquote:hover {
+  color: #deb887;
 }
 .post-content-inner blockquote > p {
   margin-top: 10px;
@@ -620,7 +623,7 @@ ol {
 }
 .post-content-inner a {
   color: #deb887;
-  font-weight: 700;
+  font-weight: 300;
 }
 table {
   border-collapse: collapse;
@@ -632,12 +635,20 @@ table {
   border-image: initial;
   border-spacing: 0px;
   display: table;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
+}
+table:hover {
+  box-shadow: 0px 0px 1px 2px #7d31ff;
 }
 table thead {
   box-shadow: rgba(0,0,0,0.05) 0px 4px 8px 0px;
   display: table-header-group;
   vertical-align: middle;
   border-color: inherit;
+  transition: all 0.3s 0.1s;
+}
+table thead:hover {
+  background: #fffdeb;
 }
 table th,
 table td {
@@ -683,12 +694,15 @@ code {
 }
 code {
   font-size: 0.8em;
-  font-weight: 1000;
   background-color: #f8f8f8;
   color: #11043c;
   padding: 4px 6px;
-  margin: 0px 4px;
+  margin: 6px;
   font-family: hack-regular, hack-italic, hack-bold, hack-bolditalic;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
+}
+code:hover {
+  box-shadow: 0px 0px 1px 2px #d3d3d3;
 }
 .toc-top {
   border: 3px solid #e3e3e3;
@@ -748,6 +762,16 @@ li p {
   font-size: 1.1em;
   font-weight: 1000;
   margin-bottom: 10px;
+}
+img {
+  width: auto;
+  max-width: 100%;
+  margin: 10px auto;
+  display: block;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
+}
+img:hover {
+  transform: scale(1.05);
 }
 #gitalk-container .gt-header-textarea,
 .gt-comment-content {
