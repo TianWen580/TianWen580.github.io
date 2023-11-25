@@ -1,0 +1,495 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  AI 发展这么快，我们却常忘记模型应该自己“打败自己” |    林天文 Tianwen Lin | Buluwasior</title>
+  <meta name="description" content="HELLO">
+  <!-- 标签页图标 -->
+  
+  <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+  
+
+  <!-- 图标库 -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- 动画库 -->
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fushaolei/cdn-white@1.0/css/animate.css"/>
+  
+  <!-- css文件 -->
+  
+<link rel="stylesheet" href="/css/white.css">
+
+  <!-- 代码高亮 -->
+  
+    
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/github.css">
+
+    
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiper.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiperstyle.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+
+<div class="menu-outer">
+    <div class="menu-inner">
+      <div class="menu-site-name  animate__animated  animate__fadeInUp">
+        <a href="/">
+          林天文 Tianwen Lin | Buluwasior
+        </a>
+        
+      </div>
+      <div class="menu-group">
+        <ul class="menu-ul">
+        
+          <a href="/" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              HOME PAGE
+            </li>
+          </a>
+        
+          <a href="/about" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              ME
+            </li>
+          </a>
+        
+          <a href="/archives" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              BLOGs
+            </li>
+          </a>
+        
+          <a href="/publication" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              PUBLICATIONS
+            </li>
+          </a>
+        
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="sort">
+             COLLECTIONs
+             <div class="categories-outer " id="sort-div">
+               <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Vision-%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">Computer Vision 计算机视觉</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/For-OpenMMLab/">For OpenMMLab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIS-Experiments/">GIS Experiments</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/">生活随笔</a></li></ul>
+             </div>
+          </li>
+        
+        
+        <a href="/search">
+          <li class="menu-li  animate__animated  animate__fadeInUp">
+            <i class="ri-search-line"></i>
+          </li>
+        </a>
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="mobile-menu">
+            <i class="ri-menu-line"></i>
+          </li>
+        
+        </ul>
+
+      </div>
+
+    </div>
+</div>
+<div id="mobile-main" class="animate__animated  animate__fadeIn">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-site-name animate__animated  animate__fadeInUp">
+      <a href="/">
+        林天文 Tianwen Lin | Buluwasior
+      </a>
+    </div>
+    <div class="mobile-menu-group" id="mobile-close">
+      <i class="ri-close-line"></i>
+    </div>
+
+  </div>
+
+  <div class="mobile-menu-div">
+  
+    <a href="/" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>HOME PAGE</span>
+      </div>
+    </a>
+  
+    <a href="/about" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>ME</span>
+      </div>
+    </a>
+  
+    <a href="/archives" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>BLOGs</span>
+      </div>
+    </a>
+  
+    <a href="/publication" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>PUBLICATIONS</span>
+      </div>
+    </a>
+  
+  
+    <a href="/search">  
+      <div class="mobile-menu-child  animate__animated  animate__fadeInUp">
+        <i class="ri-search-line"></i>
+      </div>
+    </a>
+    
+  </div>
+
+
+</div>
+
+<div class="body-outer">
+  <div class="body-inner">
+    
+<article class="post-inner">
+  <div class="post-content-outer">
+    <div class="post-intro">
+      <div class="post-title animate__animated  animate__fadeInUp">AI 发展这么快，我们却常忘记模型应该自己“打败自己”</div>
+      <div class="meta-intro animate__animated  animate__fadeInUp">10月 21 2023</div>
+      
+        <div class="post-cover"><span class="lazyload-img-span"><img data-src="https://github.com/open-mmlab/mmyolo/assets/62822224/fcce21b1-6989-42cf-87cb-c2f739eff68a" class="post-cover-img"><div class="post-cover-img-hover">asas</div><div class="post-cover-img-insert">asas</div></span></div>
+      
+    </div>
+    <div class="post-content-inner">
+      <div class="post-content-inner-space">
+
+      </div>
+      <div class="post-content-main animate__animated  animate__fadeInUp">
+        <!-- top型目录 -->
+        
+          <ol class="toc-top"><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%F0%9F%A4%94%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E6%8A%97%E5%AD%A6%E4%B9%A0"><span class="toc-top-text">🤔什么是对抗学习</span></a></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%F0%9F%A5%8A%E4%BB%8E%E7%94%9F%E6%B4%BB%E4%B8%AD%E6%84%9F%E5%8F%97%E5%AF%B9%E6%8A%97%E5%AD%A6%E4%B9%A0"><span class="toc-top-text">🥊从生活中感受对抗学习</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E3%80%8C%E5%86%99%E5%AE%9E%E4%B8%BB%E4%B9%89%E3%80%8D%F0%9F%94%AC"><span class="toc-top-text">「写实主义」🔬</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E3%80%8C%E8%B6%85%E7%8E%B0%E5%AE%9E%E4%B8%BB%E4%B9%89%E3%80%8D%F0%9F%AB%A8"><span class="toc-top-text">「超现实主义」🫨</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%F0%9F%92%AA%E5%88%9D%E6%8E%A2%E5%AF%B9%E6%8A%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-top-text">💪初探对抗学习的意义</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E4%B8%A5%E8%B0%A8%E8%80%8C%E4%BD%8E%E6%95%88%E7%9A%84%E3%80%8C%E5%86%99%E5%AE%9E%E4%B8%BB%E4%B9%89%E3%80%8D"><span class="toc-top-text">严谨而低效的「写实主义」</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E8%8D%92%E8%AF%9E%E5%8D%B4%E9%AB%98%E6%95%88%E7%9A%84%E3%80%8C%E8%B6%85%E7%8E%B0%E5%AE%9E%E4%B8%BB%E4%B9%89%E3%80%8D"><span class="toc-top-text">荒诞却高效的「超现实主义」</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E9%82%AA%E6%81%B6%E7%9A%84%E3%80%8C%E7%A0%B4%E5%9D%8F%E4%B8%BB%E4%B9%89%E3%80%8D"><span class="toc-top-text">邪恶的「破坏主义」</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E2%9B%B0%EF%B8%8F%E6%80%8E%E4%B9%88%E7%9C%8B%E5%BE%85%E5%AF%B9%E6%8A%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%9C%AA%E6%9D%A5"><span class="toc-top-text">⛰️怎么看待对抗学习的未来</span></a></li></ol>
+        
+        <blockquote>
+<p>我并没有做过对抗学习或者鲁棒算法的工作，但我非常热衷于 Zero-shot，因此关于泛化的本质有过一些思考。这次我站在对抗学习的视角尝试更深入地分析 Zero-shot。我在行文之前没有想好这篇文章的整体框架，题目也是最后命的，也没有细述对抗学习的细分领域，因此每一段都是从「零」思考过程的体现，如果有疏漏或者谬误欢迎指正！</p>
+<ul>
+<li>预习知识：<pre><code> ·了解数据加噪等数据增广操作即可
+ ·了解 GAN 即可
+</code></pre>
+</li>
+</ul>
+</blockquote>
+<h2 id="🤔什么是对抗学习"><a href="#🤔什么是对抗学习" class="headerlink" title="🤔什么是对抗学习"></a>🤔什么是对抗学习</h2><p>在深度学习领域，对抗通常是指对抗样本攻击。这种攻击比较有意思，专门挑神经网络的刺。比如对数据输入随机设置一些尽可能小的扰动，在这个规则下要想方设法完全破坏模型的性能。不过我们都知道，知己知彼，百战百胜。对于一个清楚地知道敌人弱点的对抗算法而言，我们通常也可以把对抗样本送给被打败的模型学习，积累教训，从而实现泛化能力的高效增长。从生成式的视角而言，对抗模块也可以作为一个万能的组件，用于提高生成算法的鲁棒。由于 AI 领域习惯于管「复杂=&gt;简单」的生成叫预测，「简单=&gt;复杂」的生成才真正叫生成，所以对抗生成通常给人的印象是从文本生成图像的技术。</p>
+<h2 id="🥊从生活中感受对抗学习"><a href="#🥊从生活中感受对抗学习" class="headerlink" title="🥊从生活中感受对抗学习"></a>🥊从生活中感受对抗学习</h2><p>从我们生活中的视角来理解「对抗」，其实我们能看到两种视角，即「写实主义」与「超现实主义」。「写实主义」的对抗就像读万卷书，行万里路一般。模型在现实世界中开拓学习的视野会学得很多新鲜的东西。而「超现实主义」的对抗则是将模型引入一种混乱的幻觉世界，比如毕加索、梵高等的作品风格，并让模型习惯于这种荒诞梦幻的场景。这两种对抗在生活中也有截然不同的含义。</p>
+<h3 id="「写实主义」🔬"><a href="#「写实主义」🔬" class="headerlink" title="「写实主义」🔬"></a>「写实主义」🔬</h3><p>
+        <span class="lazyload-img-span">
+        <img data-src="https://github.com/open-mmlab/mmyolo/assets/62822224/46b33d96-772b-443b-87e0-1ff1396ab1aa">
+        
+      </span></p>
+<p>假如你遇到了一只沙漠中的企鹅，其实内心会感到非常奇特，并且下意识里并不认为这是正常的。因为在大部份人的已有知识和逻辑中，很难找到企鹅出现在沙漠的原因。所以当我们知道这只企鹅是因为运输过程的逃脱或者其他合理的因素而到达了沙漠之后，便不会再摸不着头脑。因此，「写实主义」的对抗视角是在常识中建立起新的推理逻辑，让未知现象与已有的知识顺利且完整地对接，这非常像科学所推崇的方法论。</p>
+<h3 id="「超现实主义」🫨"><a href="#「超现实主义」🫨" class="headerlink" title="「超现实主义」🫨"></a>「超现实主义」🫨</h3><p>
+        <span class="lazyload-img-span">
+        <img data-src="https://github.com/open-mmlab/mmyolo/assets/62822224/d0eacc26-6fd1-485c-9c3a-c8a13381f148">
+        
+      </span></p>
+<p>「超现实主义」的对抗视角则十分荒诞，它不寻求从现有知识中推理出未知事物的合理性，而是在不断强调不合理的因素。可以把被攻击模型想象成一个准备从迷宫中熟练挣脱的人，结果一眨眼，迷宫内部都被铺满了镜子。而且很可能下一次眨眨眼，迷宫就已经变成了另一副模样。无论形式如何变幻，走出迷宫的路是永恒不变的。「超现实主义」的对抗视角则要求你在这种情况下依然能够找到记忆中的出路。这非常像找规律的智力测试。</p>
+<h2 id="💪初探对抗学习的意义"><a href="#💪初探对抗学习的意义" class="headerlink" title="💪初探对抗学习的意义"></a>💪初探对抗学习的意义</h2><h3 id="严谨而低效的「写实主义」"><a href="#严谨而低效的「写实主义」" class="headerlink" title="严谨而低效的「写实主义」"></a>严谨而低效的「写实主义」</h3><p>
+        <span class="lazyload-img-span">
+        <img data-src="https://github.com/open-mmlab/mmyolo/assets/62822224/c531304f-f6e5-4238-93d3-2ece8eef1dd8">
+        
+      <br>其实「写实主义」的本质和科学探索的本质没有什么差别。现实世界的可变因素有多少我们很难穷举，比如当我们决定带好朋友一起下馆子的时候要考虑早中晚、中式西式、店员态度、好友偏好……生活中，我们往往没必要如此严谨，所以常常只考虑几个因素就下决定了，有时候我的好朋友都吃腻了我才发现没有考虑好好友的感受，哈哈。相反，在科学中，一切都是绝对严谨的，如果让你在科学论文上决定一次聚餐的地点，那么你不仅要把想到的因素全分析一遍，而且还要用谦虚的态度表示自己对于未知因素的猜想和未来决策的展望。<br>更要命的是，不同的因素分别组合在一起也会成为很多不同的新因素。一个典型的例子是物理这个因素从神学中脱离出来的时候，主要是按照方法论来划分开了两个领域。物理相关因素强调证伪，即在不断的实验或数学建模中不断假设并不断推翻假设，直到假设被证实。而神学的相关因素强调信仰，所以根本不需要证伪，因为以人类的认知水平只能在偶然的证实中发现信仰这东西根本就无法证伪也没证伪的意义（就像你没必要怀疑亲戚朋友说的恭喜发财到底是不是在骗你）……<br>随着科学的发展，各种各样的因素被人们发现，并且它们常常抱团取暖或到处做客，不同的学科领域就诞生了。由于世界上的因素和因素的组合太多了，所以这个发展过程理论上不会结束，而且非常缓慢。当我们尝试用科学探索的本质来认识「写实主义」的本质时，会发现「写实主义」的这一套东西对模型的攻击力太弱了。如果你不行万里路就看不穿自然千姿百态的奇特景观，如果不看万卷书就读不完人类文明的繁星荟萃。而我们只好无奈吐槽数据集的昂贵和羸弱。因此在当前生产力水平下，对抗学习大部份工作选择了「超现实主义」的路线。</span></p>
+<h3 id="荒诞却高效的「超现实主义」"><a href="#荒诞却高效的「超现实主义」" class="headerlink" title="荒诞却高效的「超现实主义」"></a>荒诞却高效的「超现实主义」</h3><p>
+        <span class="lazyload-img-span">
+        <img data-src="https://github.com/open-mmlab/mmyolo/assets/62822224/3c2941d5-44d7-400d-8755-d1a47b4c55fa">
+        
+      </span></p>
+<p>「超现实主义」只是我自己取得外号，其实大部份小伙伴入门深度学习的时候都干过一件几乎是全国统一的事，即「加噪」。在我刚开始探索深度学习算法的时候，一提到噪声就想到数据增广要加噪声，而且在20年代附近的那段时间里，我印象里大部份身边的小伙伴都是这么认为的，都在说加噪对模型泛化的帮助很大，而我并不完全理解为什么这么做会有效果。一开始我的师长添加的噪声叫做「椒盐噪声」，由于基于高斯分布在图片上随机设置0和1，所以看起来就像往照片散胡椒粉和盐粒。慢慢到后期间演变出了强度更大的数据增广方式，比如随机遮挡、数据带透明度的叠加、随机色度变幻等等……<br>加噪后的图片对于人类可能感觉没什么难度，毕竟我们复杂的神经系统跟我们几十年的开阔眼界是相对平衡的。相比之下，人工神经网络在算力爆发之后便被数据集拖了后腿，我们应该怎么理解这种不平衡性的可怕之处呢？首先，我们不假思索就会发现各种各样加噪方法最大的特色就是覆盖面大。无论是扰动的强度是大是小，只要覆盖面够大，就能够产生明显的对抗效果。尤其是看着很庞大实际上训练数据较小的模型，它就像有着洪荒之力的大象，却只需要推开一扇老旧的敞开的木门，你敢想像这头粗大汉稍微用大点力气，这个旧木门便到了极乐世界。<br>另一种解释是，加噪的同时强调了更难被掩盖的抽象特征而强迫模型不断重新认识细节。强迫模型多级抽象正是CNN+池化在 AlexNet 古早年代就坐实深度学习宝座的秘诀。领悟这份秘诀有一个诀窍，以 Macbook Air 15英寸发布时的默认壁纸为例，其实你尝试把眼睛眯成一条缝就能从壁纸里抽象出 3 个字，这应该是体验模型注意力从细节特征到高层语义过度的最佳实践了～而不断重新认识细节也同样是帮助模型从细节中总结出「亘古不变」的规律，而抑制与任务无关的冗余细节。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://github.com/open-mmlab/mmyolo/assets/62822224/8f6e1b0d-f6a5-439d-89a0-59fdb9baf443">
+        
+      </span></p>
+<h3 id="邪恶的「破坏主义」"><a href="#邪恶的「破坏主义」" class="headerlink" title="邪恶的「破坏主义」"></a>邪恶的「破坏主义」</h3><p>除了正面意义，对抗学习还有很多负面意义。对抗毕竟是一个攻击性的破坏秩序的行动，因此常激起人们对 AI 可靠性的担忧。我们可以找几个容错性较差的场景来理解对抗的破坏意义。比如家庭配置的小偷监测器，一旦该机器是基于神经网络，那就必须考虑到在诸如巨物掩护、奇装异服、罕见姿态等极端情况下对小偷的监测能力。最可怕的情况下，可能小偷只是在身上穿上一件如画般的衣服就能轻松躲开监测器的识别。又或是医院的病灶识别若是基于神经网络，那么服务器的黑客一旦从中解惑图像数据并一次性破坏整张图像的特征，或者通过高超的手段在无法获取原图的前提下对原图加噪，我们的医生能不能被系统及时提醒，能不能对患者安慰负责。还有，我们的线上身份证扫描如果是基于神经网络判断是否为翻拍，那么如果被攻击导致无法正常识别，则不法分子将滥用不明来历的身份证照片进行非法活动。不过「道高一尺，魔高一丈」。我们如果能够充分预设攻击并提前演练，那么我们的模型也能够吃一堑长一智。</p>
+<h2 id="⛰️怎么看待对抗学习的未来"><a href="#⛰️怎么看待对抗学习的未来" class="headerlink" title="⛰️怎么看待对抗学习的未来"></a>⛰️怎么看待对抗学习的未来</h2><p>其实如果就功利的视角而言，对抗学习在学术界的主流认知中就是个大 Trick，而且就算放到产业界也只能作为规避犯错可能性的 Trick 勉强落地到金融、安防、医疗等容错性较差的对口场景，缺乏成熟的体系，从而导致应用价值不足。但是对抗学习的应用潜力是非常大的，那这种应用潜力凸显在哪里呢？尽管对抗的对口领域比较小众，但整个 AI 领域都在有意或无意的享受着对抗学习带来的增益，比如数据增广、常见的正则化项、对抗生成等等，它是覆盖面特别广的技术。但为什么这么具有应用潜力的技术却缺少应用价值呢？正是因为其内涵还没有得到充分的认识和利用。<br>在我的想法中，这种内涵认识的不足体现在人类对神经网络可解释性的缺失。我们知道机器学习往往会通过特征建模以抽取更有效的特征来学习或归纳，所以往往有清晰的推理脉络。而神经网络从诞生之初就是一层层全连接的黑盒结构，一切结构形式的探索都是建立在人类设计的猜想和实验的基础上，而不是严格的数理推理。讲人话就是，模型为什么能够表现出色它自己可能都说不明白。反观古之圣贤，不仅能仅凭百试百灵的「神通」快速做出巧妙的决策，还能事后头头是道地给你唠唠这么做可行的原因一、二、三……。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://github.com/open-mmlab/mmyolo/assets/62822224/b65bcbaa-f20a-493c-889e-43cc902dac0a">
+        
+      <br>诚然，我们人就是如此，当我们想探究为什么所有人天生就擅长做不同的事儿，那还得问问当事人自己特有的「感觉」。「感觉」这种东西太迷糊又太简单，没什么可解释的。但也因为太简单，迷糊的「感觉」很容易产生偏差，需要不断梳理出具体行为结果的因果逻辑才能评判「感觉」的失调，否则越用越歪也甭想培养出百试百灵的「神通」，这是一种「复杂=&gt;简单」和「简单=&gt;复杂」并重的双向循环。这就是人类和当前人工神经网络最大的差别，现在的大部份人工神经网络要不只会「复杂=&gt;简单」地预测，要不只会「简单=&gt;复杂」地生成。<br>如果我们能够让模型学会不单单依赖训练而来的「感觉」，而是能多观察一下在「感觉」发挥作用时真实世界都给了什么回馈，并且有什么积极的消极的意义，那么就能够生成看得见摸得着的思维链来关注更具体的多个结果和因素，进一步从每个结果和因素出发捕获更丰富的「感觉」抑制失调的「感觉」。这是一个「感觉」与「感觉」之间互相印证，有起有落的过程，最终养成很少犯错的「神通」。我们在大语言模型中借助思维链推理来避免模型犯错也是异曲同工之妙，只可惜思维链是静态的临时的，并不对模型本身带来实质的提升。<br>因此，最后我不得不提一提我不成熟的设想。以大模型为核心（提高能力的天花板），具有丰富感官，并能够开放与世界交互（永恒训练，且擅长培养「感觉」），同时能够从自己暴露的思维链中肃清错误「感觉」（擅长培养「神通」）的模型可能才是可解释性的最佳体现，而暴露思维链正是一种反思与自我对抗。</span></p>
+
+        <!-- 分类文章 -->
+        
+          <div class="post-categoris-bottom">
+            <div class="post-categoris-name">Computer Vision 计算机视觉</div>
+            <ul>
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/031.html" class="post-categoris-bottom-link">
+                  一键锁定目标的检测算法
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/035.html" class="post-categoris-bottom-link">
+                  AI 入门知识
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/033.html" class="post-categoris-bottom-link">
+                  实验命令汇总
+                </a>
+                </li>
+              
+              
+            
+            
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/0661594.html" class="post-categoris-bottom-link">
+                  SAM，监督学习已跳出过拟合泥潭？
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/066282.html" class="post-categoris-bottom-link">
+                  AI 术语备注
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="me base">
+                  <a  href="/2023/1065275.html" class="post-categoris-bottom-link">
+                  AI 发展这么快，我们却常忘记模型应该自己“打败自己”
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/106524324.html" class="post-categoris-bottom-link">
+                  优化算法作为深度学习的核心，可以用来优化人脑吗？
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/1065212324.html" class="post-categoris-bottom-link">
+                  多模态，原来有那么多花样！
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/1063476324.html" class="post-categoris-bottom-link">
+                  大模型要抢我工作？先看看这篇 AI 打工仔压榨攻略！
+                </a>
+                </li>
+              
+              
+            
+            
+            </ul>
+
+          </div>
+
+        
+      </div>
+      <div class="post-content-inner-space">
+        
+      </div>
+   </div>
+    <!-- 评论 -->
+    
+  </div>
+</article>
+  </div>
+</div>
+
+
+
+<!-- 如果是home模式的话，不在首页就显示footer，如果不是home模式的话 所有都显示footer -->
+
+  <div class="footer-outer animate__animated  animate__fadeInUp">
+    <div class="footer-inner">
+    <div class="footer-text">
+    <p>Have a <strong>NICE</strong> day.</p>
+
+    </div>
+    <div class="footer-contact">
+    <ul class="footer-ul">
+        
+        <li class="footer-li">
+            <a href="mailto:Tianwen580@hotmail.com" target="_blank">
+                <i class="ri-mail-send-fill"></i>
+            </a>
+        </li>
+        
+        <li class="footer-li">
+            <a href="tel:+8613622309458" target="_blank">
+                <i class="ri-phone-line"></i>
+            </a>
+        </li>
+        
+        <li class="footer-li">
+            <a href="weixin://lindaxia12138tik" target="_blank">
+                <i class="ri-wechat-fill"></i>
+            </a>
+        </li>
+        
+    </ul>
+    </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script src="/js/white.js"></script>
+
+
+
+    
+      
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='all'|| 'all' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="http://buluwasior.me/categories/生活随笔/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🐱‍👓 林天文的生活随笔 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item" style="visibility: hidden"></div><a class="magnet_link_more"  href="http://buluwasior.me/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f7f7f7;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #f2f2f2}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:#0088ff}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style> <script data-pjax>if(document.getElementById('recent-posts') && location.pathname =='/'){
+    
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms"></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载swiper')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script>
+<script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiper.min.js"></script>
+<script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper@0.18/swiper/swiperindex.js"></script>
+<style></style>
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://python-github-calendar-api.vercel.app/api?TianWen580";
+            var git_color =['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f'];
+            var git_user ="TianWen580";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="height:100%;display: flex;align-items: center;justify-content: center;"><svg style="height:50px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:248px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":250},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

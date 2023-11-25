@@ -1,0 +1,519 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  多模态，原来有那么多花样！ |    林天文 Tianwen Lin | Buluwasior</title>
+  <meta name="description" content="HELLO">
+  <!-- 标签页图标 -->
+  
+  <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+  
+
+  <!-- 图标库 -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- 动画库 -->
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fushaolei/cdn-white@1.0/css/animate.css"/>
+  
+  <!-- css文件 -->
+  
+<link rel="stylesheet" href="/css/white.css">
+
+  <!-- 代码高亮 -->
+  
+    
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/github.css">
+
+    
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiper.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiperstyle.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+
+<div class="menu-outer">
+    <div class="menu-inner">
+      <div class="menu-site-name  animate__animated  animate__fadeInUp">
+        <a href="/">
+          林天文 Tianwen Lin | Buluwasior
+        </a>
+        
+      </div>
+      <div class="menu-group">
+        <ul class="menu-ul">
+        
+          <a href="/" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              HOME PAGE
+            </li>
+          </a>
+        
+          <a href="/about" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              ME
+            </li>
+          </a>
+        
+          <a href="/archives" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              BLOGs
+            </li>
+          </a>
+        
+          <a href="/publication" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              PUBLICATIONS
+            </li>
+          </a>
+        
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="sort">
+             COLLECTIONs
+             <div class="categories-outer " id="sort-div">
+               <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Vision-%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">Computer Vision 计算机视觉</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/For-OpenMMLab/">For OpenMMLab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIS-Experiments/">GIS Experiments</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/">生活随笔</a></li></ul>
+             </div>
+          </li>
+        
+        
+        <a href="/search">
+          <li class="menu-li  animate__animated  animate__fadeInUp">
+            <i class="ri-search-line"></i>
+          </li>
+        </a>
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="mobile-menu">
+            <i class="ri-menu-line"></i>
+          </li>
+        
+        </ul>
+
+      </div>
+
+    </div>
+</div>
+<div id="mobile-main" class="animate__animated  animate__fadeIn">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-site-name animate__animated  animate__fadeInUp">
+      <a href="/">
+        林天文 Tianwen Lin | Buluwasior
+      </a>
+    </div>
+    <div class="mobile-menu-group" id="mobile-close">
+      <i class="ri-close-line"></i>
+    </div>
+
+  </div>
+
+  <div class="mobile-menu-div">
+  
+    <a href="/" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>HOME PAGE</span>
+      </div>
+    </a>
+  
+    <a href="/about" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>ME</span>
+      </div>
+    </a>
+  
+    <a href="/archives" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>BLOGs</span>
+      </div>
+    </a>
+  
+    <a href="/publication" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>PUBLICATIONS</span>
+      </div>
+    </a>
+  
+  
+    <a href="/search">  
+      <div class="mobile-menu-child  animate__animated  animate__fadeInUp">
+        <i class="ri-search-line"></i>
+      </div>
+    </a>
+    
+  </div>
+
+
+</div>
+
+<div class="body-outer">
+  <div class="body-inner">
+    
+<article class="post-inner">
+  <div class="post-content-outer">
+    <div class="post-intro">
+      <div class="post-title animate__animated  animate__fadeInUp">多模态，原来有那么多花样！</div>
+      <div class="meta-intro animate__animated  animate__fadeInUp">10月 23 2023</div>
+      
+        <div class="post-cover"><span class="lazyload-img-span"><img data-src="https://github.com/open-mmlab/mmyolo/assets/62822224/bb3f3226-c3a1-4140-a4a6-37ff5c12d57c" class="post-cover-img"><div class="post-cover-img-hover">asas</div><div class="post-cover-img-insert">asas</div></span></div>
+      
+    </div>
+    <div class="post-content-inner">
+      <div class="post-content-inner-space">
+
+      </div>
+      <div class="post-content-main animate__animated  animate__fadeInUp">
+        <!-- top型目录 -->
+        
+          <ol class="toc-top"><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E2%9C%82%EF%B8%8F%E4%BB%8E%E5%B0%8F%E4%BC%97%E9%A2%86%E5%9F%9F%E5%8D%B7%E5%85%A5%E7%83%AD%E6%BD%AE%E7%9A%84-CLIP"><span class="toc-top-text">✂️从小众领域卷入热潮的 CLIP</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#CLIP-%E7%9C%9F%E7%A7%80"><span class="toc-top-text">CLIP 真秀</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#CLIP-%E7%9A%84%E5%90%8E%E4%B8%96%E5%BD%B1%E5%93%8D"><span class="toc-top-text">CLIP 的后世影响</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%E2%9C%8D%EF%B8%8F%E4%BB%8E%E7%94%9F%E6%88%90%E5%BC%8F%E7%9A%84%E8%A7%86%E8%A7%92%E5%86%8D%E9%81%87%E8%A7%81%E5%A4%9A%E6%A8%A1%E6%80%81"><span class="toc-top-text">✍️从生成式的视角再遇见多模态</span></a></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%F0%9F%AB%A7%E4%BB%8E%E5%8D%95%E4%B8%80%E6%A8%A1%E6%80%81%E4%B8%AD%E5%8F%91%E6%8E%98%E5%87%BA%E5%A4%9A%E6%A8%A1%E6%80%81"><span class="toc-top-text">🫧从单一模态中发掘出多模态</span></a></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%F0%9F%93%9D%E9%87%8D%E6%96%B0%E8%AE%A4%E8%AF%86%E6%A8%A1%E6%80%81%E5%AF%B9%E9%BD%90"><span class="toc-top-text">📝重新认识模态对齐</span></a><ol class="toc-top-child"><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E8%BA%AB%E4%B8%B4%E5%85%B6%E5%A2%83%E6%84%9F%E5%8F%97%E5%A4%9A%E6%A8%A1%E6%80%81%E5%AD%A6%E4%B9%A0"><span class="toc-top-text">身临其境感受多模态学习</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E6%A8%A1%E6%80%81%E5%AF%B9%E9%BD%90%EF%BC%8C%E5%89%8D%E8%BF%9B%E8%BF%9B"><span class="toc-top-text">模态对齐，前进进</span></a></li><li class="toc-top-item toc-top-level-3"><a class="toc-top-link" href="#%E6%A8%A1%E6%80%81%E5%AF%B9%E9%BD%90%E6%88%96%E8%AE%B8%E4%B8%8D%E6%98%AF%E5%AE%8C%E5%A4%87%E8%A7%A3%E2%80%94%E2%80%94%E6%A8%A1%E6%80%81%E5%B7%AE%E5%88%86%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-top-text">模态对齐或许不是完备解——模态差分的概念</span></a></li></ol></li><li class="toc-top-item toc-top-level-2"><a class="toc-top-link" href="#%F0%9F%8C%88%E5%9C%A8%E5%A4%9A%E6%A8%A1%E6%80%81%E4%BA%94%E5%BD%A9%E7%BC%A4%E7%BA%B7%E7%9A%84%E4%B8%96%E7%95%8C%E9%87%8C%EF%BC%8C%E5%8F%91%E7%8E%B0%E6%9B%B4%E5%A4%9A%E5%8F%AF%E8%83%BD"><span class="toc-top-text">🌈在多模态五彩缤纷的世界里，发现更多可能</span></a></li></ol>
+        
+        <blockquote>
+<p>「不同视角下，多模态还是你心目中的模样吗。」</p>
+<ul>
+<li>预习知识：<pre><code>  · 朱毅老师-多模态串讲：https://www.bilibili.com/video/BV1Vd4y1v77v
+</code></pre>
+</li>
+</ul>
+</blockquote>
+<p>在 2021 年，随着 CLIP 工作首次公开亮相，从来没有那么活跃过的多模态领域带给研究人员一种新鲜的感受——不用训练到处都能用的感觉原来这么愉悦～</p>
+<h2 id="✂️从小众领域卷入热潮的-CLIP"><a href="#✂️从小众领域卷入热潮的-CLIP" class="headerlink" title="✂️从小众领域卷入热潮的 CLIP"></a>✂️从小众领域卷入热潮的 CLIP</h2><p>
+        <span class="lazyload-img-span">
+        <img data-src="https://github.com/open-mmlab/mmyolo/assets/62822224/53d4b623-79e0-4462-a2f0-2b316f6fd141">
+        
+      </span></p>
+<h3 id="CLIP-真秀"><a href="#CLIP-真秀" class="headerlink" title="CLIP 真秀"></a>CLIP 真秀</h3><p>在认识 CLIP 之前，我的刻板印象常告诉我通用大模型就是少数几个顶级科技公司才能玩得起的技术，仿佛训练吞电站，调用费千百。直到看到朱毅老师亲自讲解并演示怎么部署和变着花样调戏 CLIP。尽管 CLIP 也是个烧钱烧数据集的工作，但是它舍弃了庞大的体格，在「模态对齐」上下苦功夫。这个能用语言调戏的双感官模型居然真正走入了我的低端电脑，并在我面前秀了一波「袖珍」身体带来的优秀泛化能力。<br>起初我只是把它当作一个相当朴实的炫富工作，但自从在 CLIP 这慢慢了解了多模态之后，我开始对单一模态的工作指指点点。刚开始我只是无脑放点狠话，比如「视觉是聋子、哑巴」之类。到后来我越思考就想得越多，比如我们的汉字那么博大精深的语义体系视觉模型居然一直都无法从类别文本标注中感受到。我对单一模态越来越失望，再往后会去憧憬一些可能的解决方案，比如模型哪天开始能够看到自己标签上的汉字象形意义，是否能够学得更好……<br>当我彻底沉迷上多模态之后，我也爱上了 Zero-shot 这种不用训练也可以举一反三的理论。在 CLIP 诞生之前，多模态领域对于怎么处理不同感官之间复杂关系一直停留在理论的设想上，直到 CLIP 花重金印证了「模态对齐」的意义，并促进大家思考模态之间有什么样的关系值得模型去学习。「模态对齐」是引导模型真正学会模态间关系的理论，比如咱只看一根香蕉的照片可以联系很多种语言表达，比如「长的」、「黄黑相间的」、「食物」、「水果」……而反过来，我们看到「香蕉」也会拥有各种各样的想象，比如漫画风格的、油画的、照片里的……当然模态间的关系可能不只是这样，但当 CLIP 引入对比学习为两个多样性极好的模态建立起这种双向联想时，感官之间的合作已经足够简单，这也降低了 CLIP 在下游视觉或语言任务中举一反三的难度。</p>
+<h3 id="CLIP-的后世影响"><a href="#CLIP-的后世影响" class="headerlink" title="CLIP 的后世影响"></a>CLIP 的后世影响</h3><p>CLIP 给出的解决方案表面上看非常朴素，只需要假设互联网数据集足够大，模型总能够学习到这种花样多多的模态双向关系。俗话说得好，活久了什么怪事也都能见到～CLIP 也比较谦虚，在论文的一开始就提出自己只是在实践上往前走了很远而没有太多理论创新。然而，有强大泛化能力的 CLIP 同时也以 88.4% 和 51% 的精度尴尬地透露了自己在 MNIST、SVHN 等数字类数据集上泛化的无力感，因为在 CLIP 的印象里，很少见过互联网上会把哪个数字跟数字的特写照片放在一起。虽然很尴尬，但不影响 CLIP 在计算机图形学、向量数据库等细分领域，甚至分割、目标检测等各个细分任务上凭借强大的通用 Zero-shot 性能顺利出圈，诞生了大量后续的创新工作。SAM 也发扬了 CLIP 的「模态对齐」思想并在监督学习分割领域秀了一波 Zero-shot 和超大分割监督数据集廉价孵化技术。</p>
+<h2 id="✍️从生成式的视角再遇见多模态"><a href="#✍️从生成式的视角再遇见多模态" class="headerlink" title="✍️从生成式的视角再遇见多模态"></a>✍️从生成式的视角再遇见多模态</h2><p>在分析多模态与生成算法的缘份之前，应该先了解一个无监督领域的技术，即「自编码」。自编码器通常是以编解码的架构训练的，其任务通俗点描述也很简单，即「自己生成自己」。既然要生成，那花样可就多了。以图像为例子，可以先把原始的输入压缩干净（图像 =&gt; 向量），再让模型尝试恢复原图（向量 =&gt; 图像）。经过不断压缩-解压的训练，我们就能够强迫模型学习自己感受图像高度抽象的特征（一般称编码得到的向量为数据的表征），从而让模型很好地认识数据的全貌，并作为预训练模型应用到下游任务。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://github.com/open-mmlab/mmyolo/assets/62822224/dcf92f2f-c0bb-4b2e-836b-f1b4d00f8d27">
+        
+      </span></p>
+<p>理解了自编码的概念之后，我们可以尝试重新理解「自」在自编码中的意义。上面我带小伙伴们理解的「自」是指原始输入，比如我可以让自编码器重建一段句子、一张图片、一条语音等，甚至更极端地把这些句子、图片、语音等掩盖住一部份再来压缩，并重建出没有掩盖之前的状态，比如 BERT、MAE 等。那么我们怎么重新认识「自」并玩出花来呢？下面我展示其中一种视角：</p>
+<ol>
+<li>图像 =&gt; 向量 =&gt; 图像：这里以视觉任务的自编码为例子。这是我们一开始定义的「自」编码，你可以尝试把这个流程改成下面的形式👇</li>
+<li>（模态1 =&gt; 向量 =&gt; 模态2）+（模态2 =&gt; 向量 =&gt; 模态1）：如果还没 get 到这么做的意义，可以进一步把流程按照不同研究领域改成下面的变种形式👇<table>
+<thead>
+<tr>
+<th>自编码变种</th>
+<th>下游任务</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>（文本 =&gt; 向量 =&gt; 语音）+（语音 =&gt; 向量 =&gt; 文本）</td>
+<td>文声互转、虚拟语音、音频编辑、音频润色等</td>
+</tr>
+<tr>
+<td>（图像 =&gt; 向量 =&gt; 文本）+（文本 =&gt; 向量 =&gt; 图像）</td>
+<td>图片标注、图文索引、图文问答等</td>
+</tr>
+<tr>
+<td>（光学影像 =&gt; 向量 =&gt; 遥感 SAR）+（遥感 SAR =&gt; 向量 =&gt; 光学影像）</td>
+<td>消云、图像融合、数据增广等</td>
+</tr>
+<tr>
+<td>（图像 =&gt; 向量 =&gt; 语音）+（语音 =&gt; 向量 =&gt; 图像）</td>
+<td>（幻想）语音指导视觉任务、基于语气和表情监测的心理咨询等</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<p>从这可以看出自编码的方法论适用于各种领域的预训练任务，并可以站在不同模态视角下把各种异构的数据源对齐在一起。所以其实只需要把自编码的「自」换一种花样解读，我们就得到了一个多模态学习的新思路。相比于上面提到的 CLIP，这种自编码的方式并没有在编码得到表征之后就开始模态对齐了，而是一转眼又顺路跑到了对方的世界去，开眼看世界（无厘头）。自编码的方式也有自己的问题，比如引入了模态间的生成过程也增加了训练难度，尤其是模态的复杂度差异过大的时候。在这方面 CLIP 有着得天独厚的优势，那就是模态的融合是统一映射到较简单的向量空间中进行。CLIP 天生有把奥卡姆剃刀，什么噪声、失真、遮盖……在高度抽象面前都是可以被抑制的，并且在对齐的过程中模型也会主动学会避开这些无意义的信息，训练难度会降低很多。</p>
+<h2 id="🫧从单一模态中发掘出多模态"><a href="#🫧从单一模态中发掘出多模态" class="headerlink" title="🫧从单一模态中发掘出多模态"></a>🫧从单一模态中发掘出多模态</h2><p>综上，我们不难看出多模态的本质就是对同一事物的不同表达。上面我们已经尝试站在多个基于人类感官的模态视角上认识多模态的意义，下面我们将打破模态之间应该基于人类不同感官的刻板印象。以我们的好朋友「SAM」为例，它也是多模态相关的工作，明面上采用了点、框、面 3 种模态来辅助图像分割算法，但实际上这 3 种模态都是从分割标签的掩码面中随机采样得到的。虽然这些模态所含的都是空间信息，而且都从同一个掩码面模态种发掘而来，但是我们能不能认为这是对同一事物的不同表达呢？当然可以。<br>因此，我们可以尝试从多模态的本质来再次感受一种模态设计的新花样：</p>
+<ul>
+<li>对于较复杂的视觉分割任务而言，巧妙利用分割掩码模态的空间信息多样性，从十分抽象的（点模态）到较具体的（面模态）发掘出多空间尺度的融合学习。实现一个可以由「简单」模态提示的「复杂」模态预测器。比如打点得掩码。</li>
+<li>退一万步，对于最简单的视觉分类任务而言，我们搬用一模一样的模态设计，实现一个可以由「复杂」模态提示的「简单」模态预测器。比如画圈得框。<br>对多模态的理解可以不拘泥于传统的生物感官，而是从单一模态中发掘模态内部的差异性，从而创造特色各异的新模态，强迫模型主动认识这种内在差异，从而提高模型对单一模态的深刻认识。</li>
+</ul>
+<h2 id="📝重新认识模态对齐"><a href="#📝重新认识模态对齐" class="headerlink" title="📝重新认识模态对齐"></a>📝重新认识模态对齐</h2><h3 id="身临其境感受多模态学习"><a href="#身临其境感受多模态学习" class="headerlink" title="身临其境感受多模态学习"></a>身临其境感受多模态学习</h3><p>假如你是一个辅导高中生的家教，有个来年高考的差生，你会选择先给他 n 本特色不一的练习册全面练习，还是先翻开过去的练习一步步引导 ta 发现自己的知识缺陷呢？在我体验过的高中生活中，更希望先有个高手能带我发现我已经存在的问题，因为「当局者迷」的难题很难在越来越大的学习任务中自解，却可能被他人一句话就点明白。我想多模态也是一个道理，无论模态堆了多少种，又有多全面，到最后都不如先设计一个高效的模态对齐方案，显式地引导模型关注模态间相互交叉的中间地带，降低众多模态联合学习的难度。疯狂堆模态很可能只会导致模型走马观花，甚至走火入魔。在这里，更高效的模态对齐算法就是防止「差生」学不进去的宝藏家教~<br>对比学习是 CLIP 所选择的模态对齐解决方案。在引入多模态之前，对比学习是一种从数据集内部探索监督信号的无监督 SOTA 方案。它对监督信号的定义是灵活多变的，但主流的定义就一种，即「某张图像只跟其增广图像匹配，跟其他图像都不匹配」。放到多模态领域就是，「某张图像只跟其附带文本匹配，跟其他图像的附带文本都不匹配，反之亦然」。将最先进的无监督技术兼容到 CLIP 的模态对齐算法，是其能更好 hold 住图文模态的根本原因。借助对比学习实现模态对齐的例子也出现在了我们耳熟能详的 ChatGPT，比如 BLIP-2 就实现了图像模态到文本模态的对齐，给 ChatGPT 等语言大模型接上了眼睛。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://github.com/open-mmlab/mmyolo/assets/62822224/fd9af89b-c767-44e6-9669-02c49bdc37e2">
+        
+      </span></p>
+<h3 id="模态对齐，前进进"><a href="#模态对齐，前进进" class="headerlink" title="模态对齐，前进进"></a>模态对齐，前进进</h3><p>对比学习最大的缺点就是监督信号的可靠性在不同的数据集中都不一致。让我们思考对比学习在无监督任务中的原始定义，假如我们每次只把两张图像拿来对比，一旦遇到两张图像相似度较高时，就很可能会错误地把同一类的数据强制「拉开距离」，所以一般无监督对比学习都会设置一个很大的 batch size 来稀释每次对比中不可解释的部份。反观多模态对比学习，尽管文本中的主语和定语往往有很强的针对性，比如毛茸茸的哈士奇和光秃秃的哈士奇能带给我们不同的场景想象。但一旦遇到过于含糊的文本或者过于抽象的照片，就很难再套用到对比学习的假设和逻辑中。<br>因此，ALBEF 利用动量编码的思想抑制了对比学习的负面效果。但这只是妥协的临时方案，只有革新对比学习的理论，甚至创造其他模态对齐技术才能根除这种监督信号的不稳定性，并摆脱当下无监督学习对数据规模的依赖。无监督相较于监督、半监督、弱监督而言一直都是难啃的骨头，不过过去的时间里我们见证了无监督深度学习对训练设备的要求在一点点降低，这或许暗示了我们以对比学习为核心的无监督算法还有很大的进步空间。</p>
+<h3 id="模态对齐或许不是完备解——模态差分的概念"><a href="#模态对齐或许不是完备解——模态差分的概念" class="headerlink" title="模态对齐或许不是完备解——模态差分的概念"></a>模态对齐或许不是完备解——模态差分的概念</h3><p>另一方面，模态之间的关系或许不只有「n to n」的对齐关系，也就是说我们的模态之间的相关性不只有正相关的关系，还有负相关的关系。有个生活中的例子就是，同样是美食，你闻着是美食，吃着也是美食，但是闻的感觉就是和吃着的感觉就是不一样。你说这种感官差异能通过对齐香味和口味学到吗？当然不行，这种感觉之间的差异是互补的不是重叠的，却共同决定了我们要把面前的美食好好品一品。无监督的突破是模态对齐的核心很重要，但是也不能少了对「模态差分」的关注，或许「模态对齐」➕「模态差分」才是驱动「多」模态向「超多」模态转变的完整推动力。未来的多模态技术研究还需要我们做更深入的研究和探索……</p>
+<h2 id="🌈在多模态五彩缤纷的世界里，发现更多可能"><a href="#🌈在多模态五彩缤纷的世界里，发现更多可能" class="headerlink" title="🌈在多模态五彩缤纷的世界里，发现更多可能"></a>🌈在多模态五彩缤纷的世界里，发现更多可能</h2><p>在我们的探讨中，多模态的世界已经从传统的人类感官扩展到了单一模态内部的差异性。从 CLIP 的「模态对齐」，到自编码的双向生成，再到 SAM 的巧妙利用分割掩码模态，进而到「模态差分」，我们看到了多模态的许多可能。它们不仅仅是对同一事物的不同表达，更是这个世界多样性、复杂性和丰富性的体现。多模态不再是一种单一的、固定的模式，而是一种可变的、灵活的思维方式。它像极了人类的好奇心，引导人们在已有感官的基础上摆脱「千人一面」的枯燥，去发现「一花独放不是春，百花齐放春满园」的多彩世界，让人们切换不同的角度去理解和解释共同面对的现实，这正是人类的历史文化绚丽多彩的原因。这种变换的、多元的思维方式，无疑给我们的研究和应用带来了更多的可能和机会。因此，让我们在多模态的世界中，释放我们的想象，发现更多的可能。不论是在人工智能的研究中，还是在实际应用中，多模态都给我们提供了一个全新的视角，让我们能够更好地理解和处理复杂的问题。最后，希望我们都能在多模态的世界里，找到自己的位置，展现自己的花样。<br>
+        <span class="lazyload-img-span">
+        <img data-src="https://github.com/open-mmlab/mmyolo/assets/62822224/bb3f3226-c3a1-4140-a4a6-37ff5c12d57c">
+        
+      </span></p>
+
+        <!-- 分类文章 -->
+        
+          <div class="post-categoris-bottom">
+            <div class="post-categoris-name">Computer Vision 计算机视觉</div>
+            <ul>
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/031.html" class="post-categoris-bottom-link">
+                  一键锁定目标的检测算法
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/035.html" class="post-categoris-bottom-link">
+                  AI 入门知识
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/033.html" class="post-categoris-bottom-link">
+                  实验命令汇总
+                </a>
+                </li>
+              
+              
+            
+            
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/0661594.html" class="post-categoris-bottom-link">
+                  SAM，监督学习已跳出过拟合泥潭？
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/066282.html" class="post-categoris-bottom-link">
+                  AI 术语备注
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/1065275.html" class="post-categoris-bottom-link">
+                  AI 发展这么快，我们却常忘记模型应该自己“打败自己”
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/106524324.html" class="post-categoris-bottom-link">
+                  优化算法作为深度学习的核心，可以用来优化人脑吗？
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="me base">
+                  <a  href="/2023/1065212324.html" class="post-categoris-bottom-link">
+                  多模态，原来有那么多花样！
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="/2023/1063476324.html" class="post-categoris-bottom-link">
+                  大模型要抢我工作？先看看这篇 AI 打工仔压榨攻略！
+                </a>
+                </li>
+              
+              
+            
+            
+            </ul>
+
+          </div>
+
+        
+      </div>
+      <div class="post-content-inner-space">
+        
+      </div>
+   </div>
+    <!-- 评论 -->
+    
+  </div>
+</article>
+  </div>
+</div>
+
+
+
+<!-- 如果是home模式的话，不在首页就显示footer，如果不是home模式的话 所有都显示footer -->
+
+  <div class="footer-outer animate__animated  animate__fadeInUp">
+    <div class="footer-inner">
+    <div class="footer-text">
+    <p>Have a <strong>NICE</strong> day.</p>
+
+    </div>
+    <div class="footer-contact">
+    <ul class="footer-ul">
+        
+        <li class="footer-li">
+            <a href="mailto:Tianwen580@hotmail.com" target="_blank">
+                <i class="ri-mail-send-fill"></i>
+            </a>
+        </li>
+        
+        <li class="footer-li">
+            <a href="tel:+8613622309458" target="_blank">
+                <i class="ri-phone-line"></i>
+            </a>
+        </li>
+        
+        <li class="footer-li">
+            <a href="weixin://lindaxia12138tik" target="_blank">
+                <i class="ri-wechat-fill"></i>
+            </a>
+        </li>
+        
+    </ul>
+    </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script src="/js/white.js"></script>
+
+
+
+    
+      
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='all'|| 'all' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="http://buluwasior.me/categories/生活随笔/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🐱‍👓 林天文的生活随笔 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item" style="visibility: hidden"></div><a class="magnet_link_more"  href="http://buluwasior.me/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f7f7f7;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #f2f2f2}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:#0088ff}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style> <script data-pjax>if(document.getElementById('recent-posts') && location.pathname =='/'){
+    
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms"></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载swiper')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script>
+<script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiper.min.js"></script>
+<script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper@0.18/swiper/swiperindex.js"></script>
+<style></style>
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://python-github-calendar-api.vercel.app/api?TianWen580";
+            var git_color =['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f'];
+            var git_user ="TianWen580";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="height:100%;display: flex;align-items: center;justify-content: center;"><svg style="height:50px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:248px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":250},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
